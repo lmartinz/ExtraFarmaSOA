@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="DevolucaoMercadoria"
+     targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:tns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="DevolucaoMercadoriaDBBPEL">
+        <plnk:role name="DevolucaoMercadoriaPortType" portType="tns:DevolucaoMercadoriaPortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1" location="../WSDLs/DevolucaoMercadoriaV1.wsdl"/>
+</wsdl:definitions>
