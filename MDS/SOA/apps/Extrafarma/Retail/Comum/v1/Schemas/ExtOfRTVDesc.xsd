@@ -1,0 +1,100 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfRTVDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/custom/bo/ExtOfRTVDesc/v1"
+    xmlns:EXFItemDesc="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import
+        namespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1" schemaLocation="EXFItemDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Item Additional Information</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
+    <xs:element name="ExtOfRTVDesc">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element minOccurs="0" name="carrier_code" type="varchar24">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains the courier that will deliver the shipment.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="carrier_service_code" type="varchar26">
+					<retailDoc:annotation>
+						<retailDoc:documentation>This column holds the service level code for the courier that will deliver the shipment.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="vehicle_plate" type="varchar240">
+					<retailDoc:annotation>
+						<retailDoc:documentation>This field provides the identification plate of the vehicle.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="plate_state" type="varchar27">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Field used for sped. symbol/code of the state of the federation board of the vehicle.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="freight_type" type="varchar26">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Freight Type. FOB (Free on Board): The Freight should be paid by the receiver. CIF (Cost, Insurance and Freight): The Freight should be paid by the sender</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>				
+				<xs:element minOccurs="0" name="printer_id" type="varchar2120">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Printer Id</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ExtOfRTVDtl">
+        <xs:complexType>
+            <xs:sequence>
+			    <xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFItemDesc:EXFItemDtl">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Item Additional Information</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:simpleType name="varchar24">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 4 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar240">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 40 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar27">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 7 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar26">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 6 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar2120">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 120 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="120"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,35 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfReceiptDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/custom/bo/ExtOfReceiptDesc/v1"
+    xmlns:EXFItemDesc="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import
+        namespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1" schemaLocation="EXFItemDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Item Information</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
+    <xs:element name="ExtOfReceiptDesc">
+        <xs:complexType>
+            <xs:sequence>
+			    <xs:element maxOccurs="unbounded" ref="ExtOfReceiptDtl">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Details Receiving Information</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ExtOfReceiptDtl">
+        <xs:complexType>
+            <xs:sequence>
+			    <xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFItemDesc:EXFItemDtl">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Item Information</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
