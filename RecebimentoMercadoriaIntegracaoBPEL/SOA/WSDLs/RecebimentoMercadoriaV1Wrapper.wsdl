@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="RecebimentoMercadoria"
+     targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="RecebimentoMercadoriaBPELProcess">
+        <plnk:role name="RecebimentoMercadoriaPortType" portType="tns:RecebimentoMercadoriaPortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1" location="RecebimentoMercadoriaV1.wsdl"/>
+</wsdl:definitions>

@@ -1,0 +1,226 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Sun Jun 25 16:58:21 BRT 2017
+  Author:  Vinicius
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="CriarTransferenciaMercadoriaLojaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/CriarTransferenciaMercadoriaLojaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/CriarTransferenciaMercadoriaLojaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSReference"
+         xmlns:ns3="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
+          location="../WSDLs/CriarTransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="TransferenciaMercadoriaLojaDBBPEL" partnerLinkType="ns1:CriarTransferenciaMercadoriaLojaBPELProcess" myRole="TransferenciaMercadoriaLojaPortType"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+    <partnerLink name="etXTsfJMSCriarReference" partnerLinkType="ns5:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:CriarTransferenciaMercadoriaLojaRequest"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:CriarTransferenciaMercadoriaLojaResponse"/>
+    <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+    <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao"/>
+    <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns5:Posta_Mensagem_msg"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="Sequence1">
+        <scope name="ScopeTratamentoMensagem">
+          <faultHandlers>
+            <catchAll>
+              <empty name="Empty"/>
+            </catchAll>
+          </faultHandlers>
+          <sequence name="SequenceTratamentoMensagem">
+            <assign name="AssignPayloadToRegistroErroLogBPEL">
+              <copy>
+                <from>$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>'TransferenciaMercadoriaLojaRestHTTP'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaoVariable/ns4:usuario</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaoVariable/ns4:idControle</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>'CriarTransferenciaMercadoriaLojaBPELErro'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+            </assign>
+            <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns3:execute_ptt" operation="execute"
+                    inputVariable="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>'200 - OK'</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" variable="outputVariable"
+               portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in CriarTransferenciaMercadoriaLojaBPELProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja" variable="inputVariable" createInstance="yes"/>
+    <sequence name="SequencePostaMensagemRib">
+      <assign name="TransformationCriarTransferenciaMercadoriaLojaToEtXTsf">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformCriarTransferenciaMercadoriaLojaToPostaMensagem.xsl", $inputVariable.parameters)</from>
+          <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
+        </copy>
+      </assign>
+      <invoke name="PostaMensagemetReceivingJMS" partnerLink="etXTsfJMSCriarReference" portType="ns5:Posta_Mensagem_ptt"
+              operation="Posta_Mensagem" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable"
+              bpelx:invokeAsDetail="no"/>
+    </sequence>
+    <sequence name="FluxoRegistraLog">
+      <assign name="AssignPayloadToRegistroLogBPEL">
+        <copy>
+          <from>'TransferenciaMercadoriaLojaRestHTTP'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+        </copy>
+        <copy>
+          <from>'CriarTransferenciaMercadoriaLojaBPELProcessed'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+        </copy>
+        <copy>
+          <from>'SUCESSO'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable/ns4:usuario</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable/ns4:idControle</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+        </copy>
+        <copy>
+          <from>'RIB'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+        </copy>
+        <copy>
+          <from>0</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+        </copy>
+        <copy>
+          <from>oraext:get-content-as-string($inputVariable)</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
+        </copy>
+      </assign>
+      <invoke name="RegistroLogBPEL" partnerLink="RegistroLogBPELReference"
+              portType="ns3:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
+              bpelx:invokeAsDetail="no"/>
+    </sequence>
+    <assign name="AssignReplyOK">
+      <copy>
+        <from>'200 - OK'</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+      </copy>
+    </assign>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja" variable="outputVariable"/>
+  </sequence>
+</process>
