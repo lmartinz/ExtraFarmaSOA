@@ -1,0 +1,212 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Tue Jun 27 00:13:51 BRT 2017
+  Author:  lmartins
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="ModificarPedidoTransferenciaMercadoriaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/ModificarPedidoTransferenciaMercadoriaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/ModificarPedidoTransferenciaMercadoriaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/etSOStatusReference"
+         xmlns:ns3="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xml:id="id_1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
+          importType="http://www.w3.org/2001/XMLSchema" xml:id="id_2"/>
+  <import namespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+          location="../WSDLs/PedidoTransferenciaMercadoriaV1Wrapper.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true" xml:id="id_3"/>
+  <partnerLinks xml:id="id_4">
+    <partnerLink name="PedidoTransferenciaMercadoriaDBBPEL" partnerLinkType="ns1:PedidoTransferenciaMercadoriaDBBPEL"
+                 myRole="PedidoTransferenciaMercadoriaPortType" xml:id="id_5"/>
+    <partnerLink name="etSOStatusReference" partnerLinkType="ns2:Produce_Message_plt"
+                 partnerRole="Produce_Message_role" xml:id="id_6"/>
+    <partnerLink name="RegistroLogBpel1" partnerLinkType="ns3:RegistroLogBpel1" partnerRole="execute_ptt"
+                 xml:id="id_7"/>
+  </partnerLinks>
+  <variables xml:id="id_8">
+    <variable name="inputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaRequest"
+              xml:id="id_9"/>
+    <variable name="inputPostaMensagem" messageType="ns2:Produce_Message_msg" xml:id="id_10"/>
+    <variable name="inputRegistroLogBpel" messageType="ns3:requestMessage" xml:id="id_11"/>
+    <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao" xml:id="id_12"/>
+    <variable name="outputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaResponse"
+              xml:id="id_13"/>
+  </variables>
+  <faultHandlers xml:id="id_14">
+    <catchAll xml:id="id_15">
+      <sequence name="Sequence1" xml:id="id_16">
+        <scope name="ScopeTratamentoMensagem" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xml:id="id_17">
+      <faultHandlers xml:id="id_18">
+         <catchAll xml:id="id_19">
+            <empty name="Empty" xml:id="id_20"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence name="SequenceTratamentoMensagem" xml:id="id_21">
+         <assign name="AssignPayloadToRegistroErroLogBPEL" xml:id="id_22">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+         <copy xml:id="id_23">
+               <from xml:id="id_24">$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_25">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+            </copy><copy xml:id="id_26">
+               <from xml:id="id_27">'PedidoTransferenciaMercadoriaRestHTTP'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_28">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+            </copy><copy xml:id="id_29">
+               <from xml:id="id_30">1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_31">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+            </copy><copy xml:id="id_32">
+               <from xml:id="id_33">$MetaInformacaoVariable/ns4:usuario</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_34">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+            </copy><copy xml:id="id_35">
+               <from xml:id="id_36">$MetaInformacaoVariable/ns4:idControle</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_37">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+            </copy><copy xml:id="id_38">
+               <from xml:id="id_39">$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_40">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+            </copy><copy xml:id="id_41">
+               <from xml:id="id_42">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria)</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_43">$inputRegistroLogBpel.part1/ns4:Body</to>
+            </copy><copy xml:id="id_44">
+               <from xml:id="id_45">'ModificarPedidoTransferenciaMercadoriaBPELErro'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_46">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+            </copy><copy xml:id="id_47">
+               <from xml:id="id_48">ora:getFaultAsString()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_49">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+            </copy><copy xml:id="id_50">
+               <from xml:id="id_51">'RIB'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_52">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+            </copy></assign>
+         <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegistroLogBpel1" portType="ns3:execute_ptt"
+                 operation="execute" inputVariable="inputRegistroLogBpel"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no" xml:id="id_53"/>
+      </sequence>
+   </scope>
+        <assign name="AssignOK" xml:id="id_54">
+          <copy xml:id="id_55">
+            <from xml:id="id_56">"200 - OK"</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_57">$outputPedidoTransferenciaMercadoria.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="ReplyOK" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
+               variable="outputPedidoTransferenciaMercadoria" portType="ns1:PedidoTransferenciaMercadoriaPortType"
+               operation="PedidoTransferenciaMercadoria" xml:id="id_58"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main" xml:id="id_59">
+    <receive name="Receive" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
+             portType="ns1:PedidoTransferenciaMercadoriaPortType" operation="PedidoTransferenciaMercadoria"
+             variable="inputPedidoTransferenciaMercadoria" createInstance="yes" xml:id="id_60"/>
+    <scope name="ScopeRibMessage" xml:id="id_61">
+      <faultHandlers xml:id="id_62">
+        <catchAll xml:id="id_63">
+          <empty name="Empty" xml:id="id_64"/>
+        </catchAll>
+      </faultHandlers><sequence name="SequenceMain" xml:id="id_65"><sequence name="SequencePostaMensagemRibMensage"
+                                                                             xml:id="id_66"><assign name="TransformationInputToetSOStatusJMS"
+                                                                                                    xml:id="id_67"><bpelx:annotation xml:id="id_68"><bpelx:pattern patternName="bpelx:transformation"
+                                                                                                                                                                   xml:id="id_69"></bpelx:pattern></bpelx:annotation><copy xml:id="id_70"><from xml:id="id_71">ora:doXSLTransformForDoc("../Transformations/Transformation_input_To_PostaMensagemJMS.xsl", $inputPedidoTransferenciaMercadoria.parameters)</from><to variable="inputPostaMensagem"
+                                                                                                                                                                                                                                                                                                                                                                                        part="body" xml:id="id_72"/></copy></assign><invoke name="PostaMensagem"
+                                                                                                                                                                                                                                                                                                                                                                                                                             partnerLink="etSOStatusReference"
+                                                                                                                                                                                                                                                                                                                                                                                                                             portType="ns2:Produce_Message_ptt"
+                                                                                                                                                                                                                                                                                                                                                                                                                             operation="Produce_Message"
+                                                                                                                                                                                                                                                                                                                                                                                                                             inputVariable="inputPostaMensagem"
+                                                                                                                                                                                                                                                                                                                                                                                                                             bpelx:invokeAsDetail="no"
+                                                                                                                                                                                                                                                                                                                                                                                                                                            xml:id="id_73"/></sequence>
+        <assign name="AssignPayloadToRegistroLogBPEL" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+                xml:id="id_74">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   <copy xml:id="id_75">
+         <from xml:id="id_76">'ModificarPedidoTransferenciaMercadoriaRestHTTP'</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_77">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+      </copy><copy xml:id="id_78">
+         <from xml:id="id_79">$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_80">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+      </copy><copy xml:id="id_81">
+         <from xml:id="id_82">'PedidoTransferenciaMercadoriaBPELProcessed'</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_83">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+      </copy><copy xml:id="id_84">
+         <from xml:id="id_85">'SUCESSO'</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_86">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+      </copy><copy xml:id="id_87">
+         <from xml:id="id_88">$MetaInformacaoVariable/ns4:usuario</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_89">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+      </copy><copy xml:id="id_90">
+         <from xml:id="id_91">$MetaInformacaoVariable/ns4:idControle</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_92">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+      </copy><copy xml:id="id_93">
+         <from xml:id="id_94">$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_95">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+      </copy><copy xml:id="id_96">
+         <from xml:id="id_97">'RIB'</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_98">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+      </copy><copy xml:id="id_99">
+         <from xml:id="id_100">0</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_101">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+      </copy><copy xml:id="id_102">
+         <from xml:id="id_103">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria)</from>
+         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_104">$inputRegistroLogBpel.part1/ns4:Body</to>
+      </copy></assign>
+        <invoke name="InvokeRegistroLogBpel" partnerLink="RegistroLogBpel1"
+                portType="ns3:execute_ptt" operation="execute" inputVariable="inputRegistroLogBpel"
+                bpelx:invokeAsDetail="no" xml:id="id_105"/>
+        <assign name="AssignReplayOK" xml:id="id_106">
+          <copy xml:id="id_107">
+            <from xml:id="id_108">"200 - OK"</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_109">$outputPedidoTransferenciaMercadoria.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="ReplyOK" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
+               variable="outputPedidoTransferenciaMercadoria" portType="ns1:PedidoTransferenciaMercadoriaPortType"
+               operation="PedidoTransferenciaMercadoria" xml:id="id_110"/>
+      </sequence></scope>
+  </sequence>
+</process>
