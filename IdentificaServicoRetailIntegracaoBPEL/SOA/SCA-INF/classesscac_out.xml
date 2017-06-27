@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>59</line>
+      <col/>
+      <file>BPEL/IdentificaServicoRetailBPELProcess.bpel</file>
+      <name>BPEL/IdentificaServicoRetailBPELProcess.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'catchAll'</msg>
+   </Fault>
+</Faults>
