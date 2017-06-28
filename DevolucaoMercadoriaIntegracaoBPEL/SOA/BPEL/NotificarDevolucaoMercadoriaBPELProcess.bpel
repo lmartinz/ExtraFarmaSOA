@@ -54,7 +54,7 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://www.oracle.com/retail/integration/base/bo/RTVDesc/v1"
-          location="oramds:/apps/Extrafarma/Retail/Logistica/DevolucaoMercadoria/v1/Schemas/RTVDesc.xsd"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RTVDesc.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <partnerLinks>
     <!-- 
