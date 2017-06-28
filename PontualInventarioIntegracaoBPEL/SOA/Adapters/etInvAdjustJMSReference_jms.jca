@@ -1,0 +1,13 @@
+<adapter-config name="etInvAdjustJMSReference" adapter="jms" wsdlLocation="../WSDLs/etInvAdjustJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/wls/Topic" UIJmsProvider="WLSJMS"/>
+  <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
+    <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
+      <property name="TimeToLive" value="0"/>
+      <property name="DestinationName" value="jms/Generic/Topic/jms1/etInvAdjust"/>
+      <property name="DeliveryMode" value="Persistent"/>
+      <property name="PayloadType" value="TextMessage"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
