@@ -5,16 +5,16 @@
       <loc/>
       <line/>
       <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</name>
       <fix/>
       <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 
 </msg>
    </Fault>
@@ -23,8 +23,8 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
       <loc/>
       <line/>
       <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCriarReference.wsdl</name>
       <fix/>
       <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
@@ -33,16 +33,16 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
       <loc/>
       <line/>
       <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</name>
       <fix/>
       <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 
 </msg>
    </Fault>
@@ -51,38 +51,68 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
       <loc/>
       <line/>
       <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/WSDLs/etXTsfJMSCancelarReference.wsdl</name>
       <fix/>
       <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
-      <line>22</line>
+      <line>33</line>
       <col/>
       <file>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
       <name>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
       <fix>Please check import location or element QNames.</fix>
       <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 
 </msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]</loc>
+      <line>93</line>
+      <col/>
+      <file>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
+      <name>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns5:Body"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>131</line>
+      <col/>
+      <file>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
+      <name>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
+      <fix>Check variable "outputVariable" declaration, check WSDL message "wsdl:message" declaration.</fix>
+      <msg>variable "outputVariable" of type "wsdl:message" is not compatible with WSDL message "wsdl:message".</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationCancelarTransferenciaMercadoriaLojaToEtXTsf']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']</loc>
-      <line>74</line>
+      <line>159</line>
       <col/>
       <file>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
       <name>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
       <fix>Types must be compatible.</fix>
       <msg>The from-spec of "xsd:anyType" is not compatible with to-spec of "ns4:Posta_Mensagem_msg"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]</loc>
+      <line>206</line>
+      <col/>
+      <file>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
+      <name>BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns5:Body"</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -94,28 +124,18 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
       <fix>Please check import location or element QNames.</fix>
       <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
-file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 
 </msg>
    </Fault>
    <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='MetaInformacaoVariable']</loc>
-      <line>73</line>
-      <col/>
-      <file>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
-      <name>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
-      <fix>Make sure that value "ns4:MetaInformacao" is resolvable (check imports, value of "element").</fix>
-      <msg>"element" is set to "ns4:MetaInformacao" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
-   </Fault>
-   <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]</loc>
-      <line>111</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]</loc>
+      <line>112</line>
       <col/>
       <file>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
       <name>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
@@ -125,7 +145,7 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationCriarTransferenciaMercadoriaLojaToEtXTsf']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']</loc>
-      <line>151</line>
+      <line>161</line>
       <col/>
       <file>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
       <name>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
@@ -135,7 +155,7 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]</loc>
-      <line>198</line>
+      <line>208</line>
       <col/>
       <file>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</file>
       <name>BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel</name>
