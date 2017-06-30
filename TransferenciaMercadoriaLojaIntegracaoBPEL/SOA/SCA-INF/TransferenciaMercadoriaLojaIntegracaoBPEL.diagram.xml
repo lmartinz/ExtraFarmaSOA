@@ -10,6 +10,7 @@
         </dgm:shadow>
         <dgm:outputPort name="TransferenciaMercadoriaLojaDBBPEL" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:sensorIcon URI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/sensor.png" X="111" Y="8" width="12" height="12"/>
         <dgm:operations>
             <dgm:item>criarTransferenciaMercadoriaLoja</dgm:item>
             <dgm:item>cancelarTransferenciaMercadoriaLoja</dgm:item>

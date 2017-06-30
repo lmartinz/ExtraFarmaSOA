@@ -2,26 +2,6 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][5]</loc>
-      <line>58</line>
-      <col/>
-      <file>BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel</file>
-      <name>BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel</name>
-      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/Logistica/DevolucaoMercadoria/v1/Schemas/RTVDesc.xsd does not exist." near (AbstractOraMDSURLConnection.java:738).</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][5]</loc>
-      <line>58</line>
-      <col/>
-      <file>BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel</file>
-      <name>BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel</name>
-      <fix>Check location "oramds:/apps/Extrafarma/Retail/Logistica/DevolucaoMercadoria/v1/Schemas/RTVDesc.xsd" and import type "http://www.w3.org/2001/XMLSchema"</fix>
-      <msg>Cannot import type "http://www.w3.org/2001/XMLSchema" from location "oramds:/apps/Extrafarma/Retail/Logistica/DevolucaoMercadoria/v1/Schemas/RTVDesc.xsd"</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]</loc>
       <line>112</line>
       <col/>
