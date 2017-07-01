@@ -1,0 +1,129 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Sat Jul 01 14:17:02 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="CriarPedidoReservaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/CriarPedidoReservaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/CriarPedidoReservaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSCriarReference"
+         xmlns:ns3="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="../WSDLs/PedidoReservaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
+    <partnerLink name="etFulfillOrderJMSCriarReference" partnerLinkType="ns2:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
+    <partnerLink name="RegistroLogCriarBPELReference" partnerLinkType="ns3:RegistroLogCriarBPELReference"
+                 partnerRole="execute_ptt"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable" messageType="ns1:CriarPedidoReservaRequest"/>
+    <variable name="outputVariable" messageType="ns1:CriarPedidoReservaResponse"/>
+    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
+    <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+    <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="SequenceTratamentoMensagem">
+        <scope name="Scope1">
+          <faultHandlers>
+            <catchAll>
+              <empty name="Empty"/>
+            </catchAll>
+          </faultHandlers>
+          <sequence name="FluxoRegistraLogErro">
+            <assign name="AssignPayloadToRegistroErroLogBPEL">
+              <copy>
+                <from>'PedidoReservaRestHTTP'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+            </assign>
+            <invoke name="PostaMensagemErroRegistroLogBPEL"
+                    partnerLink="RegistroLogCriarBPELReference" portType="ns3:execute_ptt" operation="execute"
+                    inputVariable="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>'200 - OK'</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="PedidoReservaDBBPEL" variable="outputVariable"
+               portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main">
+    <receive name="receiveInput" partnerLink="PedidoReservaDBBPEL" portType="ns1:PedidoReservaPortType"
+             operation="criarPedidoReserva" variable="inputVariable" createInstance="yes"/>
+    <sequence name="SequencePostaMensagemRib">
+      <assign name="TransformationCriarPedidoReservaToEtFulfillOrder">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformCriarPedidoReservaToPostaMensagem.xsl", $inputVariable.parameters)</from>
+          <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
+        </copy>
+      </assign>
+      <invoke name="PostaMensagemetReceivingJMS"
+              partnerLink="etFulfillOrderJMSCriarReference" portType="ns2:Posta_Mensagem_ptt"
+              operation="Posta_Mensagem" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable"
+              bpelx:invokeAsDetail="no"/>
+    </sequence>
+    <sequence name="FluxoRegistraLog">
+      <assign name="AssignPayloadToRegistroLogBPEL">
+        <copy>
+          <from>'PedidoReservaRestHTTP'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+        </copy>
+      </assign>
+      <invoke name="RegistroLogBPEL" partnerLink="RegistroLogCriarBPELReference"
+              portType="ns3:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
+              bpelx:invokeAsDetail="no"/>
+    </sequence>
+    <assign name="AssignReplyOK">
+      <copy>
+        <from>'200 - OK'</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+      </copy>
+    </assign>
+    <reply name="Reply" partnerLink="PedidoReservaDBBPEL" variable="outputVariable"
+           portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva"/>
+  </sequence>
+</process>
