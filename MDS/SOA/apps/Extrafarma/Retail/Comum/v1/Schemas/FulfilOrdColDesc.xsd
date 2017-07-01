@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" xmlns:FulfilOrdDesc="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" version="1.0">
+	<retailDoc:annotation>
+		<retailDoc:documentation>This object is used to communicate customer order fulfillment 
+			details from OMS to RMS and SIM.
+		</retailDoc:documentation>
+	</retailDoc:annotation>
+	<xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1" schemaLocation="FulfilOrdDesc.xsd">
+		<retailDoc:annotation>
+			<retailDoc:documentation>It's a referenced element. For detailed
+				description, please refer referenced element doc.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+	</xs:import>
+	<xs:element name="FulfilOrdColDesc">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This object is used to communicate customer order fulfillment 
+				details from OMS to RMS and SIM.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+                        <xs:element name="collection_size" type="number4">
+                            <retailDoc:annotation>
+                               <retailDoc:documentation>Number of items in the collection.</retailDoc:documentation>
+                            </retailDoc:annotation>
+                        </xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="FulfilOrdDesc:FulfilOrdDesc">
+					<retailDoc:annotation>
+						<retailDoc:documentation>It's a referenced element. For
+							detailed description, please refer referenced element doc.
+						</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+      <xs:simpleType name="number4">
+          <retailDoc:annotation>
+              <retailDoc:documentation>This type can hold a number of digits count 4.</retailDoc:documentation>
+          </retailDoc:annotation>
+          <xs:restriction base="xs:int">
+              <xs:totalDigits value="4"/>
+          </xs:restriction>
+      </xs:simpleType>
+</xs:schema>

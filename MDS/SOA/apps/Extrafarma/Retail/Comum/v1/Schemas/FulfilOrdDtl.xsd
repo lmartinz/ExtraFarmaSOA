@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1" version="1.0">
+	<retailDoc:annotation>
+		<retailDoc:documentation>This object is used to communicate item details related to a customer order 
+			fulfillment request from OMS to RMS and SIM.
+		</retailDoc:documentation>
+	</retailDoc:annotation>
+	<xs:element name="FulfilOrdDtl">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This object is used to communicate item details related to a customer order fulfillment request from OMS to RMS and SIM.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the item ordered by the customer.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="ref_item" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the reference item ordered by the customer. Used only if a specific UPC is ordered.  This is supported for vendor drop-ships orders 
+							only as we don't support transfer requests for a specific reference item.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="order_qty_suom" type="number12_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the quantity of the item ordered by the customer in item's standard unit of measure.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="standard_uom" type="varchar24">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates item's standard unit of measure.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="transaction_uom" type="varchar24">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the original transaction unit of measure the order is placed in.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="substitute_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates if substitutes are allowed on a customer order. This will only be used by orders passed to SIM.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>		
+				<xs:element minOccurs="0" name="unit_retail" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the unit sales retail of item on the customer order. This will only be used by Brazil orders in case of Warehouse Fulfillment or vendor sourced POs shipped directly to the customer. 
+							It is needed for Sales NF generation.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="retail_curr" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates currency of unit retail and total retail. This will only be used by Brazil orders in case of Warehouse Fulfillment or vendor sourced POs shipped directly to the customer. 
+							It is needed for Sales NF generation.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="comments" type="varchar22000">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Used to indicate any special instructions for the item, such as services (monograms, engrave, etc).</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="varchar225">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 25 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number12_4">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits
+				count of 12 and decimal count of 4.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="12"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar24">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 4 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number20_4">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits
+				count of 20 and decimal count of 4.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="20"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar23">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 3 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar21">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 1 character.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar22000">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 2000 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
