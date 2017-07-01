@@ -1,0 +1,35 @@
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+2017-06-27 15:17:02.391/2.240 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2017-06-27 15:17:02.470/2.317 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2017-06-27 15:17:02.472/2.319 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2017-06-27 15:17:02.475/2.323 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2017-06-27 15:17:02.476/2.324 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2017-06-27 15:17:02.480/2.327 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.0.0 Build 60603
+ Grid Edition: Development mode
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+2017-06-27 15:17:02.605/2.452 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
+2017-06-27 15:17:02.611/2.458 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+2017-06-27 15:17:02.861/2.708 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "lmartins's cluster" has been automatically generated
+jun 27, 2017 3:17:03 PM oracle.dms.instrument.Noun findOrCreateByPath
+ADVERTÊNCIA: Tentativa de criar um nome /DMS-Internal preexistente, do tipo n/a, com um tipo de conflito n/d.
+jun 27, 2017 3:17:03 PM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTÊNCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+jun 27, 2017 3:17:04 PM oracle.adf.share.ADFContext getCurrent
+ADVERTÊNCIA: Inicializando automaticamente um DefaultContext para getCurrent.
+O chamador deve garantir que um DefaultContext é adequado para este uso.
+Falta de memória e/ou procedimento inesperado pode ocorrer, se a inicialização automática for executada inadequadamente.
+Esta mensagem pode ser evitada, pela execução de initADFContext antes do uso de getCurrent().
+Para obter mais informações, ativer o registro de oracle.adf.share.ADFContext no nível O MAIS REFINADO.
+jun 27, 2017 3:17:04 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
+INFORMAÇÕES: Recurso META-INF/adf-config.xml não encontrado no classpath.
+jun 27, 2017 3:17:04 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
+INFORMAÇÕES: Uma implementação padrão do ADFConfig está sendo criada para a aplicação. Esse fato pode levar a resultados inesperados em alguns casos. Adicione um META-INF/adf-config.xml básico ao seu classpath para evitar erros funcionais.
+2017-06-27 15:17:04.439/4.286 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+jun 27, 2017 3:17:04 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFORMAÇÕES: XMLSchema incremental build enabled.
+jun 27, 2017 3:17:05 PM oracle.integration.platform.blocks.PlatformConfigurationProvider getPlatformConfigurationProvider
+ADVERTÊNCIA: O JRF não pode determinar a plataforma do servidor de aplicativos atual.
