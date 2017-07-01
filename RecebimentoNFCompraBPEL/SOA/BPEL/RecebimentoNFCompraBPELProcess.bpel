@@ -1,0 +1,200 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Sat Jul 01 11:42:00 BRT 2017
+  Author:  lmartins
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="RecebimentoNFCompraBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/RecebimentoNFCompraBPEL/RecebimentoNFCompraBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/RecebimentoNFCompraBPEL/RecebimentoNFCompraBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:ns2="http://TargetNamespace.com/nxsdschema"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ns3="json"
+         xmlns:ns4="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns6="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns7="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns9="http://www.oracle.com/retail/integration/custom/bo/ExtOfPOScheduleDesc/v1"
+         xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/EXFNFInfoDesc/v1"
+         xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1" location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/nxsd_schema1.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1/RecebimentoNFCompraV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="RecebimentoNFCompraRestReference" bpelx:wadl="yes"/>
+    <partnerLink name="RegitroLOGBPEL" partnerLinkType="ns4:RegistroLogBPELReference" partnerRole="execute_ptt"/>
+    <partnerLink name="recebimentonfcomprabpelprocess_client_ep"
+                 partnerLinkType="ns1:recebimentonfcomprabpelprocess_client_ep" myRole="RecebimentoNFCompraPortType"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
+    <variable name="varJson" element="ns2:Root-Element"/>
+    <variable name="outputJSON" bpelx:json="string"/>
+    <variable name="inputPostaMensagemErroRegistroLogBPEL" messageType="ns4:requestMessage"/>
+    <variable name="metaInformacao" element="ns5:MetaInformacao"/>
+    <variable name="outputRecebimentoNFCompra" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in RecebimentoNFCompraBPELProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="recebimentonfcomprabpelprocess_client_ep" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="inputVariable" createInstance="yes"/>
+    <scope name="ScopeJson">
+      <faultHandlers>
+        <catchAll>
+          <sequence name="SequenceJSON">
+            <scope name="ScopeTratamentoMensagem" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <faultHandlers>
+         <catchAll>
+            <empty name="Empty"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence>
+         <assign name="AssignPayloadToRegistroErroLogBPEL">
+                  <copy>
+                    <from>1</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+                  </copy>
+                  <copy>
+                    <from>oraext:get-content-as-string($inputVariable)</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Body</to>
+                  </copy>
+                  <copy>
+                    <from>'RecebimentoNFCompraRestHTTP'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+                  </copy>
+                  <copy>
+                    <from>'RecebimentoNFCompraBPELErro'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:passoFluxo</to>
+                  </copy>
+                  <copy>
+                    <from>$metaInformacao/ns5:usuario</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+                  </copy>
+                  <copy>
+                    <from>$metaInformacao/ns5:idControle</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+                  </copy>
+                  <copy>
+                    <from>$metaInformacao/ns5:datahoraRequisicao</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+                  </copy>
+                  <copy>
+                    <from>'RIB'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+                  </copy>
+                  <copy>
+                    <from>$metaInformacao/ns5:sistemaOrigem</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+                  </copy>
+                </assign>
+         <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegitroLOGBPEL" portType="ns4:execute_ptt"
+                 operation="execute" inputVariable="inputPostaMensagemErroRegistroLogBPEL"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
+      </sequence>
+   </scope>
+            <assign name="AssignReplay">
+              <copy>
+                <from>001</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputRecebimentoNFCompra.parameters/ns6:id</to>
+              </copy>
+              <copy>
+                <from>"200 - OK"</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputRecebimentoNFCompra.parameters/ns6:message</to>
+              </copy>
+              <copy>
+                <from>true()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputRecebimentoNFCompra.parameters/ns6:success</to>
+              </copy>
+            </assign>
+            <reply name="ReplyErro" partnerLink="recebimentonfcomprabpelprocess_client_ep"
+                   variable="outputRecebimentoNFCompra" portType="ns1:RecebimentoNFCompraPortType"
+                   operation="autorizarRecebimentoNFCompra"/>
+          </sequence>
+        </catchAll>
+      </faultHandlers>
+      <sequence name="SequenceJSON">
+        <assign name="TransformationToJson">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/Transformation_InputToJSON.xsl", $inputVariable.parameters)</from>
+            <to variable="varJson"/>
+          </copy>
+        </assign>
+        <assign name="TranslateToJSON">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateToNative(bpws:getVariableData( 'varJson','/ns2:Root-Element'), 'Schemas/nxsd_schema1.xsd', 'Root-Element', 'STRING')</from>
+            <to>$varJson</to>
+          </copy>
+        </assign>
+        <invoke name="InvokeReceberNDCompraRest"
+                partnerLink="RecebimentoNFCompraRestReference" inputVariable="varJson"
+                outputVariable="outputJSON" bpelx:method="ReceberNFCompra" bpelx:invokeAsDetail="no"/>
+      </sequence>
+    </scope>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="recebimentonfcomprabpelprocess_client_ep" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="outputVariable"/>
+  </sequence>
+</process>

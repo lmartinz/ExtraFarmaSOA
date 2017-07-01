@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
+      <line>52</line>
+      <col/>
+      <file>BPEL/RecebimentoNFCompraBPELProcess.bpel</file>
+      <name>BPEL/RecebimentoNFCompraBPELProcess.bpel</name>
+      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1/RecebimentoNFCompraV1.wsdl não existe." near (AbstractOraMDSURLConnection.java:738).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
+      <line>52</line>
+      <col/>
+      <file>BPEL/RecebimentoNFCompraBPELProcess.bpel</file>
+      <name>BPEL/RecebimentoNFCompraBPELProcess.bpel</name>
+      <fix>Check location "oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1/RecebimentoNFCompraV1.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
+      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1/RecebimentoNFCompraV1.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceJSON']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]</loc>
+      <line>111</line>
+      <col/>
+      <file>BPEL/RecebimentoNFCompraBPELProcess.bpel</file>
+      <name>BPEL/RecebimentoNFCompraBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns5:Body"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceJSON']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TranslateToJSON']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']</loc>
+      <line>187</line>
+      <col/>
+      <file>BPEL/RecebimentoNFCompraBPELProcess.bpel</file>
+      <name>BPEL/RecebimentoNFCompraBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns2:Root-Element"</msg>
+   </Fault>
+</Faults>
