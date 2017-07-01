@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" version="1.0">
+    <retailDoc:annotation>
+        <retailDoc:documentation>This object is used to communicate customer details related to a customer order 
+			fulfillment request from OMS to RMS and SIM.
+		</retailDoc:documentation>
+    </retailDoc:annotation>
+    <xs:element name="FulfilOrdCustDesc">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This object is used to communicate customer details related to a customer order fulfillment request from OMS to RMS and SIM.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="customer_no" type="varchar214">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Indicates the number that uniquely identifies the customer in OMS.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_first_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the first name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_phonetic_first" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the phonetic first name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_last_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the last name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_phonetic_last" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the phonetic last name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_preferred_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the preferred name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_company_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the company name for the delivery address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_add1" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>First line of the delivery address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_add2" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Second line of the delivery address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_add3" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Third line of the delivery address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_county" type="varchar2250">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>County portion of the delivery address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_city" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>City portion of the delivery address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_state" type="varchar23">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>State portion of the delivery address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_country_id" type="varchar23">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Country portion of the delivery address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_post" type="varchar230">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Postal code portion of the delivery address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_jurisdiction" type="varchar210">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Identifies the jurisdiction code for the delivery country-state relationship.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_phone" type="varchar220">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the delivery phone number.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="deliver_email" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the delivery email.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_first_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the first name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_phonetic_first" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the phonetic first name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_last_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the last name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_phonetic_last" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the phonetic last name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_preferred_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the preferred name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_company_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the company name for the billing address on the order.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_add1" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>First line of the billing address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_add2" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Second line of the billing address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_add3" type="varchar2240">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Third line of the billing address for the customer.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_county" type="varchar2250">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>County portion of the billing address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_city" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>City portion of the billing address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_state" type="varchar23">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>State portion of the billing address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_country_id" type="varchar23">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Country portion of the billing address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_post" type="varchar230">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Postal code portion of the billing address.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_jurisdiction" type="varchar210">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Identifies the jurisdiction code for the billing country-state relationship.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_phone" type="varchar220">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the billing phone number.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="bill_email" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Contains the billing email.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="varchar214">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 14 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="14"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar210">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 10 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar2120">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 120 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar2240">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 240 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="240"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar23">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 3 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar230">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 30 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar220">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 20 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar2250">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max
+				length of 250 characters.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

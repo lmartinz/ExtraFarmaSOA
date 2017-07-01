@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="PontualInventario"
+     targetNamespace="http://service.ultra.com.br/estoque/PontualInventario/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:tns="http://service.ultra.com.br/estoque/PontualInventario/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="PontualInventarioDBBPEL">
+        <plnk:role name="PontualInventarioPortType" portType="tns:PontualInventarioPortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://service.ultra.com.br/estoque/PontualInventario/v1" location="PontualInventarioV1.wsdl"/>
+</wsdl:definitions>
