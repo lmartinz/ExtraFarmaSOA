@@ -17,6 +17,11 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etPOScheduleFromRFMJMSReference_jms.jca">
@@ -34,6 +39,9 @@
       <reference name="RegistroLogBPELReference" ui:wsdlLocation="WSDLs/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
+      <reference name="RecebimentoNFCompraV1DReference" ui:wsdlLocation="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
+      </reference>
     </componentType>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
   </component>
@@ -45,6 +53,14 @@
       <property name="java.naming.provider.url"></property>
     </binding.direct>
   </reference>
+  <reference name="RecebimentoNFCompraV1DReference"
+             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl">
+    <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
+    <binding.direct address="t3:/teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
+                    useLocalJNDIProvider="true">
+      <property name="java.naming.provider.url"></property>
+    </binding.direct>
+  </reference>
   <wire>
     <source.uri>etPOScheduleFromRFMJMSReference</source.uri>
     <target.uri>IdentificaServicoRetailBPELProcess/etPOScheduleFromRFMJMSReference</target.uri>
@@ -52,5 +68,9 @@
   <wire>
     <source.uri>IdentificaServicoRetailBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>IdentificaServicoRetailBPELProcess/RecebimentoNFCompraV1DReference</source.uri>
+    <target.uri>RecebimentoNFCompraV1DReference</target.uri>
   </wire>
 </composite>

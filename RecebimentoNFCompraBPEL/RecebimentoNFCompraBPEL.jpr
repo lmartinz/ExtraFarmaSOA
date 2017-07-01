@@ -61,21 +61,21 @@
       <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
    </hash>
    <list n="contentSets">
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
       <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
       <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
-      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
       <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
       <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
-      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
-      <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
       <string v="oracle.sb.tooling.ide.core.projects.SbProjectSettings/sbContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
+      <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="identificaservicoretailintegracaobpel"/>
+   <value n="defaultPackage" v="recebimentonfcomprabpel"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
@@ -107,11 +107,11 @@
          <string v=".exm"/>
          <string v=".xml"/>
       </list>
-      <value n="webIANAEncoding" v="windows-1252"/>
+      <value n="webIANAEncoding" v="UTF-8"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="IdentificaServicoRetailIntegracaoBPEL">
+         <hash n="RecebimentoNFCompraBPEL">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -198,24 +198,23 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_IdentificaServicoRetailIntegracaoBPEL.jar"/>
+            <url n="jarURL" path="deploy/sca_RecebimentoNFCompraBPEL.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="IdentificaServicoRetailIntegracaoBPEL"/>
+            <value n="profileName" v="RecebimentoNFCompraBPEL"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="IdentificaServicoRetailIntegracaoBPEL"/>
+         <string v="RecebimentoNFCompraBPEL"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-IdentificaServicoRetailIntegracaoBPEL-webapp"/>
-      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-IdentificaServicoRetailIntegracaoBPEL-context-root"/>
+      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-RecebimentoNFCompraBPEL-webapp"/>
+      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-RecebimentoNFCompraBPEL-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
          <list n="url-path">
             <url path="SOA/SCA-INF/src/"/>
-            <url path="../ExtrafarmaSOA/"/>
          </list>
       </hash>
    </hash>
@@ -225,12 +224,12 @@
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
             <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
-               <value n="remoteParameter:SOA:hostname" v="IBM486"/>
+               <value n="remoteParameter:SOA:hostname" v="192.168.0.14"/>
                <value n="remoteParameter:SOA:port" v="5004"/>
                <value n="remoteProtocol" v="SOA"/>
             </hash>
             <value n="remoteDebuggingProfiling" v="true"/>
-            <url n="targetURL" path="SOA\composite.xml"/>
+            <url n="targetURL" path="SOA/composite.xml"/>
          </hash>
       </hash>
    </hash>
@@ -300,5 +299,4 @@
    </hash>
    <value n="SCA_BPEL_FOLDER_PROPERTY_NAME" v="BPEL/"/>
    <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="Transformations/"/>
-   <value n="SOA_WSDL_FOLDER_NAME" v="WSDLs/"/>
 </jpr:project>

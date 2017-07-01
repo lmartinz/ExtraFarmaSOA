@@ -15,11 +15,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="RegistroLogBPELReference">
-        <dgm:body borderWidth="2" arcRad="20" X="934" Y="41" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="586" Y="41" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="924" Y="34" width="156" height="98">
+        <dgm:shadow arcRad="20" X="576" Y="34" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="RegistroLogBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
@@ -29,12 +29,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="IdentificaServicoRetailBPELProcess">
-        <dgm:body borderWidth="2" arcRad="20" X="481" Y="26" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="307" Y="26" width="130" height="61">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="471" Y="19" width="150" height="77">
+        <dgm:shadow arcRad="20" X="297" Y="19" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="etPOScheduleFromRFMJMSReference" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
@@ -42,12 +42,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="etPOScheduleFromRFMJMSReference" target="IdentificaServicoRetailBPELProcess/etPOScheduleFromRFMJMSReference" width="2">
-        <dgm:gSegment X1="168" Y1="51" X2="471" Y2="51"/>
+        <dgm:gSegment X1="168" Y1="51" X2="297" Y2="51"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="IdentificaServicoRetailBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
-        <dgm:gSegment X1="621" Y1="51" X2="924" Y2="51"/>
+        <dgm:gSegment X1="447" Y1="51" X2="576" Y2="51"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

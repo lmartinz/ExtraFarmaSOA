@@ -33,7 +33,8 @@
          xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
          xmlns:ns7="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-         xmlns:ns8="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+         xmlns:ns8="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns9="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,9 +51,13 @@
                  myRole="Consume_Message_role"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns7:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="RecebimentoNFCompraV1DReference" partnerLinkType="ns9:RecebimentoNFCompraV1DReference"
+                 partnerRole="RecebimentoNFCompraPortType"/>
   </partnerLinks>
   <variables>
     <variable name="ReceiveInput_Consume_Message_InputVariable" messageType="ns1:Consume_Message_msg"/>
+    <variable name="inputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraRequest"/>
+    <variable name="outputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraResponse"/>
   </variables>
   <sequence name="main">
     <receive name="ReceiveInput" createInstance="yes" partnerLink="etPOScheduleFromRFMJMSReference"
@@ -82,7 +87,6 @@
                         portType="ns7:execute_ptt" operation="execute"
                         inputVariable="postaMensagemErroRegistroLogBPEL_execute_InputVariable"
                         bpelx:invokeAsDetail="no"/>
-                <throw name="ThrowRollback" faultName="bpelx:rollback"/>
               </sequence>
             </catchAll>
           </faultHandlers>
@@ -109,7 +113,19 @@
                     operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
                     bpelx:invokeAsDetail="no"/>
             <sequence name="FluxoEnviaRecebimentoNFCompra">
-              <invoke name="RecebimentoNFCompraOSB" bpelx:invokeAsDetail="no"/>
+              <assign name="TransformationRecebimentoNFCompraV1">
+                <bpelx:annotation>
+                  <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                  <from>ora:doXSLTransformForDoc("../Transformations/Transformation_RecebimentoNFCompraV1.xsl", $ReceiveInput_Consume_Message_InputVariable.body)</from>
+                  <to variable="inputRecebimentoNFCompraV1" part="parameters"/>
+                </copy>
+              </assign>
+              <invoke name="RecebimentoNFCompraOSB"
+                      partnerLink="RecebimentoNFCompraV1DReference" portType="ns9:RecebimentoNFCompraPortType"
+                      operation="autorizarRecebimentoNFCompra" inputVariable="inputRecebimentoNFCompraV1"
+                      outputVariable="outputRecebimentoNFCompraV1" bpelx:invokeAsDetail="no"/>
             </sequence>
           </sequence>
         </scope>
