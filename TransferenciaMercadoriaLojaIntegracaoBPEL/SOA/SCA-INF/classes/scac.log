@@ -1,14 +1,26 @@
+<<<<<<< HEAD
 2017-06-26 17:51:15.535/1.550 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence.xml"
 2017-06-26 17:51:15.576/1.591 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
 2017-06-26 17:51:15.578/1.593 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
 2017-06-26 17:51:15.580/1.595 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
 2017-06-26 17:51:15.582/1.597 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
 2017-06-26 17:51:15.583/1.598 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+=======
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+2017-06-27 15:10:51.790/2.184 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2017-06-27 15:10:51.872/2.267 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2017-06-27 15:10:51.874/2.268 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2017-06-27 15:10:51.878/2.272 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2017-06-27 15:10:51.879/2.274 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2017-06-27 15:10:51.881/2.275 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 Oracle Coherence Version 12.2.1.0.0 Build 60603
  Grid Edition: Development mode
 Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
+<<<<<<< HEAD
 2017-06-26 17:51:15.706/1.721 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
 2017-06-26 17:51:15.710/1.725 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
 2017-06-26 17:51:16.606/2.621 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "Vinicius's cluster" has been automatically generated
@@ -33,15 +45,51 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+2017-06-27 15:10:52.164/2.559 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
+2017-06-27 15:10:52.170/2.564 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+2017-06-27 15:10:52.413/2.808 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "lmartins's cluster" has been automatically generated
+jun 27, 2017 3:10:52 PM oracle.dms.instrument.Noun findOrCreateByPath
+ADVERTÊNCIA: Tentativa de criar um nome /DMS-Internal preexistente, do tipo n/a, com um tipo de conflito n/d.
+jun 27, 2017 3:10:53 PM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTÊNCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+jun 27, 2017 3:10:53 PM oracle.adf.share.ADFContext getCurrent
+ADVERTÊNCIA: Inicializando automaticamente um DefaultContext para getCurrent.
+O chamador deve garantir que um DefaultContext é adequado para este uso.
+Falta de memória e/ou procedimento inesperado pode ocorrer, se a inicialização automática for executada inadequadamente.
+Esta mensagem pode ser evitada, pela execução de initADFContext antes do uso de getCurrent().
+Para obter mais informações, ativer o registro de oracle.adf.share.ADFContext no nível O MAIS REFINADO.
+jun 27, 2017 3:10:53 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
+INFORMAÇÕES: Recurso META-INF/adf-config.xml não encontrado no classpath.
+jun 27, 2017 3:10:53 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
+INFORMAÇÕES: Uma implementação padrão do ADFConfig está sendo criada para a aplicação. Esse fato pode levar a resultados inesperados em alguns casos. Adicione um META-INF/adf-config.xml básico ao seu classpath para evitar erros funcionais.
+2017-06-27 15:10:54.135/4.530 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+jun 27, 2017 3:10:54 PM oracle.fabric.common.wsdl.SchemaManager loadAllXSD
+ADVERTÊNCIA: Schema load failed due to: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 oracle.fabric.common.wsdl.XSDException: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
+<<<<<<< HEAD
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 	at oracle.fabric.common.wsdl.SchemaBuilder.postProcessXSD(SchemaBuilder.java:417)
@@ -59,6 +107,7 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
 	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
 	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+<<<<<<< HEAD
 Jun 26, 2017 5:51:17 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
 Jun 26, 2017 5:51:17 PM oracle.fabric.common.wsdl.SchemaManager buildXDKSchema
@@ -81,15 +130,47 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+jun 27, 2017 3:10:54 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFORMAÇÕES: XMLSchema incremental build enabled.
+jun 27, 2017 3:10:54 PM oracle.fabric.common.wsdl.SchemaManager buildXDKSchema
+ADVERTÊNCIA: Found a schema build exception from most recent attempt: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+
+. Will abort rebuild attempt...
+jun 27, 2017 3:10:55 PM oracle.integration.platform.blocks.PlatformConfigurationProvider getPlatformConfigurationProvider
+ADVERTÊNCIA: O JRF não pode determinar a plataforma do servidor de aplicativos atual.
+jun 27, 2017 3:10:55 PM oracle.fabric.common.wsdl.SchemaManager loadAllXSD
+ADVERTÊNCIA: Schema load failed due to: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 oracle.fabric.common.wsdl.XSDException: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
+<<<<<<< HEAD
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 	at oracle.fabric.common.wsdl.SchemaBuilder.postProcessXSD(SchemaBuilder.java:417)
@@ -128,6 +209,7 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
 	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
 	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+<<<<<<< HEAD
 Jun 26, 2017 5:51:18 PM oracle.fabric.common.wsdl.SchemaManager loadAllXSD
 WARNING: Schema load failed due to: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
@@ -136,15 +218,33 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+jun 27, 2017 3:10:55 PM oracle.fabric.common.wsdl.SchemaManager loadAllXSD
+ADVERTÊNCIA: Schema load failed due to: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 oracle.fabric.common.wsdl.XSDException: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
+<<<<<<< HEAD
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
 There are at least two of them looking different:
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
 file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+=======
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/SOA/Schemas/CancelarRibMessages.xsd [difference starting at line#:21]
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 
 
 	at oracle.fabric.common.wsdl.SchemaBuilder.postProcessXSD(SchemaBuilder.java:417)
@@ -155,10 +255,20 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 	at oracle.fabric.common.wsdl.SchemaManager.lookupXSDElementDeclaration(SchemaManager.java:873)
 	at oracle.bpel.lang.v20.resolver.ProcessImportHandler.lookupXSDElement(ProcessImportHandler.java:285)
 	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDElement(OracleModelQueryImpl.java:744)
+<<<<<<< HEAD
 	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:207)
 	at org.eclipse.bpel.validator.rules.VariableValidator.rule_CheckType_2(VariableValidator.java:164)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+=======
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDPartType(OracleModelQueryImpl.java:855)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupMessagePartType(OracleModelQueryImpl.java:835)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:415)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:179)
+	at org.eclipse.bpel.validator.rules.CToFromValidator.checkVariableAndPartVariant(CToFromValidator.java:105)
+	at org.eclipse.bpel.validator.rules.ToValidator.rule_CheckVariableAndPartVariant_18(ToValidator.java:129)
+	at sun.reflect.GeneratedMethodAccessor37.invoke(Unknown Source)
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.eclipse.bpel.validator.model.Rules$Rule.invoke(Rules.java:316)
@@ -179,6 +289,7 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
 	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
 	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+<<<<<<< HEAD
 Jun 26, 2017 5:51:18 PM oracle.fabric.common.wsdl.SchemaManager buildXDKSchema
 WARNING: Found a schema build exception from most recent attempt: Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
 
@@ -192,3 +303,5 @@ file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/TransferenciaMercadori
 Picked up JAVA_TOOL_OPTIONS: -Djava.vendor="Sun Microsystems Inc."
 Java HotSpot(TM) Client VM warning: ignoring option PermSize=32m; support was removed in 8.0
 Java HotSpot(TM) Client VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+=======
+>>>>>>> 588535e7fd2603c200d24975a405fa777a27e811
