@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="confirmarpedidoreservabpelprocess_client" x="0" y="564" side="left"/>
-      <partnerlink name="ConfirmaReservaPedidoRestReference" x="1182" y="428" side="right"/>
-      <partnerlink name="RegistroLOGBpelDReference" x="1182" y="505" side="right"/>
+      <partnerlink name="confirmarpedidoreservabpelprocess_client" x="0" y="570" side="left"/>
+      <partnerlink name="ConfirmaReservaPedidoRestReference" x="1170" y="428" side="right"/>
+      <partnerlink name="RegistroLOGBpelDReference" x="1170" y="505" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1318,447" show_swimlanes="true">
+   <graph_layout viewport="0,0,732,433" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

@@ -4,18 +4,23 @@
                 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
                 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                 xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
-                xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+                xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1"
+                xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"
+                xmlns:Q4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+                xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
+                xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
          <oracle-xsl-mapper:source type="WSDL">
-            <oracle-xsl-mapper:schema location="../WSDLs/PedidoReservaV1.wsdl"/>
-            <oracle-xsl-mapper:rootElement name="ConfirmarPedidoReservaRequest" namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
+            <oracle-xsl-mapper:schema location="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl"/>
+            <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
          </oracle-xsl-mapper:source>
       </oracle-xsl-mapper:mapSources>
       <oracle-xsl-mapper:mapTargets>
-         <oracle-xsl-mapper:target type="WSDL">
-            <oracle-xsl-mapper:schema location="../WSDLs/PedidoReservaV1Wrapper1.wsdl"/>
+         <oracle-xsl-mapper:target type="XSD">
+            <oracle-xsl-mapper:schema location="../Schemas/nxsd_schema1.xsd"/>
             <oracle-xsl-mapper:rootElement name="Root-Element" namespace="http://TargetNamespace.com/nxsdschema"/>
          </oracle-xsl-mapper:target>
       </oracle-xsl-mapper:mapTargets>
