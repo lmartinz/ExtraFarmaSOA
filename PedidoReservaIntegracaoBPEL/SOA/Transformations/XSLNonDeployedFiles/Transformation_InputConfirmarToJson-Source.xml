@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ConfirmarPedidoReservaRequest xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+   <quantidadePedido xmlns="">1</quantidadePedido>
+   <ConfirmaOrdemClienteList xmlns="">
+      <codigoPedidoCliente xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">2</codigoPedidoCliente>
+      <codigoOrdemAtendimentoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">codigoOrdemAtendimentoConfirmado3</codigoOrdemAtendimentoConfirmado>
+      <tipoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">tipoConfirmado4</tipoConfirmado>
+      <codigoAssociadoConfirmadoTransferencia xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">5</codigoAssociadoConfirmadoTransferencia>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem6</codigoItem>
+         <upcItem xmlns="">upcItem7</upcItem>
+         <quantidadeConfirmadaItem xmlns="">80.73</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada9</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem10</codigoItem>
+         <upcItem xmlns="">upcItem11</upcItem>
+         <quantidadeConfirmadaItem xmlns="">120.72</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada13</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem14</codigoItem>
+         <upcItem xmlns="">upcItem15</upcItem>
+         <quantidadeConfirmadaItem xmlns="">160.73</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada17</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+   </ConfirmaOrdemClienteList>
+   <ConfirmaOrdemClienteList xmlns="">
+      <codigoPedidoCliente xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">18</codigoPedidoCliente>
+      <codigoOrdemAtendimentoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">codigoOrdemAtendimentoConfirmado19</codigoOrdemAtendimentoConfirmado>
+      <tipoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">tipoConfirmado20</tipoConfirmado>
+      <codigoAssociadoConfirmadoTransferencia xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">21</codigoAssociadoConfirmadoTransferencia>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem22</codigoItem>
+         <upcItem xmlns="">upcItem23</upcItem>
+         <quantidadeConfirmadaItem xmlns="">240.73</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada25</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem26</codigoItem>
+         <upcItem xmlns="">upcItem27</upcItem>
+         <quantidadeConfirmadaItem xmlns="">280.73</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada29</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem30</codigoItem>
+         <upcItem xmlns="">upcItem31</upcItem>
+         <quantidadeConfirmadaItem xmlns="">320.72</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada33</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+   </ConfirmaOrdemClienteList>
+   <ConfirmaOrdemClienteList xmlns="">
+      <codigoPedidoCliente xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">34</codigoPedidoCliente>
+      <codigoOrdemAtendimentoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">codigoOrdemAtendimentoConfirmado35</codigoOrdemAtendimentoConfirmado>
+      <tipoConfirmado xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">tipoConfirmado36</tipoConfirmado>
+      <codigoAssociadoConfirmadoTransferencia xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">37</codigoAssociadoConfirmadoTransferencia>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem38</codigoItem>
+         <upcItem xmlns="">upcItem39</upcItem>
+         <quantidadeConfirmadaItem xmlns="">400.72</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada41</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem42</codigoItem>
+         <upcItem xmlns="">upcItem43</upcItem>
+         <quantidadeConfirmadaItem xmlns="">440.72</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada45</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+      <ConfirmaOrdemDetalheList xmlns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+         <codigoItem xmlns="">codigoItem46</codigoItem>
+         <upcItem xmlns="">upcItem47</upcItem>
+         <quantidadeConfirmadaItem xmlns="">480.72</quantidadeConfirmadaItem>
+         <unidadeMedidaConfirmada xmlns="">unidadeMedidaConfirmada49</unidadeMedidaConfirmada>
+      </ConfirmaOrdemDetalheList>
+   </ConfirmaOrdemClienteList>
+</ConfirmarPedidoReservaRequest>

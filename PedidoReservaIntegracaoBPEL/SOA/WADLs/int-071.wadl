@@ -1,0 +1,199 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="api" />
+    <resources base="http://localhost">
+            <resource path="erp-imifarma/v1/ordem_cliente_atacado">
+                <doc title="erp-imifarma/v1/ordem_cliente_atacado" /> 
+                <method name="POST">                    
+                        <request>
+                                                            <representation mediaType="application/json">
+                                    <doc>{
+  &quot;PedidoList&quot;: [
+    {
+      &quot;numeroPedido&quot;: 1,
+      &quot;numeroOrdemAtendimento&quot;: &quot;sample string 2&quot;,
+      &quot;tipoConfirmacao&quot;: &quot;sample string 3&quot;,
+      &quot;numeroPedidoConfirmacao&quot;: 4,
+      &quot;ItemPedidoList&quot;: [
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        },
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        }
+      ]
+    },
+    {
+      &quot;numeroPedido&quot;: 1,
+      &quot;numeroOrdemAtendimento&quot;: &quot;sample string 2&quot;,
+      &quot;tipoConfirmacao&quot;: &quot;sample string 3&quot;,
+      &quot;numeroPedidoConfirmacao&quot;: 4,
+      &quot;ItemPedidoList&quot;: [
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        },
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                                </representation>
+                                <representation mediaType="text/json">
+                                    <doc>{
+  &quot;PedidoList&quot;: [
+    {
+      &quot;numeroPedido&quot;: 1,
+      &quot;numeroOrdemAtendimento&quot;: &quot;sample string 2&quot;,
+      &quot;tipoConfirmacao&quot;: &quot;sample string 3&quot;,
+      &quot;numeroPedidoConfirmacao&quot;: 4,
+      &quot;ItemPedidoList&quot;: [
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        },
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        }
+      ]
+    },
+    {
+      &quot;numeroPedido&quot;: 1,
+      &quot;numeroOrdemAtendimento&quot;: &quot;sample string 2&quot;,
+      &quot;tipoConfirmacao&quot;: &quot;sample string 3&quot;,
+      &quot;numeroPedidoConfirmacao&quot;: 4,
+      &quot;ItemPedidoList&quot;: [
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        },
+        {
+          &quot;itemConfirmado&quot;: &quot;sample string 1&quot;,
+          &quot;codigoProduto&quot;: 2,
+          &quot;quantidadeAtendida&quot;: 3,
+          &quot;unidadeMedida&quot;: &quot;sample string 4&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                                </representation>
+                                <representation mediaType="application/xml">
+                                    <doc>&lt;OrdemVenda xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_071&quot;&gt;
+  &lt;PedidoList&gt;
+    &lt;Pedido&gt;
+      &lt;ItemPedidoList&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+      &lt;/ItemPedidoList&gt;
+      &lt;numeroOrdemAtendimento&gt;sample string 2&lt;/numeroOrdemAtendimento&gt;
+      &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+      &lt;numeroPedidoConfirmacao&gt;4&lt;/numeroPedidoConfirmacao&gt;
+      &lt;tipoConfirmacao&gt;sample string 3&lt;/tipoConfirmacao&gt;
+    &lt;/Pedido&gt;
+    &lt;Pedido&gt;
+      &lt;ItemPedidoList&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+      &lt;/ItemPedidoList&gt;
+      &lt;numeroOrdemAtendimento&gt;sample string 2&lt;/numeroOrdemAtendimento&gt;
+      &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+      &lt;numeroPedidoConfirmacao&gt;4&lt;/numeroPedidoConfirmacao&gt;
+      &lt;tipoConfirmacao&gt;sample string 3&lt;/tipoConfirmacao&gt;
+    &lt;/Pedido&gt;
+  &lt;/PedidoList&gt;
+&lt;/OrdemVenda&gt;</doc>
+                                </representation>
+                                <representation mediaType="text/xml">
+                                    <doc>&lt;OrdemVenda xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_071&quot;&gt;
+  &lt;PedidoList&gt;
+    &lt;Pedido&gt;
+      &lt;ItemPedidoList&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+      &lt;/ItemPedidoList&gt;
+      &lt;numeroOrdemAtendimento&gt;sample string 2&lt;/numeroOrdemAtendimento&gt;
+      &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+      &lt;numeroPedidoConfirmacao&gt;4&lt;/numeroPedidoConfirmacao&gt;
+      &lt;tipoConfirmacao&gt;sample string 3&lt;/tipoConfirmacao&gt;
+    &lt;/Pedido&gt;
+    &lt;Pedido&gt;
+      &lt;ItemPedidoList&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+        &lt;ItemPedido&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;itemConfirmado&gt;sample string 1&lt;/itemConfirmado&gt;
+          &lt;quantidadeAtendida&gt;3&lt;/quantidadeAtendida&gt;
+          &lt;unidadeMedida&gt;sample string 4&lt;/unidadeMedida&gt;
+        &lt;/ItemPedido&gt;
+      &lt;/ItemPedidoList&gt;
+      &lt;numeroOrdemAtendimento&gt;sample string 2&lt;/numeroOrdemAtendimento&gt;
+      &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+      &lt;numeroPedidoConfirmacao&gt;4&lt;/numeroPedidoConfirmacao&gt;
+      &lt;tipoConfirmacao&gt;sample string 3&lt;/tipoConfirmacao&gt;
+    &lt;/Pedido&gt;
+  &lt;/PedidoList&gt;
+&lt;/OrdemVenda&gt;</doc>
+                                </representation>
+                                <representation mediaType="application/x-www-form-urlencoded">
+                                    <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;OrdemVenda&#39;.</doc>
+                                </representation>
+                        </request>
+                    </method>
+            </resource>            
+    </resources>
+</application>

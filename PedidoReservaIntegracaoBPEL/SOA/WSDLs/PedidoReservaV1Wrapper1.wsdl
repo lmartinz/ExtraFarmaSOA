@@ -1,0 +1,25 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="PedidoReserva"
+     targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns1="http://TargetNamespace.com/nxsdschema"
+     xmlns:ns2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+    >
+    <plnk:partnerLinkType name="ConfirmarPedidoReservaBPELProcess">
+        <plnk:role name="PedidoReservaPortType" portType="tns:PedidoReservaPortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="PedidoReservaV1.wsdl"/>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://TargetNamespace.com/nxsdschema" schemaLocation="../Schemas/nxsd_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+</wsdl:definitions>

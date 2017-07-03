@@ -1,0 +1,237 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Sun Jul 02 21:16:21 BRT 2017
+  Author:  lmartins
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="ConfirmarPedidoReservaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:ns2="http://TargetNamespace.com/nxsdschema"
+         xmlns:ns3="json"
+         xmlns:ns4="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/nxsd_schema1.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="../WSDLs/PedidoReservaV1Wrapper1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="confirmarpedidoreservabpelprocess_client" partnerLinkType="ns1:ConfirmarPedidoReservaBPELProcess" myRole="PedidoReservaPortType"/>
+    <partnerLink name="ConfirmaReservaPedidoRestReference" bpelx:wadl="yes"/>
+    <partnerLink name="RegistroLOGBpelDReference" partnerLinkType="ns4:RegistroLOGBpelDReference"
+                 partnerRole="execute_ptt"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:ConfirmarPedidoReservaRequest"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:ConfirmarPedidoReservaResponse"/>
+    <variable name="varJson" element="ns2:Root-Element"/>
+    <variable name="outputRest" bpelx:json="string"/>
+    <variable name="inputPostaMensagemErroRegistroLogBPEL" messageType="ns4:requestMessage"/>
+    <variable name="metaInformacao" element="ns5:MetaInformacao"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="Sequence1">
+        <scope name="ScopeTratamentoMensagem" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <faultHandlers>
+         <catchAll>
+            <empty name="Empty"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence>
+         <assign name="AssignPayloadToRegistroErroLogBPEL">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+         <copy>
+               <from>1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+            </copy><copy>
+               <from>oraext:get-content-as-string($inputVariable)</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Body</to>
+            </copy><copy>
+               <from>'ConfirmarPedidoReservaBPELRest'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+            </copy><copy>
+               <from>'ConfirmarPedidoReservaBPELRestErro'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:passoFluxo</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:usuario</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:idControle</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:datahoraRequisicao</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+            </copy><copy>
+               <from>'RIB'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:sistemaOrigem</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+            </copy><copy>
+               <from>ora:getFaultAsString()</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+            </copy></assign>
+         <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegistroLOGBpelDReference"
+                 portType="ns4:execute_ptt" operation="execute" inputVariable="inputPostaMensagemErroRegistroLogBPEL"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
+      </sequence>
+   </scope>
+        <assign name="AssignOK">
+          <copy>
+            <from>"200 - OK"</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="ReplyOK" partnerLink="confirmarpedidoreservabpelprocess_client" variable="outputVariable"
+               portType="ns1:PedidoReservaPortType" operation="confirmarPedidoReserva"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in ConfirmarPedidoReservaBPELProcess.wsdl) --><receive name="receiveInput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva" variable="inputVariable" createInstance="yes"/>
+    <scope name="ScopeTranslateJson">
+      <sequence name="SequenceJson">
+        <assign name="TransformationInputToJson">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/Transformation_InputConfirmarToJson.xsl", $inputVariable.parameters)</from>
+            <to variable="varJson"/>
+          </copy>
+        </assign>
+        <assign name="TranslateJson">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($inputVariable), 'Schemas/nxsd_schema1.xsd', 'Root-Element', 'DOM')</from>
+            <to>$varJson</to>
+          </copy>
+        </assign>
+        <invoke name="InvokeConfirmarReservaPedidoRest" partnerLink="ConfirmaReservaPedidoRestReference"
+                inputVariable="varJson" outputVariable="outputRest" bpelx:method="ConfirmarReservaPedido"
+                bpelx:invokeAsDetail="no"/>
+      </sequence>
+    </scope>
+    <scope name="ScopeTratamentoMensagem" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <faultHandlers>
+         <catchAll>
+            <empty name="Empty"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence>
+         <assign name="AssignPayloadToRegistroSucessoLogBPEL">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+         <copy>
+               <from>1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+            </copy><copy>
+               <from>oraext:get-content-as-string($inputVariable)</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Body</to>
+            </copy><copy>
+               <from>'ConfirmarPedidoReservaBpelRest'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+            </copy><copy>
+               <from>'ConfirmarPedidoReservaBpelRest'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:passoFluxo</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:usuario</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:idControle</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:datahoraRequisicao</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+            </copy><copy>
+               <from>'RIB'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:sistemaOrigem</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+            </copy><copy>
+               <from>'200 - OK'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+            </copy></assign>
+         <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegistroLOGBpelDReference" portType="ns4:execute_ptt"
+                 operation="execute" inputVariable="inputPostaMensagemErroRegistroLogBPEL"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
+      </sequence>
+   </scope>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva" variable="outputVariable"/>
+  </sequence>
+</process>
