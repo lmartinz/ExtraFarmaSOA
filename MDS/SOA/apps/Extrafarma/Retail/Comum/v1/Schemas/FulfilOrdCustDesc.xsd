@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" xmlns:LocOfFulfilOrdCustDesc="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" version="1.0">
     <retailDoc:annotation>
         <retailDoc:documentation>This object is used to communicate customer details related to a customer order 
 			fulfillment request from OMS to RMS and SIM.
 		</retailDoc:documentation>
     </retailDoc:annotation>
+    <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1" schemaLocation="LocOfFulfilOrdCustDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation> References a collection of localization extension.</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
     <xs:element name="FulfilOrdCustDesc">
         <retailDoc:annotation>
             <retailDoc:documentation>This object is used to communicate customer details related to a customer order fulfillment request from OMS to RMS and SIM.</retailDoc:documentation>
@@ -184,6 +189,11 @@
                 <xs:element minOccurs="0" name="bill_email" type="varchar2120">
                     <retailDoc:annotation>
                         <retailDoc:documentation>Contains the billing email.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="0" ref="LocOfFulfilOrdCustDesc:LocOfFulfilOrdCustDesc">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>References a collection of localization extension.</retailDoc:documentation>
                     </retailDoc:annotation>
                 </xs:element>
             </xs:sequence>

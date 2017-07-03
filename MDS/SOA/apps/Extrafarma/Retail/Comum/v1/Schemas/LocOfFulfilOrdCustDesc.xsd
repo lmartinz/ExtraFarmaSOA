@@ -1,0 +1,34 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1"
+    xmlns:BrFulfilOrdCustDesc="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdCustDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <retailDoc:annotation>
+        <retailDoc:documentation>References a collection of localization extension.</retailDoc:documentation>
+    </retailDoc:annotation>
+    <xs:import
+        namespace="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdCustDesc/v1" schemaLocation="BrFulfilOrdCustDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>It's a referenced element. For detailed
+				description, please refer referenced element doc.
+			</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
+    <xs:element name="LocOfFulfilOrdCustDesc">
+        <retailDoc:annotation>
+            <retailDoc:documentation>References a collection of localization extension.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="BrFulfilOrdCustDesc:BrFulfilOrdCustDesc">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>It's a referenced element. For
+							detailed description, please refer referenced element doc.
+						</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
