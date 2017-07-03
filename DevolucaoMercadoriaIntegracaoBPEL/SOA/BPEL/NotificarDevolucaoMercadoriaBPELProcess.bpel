@@ -8,7 +8,7 @@
   Purpose: Asynchronous BPEL Process
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
-<process name="DevolucaoMercadoriaBPELProcess"
+<process name="NotificarDevolucaoMercadoriaBPELProcess"
                targetNamespace="http://xmlns.oracle.com/ExtrafarmaSOA_F1_S2/DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaBPELProcess"
                xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
                xmlns:client="http://xmlns.oracle.com/ExtrafarmaSOA_F1_S2/DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaBPELProcess"
@@ -54,7 +54,7 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages"
-          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"
+          location="../Schemas/RibMessages.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://www.oracle.com/retail/integration/base/bo/RTVDesc/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RTVDesc.xsd"

@@ -28,7 +28,7 @@
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.0.0.151013</property>
   <property name="compositeID" type="xs:string" many="false">7350cec7-46b3-43a4-bba4-89d493d2e347</property>
-  <component name="DevolucaoMercadoriaBPELProcess" version="2.0">
+  <component name="NotificarDevolucaoMercadoriaBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel"/>
     <componentType>
       <service name="DevolucaoMercadoriaDBBPEL" ui:wsdlLocation="WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl">
@@ -59,15 +59,15 @@
     </binding.direct>
   </reference>
   <wire>
-    <source.uri>DevolucaoMercadoriaBPELProcess/EtRTVJMSReference</source.uri>
+    <source.uri>NotificarDevolucaoMercadoriaBPELProcess/EtRTVJMSReference</source.uri>
     <target.uri>EtRTVJMSReference</target.uri>
   </wire>
   <wire>
-    <source.uri>DevolucaoMercadoriaBPELProcess/RegistroLogBPELReference</source.uri>
+    <source.uri>NotificarDevolucaoMercadoriaBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
   <wire>
     <source.uri>DevolucaoMercadoriaDBBPEL</source.uri>
-    <target.uri>DevolucaoMercadoriaBPELProcess/DevolucaoMercadoriaDBBPEL</target.uri>
+    <target.uri>NotificarDevolucaoMercadoriaBPELProcess/DevolucaoMercadoriaDBBPEL</target.uri>
   </wire>
 </composite>
