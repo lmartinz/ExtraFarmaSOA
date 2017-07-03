@@ -33,7 +33,8 @@
          xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/RTVDesc/v1"
          xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
          xmlns:ns6="http://www.oracle.com/retail/integration/custom/bo/ExtOfRTVDesc/v1"
-         xmlns:ns8="http://www.oracle.com/retail/integration/rib/RibMessages">
+         xmlns:ns8="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns9="http://canonico.ultra.com.br/infcorp/v1">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +43,9 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
   <import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
-          location="../WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          location="../WSDLs/DevolucaoMercadoriaV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/DevolucaoMercadoriaIntegracaoBPEL/EtRTVJMSReference"
+          location="../WSDLs/EtRTVJMSReference.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
@@ -62,11 +65,11 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="devolucaomercadoriabpelprocess_client" partnerLinkType="ns1:DevolucaoMercadoriaDBBPEL"
-                 myRole="DevolucaoMercadoriaPortType"/>
     <partnerLink name="EtRTVJMSReference" partnerLinkType="ns4:Posta_Mensagem_plt" partnerRole="Posta_Mensagem_role"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns2:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="DevolucaoMercadoriaDBBPEL" partnerLinkType="ns1:DevolucaoMercadoriaDBBPEL"
+                 myRole="DevolucaoMercadoriaPortType"/>
   </partnerLinks>
 
   <!-- 
@@ -85,6 +88,7 @@
     <variable name="MetaInformacaovariable" element="ns3:MetaInformacao"/>
     <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
+    <variable name="NotificarDevolucaoMercadoriaFault" messageType="ns1:NotificarDevolucaoMercadoriaFaultMsg"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -92,7 +96,28 @@
         <scope name="ScopeTratamentoMensagem">
           <faultHandlers>
             <catchAll>
-              <empty name="Empty"/>
+              <sequence name="SequenceTratarFalha">
+                <assign name="AssignFault">
+                  <copy>
+                    <from>'Ocorreu um erro no envio da mensagem ao Retail e no Registro de Log.'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarDevolucaoMercadoriaFault.NotificarDevolucaoMercadoriaFault/ns9:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>'ERRO_DE_SISTEMA'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarDevolucaoMercadoriaFault.NotificarDevolucaoMercadoriaFault/ns9:tipo</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarDevolucaoMercadoriaFault.NotificarDevolucaoMercadoriaFault/ns9:detalhe</to>
+                  </copy>
+                  <copy>
+                    <from>'500'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarDevolucaoMercadoriaFault.NotificarDevolucaoMercadoriaFault/ns9:codigo</to>
+                  </copy>
+                </assign>
+                <throw name="Throw" faultName="ns1:NotificarDevolucaoMercadoriaFault"
+                       faultVariable="NotificarDevolucaoMercadoriaFault"/>
+              </sequence>
             </catchAll>
           </faultHandlers>
           <sequence>
@@ -149,7 +174,7 @@
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
           </copy>
         </assign>
-        <reply name="replyCatchOutput" partnerLink="devolucaomercadoriabpelprocess_client"
+        <reply name="replyCatchOutput" partnerLink="DevolucaoMercadoriaDBBPEL"
                variable="outputVariable"
                portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria"/>
       </sequence>
@@ -165,7 +190,7 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in DevolucaoMercadoriaBPELProcess.wsdl) -->
-    <receive name="receiveInput" partnerLink="devolucaomercadoriabpelprocess_client" portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="DevolucaoMercadoriaDBBPEL" portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria" variable="inputVariable" createInstance="yes"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationNotificaDevolucaoMercadoriaToRTVDesc">
         <bpelx:annotation>
@@ -232,7 +257,7 @@
         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
       </copy>
     </assign>
-    <reply name="Reply" partnerLink="devolucaomercadoriabpelprocess_client" variable="outputVariable"
+    <reply name="Reply" partnerLink="DevolucaoMercadoriaDBBPEL" variable="outputVariable"
            portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria"/>
   </sequence>
 </process>

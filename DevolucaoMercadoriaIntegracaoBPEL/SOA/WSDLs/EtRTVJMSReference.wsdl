@@ -1,3 +1,4 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
 <wsdl:definitions
      name="EtRTVJMSReference"
      targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/DevolucaoMercadoriaIntegracaoBPEL/EtRTVJMSReference"
@@ -6,16 +7,18 @@
      xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
      xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
+     xmlns:ns1="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
     >
-  <plt:partnerLinkType name="Posta_Mensagem_plt" >
-    <plt:role name="Posta_Mensagem_role" >
-      <plt:portType name="tns:Posta_Mensagem_ptt" />
-    </plt:role>
-  </plt:partnerLinkType>
+    <plt:partnerLinkType name="Posta_Mensagem_plt">
+        <plt:role name="Posta_Mensagem_role">
+            <plt:portType name="tns:Posta_Mensagem_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1" location="DevolucaoMercadoriaV1.wsdl"/>
     <wsdl:types>
-      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="../Schemas/RibMessages.xsd" />
-      </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="../Schemas/RibMessages.xsd"/>
+        </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">
         <wsdl:part name="body" element="imp1:RibMessages"/>

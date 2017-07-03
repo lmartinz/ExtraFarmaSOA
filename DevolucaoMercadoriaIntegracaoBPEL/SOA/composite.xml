@@ -13,9 +13,6 @@
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
   <import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
           location="WSDLs/DevolucaoMercadoriaV1.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
-          location="WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl"
-          importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/DevolucaoMercadoriaIntegracaoBPEL/EtRTVJMSReference"
           location="WSDLs/EtRTVJMSReference.wsdl"
           importType="wsdl"/>
@@ -23,6 +20,8 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+          location="WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl" importType="wsdl"/>
   <service name="DevolucaoMercadoriaDBBPEL" ui:wsdlLocation="WSDLs/DevolucaoMercadoriaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1#wsdl.interface(DevolucaoMercadoriaPortType)"/>
     <binding.direct/>
@@ -32,8 +31,7 @@
   <component name="DevolucaoMercadoriaBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/NotificarDevolucaoMercadoriaBPELProcess.bpel"/>
     <componentType>
-      <service name="devolucaomercadoriabpelprocess_client"
-               ui:wsdlLocation="WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl">
+      <service name="DevolucaoMercadoriaDBBPEL" ui:wsdlLocation="WSDLs/DevolucaoMercadoriaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1#wsdl.interface(DevolucaoMercadoriaPortType)"/>
       </service>
       <reference name="EtRTVJMSReference"
@@ -45,6 +43,7 @@
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
     </componentType>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
   </component>
   <reference name="EtRTVJMSReference"
              ui:wsdlLocation="WSDLs/EtRTVJMSReference.wsdl">
@@ -60,15 +59,15 @@
     </binding.direct>
   </reference>
   <wire>
-    <source.uri>DevolucaoMercadoriaDBBPEL</source.uri>
-    <target.uri>DevolucaoMercadoriaBPELProcess/devolucaomercadoriabpelprocess_client</target.uri>
-  </wire>
-  <wire>
     <source.uri>DevolucaoMercadoriaBPELProcess/EtRTVJMSReference</source.uri>
     <target.uri>EtRTVJMSReference</target.uri>
   </wire>
   <wire>
     <source.uri>DevolucaoMercadoriaBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>DevolucaoMercadoriaDBBPEL</source.uri>
+    <target.uri>DevolucaoMercadoriaBPELProcess/DevolucaoMercadoriaDBBPEL</target.uri>
   </wire>
 </composite>
