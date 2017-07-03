@@ -50,11 +50,11 @@
                  partnerRole="execute_ptt"/>
   </partnerLinks>
   <variables>
-    <variable name="inputVariable" messageType="ns1:CriarPedidoReservaRequest"/>
-    <variable name="outputVariable" messageType="ns1:CriarPedidoReservaResponse"/>
     <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+    <variable name="inputVariable" messageType="ns1:CriarPedidoReservaRequest"/>
+    <variable name="outputVariable" messageType="ns1:CriarPedidoReservaResponse"/>
   </variables>
   <faultHandlers>
     <catchAll>

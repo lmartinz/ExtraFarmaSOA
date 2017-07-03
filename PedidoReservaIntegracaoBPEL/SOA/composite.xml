@@ -11,8 +11,6 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1.wsdl"
-          importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1Wrapper.wsdl"
           importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSCriarReference"
@@ -23,7 +21,10 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
-  <service name="PedidoReservaDBBPEL" ui:wsdlLocation="WSDLs/PedidoReservaV1.wsdl">
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
+  <service name="PedidoReservaDBBPEL"
+           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
     <binding.direct/>
   </service>
@@ -32,7 +33,8 @@
   <component name="PedidoReservaMediator">
     <implementation.mediator src="Mediators/PedidoReservaMediator.mplan"/>
     <componentType>
-      <service name="PedidoReservaMediator" ui:wsdlLocation="WSDLs/PedidoReservaV1.wsdl">
+      <service name="PedidoReservaMediator"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </service>
       <reference name="ConfirmarPedidoReservaBPELProcess.confirmarpedidoreservabpelprocess_client"

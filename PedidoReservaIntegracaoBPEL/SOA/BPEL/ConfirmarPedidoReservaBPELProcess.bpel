@@ -29,7 +29,12 @@
          xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
-         xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+         xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns6="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns7="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
+         xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,14 +70,14 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="ns1:ConfirmarPedidoReservaRequest"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="ns1:ConfirmarPedidoReservaResponse"/>
     <variable name="varJson" element="ns2:Root-Element"/>
     <variable name="outputRest" bpelx:json="string"/>
     <variable name="inputPostaMensagemErroRegistroLogBPEL" messageType="ns4:requestMessage"/>
     <variable name="metaInformacao" element="ns5:MetaInformacao"/>
+    <variable name="inputVariable" messageType="ns1:ConfirmarPedidoReservaRequest"/>
+    <variable name="outputVariable" messageType="ns1:ConfirmarPedidoReservaResponse"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -151,7 +156,8 @@
   -->
   <sequence name="main">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in ConfirmarPedidoReservaBPELProcess.wsdl) --><receive name="receiveInput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva" variable="inputVariable" createInstance="yes"/>
+    <!-- Receive input from requestor. (Note: This maps to operation defined in ConfirmarPedidoReservaBPELProcess.wsdl) --><receive name="receiveInput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType"
+                                                                                                                                    operation="confirmarPedidoReserva" variable="inputVariable" createInstance="yes"/>
     <scope name="ScopeTranslateJson">
       <sequence name="SequenceJson">
         <assign name="TransformationInputToJson">
@@ -232,6 +238,7 @@
       </sequence>
    </scope>
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType" operation="criarPedidoReserva" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType"
+           operation="confirmarPedidoReserva" variable="outputVariable"/>
   </sequence>
 </process>
