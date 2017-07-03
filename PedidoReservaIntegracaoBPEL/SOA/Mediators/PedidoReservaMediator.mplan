@@ -18,5 +18,22 @@
       </switch>
    </operation>
    <operation name="cancelarPedidoReserva" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false"/>
-   <operation name="confirmarPedidoReserva" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false"/>
+   <operation name="confirmarPedidoReserva" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
+      <switch>
+         <case executionType="sequential"
+               name="ConfirmarPedidoReservaBPELProcess.confirmarpedidoreservabpelprocess_client.confirmarPedidoReserva">
+            <action>
+               <invoke reference="ConfirmarPedidoReservaBPELProcess.confirmarpedidoreservabpelprocess_client"
+                       operation="confirmarPedidoReserva">
+                  <onReply>
+                     <reply/>
+                  </onReply>
+                  <onFault type="ConfirmarPedidoReservaFault">
+                     <fault type="ConfirmarPedidoReservaFault"/>
+                  </onFault>
+               </invoke>
+            </action>
+         </case>
+      </switch>
+   </operation>
 </Mediator>

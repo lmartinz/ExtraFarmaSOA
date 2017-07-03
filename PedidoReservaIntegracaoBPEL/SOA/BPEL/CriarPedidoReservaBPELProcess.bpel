@@ -117,7 +117,6 @@
               portType="ns3:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
               bpelx:invokeAsDetail="no"/>
     </sequence>
-    <receive name="Callback"/>
     <assign name="AssignReplyOK">
       <copy>
         <from>'200 - OK'</from>

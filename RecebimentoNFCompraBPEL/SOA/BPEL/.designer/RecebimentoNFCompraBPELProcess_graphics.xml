@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="recebimentonfcomprabpelprocess_client_ep" x="0" y="638" side="left"/>
-      <partnerlink name="RegitroLOGBPEL" x="1082" y="481" side="right"/>
-      <partnerlink name="RecebimentoNFCompraRestReference" x="1082" y="424" side="right"/>
+      <partnerlink name="recebimentonfcomprabpelprocess_client_ep" x="0" y="643" side="left"/>
+      <partnerlink name="RegitroLOGBPEL" x="1296" y="572" side="right"/>
+      <partnerlink name="RecebimentoNFCompraRestReference" x="1296" y="428" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,225,1303,509" show_swimlanes="true">
+   <graph_layout viewport="210,426,898,538" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/scope" type="scope" showhandlers="true"/>
@@ -18,6 +18,9 @@
       <layout_item collapsed="false" xpath="/process/sequence/scope/faultHandlers/catchAll/sequence/scope/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/sequence/scope/faultHandlers/catchAll/sequence/scope/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/scope/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope/sequence/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope/sequence/scope/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope/sequence/scope/sequence" type="sequence"/>
    </graph_layout>
    <bookmarks/>
 </graphics>

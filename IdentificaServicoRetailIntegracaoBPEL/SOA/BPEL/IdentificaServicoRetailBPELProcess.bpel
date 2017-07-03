@@ -34,7 +34,8 @@
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
          xmlns:ns7="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
          xmlns:ns8="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-         xmlns:ns9="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1">
+         xmlns:ns9="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+         xmlns:ns10="http://service.ultra.com.br/atacado/PedidoReserva/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,11 +54,15 @@
                  partnerRole="execute_ptt"/>
     <partnerLink name="RecebimentoNFCompraV1DReference" partnerLinkType="ns9:RecebimentoNFCompraV1DReference"
                  partnerRole="RecebimentoNFCompraPortType"/>
+    <partnerLink name="ConfirmarReservaPedidoDReference" partnerLinkType="ns10:ConfirmarReservaPedidoDReference"
+                 partnerRole="PedidoReservaPortType"/>
   </partnerLinks>
   <variables>
     <variable name="ReceiveInput_Consume_Message_InputVariable" messageType="ns1:Consume_Message_msg"/>
     <variable name="inputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraRequest"/>
     <variable name="outputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraResponse"/>
+    <variable name="inputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaRequest"/>
+    <variable name="outputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaResponse"/>
   </variables>
   <sequence name="main">
     <receive name="ReceiveInput" createInstance="yes" partnerLink="etPOScheduleFromRFMJMSReference"
@@ -130,6 +135,73 @@
           </sequence>
         </scope>
       </sequence>
+      <elseif>
+        <documentation>
+          <![CDATA[ConfirmacaoReservaPedido]]>
+        </documentation>
+        <sequence name="FluxoRecebimentoNFCompra"
+                        xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <scope name="RecebimentoNFCompra">
+         <variables>
+            <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns7:requestMessage"/>
+            <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns7:requestMessage"/>
+         </variables>
+         <faultHandlers>
+            <catchAll>
+               <sequence>
+                  <assign name="AssignPayloadToRegistroErroLogBPEL">
+                     
+                  <copy>
+                        <from>'Erro ConfirmarReservaPedido'</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns8:Header/ns8:MetaInformacao/ns8:passoFluxo</to>
+                     </copy></assign>
+                  <invoke name="postaMensagemErroRegistroLogBPEL" partnerLink="RegistroLogBPELReference"
+                          portType="ns7:execute_ptt" operation="execute"
+                          inputVariable="postaMensagemErroRegistroLogBPEL_execute_InputVariable"
+                          bpelx:invokeAsDetail="no" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+               </sequence>
+            </catchAll>
+         </faultHandlers>
+         <sequence name="FluxoConfirmacaoReservaPedido">
+            <assign name="AssignPayloadToRegistroLogBPEL">
+               
+               
+               
+               
+            <copy>
+                  <from>'LEGADO'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns8:Header/ns8:MetaInformacao/ns8:sistemaDestino</to>
+               </copy><copy>
+                  <from>xp20:current-dateTime()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns8:Header/ns8:MetaInformacao/ns8:datahoraRequisicao</to>
+               </copy><copy>
+                  <from>'Publicando mensagem ConfirmacaoReservaPedido'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns8:Header/ns8:MetaInformacao/ns8:passoFluxo</to>
+               </copy><copy>
+                  <from>'RIB'</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns8:Header/ns8:MetaInformacao/ns8:sistemaOrigem</to>
+               </copy></assign>
+            <invoke name="RegistroLogBPEL" partnerLink="RegistroLogBPELReference" portType="ns7:execute_ptt"
+                    operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable" bpelx:invokeAsDetail="no"
+                    xmlns:bpelx="http://schemas.oracle.com/bpel/extension"/>
+            <sequence name="FluxoEnviaRecebimentoNFCompra">
+               <assign name="TransformationConfirmacaoReservaPedidoV1">
+                  <bpelx:annotation xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                     <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                  </bpelx:annotation>
+                  <copy>
+                     <from>ora:doXSLTransformForDoc("../Transformations/Transformation_ConfirmarReservaPedido.xsl", $ReceiveInput_Consume_Message_InputVariable.body)</from>
+                     <to variable="inputConfirmarReservaPedidoV1" part="parameters"/>
+                  </copy>
+               </assign>
+               <invoke name="ConfirmacaoReservaPedido" partnerLink="ConfirmarReservaPedidoDReference"
+                       portType="ns10:PedidoReservaPortType" operation="confirmarPedidoReserva"
+                       inputVariable="inputConfirmarReservaPedidoV1" outputVariable="outputConfirmarReservaPedidoV1" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                       bpelx:invokeAsDetail="no"/>
+            </sequence>
+         </sequence>
+      </scope>
+   </sequence></elseif>
       <else>
         <empty name="Empty"/>
       </else>

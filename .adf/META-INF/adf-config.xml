@@ -24,7 +24,7 @@
           </metadata-store-usage>
           <metadata-store-usage id="mstore-usage_2">
             <metadata-store class-name="oracle.mds.persistence.stores.file.FileMetadataStore">
-              <property name="metadata-path" value="C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/MDS/SOA"/>
+              <property name="metadata-path" value="/Users/lmartins/jdeveloper/soamds"/>
             </metadata-store>
           </metadata-store-usage>
         </metadata-store-usages>

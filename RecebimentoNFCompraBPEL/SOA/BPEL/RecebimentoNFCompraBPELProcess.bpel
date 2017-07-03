@@ -192,9 +192,62 @@
         <invoke name="InvokeReceberNDCompraRest"
                 partnerLink="RecebimentoNFCompraRestReference" inputVariable="varJson"
                 outputVariable="outputJSON" bpelx:method="ReceberNFCompra" bpelx:invokeAsDetail="no"/>
+        <scope name="ScopeTratamentoMensagem" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <faultHandlers>
+         <catchAll>
+            <empty name="Empty"/>
+         </catchAll>
+      </faultHandlers>
+      <sequence>
+         <assign name="AssignPayloadToRegistroSucessoLogBPEL">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+         <copy>
+               <from>1</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+            </copy><copy>
+               <from>oraext:get-content-as-string($inputVariable)</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Body</to>
+            </copy><copy>
+               <from>'RecebimentoNFCompraRestHTTP'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+            </copy><copy>
+               <from>'RecebimentoNFCompraBPEL'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:passoFluxo</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:usuario</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:idControle</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:datahoraRequisicao</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+            </copy><copy>
+               <from>'RIB'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+            </copy><copy>
+               <from>$metaInformacao/ns5:sistemaOrigem</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+            </copy><copy>
+               <from>'200 - OK'</from>
+               <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+            </copy></assign>
+         <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegitroLOGBPEL" portType="ns4:execute_ptt"
+                 operation="execute" inputVariable="inputPostaMensagemErroRegistroLogBPEL"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
       </sequence>
-    </scope>
-    <!-- Generate reply to synchronous request -->
+   </scope>
+      </sequence>
+    </scope><!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="recebimentonfcomprabpelprocess_client_ep" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="outputVariable"/>
   </sequence>
 </process>

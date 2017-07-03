@@ -1,33 +1,262 @@
-2017-07-01 15:51:00.609/1.459 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence.xml"
-2017-07-01 15:51:00.634/1.484 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
-2017-07-01 15:51:00.636/1.485 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
-2017-07-01 15:51:00.638/1.487 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
-2017-07-01 15:51:00.639/1.488 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
-2017-07-01 15:51:00.640/1.489 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+2017-07-02 21:58:36.617/4.178 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2017-07-02 21:58:36.727/4.287 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/Users/lmartins/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2017-07-02 21:58:36.729/4.289 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2017-07-02 21:58:36.734/4.294 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2017-07-02 21:58:36.735/4.295 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2017-07-02 21:58:36.736/4.296 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
 
 Oracle Coherence Version 12.2.1.0.0 Build 60603
  Grid Edition: Development mode
 Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
-2017-07-01 15:51:00.739/1.588 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
-2017-07-01 15:51:00.741/1.591 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
-2017-07-01 15:51:01.932/2.781 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "Vinicius's cluster" has been automatically generated
-Jul 01, 2017 3:51:02 PM oracle.soa.scac.ValidateComposite loadWSDLs
-WARNING: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
-Jul 01, 2017 3:51:02 PM oracle.adf.share.ADFContext getCurrent
-WARNING: Automatically initializing a DefaultContext for getCurrent.
-Caller should ensure that a DefaultContext is proper for this use.
-Memory leaks and/or unexpected behaviour may occur if the automatic initialization is performed improperly.
-This message may be avoided by performing initADFContext before using getCurrent().
-For more information please enable logging for oracle.adf.share.ADFContext at FINEST level.
-Jul 01, 2017 3:51:02 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
-INFO: Resource META-INF/adf-config.xml not found on the classpath.
-Jul 01, 2017 3:51:02 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
-INFO: A default implementation of ADFConfig is being created for application. This can lead to unexpected results in some cases. Please add a basic META-INF/adf-config.xml to your classpath to avoid functional errors.
-2017-07-01 15:51:03.133/3.983 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
-Jul 01, 2017 3:51:03 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
-INFO: XMLSchema incremental build enabled.
-Jul 01, 2017 3:51:03 PM oracle.integration.platform.blocks.PlatformConfigurationProvider getPlatformConfigurationProvider
-WARNING: JRF is unable to determine the current application server platform.
-Java HotSpot(TM) Client VM warning: ignoring option PermSize=32m; support was removed in 8.0
-Java HotSpot(TM) Client VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+2017-07-02 21:58:37.034/4.594 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
+2017-07-02 21:58:37.042/4.602 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+2017-07-02 21:58:37.377/4.937 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "lmartins's cluster" has been automatically generated
+jul 02, 2017 9:58:40 PM oracle.dms.instrument.Noun findOrCreateByPath
+ADVERTÊNCIA: Tentativa de criar um nome /DMS-Internal preexistente, do tipo n/a, com um tipo de conflito n/d.
+jul 02, 2017 9:58:42 PM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTÊNCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+ADVERTÊNCIA: Schema load failed due to: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+oracle.fabric.common.wsdl.XSDException: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:580)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadSchemasFromWSDL(SchemaBuilder.java:452)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadAllSchemas(SchemaBuilder.java:249)
+	at oracle.fabric.common.wsdl.SchemaManager.loadAllXSD(SchemaManager.java:414)
+	at oracle.fabric.common.wsdl.SchemaManager.buildXDKSchema(SchemaManager.java:697)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupSchema(SchemaManager.java:548)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupXSDElementDeclaration(SchemaManager.java:873)
+	at oracle.soa.scac.WSDLValidator.validateMessageParts(WSDLValidator.java:113)
+	at oracle.soa.scac.WSDLValidator.validateMessages(WSDLValidator.java:88)
+	at oracle.soa.scac.WSDLValidator.validate(WSDLValidator.java:44)
+	at oracle.soa.scac.ValidateComposite.loadWSDLs(ValidateComposite.java:1002)
+	at oracle.soa.scac.ValidateComposite.doValidation0(ValidateComposite.java:589)
+	at oracle.soa.scac.ValidateComposite.doValidation(ValidateComposite.java:577)
+	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
+	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
+	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+Caused by: oracle.fabric.common.FabricException: Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:361)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getInputStreamFromAbsoluteURL(MDSMetadataManagerImpl.java:836)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getDocumentAsInputStreamUsingUrlResolver(MetadataManagerImpl.java:217)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStreamUsingCustomization(MDSMetadataManagerImpl.java:553)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStream(MDSMetadataManagerImpl.java:535)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXMLSrc(SchemaBuilder.java:1112)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXSDSrc(SchemaBuilder.java:1062)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:872)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:874)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:576)
+	... 15 more
+Caused by: java.io.IOException: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getPDocStreamWithRetry(AbstractOraMDSURLConnection.java:738)
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getInputStream(AbstractOraMDSURLConnection.java:295)
+	at oracle.mds.internal.net.OraMDSURLConnection.getInputStream(OraMDSURLConnection.java:89)
+	at java.net.URL.openStream(URL.java:1045)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.openStreamWithRetry(MetadataManagerImpl.java:373)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:353)
+	... 24 more
+Caused by: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	... 30 more
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://canonico.ultra.com.br/infcorp/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://www.oracle.com/retail/integration/rib/RibMessages
+ADVERTÊNCIA: Schema load failed due to: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+oracle.fabric.common.wsdl.XSDException: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:580)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadSchemasFromWSDL(SchemaBuilder.java:452)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadAllSchemas(SchemaBuilder.java:249)
+	at oracle.fabric.common.wsdl.SchemaManager.loadAllXSD(SchemaManager.java:414)
+	at oracle.fabric.common.wsdl.SchemaManager.buildXDKSchema(SchemaManager.java:697)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupSchema(SchemaManager.java:548)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupXSDElementDeclaration(SchemaManager.java:873)
+	at oracle.bpel.lang.v20.resolver.ProcessImportHandler.lookupXSDElement(ProcessImportHandler.java:285)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDElement(OracleModelQueryImpl.java:744)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDPartType(OracleModelQueryImpl.java:855)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupMessagePartType(OracleModelQueryImpl.java:835)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:415)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:179)
+	at org.eclipse.bpel.validator.xpath.XPathValidator.rule_CheckVariable_10(XPathValidator.java:633)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.bpel.validator.model.Rules$Rule.invoke(Rules.java:316)
+	at org.eclipse.bpel.validator.model.RuleRunner.runRules(RuleRunner.java:99)
+	at org.eclipse.bpel.validator.model.Validator.runRules(Validator.java:468)
+	at org.eclipse.bpel.validator.model.Validator.runRulesInChain(Validator.java:473)
+	at org.eclipse.bpel.validator.xpath.CExpr.runRulesInChain(CExpr.java:199)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visit(XPathVisitor.java:276)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visitExpr(XPathVisitor.java:580)
+	at org.eclipse.bpel.validator.xpath.XPathVisitor.visit(XPathVisitor.java:160)
+	at org.eclipse.bpel.validator.xpath.To.rule_CheckVariableReference_15(To.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.bpel.validator.model.Rules$Rule.invoke(Rules.java:316)
+	at org.eclipse.bpel.validator.model.RuleRunner.runRules(RuleRunner.java:99)
+	at org.eclipse.bpel.validator.model.Validator.validate(Validator.java:278)
+	at org.eclipse.bpel.validator.model.Runner.pass1(Runner.java:150)
+	at org.eclipse.bpel.validator.model.Runner.run(Runner.java:188)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:239)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:131)
+	at oracle.bpel.lang.v20.validator.BPEL20Validator.validate(BPEL20Validator.java:82)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.validate(BPEL2Processor.java:152)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:122)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:108)
+	at oracle.fabric.bpel.bpelc.BPELComponentValidator.validate(BPELComponentValidator.java:87)
+	at oracle.soa.scac.ValidateComposite.validateComponentTypeServicesReferences(ValidateComposite.java:1161)
+	at oracle.soa.scac.ValidateComposite.doValidation0(ValidateComposite.java:598)
+	at oracle.soa.scac.ValidateComposite.doValidation(ValidateComposite.java:577)
+	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
+	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
+	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+Caused by: oracle.fabric.common.FabricException: Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:361)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getInputStreamFromAbsoluteURL(MDSMetadataManagerImpl.java:836)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getDocumentAsInputStreamUsingUrlResolver(MetadataManagerImpl.java:217)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStreamUsingCustomization(MDSMetadataManagerImpl.java:553)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStream(MDSMetadataManagerImpl.java:535)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXMLSrc(SchemaBuilder.java:1112)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXSDSrc(SchemaBuilder.java:1062)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:872)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:874)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:576)
+	... 48 more
+Caused by: java.io.IOException: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getPDocStreamWithRetry(AbstractOraMDSURLConnection.java:738)
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getInputStream(AbstractOraMDSURLConnection.java:295)
+	at oracle.mds.internal.net.OraMDSURLConnection.getInputStream(OraMDSURLConnection.java:89)
+	at java.net.URL.openStream(URL.java:1045)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.openStreamWithRetry(MetadataManagerImpl.java:373)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:353)
+	... 57 more
+Caused by: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	... 63 more
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: O JRF não pode determinar a plataforma do servidor de aplicativos atual.
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://www.oracle.com/retail/integration/rib/RibMessages
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Schema load failed due to: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+oracle.fabric.common.wsdl.XSDException: Error loading schema from file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.]
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:580)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadSchemasFromWSDL(SchemaBuilder.java:452)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadAllSchemas(SchemaBuilder.java:249)
+	at oracle.fabric.common.wsdl.SchemaManager.loadAllXSD(SchemaManager.java:414)
+	at oracle.fabric.common.wsdl.SchemaManager.buildXDKSchema(SchemaManager.java:697)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupSchema(SchemaManager.java:548)
+	at oracle.fabric.common.wsdl.SchemaManager.lookupXSDElementDeclaration(SchemaManager.java:873)
+	at oracle.bpel.lang.v20.resolver.ProcessImportHandler.lookupXSDElement(ProcessImportHandler.java:285)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookupXSDElement(OracleModelQueryImpl.java:744)
+	at oracle.bpel.common.validator.helpers.OracleModelQueryImpl.lookup(OracleModelQueryImpl.java:207)
+	at org.eclipse.bpel.validator.rules.VariableValidator.rule_CheckType_2(VariableValidator.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.bpel.validator.model.Rules$Rule.invoke(Rules.java:316)
+	at org.eclipse.bpel.validator.model.RuleRunner.runRules(RuleRunner.java:99)
+	at org.eclipse.bpel.validator.model.Validator.validate(Validator.java:278)
+	at org.eclipse.bpel.validator.model.Runner.pass1(Runner.java:150)
+	at org.eclipse.bpel.validator.model.Runner.run(Runner.java:188)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:239)
+	at oracle.bpel.lang.v20.validator.helpers.OracleBpelREMValidator.validate(OracleBpelREMValidator.java:131)
+	at oracle.bpel.lang.v20.validator.BPEL20Validator.validate(BPEL20Validator.java:82)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.validate(BPEL2Processor.java:152)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:122)
+	at com.collaxa.cube.lang.compiler.BPEL2Processor.process(BPEL2Processor.java:108)
+	at oracle.fabric.bpel.bpelc.BPELComponentValidator.validate(BPELComponentValidator.java:87)
+	at oracle.soa.scac.ValidateComposite.validateComponentTypeServicesReferences(ValidateComposite.java:1161)
+	at oracle.soa.scac.ValidateComposite.doValidation0(ValidateComposite.java:598)
+	at oracle.soa.scac.ValidateComposite.doValidation(ValidateComposite.java:577)
+	at oracle.soa.scac.ValidateComposite.run0(ValidateComposite.java:228)
+	at oracle.soa.scac.ValidateComposite.run(ValidateComposite.java:209)
+	at oracle.soa.scac.ValidateComposite.main(ValidateComposite.java:201)
+Caused by: oracle.fabric.common.FabricException: Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:361)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getInputStreamFromAbsoluteURL(MDSMetadataManagerImpl.java:836)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getDocumentAsInputStreamUsingUrlResolver(MetadataManagerImpl.java:217)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStreamUsingCustomization(MDSMetadataManagerImpl.java:553)
+	at oracle.integration.platform.common.MDSMetadataManagerImpl.getDocumentAsInputStream(MDSMetadataManagerImpl.java:535)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXMLSrc(SchemaBuilder.java:1112)
+	at oracle.fabric.common.wsdl.SchemaBuilder.parseXSDSrc(SchemaBuilder.java:1062)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:872)
+	at oracle.fabric.common.wsdl.SchemaBuilder.processSchemaImportsAndInclude(SchemaBuilder.java:874)
+	at oracle.fabric.common.wsdl.SchemaBuilder.loadEmbeddedSchemas(SchemaBuilder.java:576)
+	... 32 more
+Caused by: java.io.IOException: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getPDocStreamWithRetry(AbstractOraMDSURLConnection.java:738)
+	at oracle.mds.internal.net.AbstractOraMDSURLConnection.getInputStream(AbstractOraMDSURLConnection.java:295)
+	at oracle.mds.internal.net.OraMDSURLConnection.getInputStream(OraMDSURLConnection.java:89)
+	at java.net.URL.openStream(URL.java:1045)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.openStreamWithRetry(MetadataManagerImpl.java:373)
+	at oracle.fabric.common.metadata.MetadataManagerImpl.getInputStreamFromAbsoluteURL(MetadataManagerImpl.java:353)
+	... 41 more
+Caused by: oracle.mds.exception.MDSException: MDS-00054: O arquivo a ser carregado oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd não existe.
+	... 47 more
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/atacado/PedidoReserva/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
+ADVERTÊNCIA: Cannot resolve entity model for: http://service.ultra.com.br/infcorp/LogIntegration/v1
