@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="numeroPedido" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1">
+        <serviceConfig service="DevolucaoMercadoriaDBBPEL" expression="$in.parameters/tns:NotificarDevolucaoMercadoriaRequest/numeroPedido" operation="notificarDevolucaoMercadoria" outputDataType="integer" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>
