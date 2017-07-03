@@ -46,7 +46,7 @@
     <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
     <partnerLink name="etFulfillOrderJMSCriarReference" partnerLinkType="ns2:Posta_Mensagem_plt"
                  partnerRole="Posta_Mensagem_role"/>
-    <partnerLink name="RegistroLogCriarBPELReference" partnerLinkType="ns3:RegistroLogCriarBPELReference"
+    <partnerLink name="RegistroLogCriarBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
   </partnerLinks>
   <variables>

@@ -4,6 +4,9 @@
    <operation name="criarPedidoReserva" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
       <switch>
          <case executionType="sequential" name="CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL.criarPedidoReserva">
+            <action/>
+         </case>
+         <case executionType="sequential" name="CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL.criarPedidoReserva_2">
             <action>
                <invoke reference="CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL" operation="criarPedidoReserva">
                   <onReply>

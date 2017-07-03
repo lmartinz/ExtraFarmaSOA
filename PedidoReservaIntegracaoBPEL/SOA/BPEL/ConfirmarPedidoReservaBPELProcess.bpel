@@ -51,7 +51,7 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="confirmarpedidoreservabpelprocess_client" partnerLinkType="ns1:ConfirmarPedidoReservaBPELProcess" myRole="PedidoReservaPortType"/>
+    <partnerLink name="confirmarpedidoreservabpelprocess_client" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
     <partnerLink name="ConfirmaReservaPedidoRestReference" bpelx:wadl="yes"/>
     <partnerLink name="RegistroLOGBpelDReference" partnerLinkType="ns4:RegistroLOGBpelDReference"
                  partnerRole="execute_ptt"/>

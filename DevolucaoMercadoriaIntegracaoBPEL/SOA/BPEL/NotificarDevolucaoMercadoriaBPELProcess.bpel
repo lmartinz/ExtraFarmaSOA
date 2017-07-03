@@ -190,7 +190,8 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in DevolucaoMercadoriaBPELProcess.wsdl) -->
-    <receive name="receiveInput" partnerLink="DevolucaoMercadoriaDBBPEL" portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="DevolucaoMercadoriaDBBPEL" portType="ns1:DevolucaoMercadoriaPortType" operation="notificarDevolucaoMercadoria" variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="MetaInformacaovariable"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationNotificaDevolucaoMercadoriaToRTVDesc">
         <bpelx:annotation>
