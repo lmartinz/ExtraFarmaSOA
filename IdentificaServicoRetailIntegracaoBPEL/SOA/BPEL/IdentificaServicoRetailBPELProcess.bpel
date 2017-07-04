@@ -54,15 +54,13 @@
                  partnerRole="execute_ptt"/>
     <partnerLink name="RecebimentoNFCompraV1DReference" partnerLinkType="ns9:RecebimentoNFCompraV1DReference"
                  partnerRole="RecebimentoNFCompraPortType"/>
-    <partnerLink name="ConfirmarReservaPedidoDReference" partnerLinkType="ns10:ConfirmarReservaPedidoDReference"
-                 partnerRole="PedidoReservaPortType"/>
+    <partnerLink name="ConfirmarReservaPedidoDReference" partnerLinkType="ns10:PedidoReservaPortType_PLT"
+                 partnerRole="PedidoReservaPortType_Role"/>
   </partnerLinks>
   <variables>
     <variable name="ReceiveInput_Consume_Message_InputVariable" messageType="ns1:Consume_Message_msg"/>
     <variable name="inputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraRequest"/>
     <variable name="outputRecebimentoNFCompraV1" messageType="ns9:AutorizarRecebimentoNFCompraResponse"/>
-    <variable name="inputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaRequest"/>
-    <variable name="outputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaResponse"/>
   </variables>
   <sequence name="main">
     <receive name="ReceiveInput" createInstance="yes" partnerLink="etPOScheduleFromRFMJMSReference"
@@ -139,13 +137,16 @@
         <documentation>
           <![CDATA[ConfirmacaoReservaPedido]]>
         </documentation>
+        <condition>xp20:compare($ReceiveInput_Consume_Message_InputVariable.body/ns2:ribMessage/ns2:family,'FulfilOrdCfm') AND xp20:compare($ReceiveInput_Consume_Message_InputVariable.body/ns2:ribMessage/ns2:type, 'fulfilordcfmcre')</condition>
         <sequence name="FluxoRecebimentoNFCompra"
                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
       <scope name="RecebimentoNFCompra">
          <variables>
             <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns7:requestMessage"/>
             <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns7:requestMessage"/>
-         </variables>
+              <variable name="inputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaRequest"/>
+              <variable name="outputConfirmarReservaPedidoV1" messageType="ns10:ConfirmarPedidoReservaResponse"/>
+            </variables>
          <faultHandlers>
             <catchAll>
                <sequence>
@@ -190,7 +191,7 @@
                      <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
                   </bpelx:annotation>
                   <copy>
-                     <from>ora:doXSLTransformForDoc("../Transformations/Transformation_ConfirmarReservaPedido.xsl", $ReceiveInput_Consume_Message_InputVariable.body)</from>
+                     <from>ora:doXSLTransformForDoc("../Transformations/transformInputToConfirmarReservaPedido.xsl", $ReceiveInput_Consume_Message_InputVariable.body)</from>
                      <to variable="inputConfirmarReservaPedidoV1" part="parameters"/>
                   </copy>
                </assign>

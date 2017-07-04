@@ -22,6 +22,8 @@
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
           location="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1Wrapper1.wsdl"
+          importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etPOScheduleFromRFMJMSReference_jms.jca">
@@ -41,6 +43,9 @@
       </reference>
       <reference name="RecebimentoNFCompraV1DReference" ui:wsdlLocation="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
+      </reference>
+      <reference name="ConfirmarReservaPedidoDReference" ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper1.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </reference>
     </componentType>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
