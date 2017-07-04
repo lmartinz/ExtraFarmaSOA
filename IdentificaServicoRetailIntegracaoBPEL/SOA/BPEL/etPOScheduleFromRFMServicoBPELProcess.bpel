@@ -1,0 +1,199 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Tue Jul 04 17:33:40 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="etPOScheduleFromRFMServicoBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMServicoBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMServicoBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference"
+         xmlns:ns2="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns3="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+         xmlns:ns4="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns6="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference"
+          location="../WSDLs/etPOScheduleFromRFMJMSReference.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="etPOScheduleFromRFMJMSReference" partnerLinkType="ns1:Consume_Message_plt"
+                 myRole="Consume_Message_role"/>
+    <partnerLink name="RecebimentoNFCompraReference" partnerLinkType="ns3:RecebimentoNFCompraReference"
+                 partnerRole="RecebimentoNFCompraPortType"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns4:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable" messageType="ns1:Consume_Message_msg"/>
+    <variable name="inputRegistroLogBPEL" messageType="ns4:requestMessage"/>
+    <variable name="inputPostaMensagemErroRegistroLogBPEL" messageType="ns4:requestMessage"/>
+  </variables>
+  <sequence name="main">
+    <receive name="ReceiveInput" createInstance="yes" partnerLink="etPOScheduleFromRFMJMSReference"
+             portType="ns1:Consume_Message_ptt" operation="Consume_Message" variable="inputVariable"/>
+    <if name="IfFamilyPOSchedule">
+      <documentation>
+        <![CDATA[AutorizarRecebimentoNFCompra]]>
+      </documentation>
+      <condition>xp20:compare($inputVariable.body/ns2:ribMessage/ns2:family,'POSchedule') AND xp20:compare($inputVariable.body/ns2:ribMessage/ns2:type, 'poschedcre')</condition>
+      <scope name="ScopeAutorizarRecebimentoNFCompra">
+        <variables>
+          <variable name="inputAutorizarRecebimentoNFCompra" messageType="ns3:AutorizarRecebimentoNFCompraRequest"/>
+          <variable name="outputAutorizarRecebimentoNFCompra" messageType="ns3:AutorizarRecebimentoNFCompraResponse"/>
+        </variables>
+        <faultHandlers>
+          <catchAll>
+            <scope name="ScopeTratamentoMensagem">
+              <faultHandlers>
+                <catchAll>
+                  <throw name="Throw" faultName="bpelx:rollback"/>
+                </catchAll>
+              </faultHandlers>
+              <sequence name="SequenceTratamentoMensagem">
+                <assign name="AssignPayloadToRegistroErroLogBPEL">
+                  <copy>
+                    <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFlowId()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+                  </copy>
+                  <copy>
+                    <from>'RIB'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+                  </copy>
+                  <copy>
+                    <from>'LEGADO'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+                  </copy>
+                  <copy>
+                    <from>1</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+                  </copy>
+                  <copy>
+                    <from>oraext:get-content-as-string($inputVariable)</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Body</to>
+                  </copy>
+                  <copy>
+                    <from>xp20:current-dateTime()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>'etPOScheduleFromRFM'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemErroRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+                  </copy>
+                </assign>
+                <invoke name="postaMensagemErroRegistroLogBPEL"
+                        partnerLink="RegistroLogBPELReference" portType="ns4:execute_ptt" operation="execute"
+                        inputVariable="inputPostaMensagemErroRegistroLogBPEL" bpelx:invokeAsDetail="no"/>
+              </sequence>
+            </scope>
+          </catchAll>
+        </faultHandlers>
+        <sequence name="SequenceAutorizarRecebimentoNFCompra">
+          <sequence name="SequenceEnviaAutorizarRecebimentoNFCompra">
+            <assign name="TransformationAutorizarRecebimentoNFCompra">
+              <bpelx:annotation>
+                <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+              </bpelx:annotation>
+              <copy>
+                <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAutorizarRecebimentoNFCompra.xsl", $inputVariable.body)</from>
+                <to variable="inputAutorizarRecebimentoNFCompra" part="parameters"/>
+              </copy>
+            </assign>
+            <invoke name="AutorizarRecebimentoNFCompra" partnerLink="RecebimentoNFCompraReference"
+                    portType="ns3:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"
+                    inputVariable="inputAutorizarRecebimentoNFCompra"
+                    outputVariable="outputAutorizarRecebimentoNFCompra" bpelx:invokeAsDetail="no"/>
+          </sequence>
+          <sequence name="FluxoRegistraLog">
+            <assign name="AssignPayloadToRegistroLogBPEL">
+              <copy>
+                <from>$outputAutorizarRecebimentoNFCompra.parameters/ns6:id</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:idControle</to>
+              </copy>
+              <copy>
+                <from>'Return RecebimentoNFCompraIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:nomeServico</to>
+              </copy>
+              <copy>
+                <from>$outputAutorizarRecebimentoNFCompra.parameters/ns6:message</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:mensagem</to>
+              </copy>
+              <copy>
+                <from>$outputAutorizarRecebimentoNFCompra.parameters/ns6:success</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>'etPOScheduleFromRFM'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:usuario</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Body</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns5:Header/ns5:MetaInformacao/ns5:datahoraRequisicao</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns4:execute_ptt" operation="execute" inputVariable="inputRegistroLogBPEL"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </sequence>
+      </scope>
+      <else>
+        <sequence name="SequenceMsgDescartada">
+          <empty name="Empty"/>
+        </sequence>
+      </else>
+    </if>
+  </sequence>
+</process>
