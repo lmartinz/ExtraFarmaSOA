@@ -23,6 +23,8 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/CallbackConfirmarPedido"
+          location="WSDLs/CallbackConfirmarPedido.wsdl" importType="wsdl"/>
   <service name="PedidoReservaDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>

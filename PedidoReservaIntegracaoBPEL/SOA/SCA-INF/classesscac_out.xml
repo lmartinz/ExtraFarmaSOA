@@ -8,7 +8,31 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Error in getting XML input stream: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd does not exist.</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -28,6 +52,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -38,7 +88,23 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -58,6 +124,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -68,7 +160,15 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -88,27 +188,23 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -128,6 +224,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -138,7 +260,23 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -158,6 +296,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -168,7 +332,15 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -188,27 +360,23 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -228,6 +396,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -238,7 +432,23 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -258,6 +468,32 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
    <Fault>
@@ -268,7 +504,15 @@
       <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+      <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -285,80 +529,38 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</name>
       <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
+      <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
-      <fix/>
-      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
-      <fix/>
-      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
-      <fix/>
-      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
-      <fix/>
-      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</name>
+      <file>file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</name>
       <fix/>
       <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc>/ns:composite/ns:reference[@name='ConfirmaReservaPedidoRestReference']</loc>
-      <line>89</line>
+      <line>91</line>
       <col>56</col>
-      <file>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</file>
-      <name>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</name>
+      <file>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/composite.xml</file>
+      <name>/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/composite.xml</name>
       <fix/>
-      <msg>Reference ConfirmaReservaPedidoRestReference does not exist as wire target</msg>
+      <msg>A referência "ConfirmaReservaPedidoRestReference" não existe como destino da conexão</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -368,27 +570,75 @@
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
       <fix>Please check import location or element QNames.</fix>
-      <msg>Error loading schema from file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Error in getting XML input stream: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd does not exist.]</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLogErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>72</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>33</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "PostaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+      <fix>Please check import location or element QNames.</fix>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLogErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>72</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>33</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+      <fix>Please check import location or element QNames.</fix>
+      <msg>Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -422,26 +672,6 @@
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>113</line>
-      <col/>
-      <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>113</line>
-      <col/>
-      <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
       <line>123</line>
       <col/>
@@ -468,32 +698,56 @@
       <file>Mediators/PedidoReservaMediator.mplan</file>
       <name>Mediators/PedidoReservaMediator.mplan</name>
       <fix/>
-      <msg>Operation\Event "cancelarPedidoReserva" does not contain case. No operation\event will be executed\processed respectively.</msg>
+      <msg>A Operação\Evento "cancelarPedidoReserva" não contém ocorrência. Nenhum evento de operação será executado\processado respectivamente.</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
-      <line>32</line>
+      <line>37</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
       <fix>Please check import location or element QNames.</fix>
-      <msg>Error loading schema from file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl [Cause=Error in getting XML input stream: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd does not exist.]</msg>
+      <msg>Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}OrdemClienteType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [line#: 5]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [line#: 5]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/OrdemCliente.xsd [difference starting at line#:7]
+
+Global Type declaration/definition of name '{http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequestType' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [line#: 7]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [line#: 8]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:9]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/PedidoReservaEBMV1.xsd [difference starting at line#:10]
+
+Global element declaration/definition of name '{http://www.oracle.com/retail/integration/rib/RibMessages}messageData' are duplicated at the following locations:
+
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [line#: 19]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [line#: 18]
+There are at least two of them looking different:
+oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/ConfirmarPedidoReservaRibMessages.xsd [difference starting at line#:22]
+file:/Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/Schemas/CriarRibMessages.xsd [difference starting at line#:21]
+
+</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
-      <line>47</line>
+      <line>52</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
       <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\WSDLs\PedidoReservaV1Wrapper1.wsdl (The system cannot find the file specified)" near (FileInputStream.java:-2).</msg>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: /Users/lmartins/Documents/Sysgroup/Extrafarma/Workspace/AppExtraFarmaSOA/ExtraFarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/PedidoReservaV1Wrapper1.wsdl (No such file or directory)" near (FileInputStream.java:-2).</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
-      <line>47</line>
+      <line>52</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -503,7 +757,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='RegistroLOGBpelDReference']</loc>
-      <line>57</line>
+      <line>62</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -513,7 +767,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='varJson']</loc>
-      <line>70</line>
+      <line>75</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -521,219 +775,19 @@
       <msg>"element" is set to "ns2:Root-Element" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
    </Fault>
    <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='metaInformacao']</loc>
-      <line>73</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Make sure that value "ns5:MetaInformacao" is resolvable (check imports, value of "element").</fix>
-      <msg>"element" is set to "ns5:MetaInformacao" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>100</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>100</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>103</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>103</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Body" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]</loc>
       <line>106</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>106</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>109</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>109</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>112</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>112</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>115</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>115</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>118</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>118</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>121</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>121</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>124</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>124</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>127</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>127</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns5:Body"</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemErroRegistroLogBPEL']</loc>
-      <line>131</line>
+      <line>136</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -743,17 +797,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>137</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "outputVariable" does not have a part named "parameters" - check expression segment "$outputVariable.parameters"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>137</line>
+      <line>142</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -763,7 +807,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTranslateJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationInputToJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
-      <line>163</line>
+      <line>168</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -773,7 +817,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTranslateJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationInputToJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>164</line>
+      <line>169</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -783,7 +827,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTranslateJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='InvokeConfirmarReservaPedidoRest']</loc>
-      <line>178</line>
+      <line>183</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -793,7 +837,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']</loc>
-      <line>181</line>
+      <line>186</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
@@ -801,209 +845,19 @@
       <msg>Immediately enclosed bpel:scope "ScopeTratamentoMensagem" must have a unique name within the outer scope "ConfirmarPedidoReservaBPELProcess".</msg>
    </Fault>
    <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>201</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>201</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>204</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>204</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Body" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]</loc>
       <line>207</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>207</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>210</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>210</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>213</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>213</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>216</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>216</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>219</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>219</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>222</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>222</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>225</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>225</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>228</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix/>
-      <msg>Variable "inputPostaMensagemErroRegistroLogBPEL" does not have a part named "part1" - check expression segment "$inputPostaMensagemErroRegistroLogBPEL.part1"</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroSucessoLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>228</line>
-      <col/>
-      <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>
-      <fix>Check the type definition associated with the BPEL variable.</fix>
-      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns5:Body"</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemErroRegistroLogBPEL']</loc>
-      <line>232</line>
+      <line>237</line>
       <col/>
       <file>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/ConfirmarPedidoReservaBPELProcess.bpel</name>

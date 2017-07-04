@@ -165,7 +165,7 @@
             <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
           </bpelx:annotation>
           <copy>
-            <from>ora:doXSLTransformForDoc("../Transformations/Transformation_InputConfirmarToJson.xsl", $inputVariable.parameters)</from>
+            <from>ora:doXSLTransformForDoc("../Transformations/TransformationInputConfirmarToJson.xsl", $inputVariable.parameters)</from>
             <to variable="varJson"/>
           </copy>
         </assign>
@@ -174,7 +174,7 @@
             <bpelx:pattern>translate</bpelx:pattern>
           </bpelx:annotation>
           <copy>
-            <from>ora:doTranslateFromNative(string($inputVariable), 'Schemas/nxsd_schema1.xsd', 'Root-Element', 'DOM')</from>
+            <from>ora:doTranslateToNative($inputVariable, 'Schemas/nxsd_schema1.xsd', 'Root-Element', 'STRING')</from>
             <to>$varJson</to>
           </copy>
         </assign>
@@ -237,6 +237,20 @@
                  xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no"/>
       </sequence>
    </scope>
+    <assign name="AssignOK">
+      <copy>
+        <from expressionLanguage="javascript">process.outputRest.id</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:id</to>
+      </copy>
+      <copy>
+        <from expressionLanguage="javascript">process.outputRest.message</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:message</to>
+      </copy>
+      <copy>
+        <from expressionLanguage="javascript">process.outputRest.sucess</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:success</to>
+      </copy>
+    </assign>
     <!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="confirmarpedidoreservabpelprocess_client" portType="ns1:PedidoReservaPortType"
            operation="confirmarPedidoReserva" variable="outputVariable"/>
