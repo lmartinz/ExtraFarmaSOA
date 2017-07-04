@@ -1,5 +1,4 @@
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/rib/RibMessages" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:POScheduleDesc="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1">
-  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1" schemaLocation="POScheduleDesc.xsd"/>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/rib/RibMessages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="name" type="xs:string"/>
   <xs:element name="value" type="xs:string"/>
   <xs:element name="family" type="xs:string"/>
