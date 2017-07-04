@@ -14,24 +14,21 @@
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl"
+          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl"
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="WSDLs/RecebimentoNFCompraV1Wrapper1.wsdl" importType="wsdl"/>
-  <service name="recebimentonfcomprabpelprocess_client_ep"
-           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/ServicesRetail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl">
+          location="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="wsdl"/>
+  <service name="RecebimentoNFCompraDBBPEL"
+           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
-    <binding.ws port="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.endpoint(recebimentonfcomprabpelprocess_client_ep/RecebimentoNFCompraPort)">
-      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
-    </binding.ws>
+    <binding.direct/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.0.0.151013</property>
   <property name="compositeID" type="xs:string" many="false">de05aa12-9932-459e-903b-60b6d2bf24d5</property>
   <component name="RecebimentoNFCompraBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/RecebimentoNFCompraBPELProcess.bpel"/>
     <componentType>
-      <service name="recebimentonfcomprabpelprocess_client_ep"
-               ui:wsdlLocation="WSDLs/RecebimentoNFCompraV1Wrapper1.wsdl">
+      <service name="RecebimentoNFCompraDBBPEL" ui:wsdlLocation="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
       </service>
       <reference name="RecebimentoNFCompraRestReference">
@@ -65,7 +62,7 @@
     <target.uri>RegitroLOGBPEL</target.uri>
   </wire>
   <wire>
-    <source.uri>recebimentonfcomprabpelprocess_client_ep</source.uri>
-    <target.uri>RecebimentoNFCompraBPELProcess/recebimentonfcomprabpelprocess_client_ep</target.uri>
+    <source.uri>RecebimentoNFCompraDBBPEL</source.uri>
+    <target.uri>RecebimentoNFCompraBPELProcess/RecebimentoNFCompraDBBPEL</target.uri>
   </wire>
 </composite>

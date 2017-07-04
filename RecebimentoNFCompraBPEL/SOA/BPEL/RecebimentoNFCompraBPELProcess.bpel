@@ -58,8 +58,8 @@
     -->
     <partnerLink name="RecebimentoNFCompraRestReference" bpelx:wadl="yes"/>
     <partnerLink name="RegitroLOGBPEL" partnerLinkType="ns4:RegistroLogBPELReference" partnerRole="execute_ptt"/>
-    <partnerLink name="recebimentonfcomprabpelprocess_client_ep"
-                 partnerLinkType="ns1:recebimentonfcomprabpelprocess_client_ep" myRole="RecebimentoNFCompraPortType"/>
+    <partnerLink name="RecebimentoNFCompraDBBPEL" partnerLinkType="ns1:RecebimentoNFCompraDBBPEL"
+                 myRole="RecebimentoNFCompraPortType"/>
   </partnerLinks>
 
   <!-- 
@@ -70,15 +70,15 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
     <variable name="varJson" element="ns2:Root-Element"/>
     <variable name="outputJSON" bpelx:json="string"/>
     <variable name="inputPostaMensagemErroRegistroLogBPEL" messageType="ns4:requestMessage"/>
     <variable name="metaInformacao" element="ns5:MetaInformacao"/>
     <variable name="outputRecebimentoNFCompra" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
+    <variable name="inputVariable" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
+    <variable name="outputVariable" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
   </variables>
 
   <!-- 
@@ -91,7 +91,7 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in RecebimentoNFCompraBPELProcess.wsdl) -->
-    <receive name="receiveInput" partnerLink="recebimentonfcomprabpelprocess_client_ep" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="RecebimentoNFCompraDBBPEL" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="inputVariable" createInstance="yes"/>
     <scope name="ScopeJson">
       <faultHandlers>
         <catchAll>
@@ -164,8 +164,8 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputRecebimentoNFCompra.parameters/ns6:success</to>
               </copy>
             </assign>
-            <reply name="ReplyErro" partnerLink="recebimentonfcomprabpelprocess_client_ep"
-                   variable="outputRecebimentoNFCompra" portType="ns1:RecebimentoNFCompraPortType"
+            <reply name="ReplyErro" partnerLink="RecebimentoNFCompraDBBPEL"
+                   variable="outputVariable" portType="ns1:RecebimentoNFCompraPortType"
                    operation="autorizarRecebimentoNFCompra"/>
           </sequence>
         </catchAll>
@@ -176,7 +176,7 @@
             <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
           </bpelx:annotation>
           <copy>
-            <from>ora:doXSLTransformForDoc("../Transformations/Transformation_InputToJSON.xsl", $inputVariable.parameters)</from>
+            <from>ora:doXSLTransformForDoc("../Transformations/transformInputToJSON.xsl", $inputVariable.parameters)</from>
             <to variable="varJson"/>
           </copy>
         </assign>
@@ -248,6 +248,6 @@
    </scope>
       </sequence>
     </scope><!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="recebimentonfcomprabpelprocess_client_ep" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="RecebimentoNFCompraDBBPEL" portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra" variable="outputVariable"/>
   </sequence>
 </process>
