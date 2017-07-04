@@ -128,7 +128,7 @@
         </assign>
         <reply name="replyCatchOutput" partnerLink="TransferenciaMercadoriaLojaDBBPEL"
                variable="outputVariable"
-               portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja"/>
+               portType="ns1:TransferenciaMercadoriaLojaPortType" operation="cancelarTransferenciaMercadoriaLoja"/>
       </sequence>
     </catchAll>
   </faultHandlers>
