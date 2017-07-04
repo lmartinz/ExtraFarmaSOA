@@ -1,2 +1,7 @@
 
+*.DS_Store
+*.jar
+*.jdb
+*.jpg
+*.log
 .adf/META-INF/adf-config.xml
