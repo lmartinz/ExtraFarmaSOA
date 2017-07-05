@@ -24,6 +24,8 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="AtualizacaoPrecoMercadoriaIntegracaoBPEL/AtualizacaoPrecoMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="CriacaoTransferenciaMercadoriaCDIntegracaoBPEL/CriacaoTransferenciaMercadoriaCDIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
