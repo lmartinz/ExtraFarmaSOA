@@ -1,0 +1,113 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Wed Jul 05 10:18:24 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="AutorizarRecebimentoNFCompraBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/RecebimentoNFCompraIntegracaoBPEL/AutorizarRecebimentoNFCompraBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/RecebimentoNFCompraIntegracaoBPEL/AutorizarRecebimentoNFCompraBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://TargetNamespace.com/nxsdschema" xmlns:ns3="json"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns5="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://TargetNamespace.com/nxsdschema"
+          location="../Schemas/AutorizarRecebimentoNFCompraRest.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="../WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="RecebimentoNFCompraDBBPEL" partnerLinkType="ns1:RecebimentoNFCompraDBBPEL"
+                 myRole="RecebimentoNFCompraPortType"/>
+    <partnerLink name="AutorizarRecebimentoNFCompraRestReference" bpelx:wadl="yes"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
+    <variable name="requestJSON" type="xsd:string"/>
+    <variable name="transformationJSON" element="ns5:Root-Element"/>
+    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="outputVariable" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="Sequence1">
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:id</to>
+          </copy>
+          <copy>
+            <from>ora:getFaultAsString()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:message</to>
+          </copy>
+          <copy>
+            <from>1</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:success</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="RecebimentoNFCompraDBBPEL" variable="outputVariable"
+               portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main">
+    <receive name="receiveInput" createInstance="yes" partnerLink="RecebimentoNFCompraDBBPEL"
+             portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"
+             variable="inputVariable"/>
+    <sequence name="SequenceChamadaRestLegado">
+      <assign name="TransformationToJson">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAutorizarRecebimentoNFCompraRest.xsl", $inputVariable.parameters)</from>
+          <to variable="transformationJSON"/>
+        </copy>
+      </assign>
+      <assign name="TranslateToJSON">
+        <bpelx:annotation>
+          <bpelx:pattern>translate</bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doTranslateToNative($transformationJSON, 'Schemas/AutorizarRecebimentoNFCompraRest.xsd', 'Root-Element', 'STRING')</from>
+          <to>$requestJSON</to>
+        </copy>
+      </assign>
+      <invoke name="AutorizarRecebimentoNFCompraRestReference"
+              partnerLink="AutorizarRecebimentoNFCompraRestReference" bpelx:method="autorizarRecebimentoNFCompra" inputVariable="requestJSON" outputVariable="responseJSON"
+              bpelx:invokeAsDetail="no"/>
+    </sequence>
+    <reply name="replyOutput" partnerLink="RecebimentoNFCompraDBBPEL" variable="outputVariable"
+           portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"/>
+  </sequence>
+</process>

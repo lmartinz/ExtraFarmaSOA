@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>54</line>
+      <col/>
+      <file>BPEL/AutorizarRecebimentoNFCompraBPELProcess.bpel</file>
+      <name>BPEL/AutorizarRecebimentoNFCompraBPELProcess.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+</Faults>
