@@ -31,7 +31,8 @@
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ns5="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1">
+         xmlns:ns5="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1"
+         xmlns:ns6="http://www.oracle.com/retail/integration/rib/RibMessages">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +41,7 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
-  <import namespace="http://TargetNamespace.com/nxsdschema"
+  <import namespace="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1"
           location="../Schemas/AutorizarRecebimentoNFCompraRest.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
