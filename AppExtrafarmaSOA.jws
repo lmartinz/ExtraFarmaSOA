@@ -31,6 +31,7 @@
       <hash><url n="URL" path="PedidoTransferenciaMercadoriaIntegracaoBPEL/PedidoTransferenciaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="RecebimentoMercadoriaIntegracaoBPEL/RecebimentoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="RecebimentoNFCompraBPEL/RecebimentoNFCompraBPEL.jpr"/></hash>
+      <hash><url n="URL" path="RecebimentoNFCompraIntegracaoBPEL/RecebimentoNFCompraIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="TransferenciaMercadoriaLojaIntegracaoBPEL/TransferenciaMercadoriaLojaIntegracaoBPEL.jpr"/></hash>
    </list>
 </jws:workspace>
