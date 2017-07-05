@@ -1,0 +1,844 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/custom/bo/ExtOfShipInfoDesc/v1/ExtOfShipInfoDesc.xsd: oracle.mds.core.MetadataNotFoundException: MDS-00013: Nenhum metadado foi encontrado para o objeto de metadados "/apps/Extrafarma/custom/bo/ExtOfShipInfoDesc/v1/ExtOfShipInfoDesc.xsd" 
+MDS-00201: PDocument não encontrado no MetadataStore: [store-type=FileMetadataStore] </msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaRequest" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaResponse" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaRequest" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaResponse" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaRequest" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaResponse" is undefined [element = {http://service.ultra.com.br/fiscal/NotaFiscalSaidaMercadoria/v1}NotaFiscalSaidaMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/NotaFiscalSaidaMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotaFiscalSaidaMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/etShipInfoJMSReference.wsdl</file>
+      <name>/D:/GitRoot/ExtraFarmaSOA/NotaFiscalSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/etShipInfoJMSReference.wsdl</name>
+      <fix/>
+      <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:component[@name='NotaFiscalSaidaMercadoriaBPELProcess/notafiscalsaidamercadoriabpelprocess_client']</loc>
+      <line/>
+      <col/>
+      <file>D:\GitRoot\ExtraFarmaSOA\NotaFiscalSaidaMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\GitRoot\ExtraFarmaSOA\NotaFiscalSaidaMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>O serviço "notafiscalsaidamercadoriabpelprocess_client" exposto pelo componente "NotaFiscalSaidaMercadoriaBPELProcess" não é conectado a\usado por nenhum outro componente.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:reference[@name='NotaFiscalSaidaMercadoriaBPELProcess/NotaFiscalSaidaDBBPEL']</loc>
+      <line/>
+      <col/>
+      <file>D:\GitRoot\ExtraFarmaSOA\NotaFiscalSaidaMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\GitRoot\ExtraFarmaSOA\NotaFiscalSaidaMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>A referência "NotaFiscalSaidaMercadoriaBPELProcess/NotaFiscalSaidaDBBPEL" não existe como destino da conexão</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='MetaInformacaoVariable']</loc>
+      <line>66</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns5:MetaInformacao" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns5:MetaInformacao" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>73</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "datahoraRequisicao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "datahoraRequisicao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>78</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>78</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>78</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>78</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "mensagem" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>81</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "usuario" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>82</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>82</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>82</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>82</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "usuario" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>85</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "idControle" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "idControle" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>89</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "sistemaOrigem" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "sistemaOrigem" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "status" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "nomeServico" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>102</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>102</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>102</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>102</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "passoFluxo" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>106</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>106</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>106</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "MetaInformacao" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>106</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Please define this prefix in the BPEL source file.</fix>
+      <msg>Namespace prefix "ns8" qualifying "sistemaDestino" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyCatch']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>115</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "outputVariable" does not have a part named "NotaFiscalSaidaMercadoriaResponse" - check expression segment "$outputVariable.NotaFiscalSaidaMercadoriaResponse"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyCatch']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>115</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:out" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationNotaFiscalSaidaMercadoriaToShipInfoDesc']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>142</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "inputVariable" does not have a part named "NotaFiscalSaidaMercadoriaRequest" - check expression segment "$inputVariable.NotaFiscalSaidaMercadoriaRequest"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationNotaFiscalSaidaMercadoriaToShipInfoDesc']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>143</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "PostaMensagemeetShipInfoJMSReferenceToRMS_Posta_Mensagem_InputVariable" is resolvable (check imports, value of "variable").</fix>
+      <msg>"variable" is set to "PostaMensagemeetShipInfoJMSReferenceToRMS_Posta_Mensagem_InputVariable" on this &lt;bpel:to>  but it cannot be resolved (check value of "variable", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemXJMS']</loc>
+      <line>148</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "PostaMensagemeetShipInfoJMSReferenceToRMS_Posta_Mensagem_InputVariable" is resolvable (check imports, value of "inputVariable").</fix>
+      <msg>"inputVariable" is set to "PostaMensagemeetShipInfoJMSReferenceToRMS_Posta_Mensagem_InputVariable" on this &lt;bpel:invoke> activity but it cannot be resolved (check value of "inputVariable", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>154</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>154</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>158</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>158</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Body" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>162</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>162</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>166</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>166</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>170</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>170</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>174</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>174</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>178</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>178</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>182</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>182</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>186</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>186</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>190</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>190</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>198</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "outputVariable" does not have a part named "NotaFiscalSaidaMercadoriaResponse" - check expression segment "$outputVariable.NotaFiscalSaidaMercadoriaResponse"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>198</line>
+      <col/>
+      <file>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotaFiscalSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns6:out" cannot be resolved.</msg>
+   </Fault>
+</Faults>
