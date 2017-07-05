@@ -1,0 +1,494 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:import[@location='../../../SoaMds/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoriaWrapper.wsdl']</loc>
+      <line>20</line>
+      <col>167</col>
+      <file>D:\WorkDirDev\Extrafarma\AppExtrafarmaSOA\AtualizacaoPrecoMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\WorkDirDev\Extrafarma\AppExtrafarmaSOA\AtualizacaoPrecoMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>Falha na carga de wsdl "../../../SoaMds/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoriaWrapper.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/WorkDirDev/Extrafarma/AppExtrafarmaSOA/AtualizacaoPrecoMercadoriaIntegracaoBPEL/SOA/WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl</file>
+      <name>/D:/WorkDirDev/Extrafarma/AppExtrafarmaSOA/AtualizacaoPrecoMercadoriaIntegracaoBPEL/SOA/WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl</name>
+      <fix/>
+      <msg>Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/Schemas/AtualizacaoPrecoMercadoriaEBMV1.xsd: oracle.mds.core.MetadataNotFoundException: MDS-00013: Nenhum metadado foi encontrado para o objeto de metadados "/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/Schemas/AtualizacaoPrecoMercadoriaEBMV1.xsd" 
+MDS-00201: PDocument não encontrado no MetadataStore: [store-type=FileMetadataStore] </msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/WorkDirDev/Extrafarma/AppExtrafarmaSOA/AtualizacaoPrecoMercadoriaIntegracaoBPEL/SOA/WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl</file>
+      <name>/D:/WorkDirDev/Extrafarma/AppExtrafarmaSOA/AtualizacaoPrecoMercadoriaIntegracaoBPEL/SOA/WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl</name>
+      <fix/>
+      <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/base/bo/PrcChgDesc/v1}PrcChgDesc</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1}AtualizacaoPrecoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoria.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:component[@name='AtualizacaoPrecoMercadoriaBPELProcess/atualizacaoprecomercadoriabpelprocess_client']</loc>
+      <line/>
+      <col/>
+      <file>D:\WorkDirDev\Extrafarma\AppExtrafarmaSOA\AtualizacaoPrecoMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\WorkDirDev\Extrafarma\AppExtrafarmaSOA\AtualizacaoPrecoMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>O serviço "atualizacaoprecomercadoriabpelprocess_client" exposto pelo componente "AtualizacaoPrecoMercadoriaBPELProcess" não é conectado a\usado por nenhum outro componente.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>37</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Please check import location or element QNames.</fix>
+      <msg>Erro ao obter o fluxo de entrada XML: file:/D:/WorkDirDev/Extrafarma/SoaMds/apps/Extrafarma/Retail/Precificacao/AtualizacaoPrecoMercadoria/v1/WSDL/AtualizacaoPrecoMercadoriaWrapper.wsdl: D:\WorkDirDev\Extrafarma\SoaMds\apps\Extrafarma\Retail\Precificacao\AtualizacaoPrecoMercadoria\v1\WSDL\AtualizacaoPrecoMercadoriaWrapper.wsdl (O sistema não pode encontrar o arquivo especificado)</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][1]</loc>
+      <line>46</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check location "../WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
+      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "../WSDLs/EtEXFXPrcChgToRMSJMSReference.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>49</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check location "../Schemas/RibMessages.xsd" and import type "http://www.w3.org/2001/XMLSchema"</fix>
+      <msg>Cannot import type "http://www.w3.org/2001/XMLSchema" from location "../Schemas/RibMessages.xsd"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='atualizacaoprecomercadoriabpelprocess_client']</loc>
+      <line>58</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaPortType_PLT" is resolvable (check imports, value of "partnerLinkType").</fix>
+      <msg>"partnerLinkType" is set to "ns1:AtualizacaoPrecoMercadoriaPortType_PLT" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='EtEXFXPrcChgToRMSJMSReference']</loc>
+      <line>60</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns2:Posta_Mensagem_plt" is resolvable (check imports, value of "partnerLinkType").</fix>
+      <msg>"partnerLinkType" is set to "ns2:Posta_Mensagem_plt" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='RegistroLogBPELReference']</loc>
+      <line>62</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:RegistroLogBPELReference" is resolvable (check imports, value of "partnerLinkType").</fix>
+      <msg>"partnerLinkType" is set to "ns3:RegistroLogBPELReference" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='inputVariable']</loc>
+      <line>72</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaRequest" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns1:AtualizacaoPrecoMercadoriaRequest" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='outputVariable']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaResponse" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns1:AtualizacaoPrecoMercadoriaResponse" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='RegistroLogBPEL_execute_InputVariable']</loc>
+      <line>75</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:requestMessage" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns3:requestMessage" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='postaMensagemErroRegistroLogBPEL_execute_InputVariable']</loc>
+      <line>76</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:requestMessage" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns3:requestMessage" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='replyCatchOutput_atualizarPrecoMercadoria_OutputVariable']</loc>
+      <line>78</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "client:AtualizacaoPrecoMercadoriaBPELProcessResponseMessage" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "client:AtualizacaoPrecoMercadoriaBPELProcessResponseMessage" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='PostaMensagemetEXFXPrcChgToRMS_Posta_Mensagem_InputVariable']</loc>
+      <line>79</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns2:Posta_Mensagem_msg" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns2:Posta_Mensagem_msg" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='messageDataRib']</loc>
+      <line>80</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns9:PrcChgDesc" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns9:PrcChgDesc" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='postaMensagemErroRegistroLogBPEL']</loc>
+      <line>93</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='postaMensagemErroRegistroLogBPEL']</loc>
+      <line>93</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "inputVariable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:variable (via the attribute "inputVariable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='postaMensagemErroRegistroLogBPEL']</loc>
+      <line>93</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:execute_ptt" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns3:execute_ptt" on this &lt;bpel:invoke> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>97</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>97</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>97</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:AtualizacaoPrecoMercadoriaPortType" on this &lt;bpel:reply> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>112</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:receive> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>112</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:AtualizacaoPrecoMercadoriaPortType" on this &lt;bpel:receive> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>112</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:receive> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
+      <line>129</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
+      <line>129</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "inputVariable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:variable (via the attribute "inputVariable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
+      <line>129</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:execute_ptt" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns3:execute_ptt" on this &lt;bpel:invoke> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationAtualizaPrecoMercadoriaToRibMessage']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>138</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this node via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The node &lt;bpel:to> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemJMS']</loc>
+      <line>141</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that the attribute "partnerLink" is specified.</fix>
+      <msg>Attribute "partnerLink" is not set on this &lt;bpel:invoke> activity.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>150</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>150</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>150</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:AtualizacaoPrecoMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:AtualizacaoPrecoMercadoriaPortType" on this &lt;bpel:reply> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+</Faults>

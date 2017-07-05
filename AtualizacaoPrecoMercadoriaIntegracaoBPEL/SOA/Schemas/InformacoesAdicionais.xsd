@@ -1,0 +1,11 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1">
+  <xsd:complexType name="informacoesAdicionaisMercadoriaType">
+    <xsd:sequence>
+      <xsd:element name="codigoCustomizadoUDA" type="xsd:string"/>
+      <xsd:element name="valorCustomizadoUDA" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="informacoesAdicionaisMercadoriaLista" type="tns:informacoesAdicionaisMercadoriaType"/>
+</xsd:schema>

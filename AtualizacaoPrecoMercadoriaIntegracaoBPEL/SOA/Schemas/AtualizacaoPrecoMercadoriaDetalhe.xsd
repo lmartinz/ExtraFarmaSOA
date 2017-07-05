@@ -1,0 +1,13 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1">
+  <xsd:include schemaLocation="InformacoesAdicionais.xsd"/>
+  <xsd:complexType name="AtualizacaoPrecoMercadoriaDetalheType">
+    <xsd:sequence>
+      <xsd:element name="precoVarejoMercadoria" type="xsd:decimal"/>
+      <xsd:element name="dataInicioVigenciaPrecoMercadoria" type="xsd:dateTime"/>
+      <xsd:element name="dataFimVigenciaPrecoMercadoria" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AtualizacaoPrecoMercadoriaLista" type="tns:AtualizacaoPrecoMercadoriaDetalheType"/>
+</xsd:schema>

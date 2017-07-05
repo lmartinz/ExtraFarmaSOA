@@ -1,0 +1,27 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPrecoMercadoria/v1"
+            xmlns:tns1="http://service.ultra.com.br/precificacao/InformacoesAdicionais/v1">
+  <xsd:include schemaLocation="AtualizacaoPrecoMercadoriaDetalhe.xsd"/>
+  <xsd:include schemaLocation="InformacoesAdicionais.xsd"/>
+  <xsd:complexType name="AtualizacaoPrecoMercadoriaRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalDestino" type="xsd:int"/>
+      <xsd:element name="tipoLocalDestino" type="xsd:string"/>
+      <xsd:element name="codigoProduto" type="xsd:string"/>
+      <xsd:element name="tipoMudancaPreco" type="xsd:string"/>
+      <xsd:element name="AtualizacaoPrecoMercadoriaDetalheList" type="tns:AtualizacaoPrecoMercadoriaDetalheType"
+                   maxOccurs="unbounded" minOccurs="0"/>
+      <xsd:element name="InformacoesAdicionaisList" type="tns:informacoesAdicionaisMercadoriaType" maxOccurs="unbounded"
+                   minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AtualizacaoPrecoMercadoriaRequest" type="tns:AtualizacaoPrecoMercadoriaRequestType"/>
+  <xsd:element name="AtualizacaoPrecoMercadoriaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
