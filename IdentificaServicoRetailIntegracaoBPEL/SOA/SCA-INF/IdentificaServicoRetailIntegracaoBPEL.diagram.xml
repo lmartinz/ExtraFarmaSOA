@@ -29,11 +29,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="RegistroLogBPELReference">
-        <dgm:body borderWidth="2" arcRad="20" X="751" Y="168" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="658" Y="168" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="741" Y="161" width="156" height="98">
+        <dgm:shadow arcRad="20" X="648" Y="161" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="RegistroLogBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
@@ -43,11 +43,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="RecebimentoNFCompraReference">
-        <dgm:body borderWidth="2" arcRad="20" X="751" Y="286" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="658" Y="286" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="741" Y="279" width="156" height="98">
+        <dgm:shadow arcRad="20" X="648" Y="279" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="RecebimentoNFCompraReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
@@ -57,11 +57,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="PedidoReservaBPELReference">
-        <dgm:body borderWidth="2" arcRad="20" X="751" Y="26" width="136" height="108">
+        <dgm:body borderWidth="2" arcRad="20" X="658" Y="26" width="136" height="108">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="741" Y="19" width="156" height="122">
+        <dgm:shadow arcRad="20" X="648" Y="19" width="156" height="122">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PedidoReservaBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
@@ -73,12 +73,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="etFulfilOrdCfmServicoBPELProcess">
-        <dgm:body borderWidth="2" arcRad="20" X="460" Y="102" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="398" Y="102" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="450" Y="95" width="150" height="102">
+        <dgm:shadow arcRad="20" X="388" Y="95" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="etFulfilOrdCfmJMSReference" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etFulfilOrdCfmJMSReference#wsdl.interface(Consume_Message_ptt)"/>
@@ -87,12 +87,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="etPOScheduleFromRFMServicoBPELProcess">
-        <dgm:body borderWidth="2" arcRad="20" X="460" Y="226" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="398" Y="226" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="450" Y="219" width="150" height="102">
+        <dgm:shadow arcRad="20" X="388" Y="219" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="etPOScheduleFromRFMJMSReference" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
@@ -101,40 +101,40 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="etFulfilOrdCfmServicoBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
-        <dgm:gSegment X1="600" Y1="127" X2="639" Y2="127"/>
-        <dgm:gSegment X1="639" Y1="127" X2="639" Y2="178"/>
-        <dgm:gSegment X1="639" Y1="178" X2="741" Y2="178"/>
+        <dgm:gSegment X1="538" Y1="127" X2="577" Y2="127"/>
+        <dgm:gSegment X1="577" Y1="127" X2="577" Y2="178"/>
+        <dgm:gSegment X1="577" Y1="178" X2="648" Y2="178"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="etPOScheduleFromRFMJMSReference" target="etPOScheduleFromRFMServicoBPELProcess/etPOScheduleFromRFMJMSReference" width="2">
-        <dgm:gSegment X1="168" Y1="251" X2="450" Y2="251"/>
+        <dgm:gSegment X1="168" Y1="251" X2="388" Y2="251"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="etFulfilOrdCfmJMSReference" target="etFulfilOrdCfmServicoBPELProcess/etFulfilOrdCfmJMSReference" width="2">
-        <dgm:gSegment X1="168" Y1="127" X2="450" Y2="127"/>
+        <dgm:gSegment X1="168" Y1="127" X2="388" Y2="127"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference" target="PedidoReservaBPELReference" width="2">
-        <dgm:gSegment X1="600" Y1="152" X2="624" Y2="152"/>
-        <dgm:gSegment X1="624" Y1="152" X2="624" Y2="36"/>
-        <dgm:gSegment X1="624" Y1="36" X2="741" Y2="36"/>
+        <dgm:gSegment X1="538" Y1="152" X2="562" Y2="152"/>
+        <dgm:gSegment X1="562" Y1="152" X2="562" Y2="36"/>
+        <dgm:gSegment X1="562" Y1="36" X2="648" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="etPOScheduleFromRFMServicoBPELProcess/RecebimentoNFCompraReference" target="RecebimentoNFCompraReference" width="2">
-        <dgm:gSegment X1="600" Y1="251" X2="639" Y2="251"/>
-        <dgm:gSegment X1="639" Y1="251" X2="639" Y2="296"/>
-        <dgm:gSegment X1="639" Y1="296" X2="741" Y2="296"/>
+        <dgm:gSegment X1="538" Y1="251" X2="577" Y2="251"/>
+        <dgm:gSegment X1="577" Y1="251" X2="577" Y2="296"/>
+        <dgm:gSegment X1="577" Y1="296" X2="648" Y2="296"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="etPOScheduleFromRFMServicoBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
-        <dgm:gSegment X1="600" Y1="276" X2="624" Y2="276"/>
-        <dgm:gSegment X1="624" Y1="276" X2="624" Y2="178"/>
-        <dgm:gSegment X1="624" Y1="178" X2="741" Y2="178"/>
+        <dgm:gSegment X1="538" Y1="276" X2="562" Y2="276"/>
+        <dgm:gSegment X1="562" Y1="276" X2="562" Y2="178"/>
+        <dgm:gSegment X1="562" Y1="178" X2="648" Y2="178"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
