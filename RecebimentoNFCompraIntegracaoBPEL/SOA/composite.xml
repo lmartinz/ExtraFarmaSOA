@@ -12,12 +12,12 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl"
-          importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
           location="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl"
+          importType="wsdl"/>
   <service name="RecebimentoNFCompraDBBPEL"
-           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl">
+           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
     <binding.direct/>
   </service>

@@ -2,7 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
             xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
-  <xsd:include schemaLocation="DadoFiscalDetalhe.xsd"/>
+  <xsd:include schemaLocation="../Schemas/DadoFiscalDetalhe.xsd"/>
   <xsd:complexType name="DadoFiscalClienteType">
     <xsd:sequence>
       <xsd:element name="DadosFiscaisDetalheList" type="tns:DadoFiscalDetalheType" maxOccurs="unbounded" minOccurs="0"/>

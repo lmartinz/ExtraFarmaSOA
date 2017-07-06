@@ -1,4 +1,4 @@
-<adapter-config name="etFulfillOrderJMSCriarReference" adapter="jms" wsdlLocation="../WSDLs/etFulfillOrderJMSCriarReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+<adapter-config name="etFulfillOrderJMSReference" adapter="jms" wsdlLocation="../WSDLs/etFulfillOrderJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
   <connection-factory location="eis/wls/Topic" UIJmsProvider="THIRDPARTY"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">

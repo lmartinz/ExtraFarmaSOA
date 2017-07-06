@@ -7,12 +7,20 @@
                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
                 xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
-                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd">
+                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+                xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1"
+                xmlns:ns6="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdPmtDesc/v1"
+                xmlns:ns9="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdCustDesc/v1"
+                xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1"
+                xmlns:ns4="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdPmtDesc/v1"
+                xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1"
+                xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1"
+                xmlns:ns11="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
          <oracle-xsl-mapper:source type="WSDL">
-            <oracle-xsl-mapper:schema location="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl"/>
+            <oracle-xsl-mapper:schema location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl"/>
             <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
          </oracle-xsl-mapper:source>
       </oracle-xsl-mapper:mapSources>

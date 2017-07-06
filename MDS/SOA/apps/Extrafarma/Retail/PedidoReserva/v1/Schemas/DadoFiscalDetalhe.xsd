@@ -2,7 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
             xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
-  <xsd:include schemaLocation="Pagamento.xsd"/>          
+  <xsd:include schemaLocation="../Schemas/Pagamento.xsd"/>          
   <xsd:complexType name="DadoFiscalDetalheType">
     <xsd:sequence>
       <xsd:element name="cpf" type="xsd:string"/>

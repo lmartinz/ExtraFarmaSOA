@@ -3,7 +3,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/ns:composite/ns:import[@location='WSDLs/CallbackConfirmarPedido.wsdl']</loc>
-      <line>27</line>
+      <line>23</line>
       <col>76</col>
       <file>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</file>
       <name>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</name>
@@ -15,18 +15,18 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
-      <msg>Error in getting XML input stream: oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd: oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/FulfilOrdColDesc.xsd does not exist.</msg>
+      <msg>Error in getting XML input stream: oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsddemCliente.xsd: oracle.mds.exception.MDSException: MDS-00054: The file to be loaded oramds:/apps/Extrafarma/Retail/PedidoReserva/Schemas/OrdemCliente.xsddemCliente.xsd does not exist.</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequest</msg>
    </Fault>
@@ -35,8 +35,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
@@ -45,8 +45,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -55,8 +55,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaRequest</msg>
    </Fault>
@@ -65,8 +65,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
@@ -75,8 +75,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -85,8 +85,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
@@ -95,8 +95,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
    </Fault>
@@ -105,8 +105,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -115,8 +115,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
    </Fault>
@@ -125,8 +125,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequest</msg>
    </Fault>
@@ -135,8 +135,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
@@ -145,8 +145,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -155,8 +155,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaRequest</msg>
    </Fault>
@@ -165,8 +165,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
@@ -175,8 +175,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -185,8 +185,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
@@ -195,8 +195,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
    </Fault>
@@ -205,8 +205,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -215,8 +215,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
    </Fault>
@@ -225,8 +225,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaRequest</msg>
    </Fault>
@@ -235,8 +235,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CriarPedidoReservaResponse</msg>
    </Fault>
@@ -245,8 +245,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CriarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -255,8 +255,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaRequest</msg>
    </Fault>
@@ -265,8 +265,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/atacado/PedidoReserva/v1}CancelarPedidoReservaResponse</msg>
    </Fault>
@@ -275,8 +275,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "CancelarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -285,8 +285,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
@@ -295,8 +295,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://schemas.datacontract.org/2004/07/Wsdl.Integration}RetornoServico</msg>
    </Fault>
@@ -305,8 +305,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "ConfirmarPedidoReservaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
    </Fault>
@@ -315,8 +315,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</file>
-      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl</name>
+      <file>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl</name>
       <fix/>
       <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
    </Fault>
@@ -355,15 +355,15 @@
       <loc/>
       <line/>
       <col/>
-      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</file>
-      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSCriarReference.wsdl</name>
+      <file>file:/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSReference.wsdl</file>
+      <name>/C:/Users/Vinicius/Dropbox/Resource/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/SOA/WSDLs/etFulfillOrderJMSReference.wsdl</name>
       <fix/>
       <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc>/ns:composite/ns:reference[@name='ConfirmaReservaPedidoRestReference']</loc>
-      <line>91</line>
+      <line>87</line>
       <col>56</col>
       <file>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</file>
       <name>C:\Users\Vinicius\Dropbox\Resource\AppExtrafarmaSOA\PedidoReservaIntegracaoBPEL\SOA\composite.xml</name>
@@ -373,7 +373,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
-      <line>33</line>
+      <line>37</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -383,7 +383,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import']</loc>
-      <line>44</line>
+      <line>48</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -393,7 +393,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='PedidoReservaDBBPEL']</loc>
-      <line>46</line>
+      <line>50</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -402,18 +402,8 @@
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='etFulfillOrderJMSCriarReference']</loc>
-      <line>48</line>
-      <col/>
-      <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
-      <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix>Make sure that value "ns2:Posta_Mensagem_plt" is resolvable (check imports, value of "partnerLinkType").</fix>
-      <msg>"partnerLinkType" is set to "ns2:Posta_Mensagem_plt" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='RegistroLogCriarBPELReference']</loc>
-      <line>50</line>
+      <line>52</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -422,18 +412,18 @@
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable']</loc>
-      <line>53</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='etFulfillOrderJMSReference']</loc>
+      <line>54</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix>Make sure that value "ns2:Posta_Mensagem_msg" is resolvable (check imports, value of "messageType").</fix>
-      <msg>"messageType" is set to "ns2:Posta_Mensagem_msg" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+      <fix>Make sure that value "ns8:Posta_Mensagem_plt" is resolvable (check imports, value of "partnerLinkType").</fix>
+      <msg>"partnerLinkType" is set to "ns8:Posta_Mensagem_plt" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='RegistroLogBPEL_execute_InputVariable']</loc>
-      <line>54</line>
+      <line>57</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -443,7 +433,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='PostaMensagemErroRegistroLogBPEL_execute_InputVariable']</loc>
-      <line>55</line>
+      <line>58</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -453,7 +443,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='inputVariable']</loc>
-      <line>56</line>
+      <line>59</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -463,7 +453,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='outputVariable']</loc>
-      <line>57</line>
+      <line>60</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -471,9 +461,19 @@
       <msg>"messageType" is set to "ns1:CriarPedidoReservaResponse" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
    </Fault>
    <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='PostaMensagemetReceivingJMS']</loc>
+      <line>61</line>
+      <col/>
+      <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
+      <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns8:Posta_Mensagem_msg" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns8:Posta_Mensagem_msg" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLogErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemErroRegistroLogBPEL']</loc>
-      <line>77</line>
+      <line>81</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -483,7 +483,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLogErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemErroRegistroLogBPEL']</loc>
-      <line>77</line>
+      <line>81</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -493,7 +493,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLogErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemErroRegistroLogBPEL']</loc>
-      <line>77</line>
+      <line>81</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -503,7 +503,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
-      <line>87</line>
+      <line>91</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -513,7 +513,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
-      <line>87</line>
+      <line>91</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -523,7 +523,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
-      <line>87</line>
+      <line>91</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -533,7 +533,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
-      <line>93</line>
+      <line>97</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -543,7 +543,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
-      <line>93</line>
+      <line>97</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -553,7 +553,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
-      <line>93</line>
+      <line>97</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -563,7 +563,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationCriarPedidoReservaToEtFulfillOrder']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>101</line>
+      <line>105</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -573,7 +573,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemetReceivingJMS']</loc>
-      <line>107</line>
+      <line>110</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -583,7 +583,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemetReceivingJMS']</loc>
-      <line>107</line>
+      <line>110</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -593,17 +593,17 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='PostaMensagemetReceivingJMS']</loc>
-      <line>107</line>
+      <line>110</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
-      <fix>Make sure that value "ns2:Posta_Mensagem_ptt" is resolvable (check imports, value of "portType").</fix>
-      <msg>"portType" is set to "ns2:Posta_Mensagem_ptt" on this &lt;bpel:invoke> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+      <fix>Make sure that value "ns8:Posta_Mensagem_ptt" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns8:Posta_Mensagem_ptt" on this &lt;bpel:invoke> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
-      <line>118</line>
+      <line>121</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -613,7 +613,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
-      <line>118</line>
+      <line>121</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -623,7 +623,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='RegistroLogBPEL']</loc>
-      <line>118</line>
+      <line>121</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -633,7 +633,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='Reply']</loc>
-      <line>127</line>
+      <line>130</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -643,7 +643,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='Reply']</loc>
-      <line>127</line>
+      <line>130</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>
@@ -653,7 +653,7 @@
    <Fault>
       <severity>error</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='Reply']</loc>
-      <line>127</line>
+      <line>130</line>
       <col/>
       <file>BPEL/CriarPedidoReservaBPELProcess.bpel</file>
       <name>BPEL/CriarPedidoReservaBPELProcess.bpel</name>

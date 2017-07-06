@@ -11,5 +11,5 @@
     <plnk:partnerLinkType name="PedidoReservaDBBPEL">
         <plnk:role name="PedidoReservaPortType" portType="tns:PedidoReservaPortType"/>
     </plnk:partnerLinkType>
-    <wsdl:import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="oramds:/apps/Extrafarma/Retail/PedidoReserva/WSDLs/PedidoReservaV1.wsdl"/>
+    <wsdl:import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl"/>
 </wsdl:definitions>

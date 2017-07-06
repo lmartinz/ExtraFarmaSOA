@@ -16,7 +16,7 @@
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
          <oracle-xsl-mapper:source type="WSDL">
-            <oracle-xsl-mapper:schema location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/WSDLs/RecebimentoNFCompraV1.wsdl"/>
+            <oracle-xsl-mapper:schema location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl"/>
             <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
          </oracle-xsl-mapper:source>
       </oracle-xsl-mapper:mapSources>

@@ -30,7 +30,11 @@
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSCriarReference"
          xmlns:ns3="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1"
+         xmlns:ns5="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
+         xmlns:ns8="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,17 +48,17 @@
           ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
-    <partnerLink name="etFulfillOrderJMSCriarReference" partnerLinkType="ns2:Posta_Mensagem_plt"
-                 partnerRole="Posta_Mensagem_role"/>
     <partnerLink name="RegistroLogCriarBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="etFulfillOrderJMSReference" partnerLinkType="ns8:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
   </partnerLinks>
   <variables>
-    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="inputVariable" messageType="ns1:CriarPedidoReservaRequest"/>
     <variable name="outputVariable" messageType="ns1:CriarPedidoReservaResponse"/>
+    <variable name="PostaMensagemetReceivingJMS" messageType="ns8:Posta_Mensagem_msg"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -98,13 +102,13 @@
         </bpelx:annotation>
         <copy>
           <from>ora:doXSLTransformForDoc("../Transformations/transformCriarPedidoReservaToPostaMensagem.xsl", $inputVariable.parameters)</from>
-          <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
+          <to variable="PostaMensagemetReceivingJMS" part="body"/>
         </copy>
       </assign>
       <invoke name="PostaMensagemetReceivingJMS"
-              partnerLink="etFulfillOrderJMSCriarReference" portType="ns2:Posta_Mensagem_ptt"
-              operation="Posta_Mensagem" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable"
-              bpelx:invokeAsDetail="no"/>
+              partnerLink="etFulfillOrderJMSReference" portType="ns8:Posta_Mensagem_ptt"
+              operation="Posta_Mensagem"
+              inputVariable="PostaMensagemetReceivingJMS" bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
