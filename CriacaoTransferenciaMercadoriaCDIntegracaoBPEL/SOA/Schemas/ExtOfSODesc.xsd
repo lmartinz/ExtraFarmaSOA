@@ -1,0 +1,38 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ExtOfSODesc">
+        <xs:complexType>
+            <xs:sequence>
+			    <xs:element minOccurs="0" name="tsf_reason_code" type="number10">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Reason of transfer</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+			    <xs:element minOccurs="0" name="tsf_reason_desc" type="varchar250">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Description's reason of transfer</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:simpleType name="number10">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits count 15.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar250">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 10 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

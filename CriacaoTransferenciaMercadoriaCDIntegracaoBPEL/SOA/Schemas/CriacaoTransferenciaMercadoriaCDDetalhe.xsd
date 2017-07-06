@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://service.ultra.com.br/logistica/CriacaoTransferenciaMercadoriaCDRest/v1"
+            targetNamespace="http://service.ultra.com.br/logistica/CriacaoTransferenciaMercadoriaCDRest/v1" elementFormDefault="qualified">
+  <xsd:element name="exampleElement">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>
