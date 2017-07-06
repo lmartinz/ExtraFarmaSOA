@@ -11,20 +11,19 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1Wrapper.wsdl"
-          importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/CallbackConfirmarPedido"
-          location="WSDLs/CallbackConfirmarPedido.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference"
           location="WSDLs/etFulfillOrderJMSReference.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
+          importType="wsdl"/>
   <service name="PedidoReservaDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
@@ -39,12 +38,16 @@
                ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </service>
-      <reference name="ConfirmarPedidoReservaBPELProcess.confirmarpedidoreservabpelprocess_client"
-                 ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+      <reference name="CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </reference>
-      <reference name="CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL"
-                 ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+      <reference name="CancelarPedidoReservaBPELProcess.PedidoReservaDBBPEL"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
+      </reference>
+      <reference name="ConfirmarPedidoReservaBPELProcess.PedidoReservaDBBPEL"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </reference>
     </componentType>
@@ -53,10 +56,10 @@
     <implementation.bpel src="BPEL/CriarPedidoReservaBPELProcess.bpel"/>
     <componentType>
       <service name="PedidoReservaDBBPEL"
-               ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </service>
-      <reference name="RegistroLogCriarBPELReference"
+      <reference name="RegistroLogBPELReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
@@ -65,18 +68,39 @@
       </reference>
     </componentType>
   </component>
-  <component name="ConfirmarPedidoReservaBPELProcess" version="2.0">
-    <implementation.bpel src="BPEL/ConfirmarPedidoReservaBPELProcess.bpel"/>
+  <component name="CancelarPedidoReservaBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/CancelarPedidoReservaBPELProcess.bpel"/>
     <componentType>
-      <service name="confirmarpedidoreservabpelprocess_client" ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+      <service name="PedidoReservaDBBPEL"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </service>
-      <reference name="RegistroLOGBpelDReference" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
+      <reference name="etFulfillOrderJMSReference" ui:wsdlLocation="WSDLs/etFulfillOrderJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+      </reference>
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
     </componentType>
   </component>
-  <reference name="RegistroLogCriarBPELReference"
+  <component name="ConfirmarPedidoReservaBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/ConfirmarPedidoReservaBPELProcess.bpel"/>
+    <componentType>
+      <service name="PedidoReservaDBBPEL"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
+      </service>
+      <reference name="ConfirmaReservaPedidoRestReference">
+        <interface.wadl interface="WADLs/ConfirmaReservaPedidoRestReference.wadl"/>
+      </reference>
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
+        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+      </reference>
+    </componentType>
+  </component>
+  <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
     <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
@@ -88,14 +112,6 @@
     <interface.wadl interface="WADLs/ConfirmaReservaPedidoRestReference.wadl"/>
     <binding.rest config="WADLs/ConfirmaReservaPedidoRestReference.wadl" location="http://localhost"/>
   </reference>
-  <reference name="RegistroLOGBpelDReference"
-             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
-    <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true">
-      <property name="java.naming.provider.url"></property>
-    </binding.direct>
-  </reference>
   <reference name="etFulfillOrderJMSReference" ui:wsdlLocation="WSDLs/etFulfillOrderJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
     <binding.jca config="Adapters/etFulfillOrderJMSReference_jms.jca"/>
@@ -105,16 +121,8 @@
     <target.uri>PedidoReservaMediator/PedidoReservaMediator</target.uri>
   </wire>
   <wire>
-    <source.uri>CriarPedidoReservaBPELProcess/RegistroLogCriarBPELReference</source.uri>
-    <target.uri>RegistroLogCriarBPELReference</target.uri>
-  </wire>
-  <wire>
-    <source.uri>PedidoReservaMediator/ConfirmarPedidoReservaBPELProcess.confirmarpedidoreservabpelprocess_client</source.uri>
-    <target.uri>ConfirmarPedidoReservaBPELProcess/confirmarpedidoreservabpelprocess_client</target.uri>
-  </wire>
-  <wire>
-    <source.uri>ConfirmarPedidoReservaBPELProcess/RegistroLOGBpelDReference</source.uri>
-    <target.uri>RegistroLOGBpelDReference</target.uri>
+    <source.uri>CriarPedidoReservaBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
   <wire>
     <source.uri>PedidoReservaMediator/CriarPedidoReservaBPELProcess.PedidoReservaDBBPEL</source.uri>
@@ -123,5 +131,29 @@
   <wire>
     <source.uri>CriarPedidoReservaBPELProcess/etFulfillOrderJMSReference</source.uri>
     <target.uri>etFulfillOrderJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PedidoReservaMediator/CancelarPedidoReservaBPELProcess.PedidoReservaDBBPEL</source.uri>
+    <target.uri>CancelarPedidoReservaBPELProcess/PedidoReservaDBBPEL</target.uri>
+  </wire>
+  <wire>
+    <source.uri>CancelarPedidoReservaBPELProcess/etFulfillOrderJMSReference</source.uri>
+    <target.uri>etFulfillOrderJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>CancelarPedidoReservaBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PedidoReservaMediator/ConfirmarPedidoReservaBPELProcess.PedidoReservaDBBPEL</source.uri>
+    <target.uri>ConfirmarPedidoReservaBPELProcess/PedidoReservaDBBPEL</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConfirmarPedidoReservaBPELProcess/ConfirmaReservaPedidoRestReference</source.uri>
+    <target.uri>ConfirmaReservaPedidoRestReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConfirmarPedidoReservaBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
 </composite>

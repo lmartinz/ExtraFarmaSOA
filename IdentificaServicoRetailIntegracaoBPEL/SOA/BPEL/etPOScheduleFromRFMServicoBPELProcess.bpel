@@ -47,7 +47,7 @@
   <partnerLinks>
     <partnerLink name="etPOScheduleFromRFMJMSReference" partnerLinkType="ns1:Consume_Message_plt"
                  myRole="Consume_Message_role"/>
-    <partnerLink name="RecebimentoNFCompraReference" partnerLinkType="ns3:RecebimentoNFCompraReference"
+    <partnerLink name="RecebimentoNFCompraReference" partnerLinkType="ns3:RecebimentoNFCompraDBBPEL"
                  partnerRole="RecebimentoNFCompraPortType"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns4:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
@@ -64,7 +64,7 @@
       <documentation>
         <![CDATA[AutorizarRecebimentoNFCompra]]>
       </documentation>
-      <condition>xp20:compare($inputVariable.body/ns2:ribMessage/ns2:family,'POSchedule') AND xp20:compare($inputVariable.body/ns2:ribMessage/ns2:type, 'poschedcre')</condition>
+      <condition>oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:family,'POSchedule') and oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:type,'poschedcre')</condition>
       <scope name="ScopeAutorizarRecebimentoNFCompra">
         <variables>
           <variable name="inputAutorizarRecebimentoNFCompra" messageType="ns3:AutorizarRecebimentoNFCompraRequest"/>

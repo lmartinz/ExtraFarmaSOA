@@ -123,7 +123,7 @@
           <sequence>
             <assign name="AssignPayloadToRegistroErroLogBPEL">
               <copy>
-                <from>'DevolucaoMercadoriaBPELErro'</from>
+                <from>'NotificarDevolucaoMercadoriaBPELErro'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:passoFluxo</to>
               </copy>
               <copy>

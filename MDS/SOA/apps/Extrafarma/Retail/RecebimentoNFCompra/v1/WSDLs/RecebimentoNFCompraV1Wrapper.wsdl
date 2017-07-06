@@ -13,10 +13,4 @@
         <plnk:role name="RecebimentoNFCompraPortType" portType="tns:RecebimentoNFCompraPortType"/>
     </plnk:partnerLinkType>
     <wsdl:import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1" location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl"/>
-    <wsdl:types>
-        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1"
-                 schemaLocation="../Schemas/AutorizarRecebimentoNFCompraRest.xsd"/>
-        </xsd:schema>
-    </wsdl:types>
 </wsdl:definitions>

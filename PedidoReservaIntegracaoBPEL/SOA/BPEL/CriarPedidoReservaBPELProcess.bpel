@@ -34,7 +34,8 @@
          xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1"
          xmlns:ns5="http://www.oracle.com/retail/integration/rib/RibMessages"
          xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
-         xmlns:ns8="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference">
+         xmlns:ns8="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference"
+         xmlns:ns9="http://canonico.ultra.com.br/infcorp/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,11 +45,17 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
-          location="../WSDLs/PedidoReservaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="../../../MDS/SOA/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
-    <partnerLink name="RegistroLogCriarBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
     <partnerLink name="etFulfillOrderJMSReference" partnerLinkType="ns8:Posta_Mensagem_plt"
                  partnerRole="Posta_Mensagem_role"/>
@@ -58,15 +65,37 @@
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="inputVariable" messageType="ns1:CriarPedidoReservaRequest"/>
     <variable name="outputVariable" messageType="ns1:CriarPedidoReservaResponse"/>
-    <variable name="PostaMensagemetReceivingJMS" messageType="ns8:Posta_Mensagem_msg"/>
+    <variable name="PostaMensagemetEtFulfillOrderJMS" messageType="ns8:Posta_Mensagem_msg"/>
+    <variable name="MetaInformacao" element="ns4:MetaInformacao"/>
+    <variable name="CriarPedidoReservaFault" messageType="ns1:CriarPedidoReservaFaultMsg"/>
   </variables>
   <faultHandlers>
     <catchAll>
       <sequence name="SequenceTratamentoMensagem">
-        <scope name="Scope1">
+        <scope name="ScopeRegistraLogErro">
           <faultHandlers>
             <catchAll>
-              <empty name="Empty"/>
+              <sequence name="SequenceFault">
+                <assign name="AssignFault">
+                  <copy>
+                    <from>'ERRO_DE_SISTEMA'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarPedidoReservaFault.CriarPedidoReservaFault/ns9:tipo</to>
+                  </copy>
+                  <copy>
+                    <from> '500'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarPedidoReservaFault.CriarPedidoReservaFault/ns9:codigo</to>
+                  </copy>
+                  <copy>
+                    <from>'Ocorreu um erro no envio da mensagem ao Retail e no Registro de Log.'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarPedidoReservaFault.CriarPedidoReservaFault/ns9:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarPedidoReservaFault.CriarPedidoReservaFault/ns9:detalhe</to>
+                  </copy>
+                </assign>
+                <throw name="Throw" faultName="ns1:CriarPedidoReservaFault" faultVariable="CriarPedidoReservaFault"/>
+              </sequence>
             </catchAll>
           </faultHandlers>
           <sequence name="FluxoRegistraLogErro">
@@ -75,9 +104,45 @@
                 <from>'PedidoReservaRestHTTP'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
               </copy>
+              <copy>
+                <from>'CriarPedidoReservaBPELErro'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacao/ns4:usuario</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacao/ns4:idControle</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacao/ns4:sistemaOrigem</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+              </copy>
             </assign>
             <invoke name="PostaMensagemErroRegistroLogBPEL"
-                    partnerLink="RegistroLogCriarBPELReference" portType="ns3:execute_ptt" operation="execute"
+                    partnerLink="RegistroLogBPELReference" portType="ns3:execute_ptt" operation="execute"
                     inputVariable="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" bpelx:invokeAsDetail="no"/>
           </sequence>
         </scope>
@@ -94,7 +159,8 @@
   </faultHandlers>
   <sequence name="main">
     <receive name="receiveInput" partnerLink="PedidoReservaDBBPEL" portType="ns1:PedidoReservaPortType"
-             operation="criarPedidoReserva" variable="inputVariable" createInstance="yes"/>
+             operation="criarPedidoReserva" variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="MetaInformacao"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationCriarPedidoReservaToEtFulfillOrder">
         <bpelx:annotation>
@@ -102,13 +168,13 @@
         </bpelx:annotation>
         <copy>
           <from>ora:doXSLTransformForDoc("../Transformations/transformCriarPedidoReservaToPostaMensagem.xsl", $inputVariable.parameters)</from>
-          <to variable="PostaMensagemetReceivingJMS" part="body"/>
+          <to variable="PostaMensagemetEtFulfillOrderJMS" part="body"/>
         </copy>
       </assign>
-      <invoke name="PostaMensagemetReceivingJMS"
+      <invoke name="PostaMensagemetEtFulfillOrderJMS"
               partnerLink="etFulfillOrderJMSReference" portType="ns8:Posta_Mensagem_ptt"
               operation="Posta_Mensagem"
-              inputVariable="PostaMensagemetReceivingJMS" bpelx:invokeAsDetail="no"/>
+              inputVariable="PostaMensagemetEtFulfillOrderJMS" bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
@@ -116,8 +182,44 @@
           <from>'PedidoReservaRestHTTP'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
         </copy>
+        <copy>
+          <from>'SUCESSO'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+        </copy>
+        <copy>
+          <from>xp20:current-dateTime()</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacao/ns4:usuario</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacao/ns4:idControle</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacao/ns4:sistemaOrigem</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+        </copy>
+        <copy>
+          <from>'RIB'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+        </copy>
+        <copy>
+          <from>0</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+        </copy>
+        <copy>
+          <from>oraext:get-content-as-string($inputVariable)</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
+        </copy>
+        <copy>
+          <from>'CriarPedidoReservaBPELProcessed'</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+        </copy>
       </assign>
-      <invoke name="RegistroLogBPEL" partnerLink="RegistroLogCriarBPELReference"
+      <invoke name="RegistroLogBPEL" partnerLink="RegistroLogBPELReference"
               portType="ns3:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
               bpelx:invokeAsDetail="no"/>
     </sequence>

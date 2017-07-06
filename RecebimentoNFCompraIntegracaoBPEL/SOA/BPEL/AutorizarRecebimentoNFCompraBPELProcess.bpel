@@ -45,7 +45,7 @@
           location="../Schemas/AutorizarRecebimentoNFCompraRest.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="../WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="RecebimentoNFCompraDBBPEL" partnerLinkType="ns1:RecebimentoNFCompraDBBPEL"
@@ -61,7 +61,7 @@
   </variables>
   <faultHandlers>
     <catchAll>
-      <sequence name="Sequence1">
+      <sequence name="SequenceRetornoErro">
         <assign name="AssignReplyCatch">
           <copy>
             <from>ora:getFlowId()</from>
@@ -108,7 +108,7 @@
               partnerLink="AutorizarRecebimentoNFCompraRestReference" bpelx:method="autorizarRecebimentoNFCompra" inputVariable="requestJSON" outputVariable="responseJSON"
               bpelx:invokeAsDetail="no"/>
     </sequence>
-    <reply name="replyOutput" partnerLink="RecebimentoNFCompraDBBPEL" variable="outputVariable"
+    <reply name="Reply" partnerLink="RecebimentoNFCompraDBBPEL" variable="outputVariable"
            portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"/>
   </sequence>
 </process>

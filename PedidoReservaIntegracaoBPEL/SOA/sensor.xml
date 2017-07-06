@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoPedidoClienteCancelar" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+        <serviceConfig service="PedidoReservaDBBPEL" expression="$in.parameters/tns:CancelarPedidoReservaRequest/codigoPedidoCliente" operation="cancelarPedidoReserva" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoPedidoClienteCriar" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+        <serviceConfig service="PedidoReservaDBBPEL" expression="$in.parameters/tns:CriarPedidoReservaRequest/codigoPedidoCliente" operation="criarPedidoReserva" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>
