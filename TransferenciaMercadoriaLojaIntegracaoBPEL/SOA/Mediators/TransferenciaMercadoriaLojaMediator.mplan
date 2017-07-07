@@ -27,8 +27,12 @@
       <switch>
          <case executionType="sequential"
                name="CancelarTransferenciaMercadoriaLojaBPELProcess.cancelartransferenciamercadorialojabpelprocess_client.cancelarTransferenciaMercadoriaLoja">
+            <action/>
+         </case>
+         <case executionType="sequential"
+               name="CancelarTransferenciaMercadoriaLojaBPELProcess.TransferenciaMercadoriaLojaDBBPEL.cancelarTransferenciaMercadoriaLoja">
             <action>
-               <invoke reference="CancelarTransferenciaMercadoriaLojaBPELProcess.cancelartransferenciamercadorialojabpelprocess_client"
+               <invoke reference="CancelarTransferenciaMercadoriaLojaBPELProcess.TransferenciaMercadoriaLojaDBBPEL"
                        operation="cancelarTransferenciaMercadoriaLoja">
                   <onReply>
                      <reply/>

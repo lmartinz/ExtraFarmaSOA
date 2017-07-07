@@ -1,7 +1,7 @@
 <wsdl:definitions
-     name="etXTsfJMSCriarReference"
-     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference"
-     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference"
+     name="etXTsfJMSCancelarReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference"
      xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
      xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
      xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
@@ -14,8 +14,7 @@
   </plt:partnerLinkType>
     <wsdl:types>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages"
-                schemaLocation="../Schemas/CriarRibMessages.xsd" />
+        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd" />
       </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">

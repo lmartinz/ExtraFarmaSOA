@@ -41,7 +41,7 @@
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
           location="../WSDLs/TransferenciaMercadoriaLojaV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
-          location="../WSDLs/CancelarTransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          location="../WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
     <!-- 
@@ -49,11 +49,12 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="TransferenciaMercadoriaLojaDBBPEL" partnerLinkType="ns1:CancelarTransferenciaMercadoriaLojaBPELProcess" myRole="TransferenciaMercadoriaLojaPortType"/>
-    <partnerLink name="RegistroLogCancelarBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
-                 partnerRole="execute_ptt"/>
+    <partnerLink name="TransferenciaMercadoriaLojaDBBPEL"
+                 partnerLinkType="ns1:CriarTransferenciaMercadoriaLojaBPELProcess" myRole="TransferenciaMercadoriaLojaPortType"/>
     <partnerLink name="etXTsfJMSCancelarReference" partnerLinkType="ns4:Posta_Mensagem_plt"
                  partnerRole="Posta_Mensagem_role"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
   </partnerLinks>
   <variables>
     <variable name="inputVariable" messageType="ns1:CancelarTransferenciaMercadoriaLojaRequest"/>
@@ -115,9 +116,10 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns5:Header/ns5:MetaInformacao/ns5:status</to>
               </copy>
             </assign>
-            <invoke name="PostaMensagemErroRegistroLogBPEL" partnerLink="RegistroLogCancelarBPELReference"
-                    portType="ns3:execute_ptt" operation="execute"
-                    inputVariable="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" bpelx:invokeAsDetail="no"/>
+            <invoke name="PostaMensagemErroRegistroLogBPEL"
+                    inputVariable="PostaMensagemErroRegistroLogBPEL_execute_InputVariable"
+                    partnerLink="RegistroLogBPELReference" portType="ns3:execute_ptt" operation="execute"
+                    bpelx:invokeAsDetail="no"/>
           </sequence>
         </scope>
         <assign name="AssignReplyCatch">
@@ -150,7 +152,8 @@
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in CancelarTransferenciaMercadoriaLojaBPELProcess.wsdl) -->
     <receive name="receiveInput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" portType="ns1:TransferenciaMercadoriaLojaPortType"
-             operation="cancelarTransferenciaMercadoriaLoja" variable="inputVariable" createInstance="yes"/>
+             operation="cancelarTransferenciaMercadoriaLoja" variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="MetaInformacaoVariable"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationCancelarTransferenciaMercadoriaLojaToEtXTsf">
         <bpelx:annotation>
@@ -208,8 +211,8 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns5:Body</to>
         </copy>
       </assign>
-      <invoke name="RegistroLogBPEL" partnerLink="RegistroLogCancelarBPELReference"
-              portType="ns3:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL_execute_InputVariable"
+      <invoke name="RegistroLogBPEL" inputVariable="RegistroLogBPEL_execute_InputVariable"
+              partnerLink="RegistroLogBPELReference" portType="ns3:execute_ptt" operation="execute"
               bpelx:invokeAsDetail="no"/>
     </sequence>
     <assign name="AssignReplyOK">

@@ -1,10 +1,10 @@
-<adapter-config name="etXTsfJMSCriarReference" adapter="jms" wsdlLocation="../WSDLs/etXTsfJMSCriarReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+<adapter-config name="etXTsfJMSCancelarReference" adapter="jms" wsdlLocation="../WSDLs/etXTsfJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/wls/Topic" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etXTsf" UIJmsProvider="WLSJMS"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
     <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
       <property name="TimeToLive" value="0"/>
-      <property name="DestinationName" value="jms/Generic/Topic/jms1/etXTsf"/>
+      <property name="DestinationName" value="topic/etXTsf"/>
       <property name="DeliveryMode" value="Persistent"/>
       <property name="PayloadType" value="TextMessage"/>
     </interaction-spec>

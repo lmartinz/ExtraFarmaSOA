@@ -14,17 +14,15 @@
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
           location="WSDLs/TransferenciaMercadoriaLojaV1.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
-          location="WSDLs/CriarTransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="wsdl"/>
+          location="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
-          location="WSDLs/CancelarTransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference"
-          location="WSDLs/etXTsfJMSCriarReference.wsdl" importType="wsdl"/>
+          location="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference"
-          location="WSDLs/etXTsfJMSCancelarReference.wsdl" importType="wsdl"/>
+          location="WSDLs/etXTsfJMSReference.wsdl" importType="wsdl"/>
   <service name="TransferenciaMercadoriaLojaDBBPEL" ui:wsdlLocation="WSDLs/TransferenciaMercadoriaLojaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
     <binding.direct/>
@@ -38,11 +36,11 @@
         <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
       </service>
       <reference name="CriarTransferenciaMercadoriaLojaBPELProcess.criartransferenciamercadorialojabpelprocess_client"
-                 ui:wsdlLocation="WSDLs/CriarTransferenciaMercadoriaLojaV1Wrapper.wsdl">
+                 ui:wsdlLocation="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
       </reference>
-      <reference name="CancelarTransferenciaMercadoriaLojaBPELProcess.cancelartransferenciamercadorialojabpelprocess_client"
-                 ui:wsdlLocation="WSDLs/CancelarTransferenciaMercadoriaLojaV1Wrapper.wsdl">
+      <reference name="CancelarTransferenciaMercadoriaLojaBPELProcess.TransferenciaMercadoriaLojaDBBPEL"
+                 ui:wsdlLocation="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
       </reference>
     </componentType>
@@ -51,15 +49,15 @@
     <implementation.bpel src="BPEL/CriarTransferenciaMercadoriaLojaBPELProcess.bpel"/>
     <componentType>
       <service name="TransferenciaMercadoriaLojaDBBPEL"
-               ui:wsdlLocation="WSDLs/CriarTransferenciaMercadoriaLojaV1Wrapper.wsdl">
+               ui:wsdlLocation="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
       </service>
       <reference name="RegistroLogBPELReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
-      <reference name="etXTsfJMSCriarReference" ui:wsdlLocation="WSDLs/etXTsfJMSCriarReference.wsdl">
-        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+      <reference name="etXTsfJMSReference" ui:wsdlLocation="WSDLs/etXTsfJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
       </reference>
     </componentType>
   </component>
@@ -67,19 +65,19 @@
     <implementation.bpel src="BPEL/CancelarTransferenciaMercadoriaLojaBPELProcess.bpel"/>
     <componentType>
       <service name="TransferenciaMercadoriaLojaDBBPEL"
-               ui:wsdlLocation="WSDLs/CancelarTransferenciaMercadoriaLojaV1Wrapper.wsdl">
+               ui:wsdlLocation="WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1#wsdl.interface(TransferenciaMercadoriaLojaPortType)"/>
       </service>
-      <reference name="RegistroLogCancelarBPELReference"
+      <reference name="etXTsfJMSCancelarReference" ui:wsdlLocation="WSDLs/etXTsfJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+      </reference>
+      <reference name="RegistroLogBPELReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
-      <reference name="etXTsfJMSCancelarReference" ui:wsdlLocation="WSDLs/etXTsfJMSCancelarReference.wsdl">
-        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
-      </reference>
     </componentType>
   </component>
-  <reference name="RegistroLogCriarBPELReference"
+  <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
     <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
@@ -87,21 +85,9 @@
       <property name="java.naming.provider.url"></property>
     </binding.direct>
   </reference>
-  <reference name="RegistroLogCancelarBPELReference"
-             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
-    <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true">
-      <property name="java.naming.provider.url"></property>
-    </binding.direct>
-  </reference>
-  <reference name="etXTsfJMSCriarReference" ui:wsdlLocation="WSDLs/etXTsfJMSCriarReference.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
-    <binding.jca config="Adapters/etXTsfJMSCriarReference_jms.jca"/>
-  </reference>
-  <reference name="etXTsfJMSCancelarReference" ui:wsdlLocation="WSDLs/etXTsfJMSCancelarReference.wsdl">
+  <reference name="etXTsfJMSReference" ui:wsdlLocation="WSDLs/etXTsfJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference#wsdl.interface(Posta_Mensagem_ptt)"/>
-    <binding.jca config="Adapters/etXTsfJMSCancelarReference_jms.jca"/>
+    <binding.jca config="Adapters/etXTsfJMSReference_jms.jca"/>
   </reference>
   <wire>
     <source.uri>TransferenciaMercadoriaLojaDBBPEL</source.uri>
@@ -113,22 +99,22 @@
   </wire>
   <wire>
     <source.uri>CriarTransferenciaMercadoriaLojaBPELProcess/RegistroLogBPELReference</source.uri>
-    <target.uri>RegistroLogCriarBPELReference</target.uri>
-  </wire>
-  <wire>
-    <source.uri>TransferenciaMercadoriaLojaMediator/CancelarTransferenciaMercadoriaLojaBPELProcess.cancelartransferenciamercadorialojabpelprocess_client</source.uri>
-    <target.uri>CancelarTransferenciaMercadoriaLojaBPELProcess/TransferenciaMercadoriaLojaDBBPEL</target.uri>
-  </wire>
-  <wire>
-    <source.uri>CancelarTransferenciaMercadoriaLojaBPELProcess/RegistroLogCancelarBPELReference</source.uri>
-    <target.uri>RegistroLogCancelarBPELReference</target.uri>
-  </wire>
-  <wire>
-    <source.uri>CriarTransferenciaMercadoriaLojaBPELProcess/etXTsfJMSCriarReference</source.uri>
-    <target.uri>etXTsfJMSCriarReference</target.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
   <wire>
     <source.uri>CancelarTransferenciaMercadoriaLojaBPELProcess/etXTsfJMSCancelarReference</source.uri>
-    <target.uri>etXTsfJMSCancelarReference</target.uri>
+    <target.uri>etXTsfJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>CancelarTransferenciaMercadoriaLojaBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>CriarTransferenciaMercadoriaLojaBPELProcess/etXTsfJMSReference</source.uri>
+    <target.uri>etXTsfJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>TransferenciaMercadoriaLojaMediator/CancelarTransferenciaMercadoriaLojaBPELProcess.TransferenciaMercadoriaLojaDBBPEL</source.uri>
+    <target.uri>CancelarTransferenciaMercadoriaLojaBPELProcess/TransferenciaMercadoriaLojaDBBPEL</target.uri>
   </wire>
 </composite>

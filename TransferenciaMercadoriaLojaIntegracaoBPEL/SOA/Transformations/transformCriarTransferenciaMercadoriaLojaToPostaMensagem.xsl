@@ -7,7 +7,8 @@
                 xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
                 xmlns:ns3="http://www.oracle.com/retail/integration/custom/bo/ExtOfXTsfDesc/v1"
                 xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference"
-                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/">
+                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+                xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -18,7 +19,7 @@
       </oracle-xsl-mapper:mapSources>
       <oracle-xsl-mapper:mapTargets>
          <oracle-xsl-mapper:target type="WSDL">
-            <oracle-xsl-mapper:schema location="../WSDLs/etXTsfJMSCriarReference.wsdl"/>
+            <oracle-xsl-mapper:schema location="../WSDLs/etXTsfJMSReference.wsdl"/>
             <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
          </oracle-xsl-mapper:target>
       </oracle-xsl-mapper:mapTargets>

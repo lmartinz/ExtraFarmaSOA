@@ -30,7 +30,9 @@
          xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
-         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference">
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCriarReference"
+         xmlns:ns6="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/TransferenciaMercadoriaLojaIntegracaoBPEL/etXTsfJMSCancelarReference"
+         xmlns:ns7="http://canonico.ultra.com.br/infcorp/v1">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,11 +40,13 @@
       List of services participating in this BPEL process               
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
+          location="../WSDLs/TransferenciaMercadoriaLojaV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
-          location="../WSDLs/CriarTransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          location="../WSDLs/TransferenciaMercadoriaLojaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
     <!-- 
@@ -53,8 +57,7 @@
     <partnerLink name="TransferenciaMercadoriaLojaDBBPEL" partnerLinkType="ns1:CriarTransferenciaMercadoriaLojaBPELProcess" myRole="TransferenciaMercadoriaLojaPortType"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
-    <partnerLink name="etXTsfJMSCriarReference" partnerLinkType="ns5:Posta_Mensagem_plt"
-                 partnerRole="Posta_Mensagem_role"/>
+    <partnerLink name="etXTsfJMSReference" partnerLinkType="ns6:Posta_Mensagem_plt" partnerRole="Posta_Mensagem_role"/>
   </partnerLinks>
 
   <!-- 
@@ -72,15 +75,37 @@
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
-    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns5:Posta_Mensagem_msg"/>
+    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns6:Posta_Mensagem_msg"/>
+    <variable name="CriarTransferenciaMercadoriaLojaFault" messageType="ns1:CriarTransferenciaMercadoriaLojaFaultMsg"/>
   </variables>
   <faultHandlers>
     <catchAll>
-      <sequence name="Sequence1">
+      <sequence name="FluxoTratamentoMensagem">
         <scope name="ScopeTratamentoMensagem">
           <faultHandlers>
             <catchAll>
-              <empty name="Empty"/>
+              <sequence name="SequenceTratarFalha">
+                <assign name="AssignFault">
+                  <copy>
+                    <from>'500'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarTransferenciaMercadoriaLojaFault.CriarTransferenciaMercadoriaLojaFault/ns7:codigo</to>
+                  </copy>
+                  <copy>
+                    <from>'Erro no envio da mensagem ao Retail e no Registro de Log.'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarTransferenciaMercadoriaLojaFault.CriarTransferenciaMercadoriaLojaFault/ns7:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarTransferenciaMercadoriaLojaFault.CriarTransferenciaMercadoriaLojaFault/ns7:detalhe</to>
+                  </copy>
+                  <copy>
+                    <from>'ERRO_DE_SISTEMA'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$CriarTransferenciaMercadoriaLojaFault.CriarTransferenciaMercadoriaLojaFault/ns7:tipo</to>
+                  </copy>
+                </assign>
+                <throw name="Throw" faultName="ns1:CriarTransferenciaMercadoriaLojaFault"
+                       faultVariable="CriarTransferenciaMercadoriaLojaFault"/>
+              </sequence>
             </catchAll>
           </faultHandlers>
           <sequence name="SequenceTratamentoMensagem">
@@ -152,7 +177,8 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in CriarTransferenciaMercadoriaLojaBPELProcess.wsdl) -->
-    <receive name="receiveInput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="TransferenciaMercadoriaLojaDBBPEL" portType="ns1:TransferenciaMercadoriaLojaPortType" operation="criarTransferenciaMercadoriaLoja" variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="MetaInformacaoVariable"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationCriarTransferenciaMercadoriaLojaToEtXTsf">
         <bpelx:annotation>
@@ -163,9 +189,8 @@
           <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
-      <invoke name="PostaMensagemetReceivingJMS" partnerLink="etXTsfJMSCriarReference" portType="ns5:Posta_Mensagem_ptt"
-              operation="Posta_Mensagem" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable"
-              bpelx:invokeAsDetail="no"/>
+      <invoke name="PostaMensagemetReceivingJMS" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" partnerLink="etXTsfJMSReference" portType="ns6:Posta_Mensagem_ptt"
+              operation="Posta_Mensagem" bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
