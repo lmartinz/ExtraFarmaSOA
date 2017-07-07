@@ -1,9 +1,9 @@
 <adapter-config name="etFulfilOrdCfmJMSReference" adapter="jms" wsdlLocation="../WSDLs/etFulfilOrdCfmJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/wls/Topic" UIJmsProvider="THIRDPARTY"/>
+  <connection-factory location="eis/aqjms/etFulfilOrdCfm" UIJmsProvider="WLSJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
-      <property name="DestinationName" value="jms/Generic/Topic/jms1/etFulfilOrdCfm"/>
+      <property name="DestinationName" value="topic/etFulfilOrdCfm"/>
       <property name="UseMessageListener" value="false"/>
       <property name="PayloadType" value="TextMessage"/>
     </activation-spec>
