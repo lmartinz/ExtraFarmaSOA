@@ -40,7 +40,7 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
 
     <!--HEADER-->
     <wsdl:portType name="PedidoTransferenciaMercadoriaPortType">
-        <wsdl:operation name="ModificarPedidoTransferenciaMercadoria">
+        <wsdl:operation name="modificarPedidoTransferenciaMercadoria">
             <wsdl:input message="tns:PedidoTransferenciaMercadoriaRequest"/>
             <wsdl:output message="tns:PedidoTransferenciaMercadoriaResponse"/>
             <wsdl:fault name="PedidoTransferenciaMercadoriaFault" message="tns:PedidoTransferenciaMercadoriaFaultMsg"/>

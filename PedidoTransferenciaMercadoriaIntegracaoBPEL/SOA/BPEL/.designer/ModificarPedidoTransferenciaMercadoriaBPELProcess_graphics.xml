@@ -8,7 +8,7 @@
       <partnerlink name="RegistroLogBpel1" x="0" y="450" side="left"/>
       <partnerlink name="etSOStatusReference" x="1236" y="367" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,939,244" show_swimlanes="true">
+   <graph_layout viewport="44,375,938,276" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

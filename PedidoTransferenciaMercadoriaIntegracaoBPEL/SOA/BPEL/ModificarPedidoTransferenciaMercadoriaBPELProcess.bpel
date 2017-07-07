@@ -128,13 +128,13 @@
         </assign>
         <reply name="ReplyOK" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
                variable="outputPedidoTransferenciaMercadoria" portType="ns1:PedidoTransferenciaMercadoriaPortType"
-               operation="PedidoTransferenciaMercadoria" xml:id="id_58"/>
+               operation="ModificarPedidoTransferenciaMercadoria" xml:id="id_58"/>
       </sequence>
     </catchAll>
   </faultHandlers>
   <sequence name="main" xml:id="id_59">
     <receive name="Receive" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
-             portType="ns1:PedidoTransferenciaMercadoriaPortType" operation="PedidoTransferenciaMercadoria"
+             portType="ns1:PedidoTransferenciaMercadoriaPortType" operation="ModificarPedidoTransferenciaMercadoria"
              variable="inputPedidoTransferenciaMercadoria" createInstance="yes" xml:id="id_60"/>
     <scope name="ScopeRibMessage" xml:id="id_61">
       <faultHandlers xml:id="id_62">
@@ -206,7 +206,7 @@
         </assign>
         <reply name="ReplyOK" partnerLink="PedidoTransferenciaMercadoriaDBBPEL"
                variable="outputPedidoTransferenciaMercadoria" portType="ns1:PedidoTransferenciaMercadoriaPortType"
-               operation="PedidoTransferenciaMercadoria" xml:id="id_110"/>
+               operation="modificarPedidoTransferenciaMercadoria" xml:id="id_110"/>
       </sequence></scope>
   </sequence>
 </process>
