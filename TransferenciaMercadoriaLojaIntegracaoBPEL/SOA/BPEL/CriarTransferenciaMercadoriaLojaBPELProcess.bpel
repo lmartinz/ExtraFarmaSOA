@@ -75,7 +75,7 @@
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
-    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns6:Posta_Mensagem_msg"/>
+    <variable name="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" messageType="ns6:Posta_Mensagem_msg"/>
     <variable name="CriarTransferenciaMercadoriaLojaFault" messageType="ns1:CriarTransferenciaMercadoriaLojaFaultMsg"/>
   </variables>
   <faultHandlers>
@@ -186,10 +186,10 @@
         </bpelx:annotation>
         <copy>
           <from>ora:doXSLTransformForDoc("../Transformations/transformCriarTransferenciaMercadoriaLojaToPostaMensagem.xsl", $inputVariable.parameters)</from>
-          <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
+          <to variable="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
-      <invoke name="PostaMensagemetReceivingJMS" inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" partnerLink="etXTsfJMSReference" portType="ns6:Posta_Mensagem_ptt"
+      <invoke name="PostaMensagemetXTsfJMS" inputVariable="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" partnerLink="etXTsfJMSReference" portType="ns6:Posta_Mensagem_ptt"
               operation="Posta_Mensagem" bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">

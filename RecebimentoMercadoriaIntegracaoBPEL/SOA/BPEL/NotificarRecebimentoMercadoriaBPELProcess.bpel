@@ -33,7 +33,8 @@
          xmlns:ns5="http://www.oracle.com/retail/integration/rib/RibMessages"
          xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
          xmlns:ns7="http://www.oracle.com/retail/integration/custom/bo/ExtOfReceiptDesc/v1"
-         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1">
+         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1"
+         xmlns:ns9="http://canonico.ultra.com.br/infcorp/v1">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,6 +76,7 @@
     <variable name="MetaInformacaoVariable" element="ns3:MetaInformacao"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
+    <variable name="NotificarRecebimentoMercadoriaFault" messageType="ns1:NotificarRecebimentoMercadoriaFaultMsg"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -82,7 +84,28 @@
         <scope name="ScopeTratamentoMensagem">
           <faultHandlers>
             <catchAll>
-              <empty name="Empty"/>
+              <sequence name="SequenceTratarFalha">
+                <assign name="AssignFault">
+                  <copy>
+                    <from>'500'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarRecebimentoMercadoriaFault.NotificarRecebimentoMercadoriaFault/ns9:codigo</to>
+                  </copy>
+                  <copy>
+                    <from>'Erro no envio da mensagem ao Retail e no Registro de Log.'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarRecebimentoMercadoriaFault.NotificarRecebimentoMercadoriaFault/ns9:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarRecebimentoMercadoriaFault.NotificarRecebimentoMercadoriaFault/ns9:detalhe</to>
+                  </copy>
+                  <copy>
+                    <from>'ERRO_DE_SISTEMA'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$NotificarRecebimentoMercadoriaFault.NotificarRecebimentoMercadoriaFault/ns9:tipo</to>
+                  </copy>
+                </assign>
+                <throw name="Throw" faultName="ns1:NotificarRecebimentoMercadoriaFault"
+                       faultVariable="NotificarRecebimentoMercadoriaFault"/>
+              </sequence>
             </catchAll>
           </faultHandlers>
           <sequence>
@@ -154,7 +177,8 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in RecebimentoMercadoriaBPELProcess.wsdl) -->
-    <receive name="receiveInput" partnerLink="RecebimentoMercadoriaDBBPEL" portType="ns1:RecebimentoMercadoriaPortType" operation="notificarRecebimentoMercadoria" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="RecebimentoMercadoriaDBBPEL" portType="ns1:RecebimentoMercadoriaPortType" operation="notificarRecebimentoMercadoria" variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="MetaInformacaoVariable"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationNotificaRececbimentoMercadoriaToRTVDesc">
         <bpelx:annotation>

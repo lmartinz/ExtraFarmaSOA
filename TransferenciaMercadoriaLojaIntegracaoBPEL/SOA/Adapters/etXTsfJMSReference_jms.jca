@@ -1,4 +1,4 @@
-<adapter-config name="etXTsfJMSCancelarReference" adapter="jms" wsdlLocation="../WSDLs/etXTsfJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+<adapter-config name="etXTsfJMSReference" adapter="jms" wsdlLocation="../WSDLs/etXTsfJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
   <connection-factory location="eis/aqjms/etXTsf" UIJmsProvider="WLSJMS"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">

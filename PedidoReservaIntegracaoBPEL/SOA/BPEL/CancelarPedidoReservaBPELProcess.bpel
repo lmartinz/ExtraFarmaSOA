@@ -156,7 +156,8 @@
   </faultHandlers>
   <sequence name="main">
     <receive name="receiveInput" createInstance="yes" partnerLink="PedidoReservaDBBPEL"
-             portType="ns1:PedidoReservaPortType" operation="cancelarPedidoReserva" variable="inputVariable"/>
+             portType="ns1:PedidoReservaPortType" operation="cancelarPedidoReserva" variable="inputVariable"
+             bpelx:headerVariable="MetaInformacao"/>
     <sequence name="SequencePostaMensagemRib">
       <assign name="TransformationCancelarPedidoReservaToEtFulfillOrder">
         <bpelx:annotation>

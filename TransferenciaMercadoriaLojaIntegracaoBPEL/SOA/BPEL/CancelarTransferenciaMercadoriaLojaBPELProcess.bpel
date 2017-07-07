@@ -59,7 +59,7 @@
   <variables>
     <variable name="inputVariable" messageType="ns1:CancelarTransferenciaMercadoriaLojaRequest"/>
     <variable name="outputVariable" messageType="ns1:CancelarTransferenciaMercadoriaLojaResponse"/>
-    <variable name="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" messageType="ns4:Posta_Mensagem_msg"/>
+    <variable name="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" messageType="ns4:Posta_Mensagem_msg"/>
     <variable name="PostaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="MetaInformacaoVariable" element="ns5:MetaInformacao"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
@@ -161,12 +161,12 @@
         </bpelx:annotation>
         <copy>
           <from>ora:doXSLTransformForDoc("../Transformations/transformCancelarTransferenciaMercadoriaLojaToPostaMensagem.xsl", $inputVariable.parameters)</from>
-          <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
+          <to variable="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
-      <invoke name="PostaMensagemetReceivingJMS" partnerLink="etXTsfJMSCancelarReference"
+      <invoke name="PostaMensagemetXTsfJMS" partnerLink="etXTsfJMSCancelarReference"
               portType="ns4:Posta_Mensagem_ptt" operation="Posta_Mensagem"
-              inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" bpelx:invokeAsDetail="no"/>
+              inputVariable="PostaMensagemetXTsfJMS_Posta_Mensagem_InputVariable" bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
