@@ -65,10 +65,10 @@
     <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao" xml:id="id_12"/>
     <variable name="PedidoTransferenciaMercadoriaFault" messageType="ns1:PedidoTransferenciaMercadoriaFaultMsg"
               xml:id="id_116"/>
-    <variable name="inputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaRequest"
-              xml:id="id_133"/>
     <variable name="outputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaResponse"
               xml:id="id_134"/>
+    <variable name="inputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaRequest"
+              xml:id="id_135"/>
   </variables>
   <faultHandlers xml:id="id_14">
     <catchAll xml:id="id_15">
@@ -172,7 +172,7 @@
           <bpelx:pattern patternName="bpelx:transformation" xml:id="id_69"></bpelx:pattern>
         </bpelx:annotation>
         <copy xml:id="id_70">
-          <from xml:id="id_71">ora:doXSLTransformForDoc("../Transformations/Transformation_input_To_PostaMensagemJMS.xsl", $inputPedidoTransferenciaMercadoria.parameters)</from>
+          <from xml:id="id_71">ora:doXSLTransformForDoc("../Transformations/transformInputToPostaMensagemEtSOStatusJMS.xsl", $inputPedidoTransferenciaMercadoria.parameters)</from>
           <to variable="inputPostaMensagem" part="body" xml:id="id_72"/>
         </copy>
       </assign>
