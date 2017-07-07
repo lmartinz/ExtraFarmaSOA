@@ -4,22 +4,21 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="PedidoTransferenciaMercadoriaDBBPEL" x="0" y="511" side="left"/>
-      <partnerlink name="RegistroLogBpel1" x="0" y="450" side="left"/>
-      <partnerlink name="etSOStatusReference" x="1236" y="367" side="right"/>
+      <partnerlink name="PedidoTransferenciaMercadoriaDBBPEL" x="0" y="531" side="left"/>
+      <partnerlink name="RegistroLogBPELReference" x="1059" y="447" side="right"/>
+      <partnerlink name="etSOStatusReference" x="1059" y="323" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="44,375,938,276" show_swimlanes="true">
+   <graph_layout viewport="0,0,1200,535" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/scope" type="scope" showhandlers="true"/>
-      <layout_item collapsed="false" xpath="/process/sequence/scope/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="false" xpath="/process/sequence/scope/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/scope/sequence/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[2]" type="sequence"/>
    </graph_layout>
    <bookmarks/>
 </graphics>

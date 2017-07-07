@@ -21,7 +21,7 @@
       </oracle-xsl-mapper:mapSources>
       <oracle-xsl-mapper:mapTargets xml:id="id_7">
          <oracle-xsl-mapper:target type="WSDL" xml:id="id_8">
-            <oracle-xsl-mapper:schema location="../WSDLs/etSOStatusReference.wsdl" xml:id="id_9"/>
+            <oracle-xsl-mapper:schema location="../WSDLs/etSOStatusJMSReference.wsdl" xml:id="id_9"/>
             <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"
                                            xml:id="id_10"/>
          </oracle-xsl-mapper:target>
@@ -44,63 +44,54 @@
             <tns:publishTime xml:id="id_20">
                <xsl:value-of select="xp20:current-dateTime ( )" xml:id="id_21"/>
             </tns:publishTime>
-            <tns:messageData xml:id="id_22">
-               <ns3:SOStatusDtl xml:id="id_23">
-          
-                   <ns3:dc_dest_id xml:id="id_24">
-                      <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/codigoLocalOrigem"
-                                    xml:id="id_25"/>
-                   </ns3:dc_dest_id>
-                   <xsl:choose xml:id="id_26">
-                      <xsl:when test="/ns0:PedidoTransferenciaMercadoriaRequest/codigoCliente = '04899316034284'"
-                                xml:id="id_27">
-                         <ns3:loc_type xml:id="id_28">W</ns3:loc_type>
-                      </xsl:when>
-                      <xsl:when test="/ns0:PedidoTransferenciaMercadoriaRequest/codigoCliente = 'LOJA (MAGAZINE 15)'"
-                                xml:id="id_29">
-                         <ns3:loc_type xml:id="id_30">L</ns3:loc_type>
-                      </xsl:when>
-                   </xsl:choose>
-                   <ns3:store_type xml:id="id_31">C</ns3:store_type>
-                   <ns3:distro_nbr xml:id="id_32">
-                      <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/numeroPedido" xml:id="id_33"/>
-                   </ns3:distro_nbr>
-                   <ns3:distro_document_type xml:id="id_34">T</ns3:distro_document_type>
-                   <xsl:for-each select="/ns0:PedidoTransferenciaMercadoriaRequest/PedidoTransferenciaMercadoriaDetalhe"
-                                 xml:id="id_35">
-                      <ns3:SOStatusDtl xml:id="id_36">
-                             <ns3:dest_id xml:id="id_37">
-                                <xsl:value-of select="PedidoTransferenciaMercadoriaRequestItem/codigoLocalRecebimento"
-                                              xml:id="id_38"/>
-                             </ns3:dest_id>
-                             <xsl:choose xml:id="id_39">
-                                <xsl:when test="PedidoTransferenciaMercadoriaRequestItem/tipoLocal = '04899316034284'"
-                                          xml:id="id_40">
-                                  <ns3:loc_type xml:id="id_41">W</ns3:loc_type>
-                                </xsl:when>
-                                 <xsl:when test="PedidoTransferenciaMercadoriaRequestItem/tipoLocal = 'LOJA (MAGAZINE 15)'"
-                                           xml:id="id_42">
-                                 <ns3:loc_type xml:id="id_43">L</ns3:loc_type>
-                                </xsl:when>
-                             </xsl:choose>
-                             <ns3:store_type xml:id="id_44">C</ns3:store_type>
-                             <ns3:item_id xml:id="id_45">
-                                <xsl:value-of select="PedidoTransferenciaMercadoriaRequestItem/itemId" xml:id="id_46"/>
-                             </ns3:item_id>
-                             <ns3:order_line_nbr xml:id="id_47">
-                                <xsl:value-of select="PedidoTransferenciaMercadoriaRequestItem/numeroLinha"
-                                              xml:id="id_48"/>
-                             </ns3:order_line_nbr>
-                             <ns3:unit_qty xml:id="id_49">
-                                <xsl:value-of select="PedidoTransferenciaMercadoriaRequestItem/quantidadeItem"
-                                              xml:id="id_50"/>
-                             </ns3:unit_qty>
-                             <ns3:status xml:id="id_51">SD</ns3:status>
-                        </ns3:SOStatusDtl>
-                    </xsl:for-each>
-                </ns3:SOStatusDtl>
+            <tns:messageData xml:id="id_55">
+               <ns3:SOStatusDesc xml:id="id_56">
+                  <ns3:dc_dest_id xml:id="id_57">
+                     <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/codigoLocalOrigem" xml:id="id_58"/>
+                  </ns3:dc_dest_id>
+                  <ns3:loc_type xml:id="id_68">
+                     <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/tipoLocal" xml:id="id_69"/>
+                  </ns3:loc_type>
+                  <ns3:store_type xml:id="id_66">
+                     <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/tipoLoja" xml:id="id_67"/>
+                  </ns3:store_type>
+                  <ns3:stockholding_ind xml:id="id_64"/>
+                  <ns3:distro_nbr xml:id="id_59">
+                     <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/numeroPedido" xml:id="id_63"/>
+                  </ns3:distro_nbr>
+                  <ns3:distro_document_type xml:id="id_61">
+                     <xsl:value-of select="/ns0:PedidoTransferenciaMercadoriaRequest/statusOrdemEstoque"
+                                   xml:id="id_62"/>
+                  </ns3:distro_document_type>
+                  <xsl:for-each xml:id="id_70"
+                                select="/ns0:PedidoTransferenciaMercadoriaRequest/PedidoTransferenciaMercadoriaDetalhe">
+                     <ns3:SOStatusDtl xml:id="id_71">
+                        <ns3:dest_id xml:id="id_72">
+                           <xsl:value-of select="codigoLocalRecebimento" xml:id="id_73"/>
+                        </ns3:dest_id>
+                        <ns3:loc_type xml:id="id_74">
+                           <xsl:value-of select="tipoLocal" xml:id="id_75"/>
+                        </ns3:loc_type>
+                        <ns3:store_type xml:id="id_76">
+                           <xsl:value-of select="tipoLoja" xml:id="id_77"/>
+                        </ns3:store_type>
+                        <ns3:item_id xml:id="id_78">
+                           <xsl:value-of select="codigoItem" xml:id="id_79"/>
+                        </ns3:item_id>
+                        <ns3:order_line_nbr xml:id="id_80">
+                           <xsl:value-of select="numeroLinha" xml:id="id_81"/>
+                        </ns3:order_line_nbr>
+                        <ns3:unit_qty xml:id="id_82">
+                           <xsl:value-of select="quantidadeItem" xml:id="id_83"/>
+                        </ns3:unit_qty>
+                        <ns3:status xml:id="id_84">
+                           <xsl:value-of select="statusEstoque" xml:id="id_85"/>
+                        </ns3:status>
+                     </ns3:SOStatusDtl>
+                  </xsl:for-each>
+               </ns3:SOStatusDesc>
             </tns:messageData>
-             <tns:customFlag xml:id="id_52">
+            <tns:customFlag xml:id="id_52">
             </tns:customFlag>
              <tns:customFlag xml:id="id_53">
                <xsl:value-of select="oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '067', 'customFlag', '')"

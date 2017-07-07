@@ -21,7 +21,7 @@
   <xs:element name="messageData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="md:SOStatusDtl"/>
+        <xs:element ref="md:SOStatusDesc"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -13,23 +13,21 @@
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext" xml:id="id_1" ui:customizable="true">
   <import namespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
           location="WSDLs/PedidoTransferenciaMercadoriaV1.wsdl" importType="wsdl" xml:id="id_2"/>
-  <import namespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
-          location="WSDLs/PedidoTransferenciaMercadoriaV1Wrapper.wsdl" importType="wsdl" xml:id="id_3"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/etSOStatusReference"
-          location="WSDLs/etSOStatusReference.wsdl" importType="wsdl" xml:id="id_4"/>
+          location="WSDLs/etSOStatusJMSReference.wsdl" importType="wsdl" xml:id="id_4"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"
           xml:id="id_5"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"
           xml:id="id_6"/>
-  <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-          location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl" xml:id="id_7"/>
+  <import namespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+          location="WSDLs/PedidoTransferenciaMercadoriaV1Wrapper.wsdl" importType="wsdl" xml:id="id_45"/>
   <service name="PedidoTransferenciaMercadoriaDBBPEL" ui:wsdlLocation="WSDLs/PedidoTransferenciaMercadoriaV1.wsdl"
-           xml:id="id_8">
+           xml:id="id_42">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1#wsdl.interface(PedidoTransferenciaMercadoriaPortType)"
-                    xml:id="id_9"/>
-    <binding.direct xml:id="id_10"/>
+                    xml:id="id_43"/>
+    <binding.direct xml:id="id_44"/>
   </service>
   <property name="productVersion" type="xs:string" many="false" xml:id="id_11">12.2.1.0.0.151013</property>
   <property name="compositeID" type="xs:string" many="false" xml:id="id_12">64760c45-6bd0-48c1-92c0-58ffb7bbb56d</property>
@@ -37,27 +35,28 @@
     <implementation.bpel src="BPEL/ModificarPedidoTransferenciaMercadoriaBPELProcess.bpel" xml:id="id_14"/>
     <componentType xml:id="id_15">
       <service name="PedidoTransferenciaMercadoriaDBBPEL"
-               ui:wsdlLocation="WSDLs/PedidoTransferenciaMercadoriaV1Wrapper.wsdl" xml:id="id_16">
+               ui:wsdlLocation="WSDLs/PedidoTransferenciaMercadoriaV1Wrapper.wsdl" xml:id="id_46">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1#wsdl.interface(PedidoTransferenciaMercadoriaPortType)"
-                        xml:id="id_17"/>
+                        xml:id="id_47"/>
       </service>
-      <reference name="etSOStatusReference" ui:wsdlLocation="WSDLs/etSOStatusReference.wsdl" xml:id="id_18">
+      <reference name="etSOStatusReference" ui:wsdlLocation="WSDLs/etSOStatusJMSReference.wsdl" xml:id="id_18">
         <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/etSOStatusReference#wsdl.interface(Produce_Message_ptt)"
                         xml:id="id_19"/>
       </reference>
     
-      <reference name="RegistroLogBpel1" ui:wsdlLocation="WSDLs/RegistroLogBPELWrapper.wsdl" xml:id="id_20">
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" xml:id="id_20">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"
-                        xml:id="id_21"/>
+                        xml:id="id_40"/>
       </reference>
     </componentType>
   </component>
-  <reference name="etSOStatusReference" ui:wsdlLocation="WSDLs/etSOStatusReference.wsdl" xml:id="id_22">
+  <reference name="etSOStatusJMSReference" ui:wsdlLocation="WSDLs/etSOStatusJMSReference.wsdl" xml:id="id_22">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/etSOStatusReference#wsdl.interface(Produce_Message_ptt)"
                     xml:id="id_23"/>
-    <binding.jca config="Adapters/etSOStatusReference_jms.jca" xml:id="id_24"/>
+    <binding.jca config="Adapters/etSOStatusJMSReference.jca" xml:id="id_24"/>
   </reference>
-  <reference name="RegistroLogBpel"
+  <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" xml:id="id_25">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"
                     xml:id="id_26"/>
@@ -66,16 +65,16 @@
       <property name="java.naming.provider.url" xml:id="id_28"></property>
     </binding.direct>
   </reference>
-  <wire xml:id="id_29">
-    <source.uri xml:id="id_30">PedidoTransferenciaMercadoriaDBBPEL</source.uri>
-    <target.uri xml:id="id_31">ModificarPedidoTransferenciaMercadoriaBPELProcess/PedidoTransferenciaMercadoriaDBBPEL</target.uri>
-  </wire>
   <wire xml:id="id_32">
     <source.uri xml:id="id_33">ModificarPedidoTransferenciaMercadoriaBPELProcess/etSOStatusReference</source.uri>
-    <target.uri xml:id="id_34">etSOStatusReference</target.uri>
+    <target.uri xml:id="id_34">etSOStatusJMSReference</target.uri>
   </wire>
   <wire xml:id="id_35">
-    <source.uri xml:id="id_36">ModificarPedidoTransferenciaMercadoriaBPELProcess/RegistroLogBpel1</source.uri>
-    <target.uri xml:id="id_37">RegistroLogBpel</target.uri>
+    <source.uri xml:id="id_39">ModificarPedidoTransferenciaMercadoriaBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri xml:id="id_37">RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire xml:id="id_48">
+    <source.uri xml:id="id_49">PedidoTransferenciaMercadoriaDBBPEL</source.uri>
+    <target.uri xml:id="id_50">ModificarPedidoTransferenciaMercadoriaBPELProcess/PedidoTransferenciaMercadoriaDBBPEL</target.uri>
   </wire>
 </composite>
