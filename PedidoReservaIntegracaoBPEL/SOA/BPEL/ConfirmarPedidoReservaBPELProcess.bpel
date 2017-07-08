@@ -32,7 +32,9 @@
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration">
+         xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:ns5="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaResponseRest/v1"
+         xmlns:ns6="http://TargetNamespace.com/nxsdschema">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,11 +43,22 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/JsonResponseConfirmarReservaPedido.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
+          location="../WSDLs/ConfirmarPedidoReservaBPELProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <import namespace="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaResponseRest/v1"
+          location="../Schemas/JsonToXMLConfirmaReserva.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaRest/v1"
+          location="../Schemas/ConfirmarReservaPedidoRestOutput.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaRest/v1"
+          location="../Schemas/responseConfirmarReservaPedidoRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaRest/v1"
           location="../Schemas/ConfirmarPedidoReservaRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
-          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
   <partnerLinks>
     <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
     <partnerLink name="ConfirmaReservaPedidoRestReference" bpelx:wadl="yes"/>
@@ -55,7 +68,7 @@
     <variable name="outputVariable" messageType="ns1:ConfirmarPedidoReservaResponse"/>
     <variable name="requestJSON" type="xsd:string"/>
     <variable name="responseJSON" type="xsd:string"/>
-    <variable name="transformationJSON" element="ns3:Root-Element"/>
+    <variable name="TranslateJsonToXML" element="ns6:Root-Element"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -66,7 +79,7 @@
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:id</to>
           </copy>
           <copy>
-            <from>ora:getFaultAsString()</from>
+            <from>oraext:get-content-as-string($responseJSON)</from>
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:message</to>
           </copy>
           <copy>
@@ -104,7 +117,31 @@
       <invoke name="ConfirmarPedidoReservaRestReference"
               partnerLink="ConfirmaReservaPedidoRestReference" inputVariable="requestJSON"
               outputVariable="responseJSON" bpelx:method="ConfirmarReservaPedido" bpelx:invokeAsDetail="no"/>
+      
     </sequence>
+    <assign name="TranslateJsonToXMLReponse">
+      <bpelx:annotation>
+        <bpelx:pattern>translate</bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doTranslateFromNative(string($responseJSON), 'Schemas/JsonResponseConfirmarReservaPedido.xsd', 'Root-Element', 'DOM')</from>
+        <to>$TranslateJsonToXML</to>
+      </copy>
+    </assign>
+    <assign name="AssignSucessoConfirmarReserva">
+      <copy>
+        <from>$TranslateJsonToXML/ns6:success</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:success</to>
+      </copy>
+      <copy>
+        <from>$TranslateJsonToXML/ns6:data/ns6:id</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:id</to>
+      </copy>
+      <copy>
+        <from>$TranslateJsonToXML/ns6:data/ns6:mensagem</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:message</to>
+      </copy>
+    </assign>
     <reply name="Reply" partnerLink="PedidoReservaDBBPEL" variable="outputVariable"
            portType="ns1:PedidoReservaPortType" operation="confirmarPedidoReserva"/>
   </sequence>
