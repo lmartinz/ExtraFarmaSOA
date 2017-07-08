@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <action name="DBSensorAction" enabled="true" publishType="BpelReportsSchema" publishName="" filter="" publishTarget="">
+        <sensorName>codigoTransferenciaCancelar</sensorName>
+        <sensorName>codigoTransferenciaCriar</sensorName>
+    </action>
+    <action name="JMSSensorAction_codigoTransferenciaCancelar" enabled="false" publishType="JMSQueue" publishTarget="">
+        <property name="JMSConnectionFactory"/>
+    </action>
+    <action name="JMSSensorAction_codigoTransferenciaCriar" enabled="false" publishType="JMSQueue" publishTarget="">
+        <property name="JMSConnectionFactory"/>
+    </action>
+</actions>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoTransferenciaCancelar" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">
+        <serviceConfig service="TransferenciaMercadoriaLojaDBBPEL" expression="$in.parameters/tns:CancelarTransferenciaMercadoriaLojaRequest/codigoTransferencia" operation="cancelarTransferenciaMercadoriaLoja" outputDataType="integer" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoTransferenciaCriar" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">
+        <serviceConfig service="TransferenciaMercadoriaLojaDBBPEL" expression="$in.parameters/tns:CriarTransferenciaMercadoriaLojaRequest/codigoTransferencia" operation="criarTransferenciaMercadoriaLoja" outputDataType="integer" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>

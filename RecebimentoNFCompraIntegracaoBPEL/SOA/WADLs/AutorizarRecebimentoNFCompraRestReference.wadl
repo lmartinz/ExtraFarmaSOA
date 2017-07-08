@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
-   <doc title="AutorizarRecebimentoNFCompraRestReference">RestReference</doc>
+   <doc title="RestReference">RestReference</doc>
    <resources>
       <resource path="erp-imifarma/v1/recebimento/cd/agendamento">
          <method name="POST" soa:name="autorizarRecebimentoNFCompra">
