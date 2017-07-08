@@ -94,10 +94,6 @@
       <reference name="ConfirmaReservaPedidoRestReference">
         <interface.wadl interface="WADLs/ConfirmaReservaPedidoRestReference.wadl"/>
       </reference>
-      <reference name="RegistroLogBPELReference"
-                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
-        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-      </reference>
     </componentType>
   </component>
   <reference name="RegistroLogBPELReference"
@@ -151,9 +147,5 @@
   <wire>
     <source.uri>ConfirmarPedidoReservaBPELProcess/ConfirmaReservaPedidoRestReference</source.uri>
     <target.uri>ConfirmaReservaPedidoRestReference</target.uri>
-  </wire>
-  <wire>
-    <source.uri>ConfirmarPedidoReservaBPELProcess/RegistroLogBPELReference</source.uri>
-    <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
 </composite>
