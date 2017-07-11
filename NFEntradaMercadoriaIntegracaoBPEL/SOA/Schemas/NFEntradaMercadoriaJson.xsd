@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1" targetNamespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" 
+nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="codigoAgendamento" type="xsd:integer"/>
+            <xsd:element name="AgendamentoList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="AgendamentoDetalheList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="ItemList" maxOccurs="unbounded">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="numeroItens" type="xsd:integer"/>
+                                       <xsd:element name="IdentificacaoList" maxOccurs="unbounded">
+                                          <xsd:complexType>
+                                             <xsd:sequence>
+                                                <xsd:element name="numeroIdentificacaoUniversal" type="xsd:integer"/>
+                                             </xsd:sequence>
+                                          </xsd:complexType>
+                                       </xsd:element>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="InformacaoNotaFiscal">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="NotaFiscal">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="numeroNotaFiscal" type="xsd:integer"/>
+                              <xsd:element name="numeroSerieNotaFiscal" type="xsd:integer"/>
+                              <xsd:element name="cnpjEmissor" type="xsd:string"/>
+                              <xsd:element name="dataEmissaoNotaFiscal" type="xsd:string"/>
+                              <xsd:element name="chaveAcessoNotaFiscal" type="xsd:string"/>
+                              <xsd:element name="codigoDestino" type="xsd:integer"/>
+                              <xsd:element name="valorTotalNotaFiscal" type="xsd:double"/>
+                              <xsd:element name="ProdutoList" maxOccurs="unbounded">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="codigoProduto" type="xsd:integer"/>
+                                       <xsd:element name="quantidade" type="xsd:integer"/>
+                                       <xsd:element name="codigoVolume" type="xsd:string"/>
+                                       <xsd:element name="LoteList" maxOccurs="unbounded">
+                                          <xsd:complexType>
+                                             <xsd:sequence>
+                                                <xsd:element name="loteProduto" type="xsd:string"/>
+                                                <xsd:element name="dataFabricacao" type="xsd:string"/>
+                                                <xsd:element name="dataValidade" type="xsd:string"/>
+                                                <xsd:element name="quantidadeLote" type="xsd:integer"/>
+                                             </xsd:sequence>
+                                          </xsd:complexType>
+                                       </xsd:element>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

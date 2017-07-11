@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="PedidoReservaDBBPEL" x="0" y="531" side="left"/>
-      <partnerlink name="RegistroLogBPELReference" x="1017" y="447" side="right"/>
-      <partnerlink name="etFulfillOrderJMSReference" x="1017" y="323" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="980" y="447" side="right"/>
+      <partnerlink name="etFulfillOrderJMSReference" x="980" y="323" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1185,485" show_swimlanes="true">
+   <graph_layout viewport="0,0,938,291" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

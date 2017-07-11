@@ -1,0 +1,161 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Mon Jul 10 18:17:49 BRT 2017
+  Author:  LeandroMartins
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="NFEntradaMercadoriaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns2="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1" 
+         
+         xmlns:ns3="http://TargetNamespace.com/nxsdschema"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+          location="../WSDLs/NFEntradaMercadoriaV1Wrapper1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/NFEntregaResponse.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1" location="../Schemas/NFEntradaMercadoriaJson.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="NFEntradaMercadoriaRestReference" bpelx:wadl="yes"/>
+    <partnerLink name="NFEntradaMercadoriaDBBPEL" partnerLinkType="ns2:NFEntradaMercadoriaDBBPEL"
+                 myRole="NFEntradaMercadoriaPortType"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:NFEntradaMercadoriaRequest"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:NFEntradaMercadoriaResponse"/>
+    <variable name="transformationJson" element="ns2:Root-Element"/>
+    <variable name="requestJSON" type="xsd:string"/>
+    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="translateXML" element="ns3:Root-Element"/>
+  </variables>
+  <faultHandlers>
+    <catchAll><sequence name="SequenceRetornoErro" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <assign name="AssignReplyCatch">
+         
+         
+         
+      <copy>
+            <from>ora:getFlowId()</from>
+            <to  expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:id</to>
+                                   
+         </copy><copy>
+            <from>oraext:get-content-as-string($responseJSON)</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:message</to>
+         </copy><copy>
+            <from>1</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:success</to>
+         </copy></assign>
+      <reply name="replyCatchOutput" partnerLink="NFEntradaMercadoriaDBBPEL" variable="outputVariable"
+             portType="ns2:NFEntradaMercadoriaPortType" operation="publicarNFEntradaMercadoria"/>
+   </sequence></catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in NFEntradaMercadoriaBPELProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="NFEntradaMercadoriaDBBPEL" portType="ns1:NFEntradaMercadoriaPortType" operation="publicarNFEntradaMercadoria" variable="inputVariable" createInstance="yes"/>
+    <scope name="ScopeNFEntrada">
+      <sequence name="SequenceNFEntrada">
+        <assign name="TransformationInputToNFEntradaJson">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/TransformationInputToNFEntradaJson.xsl", $inputVariable.parameters)</from>
+            <to variable="transformationJson"/>
+          </copy>
+        </assign>
+        <assign name="TranslateToJson">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateToNative($transformationJson, 'Schemas/NFEntradaMercadoriaJson.xsd', 'Root-Element', 'STRING')</from>
+            <to>$requestJSON</to>
+          </copy>
+        </assign>
+        <invoke name="InvokePublicarNFEntradMercadoria"
+                partnerLink="NFEntradaMercadoriaRestReference" inputVariable="requestJSON"
+                outputVariable="responseJSON" bpelx:method="publicarNFEntradaMercadoria" bpelx:invokeAsDetail="no"/>
+      </sequence>
+    </scope>
+    <assign name="TranslateJsonToXML">
+      <bpelx:annotation>
+        <bpelx:pattern>translate</bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doTranslateFromNative(string($responseJSON), 'Schemas/NFEntregaResponse.xsd', 'Root-Element', 'DOM')</from>
+        <to>$translateXML</to>
+      </copy>
+    </assign>
+    <assign name="AssignSucessoPulicarNFEtrada">
+      <copy>
+        <from>$translateXML/ns3:success</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:success</to>
+      </copy>
+      <copy>
+        <from>$translateXML/ns3:data/ns3:id</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:id</to>
+      </copy>
+      <copy>
+        <from>$translateXML/ns3:data/ns3:mensagem</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns4:message</to>
+      </copy>
+    </assign>
+    <!--<assign name="AssignSucessoPublicarNFEntrada"></assign>-->
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="NFEntradaMercadoriaDBBPEL" portType="ns1:NFEntradaMercadoriaPortType" operation="publicarNFEntradaMercadoria" variable="outputVariable"/>
+  </sequence>
+</process>

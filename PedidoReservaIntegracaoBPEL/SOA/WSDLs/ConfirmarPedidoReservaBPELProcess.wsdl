@@ -6,6 +6,7 @@
      xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
      xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
      xmlns:ns1="http://TargetNamespace.com/nxsdschema"
+     xmlns:ns2="http://TargetNamespace.com/confirmarPedidoReserva"
     >
     <wsdl:types>
         <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
@@ -16,6 +17,9 @@
              xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/ConfirmarPedidoReservaBPELProcess"
              xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns1="http://TargetNamespace.com/nxsdschema">
             <xsd:import namespace="http://TargetNamespace.com/nxsdschema" schemaLocation="../Schemas/JsonResponseConfirmarReservaPedido.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://TargetNamespace.com/confirmarPedidoReserva" schemaLocation="../Schemas/ConfirmarPedidoReservaError.xsd"/>
         </xsd:schema>
     </wsdl:types>
 </wsdl:definitions>

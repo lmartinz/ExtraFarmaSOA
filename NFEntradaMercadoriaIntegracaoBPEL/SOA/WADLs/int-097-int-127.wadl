@@ -1,0 +1,695 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="api" />
+    <resources base="http://localhost">
+            <resource path="agendamento">
+                <doc title="agendamento" /> 
+                <method name="POST">                    
+                        <request>
+                                                            <representation mediaType="application/json">
+                                    <doc>{
+  &quot;codigoAgendamento&quot;: 1,
+  &quot;AgendamentoList&quot;: [
+    {
+      &quot;AgendamentoDetalheList&quot;: [
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;AgendamentoDetalheList&quot;: [
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;InformacaoNotaFiscal&quot;: {
+    &quot;NotaFiscal&quot;: {
+      &quot;numeroNotaFiscal&quot;: 1,
+      &quot;numeroSerieNotaFiscal&quot;: 2,
+      &quot;cnpjEmissor&quot;: &quot;sample string 3&quot;,
+      &quot;dataEmissaoNotaFiscal&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+      &quot;chaveAcessoNotaFiscal&quot;: &quot;sample string 5&quot;,
+      &quot;codigoDestino&quot;: 6,
+      &quot;valorTotalNotaFiscal&quot;: 7.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;codigoProduto&quot;: 1,
+          &quot;quantidade&quot;: 2,
+          &quot;codigoVolume&quot;: &quot;sample string 3&quot;,
+          &quot;LoteList&quot;: [
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            },
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            }
+          ]
+        },
+        {
+          &quot;codigoProduto&quot;: 1,
+          &quot;quantidade&quot;: 2,
+          &quot;codigoVolume&quot;: &quot;sample string 3&quot;,
+          &quot;LoteList&quot;: [
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            },
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}</doc>
+                                </representation>
+                                <representation mediaType="text/json">
+                                    <doc>{
+  &quot;codigoAgendamento&quot;: 1,
+  &quot;AgendamentoList&quot;: [
+    {
+      &quot;AgendamentoDetalheList&quot;: [
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;AgendamentoDetalheList&quot;: [
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          &quot;ItemList&quot;: [
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            },
+            {
+              &quot;numeroItens&quot;: 1,
+              &quot;IdentificacaoList&quot;: [
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                },
+                {
+                  &quot;numeroIdentificacaoUniversal&quot;: 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;InformacaoNotaFiscal&quot;: {
+    &quot;NotaFiscal&quot;: {
+      &quot;numeroNotaFiscal&quot;: 1,
+      &quot;numeroSerieNotaFiscal&quot;: 2,
+      &quot;cnpjEmissor&quot;: &quot;sample string 3&quot;,
+      &quot;dataEmissaoNotaFiscal&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+      &quot;chaveAcessoNotaFiscal&quot;: &quot;sample string 5&quot;,
+      &quot;codigoDestino&quot;: 6,
+      &quot;valorTotalNotaFiscal&quot;: 7.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;codigoProduto&quot;: 1,
+          &quot;quantidade&quot;: 2,
+          &quot;codigoVolume&quot;: &quot;sample string 3&quot;,
+          &quot;LoteList&quot;: [
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            },
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            }
+          ]
+        },
+        {
+          &quot;codigoProduto&quot;: 1,
+          &quot;quantidade&quot;: 2,
+          &quot;codigoVolume&quot;: &quot;sample string 3&quot;,
+          &quot;LoteList&quot;: [
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            },
+            {
+              &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+              &quot;dataFabricacao&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;dataValidade&quot;: &quot;2017-07-01T15:05:37.3369575-03:00&quot;,
+              &quot;quantidadeLote&quot;: 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}</doc>
+                                </representation>
+                                <representation mediaType="application/xml">
+                                    <doc>&lt;RecebimentoFisicoLoja xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_097_int_127&quot;&gt;
+  &lt;AgendamentoList&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalheList&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+      &lt;/AgendamentoDetalheList&gt;
+    &lt;/Agendamento&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalheList&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+      &lt;/AgendamentoDetalheList&gt;
+    &lt;/Agendamento&gt;
+  &lt;/AgendamentoList&gt;
+  &lt;InformacaoNotaFiscal&gt;
+    &lt;NotaFiscal&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;LoteList&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+          &lt;/LoteList&gt;
+          &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;codigoVolume&gt;sample string 3&lt;/codigoVolume&gt;
+          &lt;quantidade&gt;2&lt;/quantidade&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;LoteList&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+          &lt;/LoteList&gt;
+          &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;codigoVolume&gt;sample string 3&lt;/codigoVolume&gt;
+          &lt;quantidade&gt;2&lt;/quantidade&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;chaveAcessoNotaFiscal&gt;sample string 5&lt;/chaveAcessoNotaFiscal&gt;
+      &lt;cnpjEmissor&gt;sample string 3&lt;/cnpjEmissor&gt;
+      &lt;codigoDestino&gt;6&lt;/codigoDestino&gt;
+      &lt;dataEmissaoNotaFiscal&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataEmissaoNotaFiscal&gt;
+      &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+      &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;valorTotalNotaFiscal&gt;7&lt;/valorTotalNotaFiscal&gt;
+    &lt;/NotaFiscal&gt;
+  &lt;/InformacaoNotaFiscal&gt;
+  &lt;codigoAgendamento&gt;1&lt;/codigoAgendamento&gt;
+&lt;/RecebimentoFisicoLoja&gt;</doc>
+                                </representation>
+                                <representation mediaType="text/xml">
+                                    <doc>&lt;RecebimentoFisicoLoja xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_097_int_127&quot;&gt;
+  &lt;AgendamentoList&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalheList&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+      &lt;/AgendamentoDetalheList&gt;
+    &lt;/Agendamento&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalheList&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+        &lt;AgendamentoDetalhe&gt;
+          &lt;ItemList&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+            &lt;Item&gt;
+              &lt;IdentificacaoList&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+                &lt;Identificacao&gt;
+                  &lt;numeroIdentificacaoUniversal&gt;1&lt;/numeroIdentificacaoUniversal&gt;
+                &lt;/Identificacao&gt;
+              &lt;/IdentificacaoList&gt;
+              &lt;numeroItens&gt;1&lt;/numeroItens&gt;
+            &lt;/Item&gt;
+          &lt;/ItemList&gt;
+        &lt;/AgendamentoDetalhe&gt;
+      &lt;/AgendamentoDetalheList&gt;
+    &lt;/Agendamento&gt;
+  &lt;/AgendamentoList&gt;
+  &lt;InformacaoNotaFiscal&gt;
+    &lt;NotaFiscal&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;LoteList&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+          &lt;/LoteList&gt;
+          &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;codigoVolume&gt;sample string 3&lt;/codigoVolume&gt;
+          &lt;quantidade&gt;2&lt;/quantidade&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;LoteList&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+            &lt;Lote&gt;
+              &lt;dataFabricacao&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataFabricacao&gt;
+              &lt;dataValidade&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataValidade&gt;
+              &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+              &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+            &lt;/Lote&gt;
+          &lt;/LoteList&gt;
+          &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;codigoVolume&gt;sample string 3&lt;/codigoVolume&gt;
+          &lt;quantidade&gt;2&lt;/quantidade&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;chaveAcessoNotaFiscal&gt;sample string 5&lt;/chaveAcessoNotaFiscal&gt;
+      &lt;cnpjEmissor&gt;sample string 3&lt;/cnpjEmissor&gt;
+      &lt;codigoDestino&gt;6&lt;/codigoDestino&gt;
+      &lt;dataEmissaoNotaFiscal&gt;2017-07-01T15:05:37.3369575-03:00&lt;/dataEmissaoNotaFiscal&gt;
+      &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+      &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;valorTotalNotaFiscal&gt;7&lt;/valorTotalNotaFiscal&gt;
+    &lt;/NotaFiscal&gt;
+  &lt;/InformacaoNotaFiscal&gt;
+  &lt;codigoAgendamento&gt;1&lt;/codigoAgendamento&gt;
+&lt;/RecebimentoFisicoLoja&gt;</doc>
+                                </representation>
+                                <representation mediaType="application/x-www-form-urlencoded">
+                                    <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;RecebimentoFisicoLoja&#39;.</doc>
+                                </representation>
+                        </request>
+                    </method>
+            </resource>            
+    </resources>
+</application>

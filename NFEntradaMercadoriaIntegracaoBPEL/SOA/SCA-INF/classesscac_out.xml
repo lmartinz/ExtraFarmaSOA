@@ -1,0 +1,273 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:import[@location='WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl']</loc>
+      <line>18</line>
+      <col>81</col>
+      <file>/Users/LeandroMartins/Sysgroup/extrafarma/extrafarmasoa/NFEntradaMercadoriaIntegracaoBPEL/SOA/composite.xml</file>
+      <name>/Users/LeandroMartins/Sysgroup/extrafarma/extrafarmasoa/NFEntradaMercadoriaIntegracaoBPEL/SOA/composite.xml</name>
+      <fix/>
+      <msg>Falha na carga de wsdl "WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>34</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Please check import location or element QNames.</fix>
+      <msg>Erro ao obter o fluxo de entrada XML: file:/Users/LeandroMartins/Sysgroup/extrafarma/extrafarmasoa/NFEntradaMercadoriaIntegracaoBPEL/SOA/WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl: /Users/LeandroMartins/Sysgroup/extrafarma/extrafarmasoa/NFEntradaMercadoriaIntegracaoBPEL/SOA/WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl (No such file or directory)</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][1]</loc>
+      <line>43</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check location "../Schemas/NFEntregaResponse.xsd" and import type "http://www.w3.org/2001/XMLSchema"</fix>
+      <msg>Cannot import type "http://www.w3.org/2001/XMLSchema" from location "../Schemas/NFEntregaResponse.xsd"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>45</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check location "../Schemas/NFEntradaMercadoriaJson.xsd" and import type "http://www.w3.org/2001/XMLSchema"</fix>
+      <msg>Cannot import type "http://www.w3.org/2001/XMLSchema" from location "../Schemas/NFEntradaMercadoriaJson.xsd"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLinks']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='partnerLink'][@name='NFEntradaMercadoriaDBBPEL']</loc>
+      <line>54</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaDBBPEL" is resolvable (check imports, value of "partnerLinkType").</fix>
+      <msg>"partnerLinkType" is set to "ns1:NFEntradaMercadoriaDBBPEL" on this &lt;bpel:partnerLink>  but it cannot be resolved (check value of "partnerLinkType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='inputVariable']</loc>
+      <line>65</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaRequest" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns1:NFEntradaMercadoriaRequest" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='outputVariable']</loc>
+      <line>68</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaResponse" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "ns1:NFEntradaMercadoriaResponse" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='transformationJson']</loc>
+      <line>69</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:Root-Element" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns1:Root-Element" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='requestJSON']</loc>
+      <line>70</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "xsd:string" is resolvable (check imports, value of "type").</fix>
+      <msg>"type" is set to "xsd:string" on this &lt;bpel:variable>  but it cannot be resolved (check value of "type", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='responseJSON']</loc>
+      <line>71</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "xsd:string" is resolvable (check imports, value of "type").</fix>
+      <msg>"type" is set to "xsd:string" on this &lt;bpel:variable>  but it cannot be resolved (check value of "type", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='translateXML']</loc>
+      <line>72</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns3:Root-Element" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns3:Root-Element" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceRetornoErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>92</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceRetornoErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>92</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceRetornoErro']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyCatchOutput']</loc>
+      <line>92</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:NFEntradaMercadoriaPortType" on this &lt;bpel:reply> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>105</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:receive> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>105</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:NFEntradaMercadoriaPortType" on this &lt;bpel:receive> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>105</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:receive> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationInputToNFEntradaJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>114</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this node via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The node &lt;bpel:to> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='InvokePublicarNFEntradMercadoria']</loc>
+      <line>128</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "inputVariable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:variable (via the attribute "inputVariable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceNFEntrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='InvokePublicarNFEntradMercadoria']</loc>
+      <line>128</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "outputVariable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:variable (via the attribute "outputVariable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TranslateJsonToXML']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']</loc>
+      <line>135</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "type" is not compatible with to-spec of "type"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignSucessoPulicarNFEtrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]</loc>
+      <line>141</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "type" is not compatible with to-spec of "type"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignSucessoPulicarNFEtrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]</loc>
+      <line>145</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "type" is not compatible with to-spec of "type"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignSucessoPulicarNFEtrada']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]</loc>
+      <line>149</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "type" is not compatible with to-spec of "type"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>156</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:partnerLink specified on this activity via attribute "partnerLink" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:partnerLink (via the attribute "partnerLink") - this bpel:partnerLink needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>156</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:reply> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='reply'][@name='replyOutput']</loc>
+      <line>156</line>
+      <col/>
+      <file>BPEL/NFEntradaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NFEntradaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that value "ns1:NFEntradaMercadoriaPortType" is resolvable (check imports, value of "portType").</fix>
+      <msg>"portType" is set to "ns1:NFEntradaMercadoriaPortType" on this &lt;bpel:reply> activity but it cannot be resolved (check value of "portType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+</Faults>
