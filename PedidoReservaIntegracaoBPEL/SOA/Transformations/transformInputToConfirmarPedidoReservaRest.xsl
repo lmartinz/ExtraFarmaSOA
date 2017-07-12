@@ -5,7 +5,9 @@
                 xmlns:Q4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd">
+                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+                xmlns:Q5="http://canonico.ultra.com.br/LegadoFault/v1"
+                xmlns:ns2="http://canonico.ultra.com.br/LegadoOutput/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

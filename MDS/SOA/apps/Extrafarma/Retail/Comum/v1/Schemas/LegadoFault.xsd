@@ -1,9 +1,11 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/confirmarPedidoReserva" targetNamespace="http://TargetNamespace.com/confirmarPedidoReserva" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
-   <xsd:element name="Root-Element">
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://canonico.ultra.com.br/LegadoFault/v1"
+     xmlns:tns="http://canonico.ultra.com.br/LegadoFault/v1" targetNamespace="http://canonico.ultra.com.br/LegadoFault/v1"
+     elementFormDefault="qualified">
+   <xsd:element name="RetornoServicoFault">
       <xsd:complexType>
          <xsd:sequence>
-            <xsd:element name="success" type="xsd:string"/>
+            <xsd:element name="success" type="xsd:boolean"/>
             <xsd:element name="errors" maxOccurs="unbounded">
                <xsd:complexType>
                   <xsd:sequence>
@@ -17,8 +19,4 @@
          </xsd:sequence>
       </xsd:complexType>
    </xsd:element>
-<xsd:annotation xmlns="">
-      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
-      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
-   </xsd:annotation>
 </xsd:schema>

@@ -1,0 +1,260 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Fri Jul 07 20:23:41 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="etStoresFromRMSServicoBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSServicoBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSServicoBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference"
+         xmlns:ns3="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference"
+          location="../WSDLs/etStoresFromRMSJMSReference.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="etStoresFromRMSJMSReference" partnerLinkType="ns1:Consume_Message_plt"
+                 myRole="Consume_Message_role"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns2:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable" messageType="ns1:Consume_Message_msg"/>
+    <variable name="RegistroLogBPEL" messageType="ns2:requestMessage"/>
+  </variables>
+  <sequence name="main">
+    <receive name="ReceiveInput" createInstance="yes" partnerLink="etStoresFromRMSJMSReference"
+             portType="ns1:Consume_Message_ptt" operation="Consume_Message" variable="inputVariable"/>
+    <if name="IfFamilyStores">
+      <documentation>
+        <![CDATA[CriarLoja]]>
+      </documentation>
+      <condition>oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:family,'Stores') and oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:type,'storecre') </condition>
+      <scope name="ScopeCriarLoja">
+        <sequence name="SequenceCriarLoja">
+          <sequence name="CriarFluxoRegistraLog">
+            <assign name="AssignPayloadToRegistroLogBPEL">
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>'Return LojaIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogCriarBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns2:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </sequence>
+      </scope>
+      <elseif>
+        <documentation>
+          <![CDATA[AlterarLoja]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:family,'Stores') and oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:type,'storemod')</condition>
+        <scope name="ScopeAlterarLoja">
+          <sequence name="AlterarFluxoRegistraLog">
+            <assign name="AssignPayloadAlterarToRegistroLogBPEL">
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>'Return LojaIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogAlterarBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns2:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+      </elseif>
+      <elseif>
+        <documentation>
+          <![CDATA[ExcluirLoja]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:family,'Stores') and oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:type,'storedel')</condition>
+        <scope name="ScopeExcluirLoja">
+          <sequence name="ExcluirFluxoRegistraLog">
+            <assign name="AssignPayloadExcluirToRegistroLogBPEL">
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>'Return LojaIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogExcluirBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns2:execute_ptt" operation="execute" inputVariable="RegistroLogBPEL"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+      </elseif>
+      <elseif>
+        <documentation>
+          <![CDATA[AlterarDetalheLoja]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:family,'Stores') and oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:type,'storedtlmod')</condition>
+        <scope name="ScopeAlterarDetalheLoja">
+          <sequence name="AlterarDetalheFluxoRegistraLog">
+            <assign name="AssignPayloadAlterarDetalheLojaToRegistroLogBPEL">
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
+              </copy>
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>'Return LojaIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogDetalheAlterarBPEL"
+                    partnerLink="RegistroLogBPELReference" portType="ns2:execute_ptt" operation="execute"
+                    inputVariable="RegistroLogBPEL" bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+      </elseif>
+      <elseif>
+        <documentation>
+          <![CDATA[ExcluirDetalheLoja]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:family,'Stores') and oraext:compare-ignore-case($inputVariable.body/ns3:ribMessage/ns3:type,'storedtldel')</condition>
+        <scope name="ScopeExcluirDetalheLoja">
+          <sequence name="ExcluirDetalheFluxoRegistraLog">
+            <assign name="AssignPayloadExcluirDetalheLojaToRegistroLogBPEL">
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>'Return LojaIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogDetalheExcluirBPEL"
+                    partnerLink="RegistroLogBPELReference" portType="ns2:execute_ptt" operation="execute"
+                    inputVariable="RegistroLogBPEL" bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </scope>
+      </elseif>
+      <else>
+        <sequence name="SequenceMsgDescartada">
+          <empty name="Empty"/>
+        </sequence>
+      </else>
+    </if>
+  </sequence>
+</process>

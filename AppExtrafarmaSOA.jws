@@ -30,6 +30,7 @@
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
       <hash><url n="URL" path="NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="NFSaidaMercadoriaIntegracaoBPEL/NFSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="NotaFiscalSaidaMercadoriaIntegracaoBPEL/NotaFiscalSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoReservaIntegracaoBPEL/PedidoReservaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoTransferenciaMercadoriaIntegracaoBPEL/PedidoTransferenciaMercadoriaIntegracaoBPEL.jpr"/></hash>

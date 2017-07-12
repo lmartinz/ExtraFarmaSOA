@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/NFSaidaMercadoriaMediator.mplan</file>
+      <name>Mediators/NFSaidaMercadoriaMediator.mplan</name>
+      <fix/>
+      <msg>Operation\Event "criarNFSaidaMercadoria" does not contain case. No operation\event will be executed\processed respectively.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>51</line>
+      <col/>
+      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: C:\Users\Vinicius\Dropbox\Resource\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\PublicacaoNFSaidaMercadoriaBPELProcess.wsdl (The system cannot find the file specified)" near (FileInputStream.java:-2).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>51</line>
+      <col/>
+      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Check location "../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
+      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
+      <line>123</line>
+      <col/>
+      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that the expression in &lt;bpel:condition> is a boolean expression.</fix>
+      <msg>The expression oraext:compare-ignore-case($inputVariable.parame ... in &lt;bpel:condition> is not a boolean expression.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='elseif']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
+      <line>134</line>
+      <col/>
+      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
+      <fix>Make sure that the expression in &lt;bpel:condition> is a boolean expression.</fix>
+      <msg>The expression oraext:compare-ignore-case($inputVariable.parame ... in &lt;bpel:condition> is not a boolean expression.</msg>
+   </Fault>
+</Faults>

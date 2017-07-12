@@ -1,0 +1,192 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Mon Jul 10 12:19:14 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="PublicacaoNFSaidaMercadoriaBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/NFSaidaMercadoriaIntegracaoBPEL/PublicacaoNFSaidaMercadoriaBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/NFSaidaMercadoriaIntegracaoBPEL/PublicacaoNFSaidaMercadoriaBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://service.ultra.com.br/fiscal/PublicacaoNFSaidaMercadoriaRest/v1"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns3="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+         xmlns:ns4="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+         xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/EXFBrInvoicesDesc/v1"
+         xmlns:ns7="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns8="http://canonico.ultra.com.br/LegadoFault/v1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/fiscal/PublicacaoNFSaidaMercadoriaRest/v1"
+          location="../Schemas/PublicacaoNFSaidaMercadoriaRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/NFSaidaMercadoriaIntegracaoBPEL/PublicacaoNFSaidaMercadoriaBPELProcess"
+          location="../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="NFSaidaMercadoriaDBBPEL" partnerLinkType="ns1:NFSaidaMercadoriaDBBPEL"
+                 myRole="NFSaidaMercadoriaPortType"/>
+    <partnerLink name="PublicacaoNFSaidaMercadoriaRestReference" bpelx:wadl="yes"/>
+  </partnerLinks>
+  <variables>
+    <variable name="requestJSON" type="xsd:string"/>
+    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="TranslateXMLToJson" element="ns2:Root-Element"/>
+    <variable name="inputVariable" messageType="ns1:PublicacaoNFSaidaMercadoriaRequest"/>
+    <variable name="outputVariable" messageType="ns1:PublicacaoNFSaidaMercadoriaResponse"/>
+    <variable name="translateJsonToXML" element="ns7:RetornoServico"/>
+    <variable name="errorTranslateToXML" element="ns8:RetornoServicoFault"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="SequenceRetornoErro">
+        <assign name="TranslateJsonToXMLError">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
+            <to>$errorTranslateToXML</to>
+          </copy>
+        </assign>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>$errorTranslateToXML/ns8:success</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+          </copy>
+          <copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+          </copy>
+          <copy>
+            <from>oraext:get-content-as-string($errorTranslateToXML/ns8:errors/node())</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" variable="outputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
+               portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main">
+    <receive name="receiveInput" variable="inputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
+             portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria" createInstance="yes"/>
+    <sequence name="SequenceChamadaRestLegado">
+      <assign name="TransformationToJson">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToPublicacaoNFSaidaMercadoriaRest.xsl", $inputVariable.parameters)</from>
+          <to variable="TranslateXMLToJson"/>
+        </copy>
+      </assign>
+      <assign name="TranslateToJSON">
+        <bpelx:annotation>
+          <bpelx:pattern>translate</bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doTranslateToNative($TranslateXMLToJson, 'Schemas/PublicacaoNFSaidaMercadoriaRest.xsd', 'Root-Element', 'STRING')</from>
+          <to>$requestJSON</to>
+        </copy>
+      </assign>
+      <if name="IfTipoOperacao">
+        <documentation>
+          <![CDATA[Aprovar]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfapprovdcre')</condition>
+        <sequence name="SequenceAprovar">
+          <invoke name="PublicacaoAprovarNFSaidaMercadoriaRestReference"
+                  partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJSON"
+                  outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaAprovada"
+                  bpelx:invokeAsDetail="no"/>
+        </sequence>
+        <elseif>
+          <documentation>
+            <![CDATA[Cancelar]]>
+          </documentation>
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfcanceldcre')</condition>
+          <sequence name="SequenceCancelar">
+            <invoke name="PublicacaoCancelarNFSaidaMercadoriaRestReference"
+                    partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJSON"
+                    outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaCancelada"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </elseif>
+        <else>
+          <sequence name="SequenceTipoInvalido">
+            <assign name="AssignReplyTipoInvalido">
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+              </copy>
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+              </copy>
+              <copy>
+                <from>concat('Rib Message Type ',$inputVariable.parameters/ns4:ribMessage/ns4:type,' invalida.')</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+              </copy>
+            </assign>
+            <reply name="ReplyTipoInvalido" variable="outputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
+                   portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria"/>
+          </sequence>
+        </else>
+      </if>
+      <sequence name="SequenceRetornoRestLegado">
+        <assign name="TranslateJsonToXMLReponse">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
+            <to>$translateJsonToXML</to>
+          </copy>
+        </assign>
+        <assign name="AssignSucessoPublicacaoNFSaidaMercadoria">
+          <copy>
+            <from>$translateJsonToXML/ns7:success</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+          </copy>
+          <copy>
+            <from>$translateJsonToXML/ns7:data/ns7:mensagem</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+          </copy>
+          <copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+          </copy>
+        </assign>
+      </sequence>
+    </sequence>
+    <reply name="Reply" variable="outputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
+           portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria"/>
+  </sequence>
+</process>

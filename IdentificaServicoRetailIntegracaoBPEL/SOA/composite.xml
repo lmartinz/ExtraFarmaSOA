@@ -19,8 +19,6 @@
           location="WSDLs/etFulfilOrdCfmJMSReference.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1Wrapper.wsdl"
-          importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
           location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl"
           importType="wsdl"/>
@@ -29,6 +27,19 @@
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference"
+          location="WSDLs/etStoresFromRMSJMSReference.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etEXFBrInvoicesJMSReference"
+          location="WSDLs/etEXFBrInvoicesJMSReference.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+          location="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+          location="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1Wrapper.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
+          importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etPOScheduleFromRFMJMSReference_jms.jca">
@@ -38,6 +49,18 @@
   <service name="etFulfilOrdCfmJMSReference" ui:wsdlLocation="WSDLs/etFulfilOrdCfmJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etFulfilOrdCfmJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etFulfilOrdCfmJMSReference_jms.jca">
+      <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
+    </binding.jca>
+  </service>
+  <service name="etStoresFromRMSJMSReference" ui:wsdlLocation="WSDLs/etStoresFromRMSJMSReference.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference#wsdl.interface(Consume_Message_ptt)"/>
+    <binding.jca config="Adapters/etStoresFromRMSJMSReference_jms.jca">
+      <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
+    </binding.jca>
+  </service>
+  <service name="etEXFBrInvoicesJMSReference" ui:wsdlLocation="WSDLs/etEXFBrInvoicesJMSReference.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etEXFBrInvoicesJMSReference#wsdl.interface(Consume_Message_ptt)"/>
+    <binding.jca config="Adapters/etEXFBrInvoicesJMSReference_jms.jca">
       <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
     </binding.jca>
   </service>
@@ -54,7 +77,7 @@
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
       <reference name="PedidoReservaBPELReference"
-                 ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </reference>
     </componentType>
@@ -73,6 +96,36 @@
       <reference name="RegistroLogBPELReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
+  </component>
+  <component name="etStoresFromRMSServicoBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/etStoresFromRMSServicoBPELProcess.bpel"/>
+    <componentType>
+      <service name="etStoresFromRMSJMSReference" ui:wsdlLocation="WSDLs/etStoresFromRMSJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference#wsdl.interface(Consume_Message_ptt)"/>
+      </service>
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
+        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
+  </component>
+  <component name="etEXFBrInvoicesServicoBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/etEXFBrInvoicesServicoBPELProcess.bpel"/>
+    <componentType>
+      <service name="etEXFBrInvoicesJMSReference" ui:wsdlLocation="WSDLs/etEXFBrInvoicesJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etEXFBrInvoicesJMSReference#wsdl.interface(Consume_Message_ptt)"/>
+      </service>
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
+        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+      </reference>
+      <reference name="NFSaidaMercadoriaReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1#wsdl.interface(NFSaidaMercadoriaPortType)"/>
       </reference>
     </componentType>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
@@ -101,6 +154,14 @@
       <property name="java.naming.provider.url"></property>
     </binding.direct>
   </reference>
+  <reference name="NFSaidaMercadoriaReference"
+             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1.wsdl">
+    <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1#wsdl.interface(NFSaidaMercadoriaPortType)"/>
+    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
+                    useLocalJNDIProvider="true">
+      <property name="java.naming.provider.url"></property>
+    </binding.direct>
+  </reference>
   <wire>
     <source.uri>etFulfilOrdCfmServicoBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
@@ -114,15 +175,35 @@
     <target.uri>etFulfilOrdCfmServicoBPELProcess/etFulfilOrdCfmJMSReference</target.uri>
   </wire>
   <wire>
-    <source.uri>etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference</source.uri>
-    <target.uri>PedidoReservaBPELReference</target.uri>
-  </wire>
-  <wire>
     <source.uri>etPOScheduleFromRFMServicoBPELProcess/RecebimentoNFCompraReference</source.uri>
     <target.uri>RecebimentoNFCompraReference</target.uri>
   </wire>
   <wire>
     <source.uri>etPOScheduleFromRFMServicoBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etStoresFromRMSJMSReference</source.uri>
+    <target.uri>etStoresFromRMSServicoBPELProcess/etStoresFromRMSJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etStoresFromRMSServicoBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etEXFBrInvoicesJMSReference</source.uri>
+    <target.uri>etEXFBrInvoicesServicoBPELProcess/etEXFBrInvoicesJMSReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etEXFBrInvoicesServicoBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etEXFBrInvoicesServicoBPELProcess/NFSaidaMercadoriaReference</source.uri>
+    <target.uri>NFSaidaMercadoriaReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference</source.uri>
+    <target.uri>PedidoReservaBPELReference</target.uri>
   </wire>
 </composite>
