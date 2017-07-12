@@ -7,7 +7,7 @@
       <partnerlink name="NFEntradaMercadoriaDBBPEL" x="0" y="370" side="left"/>
       <partnerlink name="NFEntradaMercadoriaRestReference" x="780" y="428" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="75,0,824,499" show_swimlanes="true">
+   <graph_layout viewport="50,0,958,318" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

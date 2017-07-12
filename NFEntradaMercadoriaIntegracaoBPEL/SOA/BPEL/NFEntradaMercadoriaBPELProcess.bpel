@@ -113,7 +113,7 @@
             <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
           </bpelx:annotation>
           <copy>
-            <from>ora:doXSLTransformForDoc("../Transformations/TransformationInputToNFEntradaJson.xsl", $inputVariable.parameters)</from>
+            <from>ora:doXSLTransformForDoc("../Transformations/TransformationInputToNFEntradaMercJSON.xsl", $inputVariable.parameters)</from>
             <to variable="transformationJson"/>
           </copy>
         </assign>
