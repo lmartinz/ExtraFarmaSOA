@@ -1,0 +1,196 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu Jul 13 10:33:24 BRT 2017
+  Author:  marco
+  Type: BPEL 2.0 Process
+  Purpose: Asynchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="AtualizacaoPrecoBPELProcess"
+         targetNamespace="http://xmlns.oracle.com/ExtrafarmaSOA_F1_S2/AtualizacaoPrecoBPEL/AtualizacaoPrecoBPELProcess"
+         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:client="http://xmlns.oracle.com/ExtrafarmaSOA_F1_S2/AtualizacaoPrecoBPEL/AtualizacaoPrecoBPELProcess"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:ns1="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+         xmlns:ns2="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns3="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns5="http://canonico.ultra.com.br/infcorp/v1"
+         xmlns:ns6="http://service.ultra.com.br/precificacao/DevolucaoMercadoria/v1">
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <import namespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+          location="../WSDLs/AtualizacaoPrecoV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>          
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="AtualizacaoPrecoDBBPEL" partnerLinkType="ns1:AtualizacaoPrecoaDBBPEL"
+                 myRole="AtualizacaoPrecoPortType"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns2:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+    <partnerLink name="etEXFXPrcChgToRMSJMSReference" partnerLinkType="ns3:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
+  </partnerLinks>
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        VARIABLES                                                        
+        List of messages and XML documents used within this BPEL process 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:AtualizacaoPrecoRequest"/>
+    <variable name="outputVariable" messageType="ns1:AtualizacaoPrecoResponse"/>
+    <variable name="PostaMensagemEtEXFPrcChgToRMSJMS_Posta_Mensagem_InputVariable"
+              messageType="ns3:Posta_Mensagem_msg"/>
+    <variable name="MetaInformacaovariable" element="ns4:MetaInformacao"/>
+    <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
+    <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
+    <variable name="AtualizacaoPrecoFault" messageType="ns1:AtualizacaoPrecoFaultMsg"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="FluxoTratamentoMensagem">
+        <scope name="ScopeTratamentoMensagem">
+          <faultHandlers>
+            <catchAll>
+              <sequence name="Sequence1">
+                <assign name="AssignFault">
+                  <copy>
+                    <from>'500'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$AtualizacaoPrecoFault.AtualizacaoPrecoFault/ns5:codigo</to>
+                  </copy>
+                  <copy>
+                    <from>'Ocorreu um erro no envio da mensagem ao Retail e no Registro de Log.'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$AtualizacaoPrecoFault.AtualizacaoPrecoFault/ns5:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$AtualizacaoPrecoFault.AtualizacaoPrecoFault/ns5:detalhe</to>
+                  </copy>
+                  <copy>
+                    <from>'ERRO_DE_SISTEMA'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$AtualizacaoPrecoFault.AtualizacaoPrecoFault/ns5:tipo</to>
+                  </copy>
+                </assign>
+                <throw name="Throw" faultName="ns6:AtualizarPrecoFault" faultVariable="AtualizacaoPrecoFault"/>
+              </sequence>
+            </catchAll>
+          </faultHandlers>
+          <sequence name="Sequence2">
+            <assign name="AssignPayloadToRegistroErroLogBPEL">
+              <copy>
+                <from>$MetaInformacaovariable/ns4:datahoraRequisicao</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaovariable/ns4:usuario</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaovariable/ns4:idControle</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaovariable/ns4:sistemaOrigem</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>'AtualizaPrecoRestHTTP'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
+              </copy>
+              <copy>
+                <from>'AtualizarPrecoBPELErro'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+              </copy>
+              <copy>
+                <from> 'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
+              </copy>
+            </assign>
+            <invoke name="postaMensagemErroRegistroLogBPEL"
+                    partnerLink="RegistroLogBPELReference" portType="ns2:execute_ptt" operation="execute"
+                    bpelx:invokeAsDetail="no" inputVariable="postaMensagemErroRegistroLogBPEL_execute_InputVariable"/>
+          </sequence>
+        </scope>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>'200 - OK'</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/out</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="AtualizacaoPrecoDBBPEL" variable="outputVariable"
+               portType="ns1:AtualizacaoPrecoPortType" operation="atualizarPreco"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ORCHESTRATION LOGIC                                               
+       Set of activities coordinating the flow of messages across the    
+       services integrated within this business process                  
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <sequence name="main">
+    <!-- Receive input from requestor. (Note: This maps to operation defined in AtualizacaoPrecoBPELProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="AtualizacaoPrecoDBBPEL" portType="ns1:AtualizacaoPrecoPortType"
+             operation="atualizarPreco" variable="inputVariable" createInstance="yes"/>
+    <sequence name="SequencePostaMensagemRib">
+      <assign name="TransformationAtualizacaoPrecoToPrcChgDesc">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/TransformationAtualizacaoPrecoToPrcChgDesc_1.xsl", $inputVariable.parameters)</from>
+          <to variable="PostaMensagemEtEXFPrcChgToRMSJMS_Posta_Mensagem_InputVariable" part="body"/>
+        </copy>
+      </assign>
+      <invoke name="PostaMensagem"/>
+    </sequence>
+    <sequence name="FluxoRegistraLog"></sequence>
+    <assign name="AssignReplyOK"></assign>
+    <reply name="Reply"/>
+    <!-- 
+          Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
+        -->
+  </sequence>
+</process>
