@@ -17,12 +17,31 @@
           location="WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
           location="WSDLs/AtualizacaoPrecoV1.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+          location="WSDLs/AtualizacaoPrecoV1Wrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+          location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <service name="AtualizacaoPrecoaDBBPEL" ui:wsdlLocation="WSDLs/AtualizacaoPrecoV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1#wsdl.interface(AtualizacaoPrecoPortType)"/>
     <binding.direct/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.2.0.161003</property>
   <property name="compositeID" type="xs:string" many="false">db2744f5-21bd-40c0-b6e5-e9aece1deea0</property>
+  <component name="AtualizacaoPrecoBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/AtualizacaoPrecoBPELProcess.bpel"/>
+    <componentType>
+      <service name="AtualizacaoPrecoDBBPEL" ui:wsdlLocation="WSDLs/AtualizacaoPrecoV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1#wsdl.interface(AtualizacaoPrecoPortType)"/>
+      </service>
+      <reference name="RegistroLogBPELReference" ui:wsdlLocation="WSDLs/RegistroLogBPELWrapper.wsdl">
+        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+      </reference>
+      <reference name="etEXFXPrcChgToRMSJMSReference" ui:wsdlLocation="WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
+  </component>
   <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
@@ -35,4 +54,16 @@
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
     <binding.jca config="Adapters/etEXFXPrcChgToRMSJMSReference_jms.jca"/>
   </reference>
+  <wire>
+    <source.uri>AtualizacaoPrecoaDBBPEL</source.uri>
+    <target.uri>AtualizacaoPrecoBPELProcess/AtualizacaoPrecoDBBPEL</target.uri>
+  </wire>
+  <wire>
+    <source.uri>AtualizacaoPrecoBPELProcess/RegistroLogBPELReference</source.uri>
+    <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>AtualizacaoPrecoBPELProcess/etEXFXPrcChgToRMSJMSReference</source.uri>
+    <target.uri>etEXFXPrcChgToRMSJMSReference</target.uri>
+  </wire>
 </composite>

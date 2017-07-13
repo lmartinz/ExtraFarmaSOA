@@ -22,9 +22,11 @@
         <xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
              elementFormDefault="qualified">
             <xsd:include schemaLocation="../Schemas/AtualizacaoPrecoEBMV1.xsd"/>
-            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+      <xsd:import schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
         </xsd:schema>
+        
+       
     </wsdl:types>
     <wsdl:message name="AtualizacaoPrecoRequest">
         <wsdl:part name="parameters" element="tns:AtualizacaoPrecoRequest"/>
