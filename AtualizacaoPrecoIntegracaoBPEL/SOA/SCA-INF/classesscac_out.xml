@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl</name>
+      <fix/>
+      <msg>Erro ao obter o fluxo de entrada XML: file:/D:/RootGitExtrafarma/Comum/v1/Schemas/Fault.xsd: D:\RootGitExtrafarma\Comum\v1\Schemas\Fault.xsd (O sistema não pode encontrar o caminho especificado)</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/etEXFXPrcChgToRMSJMSReference.wsdl</name>
+      <fix/>
+      <msg>Message part "body" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:service[@name='AtualizacaoPrecoaDBBPEL']</loc>
+      <line>20</line>
+      <col>91</col>
+      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>O Serviço "AtualizacaoPrecoaDBBPEL" não existe como origem da conexão</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:reference[@name='etEXFXPrcChgToRMSJMSReference']</loc>
+      <line>34</line>
+      <col>110</col>
+      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>A referência "etEXFXPrcChgToRMSJMSReference" não existe como destino da conexão</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:reference[@name='RegistroLogBPELReference']</loc>
+      <line>27</line>
+      <col>102</col>
+      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>A referência "RegistroLogBPELReference" não existe como destino da conexão</msg>
+   </Fault>
+</Faults>
