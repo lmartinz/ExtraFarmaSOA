@@ -1,0 +1,248 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Thu Jul 13 22:38:50 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="AtualizacaoLojasBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/LojasIntegracaoBPEL/AtualizacaoLojasBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/LojasIntegracaoBPEL/AtualizacaoLojasBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/logistica/Lojas/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://service.ultra.com.br/logistica/AtualizacaoLojasRest/v1"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns3="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/StoreDesc/v1"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/AddrDesc/v1"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns6="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns7="http://canonico.ultra.com.br/LegadoFault/v1">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://service.ultra.com.br/logistica/Lojas/v1"
+          location="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1Wrapper.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <import namespace="http://canonico.ultra.com.br/LegadoFault/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://canonico.ultra.com.br/LegadoOutput/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/AtualizacaoLojasRest/v1"
+          location="../Schemas/AtualizacaoLojasRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <partnerLinks>
+    <partnerLink name="LojasDBBPEL" partnerLinkType="ns1:LojasDBBPEL" myRole="LojasPortType"/>
+    <partnerLink name="AtualizacaoLojasRestReference" bpelx:wadl="yes"/>
+  </partnerLinks>
+  <variables>
+    <variable name="outputVariable" messageType="ns1:AtualizacaoLojasResponse"/>
+    <variable name="transformationJSON" element="ns2:Root-Element"/>
+    <variable name="inputVariable" messageType="ns1:AtualizacaoLojasRequest"/>
+    <variable name="requestJSON" type="xsd:string"/>
+    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="translateJsonToXML" element="ns6:RetornoServico"/>
+    <variable name="errorTranslateToXML" element="ns7:RetornoServicoFault"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="SequenceRetornoErro">
+        <assign name="TranslateJsonToXMLError">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
+            <to>$errorTranslateToXML</to>
+          </copy>
+        </assign>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>$errorTranslateToXML/ns7:success</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:success</to>
+          </copy>
+          <copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:id</to>
+          </copy>
+          <copy>
+            <from>oraext:get-content-as-string($errorTranslateToXML/ns7:errors/node())</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:mensagem</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="LojasDBBPEL" variable="outputVariable"
+               portType="ns1:LojasPortType" operation="atualizacaoLojas"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <sequence name="main">
+    <receive name="receiveInput" createInstance="yes" variable="inputVariable" partnerLink="LojasDBBPEL"
+             portType="ns1:LojasPortType" operation="atualizacaoLojas"/>
+    <if name="IfType">
+      <documentation>
+        <![CDATA[CriarAlterar]]>
+      </documentation>
+      <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storecre') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtlmod') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storemod') </condition>
+      <sequence name="SequenceChamadaRestLegadoCriacaoLoja">
+        <assign name="TransformationToJsonCriacao">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAtualizacaoLojasRest.xsl", $inputVariable.parameters)</from>
+            <to variable="transformationJSON"/>
+          </copy>
+        </assign>
+        <assign name="TranslateToJSONCriacao">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateToNative($transformationJSON, 'Schemas/AtualizacaoLojasRest.xsd', 'Root-Element', 'STRING')</from>
+            <to>$requestJSON</to>
+          </copy>
+        </assign>
+        <if name="IfAcao">
+          <documentation>
+            <![CDATA[Criar]]>
+          </documentation>
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storecre')</condition>
+          <invoke name="CriarLojas" partnerLink="AtualizacaoLojasRestReference"
+                  inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="criacao"
+                  bpelx:invokeAsDetail="no"/>
+          <elseif>
+            <documentation>
+              <![CDATA[AlterarEndereco]]>
+            </documentation>
+            <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtlmod')</condition>
+            <invoke name="AlterarEnderecoLojas" partnerLink="AtualizacaoLojasRestReference"
+                    inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoEndereco"
+                    bpelx:invokeAsDetail="no"/>
+          </elseif>
+          <else>
+            <documentation>
+              <![CDATA[AlterarGerente]]>
+            </documentation>
+            <invoke name="AlterarGerenteLojas" partnerLink="AtualizacaoLojasRestReference"
+                    inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracao"
+                    bpelx:invokeAsDetail="no"/>
+          </else>
+        </if>
+      </sequence>
+      <elseif>
+        <documentation>
+          <![CDATA[Excluir]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedel') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtldel')</condition>
+        <sequence name="SequenceChamadaRestLegadoExclusaoLoja">
+          <assign name="TransformationToJsonExclusao">
+            <bpelx:annotation>
+              <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+            </bpelx:annotation>
+            <copy>
+              <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAtualizacaoLojasExclusaoRest.xsl", $inputVariable.parameters)</from>
+              <to variable="transformationJSON"/>
+            </copy>
+          </assign>
+          <assign name="TranslateToJSONExclusao">
+            <bpelx:annotation>
+              <bpelx:pattern>translate</bpelx:pattern>
+            </bpelx:annotation>
+            <copy>
+              <from>ora:doTranslateToNative($transformationJSON, 'Schemas/AtualizacaoLojasRest.xsd', 'Root-Element', 'STRING')</from>
+              <to>$requestJSON</to>
+            </copy>
+          </assign>
+          <if name="IfExclusao">
+            <documentation>
+              <![CDATA[Exclusao]]>
+            </documentation>
+            <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedel')</condition>
+            <invoke name="ExcluirLojas" partnerLink="AtualizacaoLojasRestReference" inputVariable="requestJSON"
+                    outputVariable="responseJSON" bpelx:method="exclusao" bpelx:invokeAsDetail="no"/>
+            <else>
+              <documentation>
+                <![CDATA[ExclusaoEndereco]]>
+              </documentation>
+              <invoke name="ExcluirEnderecoLojas" partnerLink="AtualizacaoLojasRestReference"
+                      inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="exclusaoEndereco"
+                      bpelx:invokeAsDetail="no"/>
+            </else>
+          </if>
+        </sequence>
+      </elseif>
+      <else>
+        <documentation>
+          <![CDATA[TipoInvalido]]>
+        </documentation>
+        <sequence name="SequenceTipoInvalido">
+          <assign name="AssignReplyTipoInvalido">
+            <copy>
+              <from>concat('Rib Message Type ',$inputVariable.parameters/ns3:ribMessage/ns3:type,' invalida.')</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:mensagem</to>
+            </copy>
+            <copy>
+              <from>ora:getFlowId()</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:id</to>
+            </copy>
+            <copy>
+              <from>1</from>
+              <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:success</to>
+            </copy>
+          </assign>
+          <reply name="ReplyTipoInvalido" partnerLink="LojasDBBPEL" variable="outputVariable"
+                 portType="ns1:LojasPortType" operation="atualizacaoLojas"/>
+        </sequence>
+      </else>
+    </if>
+    <sequence name="SequenceRetornoRestLegado">
+      <assign name="TranslateJsonToXMLReponse">
+        <bpelx:annotation>
+          <bpelx:pattern>translate</bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
+          <to>$translateJsonToXML</to>
+        </copy>
+      </assign>
+      <assign name="AssignSucessoAtualizacaoLojas">
+        <copy>
+          <from>$translateJsonToXML/ns6:success</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:success</to>
+        </copy>
+        <copy>
+          <from>$translateJsonToXML/ns6:data/ns6:id</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:id</to>
+        </copy>
+        <copy>
+          <from>$translateJsonToXML/ns6:data/ns6:mensagem</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns6:data/ns6:mensagem</to>
+        </copy>
+      </assign>
+    </sequence>
+    <reply name="Reply" partnerLink="LojasDBBPEL" variable="outputVariable" portType="ns1:LojasPortType"
+           operation="atualizacaoLojas"/>
+  </sequence>
+</process>

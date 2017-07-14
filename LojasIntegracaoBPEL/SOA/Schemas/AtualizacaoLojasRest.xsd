@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://service.ultra.com.br/logistica/AtualizacaoLojasRest/v1" targetNamespace="http://service.ultra.com.br/logistica/AtualizacaoLojasRest/v1" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="codigoLoja" type="xsd:integer"/>
+            <xsd:element name="tipoLoja" type="xsd:string"/>
+            <xsd:element name="nomeLoja" type="xsd:string"/>
+            <xsd:element name="nomeFantasia" type="xsd:string"/>
+            <xsd:element name="nomeAbreviado" type="xsd:string"/>
+            <xsd:element name="enderecoPrincipal" type="xsd:string"/>
+            <xsd:element name="nomeCidade" type="xsd:string"/>
+            <xsd:element name="municipio" type="xsd:string"/>
+            <xsd:element name="uf" type="xsd:string"/>
+            <xsd:element name="classeLoja" type="xsd:string"/>
+            <xsd:element name="gerentes" type="xsd:string"/>
+            <xsd:element name="dataAberturaLoja" type="xsd:string"/>
+            <xsd:element name="dataFechamentoLoja" type="xsd:string"/>
+            <xsd:element name="telefoneLoja" type="xsd:string"/>
+            <xsd:element name="emailLoja" type="xsd:string"/>
+            <xsd:element name="areaTotalLoja" type="xsd:double"/>
+            <xsd:element name="areaVendaLoja" type="xsd:double"/>
+            <xsd:element name="areaUtilizavelLoja" type="xsd:double"/>
+            <xsd:element name="lojaPossuiEstoque" type="xsd:string"/>
+            <xsd:element name="codigoDistritoLoja" type="xsd:integer"/>
+            <xsd:element name="numeroDiasRecebimento" type="xsd:integer"/>
+            <xsd:element name="moedaLoja" type="xsd:string"/>
+            <xsd:element name="linguagemLoja" type="xsd:integer"/>
+            <xsd:element name="possuiPOSIntegrado" type="xsd:string"/>
+            <xsd:element name="DetalheEnderecoLojaList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="tipoEndereco" type="xsd:string"/>
+                     <xsd:element name="enderecoPrimario" type="xsd:string"/>
+                     <xsd:element name="cidade" type="xsd:string"/>
+                     <xsd:element name="uf" type="xsd:string"/>
+                     <xsd:element name="cep" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CustomizacaoCampoLojaList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="remessaControlado" type="xsd:string"/>
+                     <xsd:element name="remessaRetinoico" type="xsd:string"/>
+                     <xsd:element name="validadeLicencaRetinoico" type="xsd:string"/>
+                     <xsd:element name="numeroInscricaoSuframa" type="xsd:string"/>
+                     <xsd:element name="validadeSuframa" type="xsd:string"/>
+                     <xsd:element name="registroLicencaVigilanciaSanitaria" type="xsd:string"/>
+                     <xsd:element name="codigoAlvaraLocalizacaoPrefeitura" type="xsd:string"/>
+                     <xsd:element name="possuiAfeAnvisa" type="xsd:string"/>
+                     <xsd:element name="registroLicencaValidadeVigilanciaSanitaria" type="xsd:string"/>
+                     <xsd:element name="enderecoFantasia" type="xsd:string"/>
+                     <xsd:element name="localizacaoCartesiana" type="xsd:string"/>
+                     <xsd:element name="gerenteDistrital" type="xsd:string"/>
+                     <xsd:element name="gerenteMercado" type="xsd:string"/>
+                     <xsd:element name="horarioFuncionamento" type="xsd:string"/>
+                     <xsd:element name="tipoEstacionamento" type="xsd:string"/>
+                     <xsd:element name="lojaPolo" type="xsd:string"/>
+                     <xsd:element name="perfilSortimento" type="xsd:string"/>
+                     <xsd:element name="possuiTelefonia" type="xsd:string"/>
+                     <xsd:element name="possuiFarmaciaPopular" type="xsd:string"/>
+                     <xsd:element name="possuiServicosFarmaceutico" type="xsd:string"/>
+                     <xsd:element name="possuiCaixaEletronico" type="xsd:string"/>
+                     <xsd:element name="numeroTerminalAtendimento" type="xsd:string"/>
+                     <xsd:element name="numeroCheckout" type="xsd:string"/>
+                     <xsd:element name="numeroCestaoFralda" type="xsd:string"/>
+                     <xsd:element name="numeroFreezer" type="xsd:string"/>
+                     <xsd:element name="numeroPontaGondola" type="xsd:string"/>
+                     <xsd:element name="numeroVagaEstacionamento" type="xsd:string"/>
+                     <xsd:element name="numeroGeladeira" type="xsd:string"/>
+                     <xsd:element name="numeroCooler" type="xsd:string"/>
+                     <xsd:element name="validadeVigilanciaSanitaria" type="xsd:string"/>
+                     <xsd:element name="tamanhoLoja" type="xsd:string"/>
+                     <xsd:element name="areaTerreno" type="xsd:string"/>
+                     <xsd:element name="areaConstruida" type="xsd:string"/>
+                     <xsd:element name="areaVendas" type="xsd:string"/>
+                     <xsd:element name="padraoArquitetonico" type="xsd:string"/>
+                     <xsd:element name="clusterVenda" type="xsd:string"/>
+                     <xsd:element name="tipoLoja" type="xsd:string"/>
+                     <xsd:element name="totem" type="xsd:string"/>
+                     <xsd:element name="idLojaFisica" type="xsd:integer"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CustomizacaoCampoFiscalList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="CampoFiscalList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="bairroLoja" type="xsd:string"/>
+                              <xsd:element name="inscricaoEstadual" type="xsd:string"/>
+                              <xsd:element name="cnpj" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=C:\Users\Vinicius\Desktop\int-005-int-048-int-050.json</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>

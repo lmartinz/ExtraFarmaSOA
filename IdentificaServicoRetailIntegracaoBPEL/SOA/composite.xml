@@ -40,6 +40,10 @@
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
           importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/Lojas/v1"
+          location="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/Lojas/v1"
+          location="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1Wrapper.wsdl" importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etPOScheduleFromRFMJMSReference_jms.jca">
@@ -110,6 +114,10 @@
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
+      <reference name="LojasBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/logistica/Lojas/v1#wsdl.interface(LojasPortType)"/>
+      </reference>
     </componentType>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">async.persist</property>
   </component>
@@ -162,6 +170,13 @@
       <property name="java.naming.provider.url"></property>
     </binding.direct>
   </reference>
+  <reference name="LojasBPELReference" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1.wsdl">
+    <interface.wsdl interface="http://service.ultra.com.br/logistica/Lojas/v1#wsdl.interface(LojasPortType)"/>
+    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
+                    useLocalJNDIProvider="true">
+      <property name="java.naming.provider.url"></property>
+    </binding.direct>
+  </reference>
   <wire>
     <source.uri>etFulfilOrdCfmServicoBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
@@ -205,5 +220,9 @@
   <wire>
     <source.uri>etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference</source.uri>
     <target.uri>PedidoReservaBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etStoresFromRMSServicoBPELProcess/LojasBPELReference</source.uri>
+    <target.uri>LojasBPELReference</target.uri>
   </wire>
 </composite>
