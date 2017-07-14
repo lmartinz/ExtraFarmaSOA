@@ -178,7 +178,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
               </copy>
               <copy>
-                <from>$outputPublicacaoNFSaidaMercadoria.parameters/ns6:success</from>
+                <from>number($outputPublicacaoNFSaidaMercadoria.parameters/ns6:success)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
               </copy>
               <copy>
