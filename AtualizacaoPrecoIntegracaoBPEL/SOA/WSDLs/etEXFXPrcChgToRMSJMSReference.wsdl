@@ -17,7 +17,7 @@
     <wsdl:types>
         <schema xmlns="http://www.w3.org/2001/XMLSchema">
             <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" 
-            schemaLocation="../Schemas/RibMessages.xsd"/>
+            schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"/>
         </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">
