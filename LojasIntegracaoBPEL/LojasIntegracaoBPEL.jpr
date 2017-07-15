@@ -19,7 +19,7 @@
       <value n="oracle.adfdtinternal.view.rich.binding.migration.JarResourceMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdtinternal.view.rich.migration.ComponentIdNodeMigratorHelper" v="11.1.1.1.0.01"/>
       <value n="oracle.adfdtinternal.view.rich.migration.FacesLibraryVersionMigrator" v="11.1.1.1.0.1"/>
-      <value n="oracle.ide.model.Project" v="12.2.1.0.0"/>
+      <value n="oracle.ide.model.Project" v="12.2.1.2.0"/>
       <value n="oracle.ide.model.ResourcePathsMigrator" v="11.1.1.1.0"/>
       <value n="oracle.ideimpl.model.TechnologyScopeUpdateMigrator" v="11.1.2.0.0.6"/>
       <value n="oracle.jbo.dt.jclient.migrator.JCProjectMigrator" v="11.1.1.1.0"/>
@@ -61,28 +61,27 @@
       <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
    </hash>
    <list n="contentSets">
+      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
       <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
       <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
-      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
-      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
-      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
-      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
-      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
-      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
       <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
+      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.sb.tooling.ide.core.projects.SbProjectSettings/sbContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
    </list>
-   <value n="defaultPackage" v="pontualinventariointegracaobpel"/>
+   <value n="defaultPackage" v="lojasintegracaobpel"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
          <string v="WSDL"/>
          <string v="WSPolicy"/>
          <string v="XML"/>
-         <string v="XML_SCHEMA"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -108,11 +107,14 @@
          <string v=".exm"/>
          <string v=".xml"/>
       </list>
+      <list n="excludedUrls">
+         <string v="fXSLNonDeployedFiles"/>
+      </list>
       <value n="webIANAEncoding" v="windows-1252"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="PontualInventarioIntegracaoBPEL">
+         <hash n="LojasIntegracaoBPEL">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -199,18 +201,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_PontualInventarioIntegracaoBPEL.jar"/>
+            <url n="jarURL" path="deploy/sca_LojasIntegracaoBPEL.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="PontualInventarioIntegracaoBPEL"/>
+            <value n="profileName" v="LojasIntegracaoBPEL"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="PontualInventarioIntegracaoBPEL"/>
+         <string v="LojasIntegracaoBPEL"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-PontualInventarioIntegracaoBPEL-webapp"/>
-      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-PontualInventarioIntegracaoBPEL-context-root"/>
+      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-LojasIntegracaoBPEL-webapp"/>
+      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-LojasIntegracaoBPEL-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
@@ -300,5 +302,5 @@
    </hash>
    <value n="SCA_BPEL_FOLDER_PROPERTY_NAME" v="BPEL/"/>
    <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="Transformations/"/>
-   <value n="SOA_WSDL_FOLDER_NAME" v="WSDLs/"/>
+   <value n="SOA_WADL_FOLDER_NAME" v="WADLs/"/>
 </jpr:project>

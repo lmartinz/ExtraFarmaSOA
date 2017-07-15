@@ -29,6 +29,7 @@
       <hash><url n="URL" path="CriacaoTransferenciaMercadoriaCDIntegracaoBPEL/CriacaoTransferenciaMercadoriaCDIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="LojasIntegracaoBPEL/LojasIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
       <hash><url n="URL" path="NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="NFSaidaMercadoriaIntegracaoBPEL/NFSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>

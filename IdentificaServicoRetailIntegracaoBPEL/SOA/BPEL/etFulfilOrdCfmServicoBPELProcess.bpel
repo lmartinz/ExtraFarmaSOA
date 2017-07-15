@@ -168,7 +168,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns8:Header/ns8:MetaInformacao/ns8:mensagem</to>
               </copy>
               <copy>
-                <from>$outputConfirmarReservaPedido.parameters/ns13:success</from>
+                <from>number($outputConfirmarReservaPedido.parameters/ns13:success)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns8:Header/ns8:MetaInformacao/ns8:status</to>
               </copy>
               <copy>

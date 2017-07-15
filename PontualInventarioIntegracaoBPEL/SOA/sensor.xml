@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoFilial" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/estoque/PontualInventario/v1">
+        <serviceConfig service="PontualInventarioDBBPEL" expression="$in.parameters/tns:AjustePontualInventarioRequest/codigoFilial" operation="ajustePontualInventario" outputDataType="integer" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoProduto" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/estoque/PontualInventario/v1">
+        <serviceConfig service="PontualInventarioDBBPEL" expression="$in.parameters/tns:AjustePontualInventarioRequest/AjusteDetalheList/codigoProduto" operation="ajustePontualInventario" outputDataType="integer" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>
