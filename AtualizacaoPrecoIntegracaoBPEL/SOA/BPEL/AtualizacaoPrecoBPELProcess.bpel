@@ -180,7 +180,7 @@
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/TransformationAtualizacaoPrecoToPrcChgDesc_1.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/TransformationAtualizacaoPrecoToPrcChgDesc.xsl", $inputVariable.parameters)</from>
           <to variable="PostaMensagemEtEXFPrcChgToRMSJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>

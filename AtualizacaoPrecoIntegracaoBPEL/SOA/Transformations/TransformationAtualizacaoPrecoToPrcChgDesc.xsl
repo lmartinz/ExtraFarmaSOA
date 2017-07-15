@@ -26,6 +26,42 @@
    </oracle-xsl-mapper:schema>
    <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
    <xsl:template match="/">
-      <tns:RibMessages/>
+      <tns:RibMessages>
+         <tns:ribMessage>
+            <tns:messageData>
+               <ns3:PrcChgDesc>
+                  <xsl:for-each select="">
+                     <ns3:PrcChg>
+                        <ns3:location>
+                           <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/codigoLocalDestino"/>
+                        </ns3:location>
+                        <ns3:loc_type>
+                           <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/tipoLocalDestino"/>
+                        </ns3:loc_type>
+                        <ns3:item>
+                           <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/codigoProduto"/>
+                        </ns3:item>
+                        <ns3:change_type>
+                           <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/tipoMudancaPreco"/>
+                        </ns3:change_type>
+                        <xsl:for-each select="">
+                           <ns3:PrcChgDtl>
+                              <ns3:unit_retail>
+                                 <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/AtualizacaoPrecoDetalheList/precoVarejo"/>
+                              </ns3:unit_retail>
+                              <ns3:effective_date>
+                                 <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/AtualizacaoPrecoDetalheList/dataInicioVigenciaPreco"/>
+                              </ns3:effective_date>
+                              <ns3:end_date>
+                                 <xsl:value-of select="/ns0:AtualizacaoPrecoRequest/AtualizacaoPrecoDetalheList/dataFimVigenciaPreco"/>
+                              </ns3:end_date>
+                           </ns3:PrcChgDtl>
+                        </xsl:for-each>
+                     </ns3:PrcChg>
+                  </xsl:for-each>
+               </ns3:PrcChgDesc>
+            </tns:messageData>
+         </tns:ribMessage>
+      </tns:RibMessages>
    </xsl:template>
 </xsl:stylesheet>
