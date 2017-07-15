@@ -5,7 +5,9 @@
                 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                 xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
                 xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference"
-                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/">
+                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+                xmlns:ns2="http://www.oracle.com/retail/integration/custom/bo/ExtOfPrcChgDesc/v1"
+                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/PrcChgDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

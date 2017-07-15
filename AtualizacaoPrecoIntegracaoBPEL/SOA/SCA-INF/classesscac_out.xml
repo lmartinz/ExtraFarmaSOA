@@ -65,6 +65,86 @@
       <loc/>
       <line/>
       <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1}AtualizacaoPrecoResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "AtualizacaoPrecoFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AtualizacaoPrecoIntegracaoBPEL/SOA/WSDLs/AtualizacaoPrecoV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
       <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
       <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
       <fix/>
@@ -72,32 +152,82 @@
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/ns:composite/ns:service[@name='AtualizacaoPrecoaDBBPEL']</loc>
-      <line>20</line>
-      <col>91</col>
-      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
-      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
       <fix/>
-      <msg>O Serviço "AtualizacaoPrecoaDBBPEL" não existe como origem da conexão</msg>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/ns:composite/ns:reference[@name='etEXFXPrcChgToRMSJMSReference']</loc>
-      <line>34</line>
-      <col>110</col>
-      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
-      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
       <fix/>
-      <msg>A referência "etEXFXPrcChgToRMSJMSReference" não existe como destino da conexão</msg>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>22</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>You should place all explicit &lt;bpel:import> statements in a BPEL 2.0 process.</fix>
+      <msg>There are no explicit "import" statements in &lt;bpel:process> "AtualizacaoPrecoBPELProcess" as required by BPEL 2.0 standard.</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/ns:composite/ns:reference[@name='RegistroLogBPELReference']</loc>
-      <line>27</line>
-      <col>102</col>
-      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</file>
-      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AtualizacaoPrecoIntegracaoBPEL\SOA\composite.xml</name>
-      <fix/>
-      <msg>A referência "RegistroLogBPELReference" não existe como destino da conexão</msg>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='inputVariable']</loc>
+      <line>51</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>Make sure that value "client:AtualizacaoPrecoBPELProcessRequestMessage" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "client:AtualizacaoPrecoBPELProcessRequestMessage" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='outputVariable']</loc>
+      <line>54</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>Make sure that value "client:AtualizacaoPrecoBPELProcessResponseMessage" is resolvable (check imports, value of "messageType").</fix>
+      <msg>"messageType" is set to "client:AtualizacaoPrecoBPELProcessResponseMessage" on this &lt;bpel:variable>  but it cannot be resolved (check value of "messageType", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>67</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:receive> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='callbackClient']</loc>
+      <line>72</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>Make sure that the attribute "partnerLink" is specified.</fix>
+      <msg>Attribute "partnerLink" is not set on this &lt;bpel:invoke> activity.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='callbackClient']</loc>
+      <line>72</line>
+      <col/>
+      <file>BPEL/AtualizacaoPrecoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoPrecoBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this activity via attribute "inputVariable" and make sure it is itself specified correctly.</fix>
+      <msg>The activity &lt;bpel:invoke> refers to a bpel:variable (via the attribute "inputVariable") - this bpel:variable needs to be defined correctly.</msg>
    </Fault>
 </Faults>

@@ -16,7 +16,8 @@
     <wsdl:import namespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1" location="AtualizacaoPrecoV1.wsdl"/>
     <wsdl:types>
         <schema xmlns="http://www.w3.org/2001/XMLSchema">
-            <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"/>
+            <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" 
+            schemaLocation="../Schemas/RibMessages.xsd"/>
         </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">
