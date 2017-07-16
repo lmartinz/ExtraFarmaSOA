@@ -1,0 +1,143 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Sat Jul 15 17:29:18 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="AtualizacaoProdutoBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoIntegracaoBPEL/ProdutoBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoIntegracaoBPEL/ProdutoBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/logistica/Produto/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns4="http://canonico.ultra.com.br/LegadoFault/v1"
+         xmlns:ns17="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
+         xmlns:ns5="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/ItemUDADateDesc/v1"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/ItemUDAFFDesc/v1"
+         xmlns:ns19="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/ItemUDALOVDesc/v1"
+         xmlns:ns18="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyMfrDesc/v1"
+         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ItemDesc/v1"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/ISCDimDesc/v1"
+         xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/ItemImageDesc/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/ItemSupDesc/v1"
+         xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyDesc/v1"
+         xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
+         xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://canonico.ultra.com.br/LegadoFault/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://canonico.ultra.com.br/LegadoOutput/v1"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1"
+          location="../Schemas/AtualizacaoProdutoRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/logistica/Produto/v1"
+          location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="ProdutoDBBPEL" partnerLinkType="ns1:ProdutoDBBPEL" myRole="ProdutoPortType"/>
+    <partnerLink name="AtualizacaoProdutoRestReference" bpelx:wadl="yes"/>
+  </partnerLinks>
+  <variables>
+    <variable name="outputVariable" messageType="ns1:AtualizacaoProdutoResponse"/>
+    <variable name="inputVariable" messageType="ns1:AtualizacaoProdutoRequest"/>
+    <variable name="transformationJSON" element="ns2:Root-Element"/>
+    <variable name="requestJSON" type="xsd:string"/>
+    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="translateJsonToXML" element="ns3:RetornoServico"/>
+    <variable name="errorTranslateToXML" element="ns4:RetornoServicoFault"/>
+  </variables>
+  <sequence name="main">
+    <receive name="receiveInput" variable="inputVariable" createInstance="yes" partnerLink="ProdutoDBBPEL"
+             portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
+    <sequence name="SequenceChamadaRestLegado">
+      <assign name="TransformationToJson">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAtualizacaoProdutoRest.xsl", $inputVariable.parameters)</from>
+          <to variable="transformationJSON"/>
+        </copy>
+      </assign>
+      <assign name="TranslateToJSON">
+        <bpelx:annotation>
+          <bpelx:pattern>translate</bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doTranslateToNative($transformationJSON, 'Schemas/AtualizacaoProdutoRest.xsd', 'Root-Element', 'STRING')</from>
+          <to>$requestJSON</to>
+        </copy>
+      </assign>
+      <if name="IfAcao">
+        <documentation>
+          <![CDATA[Criar]]>
+        </documentation>
+        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemCre')</condition>
+        <invoke name="CriarProduto" partnerLink="AtualizacaoProdutoRestReference"
+                inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="criacaoProduto"
+                bpelx:invokeAsDetail="no"/>
+        <else>
+          <empty name="Empty"/>
+        </else>
+      </if>
+    </sequence>
+    <sequence name="SequenceRetornoRestLegado">
+      <assign name="TranslateJsonToXMLReponse">
+        <bpelx:annotation>
+          <bpelx:pattern>translate</bpelx:pattern>
+        </bpelx:annotation>
+        <copy>
+          <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
+          <to>$translateJsonToXML</to>
+        </copy>
+      </assign>
+      <assign name="AssignSucessoAtualizacaoLojas">
+        <copy>
+          <from>$translateJsonToXML/ns3:success</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+        </copy>
+        <copy>
+          <from>ora:getFlowId()</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+        </copy>
+        <copy>
+          <from>$translateJsonToXML/ns3:data/ns3:mensagem</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+        </copy>
+      </assign>
+    </sequence>
+    <reply name="Reply" partnerLink="ProdutoDBBPEL" variable="outputVariable" portType="ns1:ProdutoPortType"
+           operation="atualizacaoProduto"/>
+  </sequence>
+</process>

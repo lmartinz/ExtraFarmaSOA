@@ -1,0 +1,183 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1" targetNamespace="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="CabecalhoItem">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificacaoItem" type="xsd:string"/>
+                     <xsd:element name="numeroDigitos" type="xsd:string"/>
+                     <xsd:element name="subclasse" type="xsd:string"/>
+                     <xsd:element name="descricaItem" type="xsd:string"/>
+                     <xsd:element name="breveDescricaoItem" type="xsd:string"/>
+                     <xsd:element name="precoVarejo" type="xsd:double"/>
+                     <xsd:element name="temperaturaItem" type="xsd:string"/>
+                     <xsd:element name="descricaoControleTemperatura" type="xsd:string"/>
+                     <xsd:element name="observacao" type="xsd:string"/>
+                     <xsd:element name="unidadeVarejo" type="xsd:double"/>
+                     <xsd:element name="unidadeVaregista" type="xsd:double"/>
+                     <xsd:element name="comprimentoItem" type="xsd:double"/>
+                     <xsd:element name="larguraItem" type="xsd:double"/>
+                     <xsd:element name="alturaItem" type="xsd:double"/>
+                     <xsd:element name="pesoItem" type="xsd:double"/>
+                     <xsd:element name="LocalizacaoItem">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="AtributoLocalizadoItem">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="indicadorItemServico" type="xsd:string"/>
+                                       <xsd:element name="origemMercadoria" type="xsd:string"/>
+                                       <xsd:element name="ncmItem" type="xsd:string"/>
+                                       <xsd:element name="caracteristicaNCM" type="xsd:string"/>
+                                       <xsd:element name="excessaoIPI" type="xsd:string"/>
+                                       <xsd:element name="pauta" type="xsd:string"/>
+                                       <xsd:element name="codigoServico" type="xsd:string"/>
+                                       <xsd:element name="servicoFederal" type="xsd:string"/>
+                                       <xsd:element name="estadoFabricacao" type="xsd:string"/>
+                                       <xsd:element name="tipoListaFarmaceutica" type="xsd:string"/>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FornecedorItemList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorFornecedor" type="xsd:string"/>
+                     <xsd:element name="identificadorItemFornecedor" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PaisFornecedorItem">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorFornecedor" type="xsd:string"/>
+                     <xsd:element name="paisFabricacao" type="xsd:string"/>
+                     <xsd:element name="fornecedorPrimario" type="xsd:string"/>
+                     <xsd:element name="paisPrimario" type="xsd:string"/>
+                     <xsd:element name="custoUnitarioCorporativo" type="xsd:string"/>
+                     <xsd:element name="fatorFornecedorItem" type="xsd:integer"/>
+                     <xsd:element name="leadtime" type="xsd:string"/>
+                     <xsd:element name="tamanhoQuebraPack" type="xsd:integer"/>
+                     <xsd:element name="formaArredondamentoPedido" type="xsd:string"/>
+                     <xsd:element name="numeroUnidadeEnvio" type="xsd:integer"/>
+                     <xsd:element name="numeroCamadaComplementar" type="xsd:integer"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DimensaoItemList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorFornecedor" type="xsd:string"/>
+                     <xsd:element name="paisFabricacao" type="xsd:string"/>
+                     <xsd:element name="descricaoObjeto" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemUDALOVList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorGrupoAtributos" type="xsd:integer"/>
+                     <xsd:element name="valorGrupoAtributos" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemUDAFFList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorUDAFF" type="xsd:integer"/>
+                     <xsd:element name="textoUDAFF" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemUDADateList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorUDA" type="xsd:integer"/>
+                     <xsd:element name="dataEfetivaUDA" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemImagemList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="nomeImagem" type="xsd:string"/>
+                     <xsd:element name="caminhoImagem" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemCodigoBarra">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="numeroDigitosContados" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemPackList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorPack" type="xsd:string"/>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="quantidadeItemNoPack" type="xsd:integer"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemTicketList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="tipoTicket" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemPaisManufaturaFornecedorList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="identificadorFornecedor" type="xsd:integer"/>
+                     <xsd:element name="paisFabricacao" type="xsd:string"/>
+                     <xsd:element name="paisPrimario" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemReferenciaList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="identificadorItem" type="xsd:string"/>
+                     <xsd:element name="idGeradoSistema" type="xsd:integer"/>
+                     <xsd:element name="nomeRelacionamento" type="xsd:string"/>
+                     <xsd:element name="tipoRelacionamento" type="xsd:string"/>
+                     <xsd:element name="relacionamentoObrigatorio" type="xsd:string"/>
+                     <xsd:element name="ItemElementoReferenciadoList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="itemRelacionado" type="xsd:string"/>
+                              <xsd:element name="transacaoAPartir" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=C:\Users\Vinicius\Downloads\int-001 - itens\sample\int-001.json</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>
