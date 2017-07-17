@@ -1,0 +1,73 @@
+<wsdl:definitions name="Produto"
+                  targetNamespace="http://service.ultra.com.br/logistica/Produto/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://service.ultra.com.br/logistica/Produto/v1"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:Q1="http://www.oracle.com/retail/integration/rib/RibMessages"
+                  xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+                  xmlns:Q3="http://canonico.ultra.com.br/LegadoFault/v1"
+                  xmlns:Q4="http://canonico.ultra.com.br/LegadoOutput/v1">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
+              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+    <sp:UsernameToken>
+      <wsp:Policy>
+        <sp:WssUsernameToken11/>
+      </wsp:Policy>
+    </sp:UsernameToken>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/Produto/v1"
+                elementFormDefault="qualified">
+      <xsd:import schemaLocation="../../../Comum/v1/Schemas/RibMessages.xsd"
+                  namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+      <xsd:import schemaLocation="../../../Comum/v1/Schemas/LegadoFault.xsd"
+                  namespace="http://canonico.ultra.com.br/LegadoFault/v1"/>
+      <xsd:import schemaLocation="../../../Comum/v1/Schemas/MetaInformacao.xsd"
+                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+      <xsd:import schemaLocation="../../../Comum/v1/Schemas/LegadoOutput.xsd"
+                  namespace="http://canonico.ultra.com.br/LegadoOutput/v1"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AtualizacaoProdutoRequest">
+    <wsdl:part name="parameters" element="Q1:RibMessages"/>
+  </wsdl:message>
+  <wsdl:message name="AtualizacaoProdutoResponse">
+    <wsdl:part name="parameters" element="Q4:RetornoServico"/>
+  </wsdl:message>
+  <wsdl:message name="AtualizacaoProdutoFaultMsg">
+    <wsdl:part name="AtualizacaoProdutoFault" element="Q3:RetornoServicoFault"/>
+  </wsdl:message>
+  <wsdl:message name="requestHeader">
+    <wsdl:part name="parameters" element="Q2:MetaInformacao"/>
+  </wsdl:message>
+  <wsdl:portType name="ProdutoPortType">
+    <wsdl:operation name="atualizacaoProduto">
+      <wsdl:input message="tns:AtualizacaoProdutoRequest"/>
+      <wsdl:output message="tns:AtualizacaoProdutoResponse"/>
+      <wsdl:fault name="AtualizacaoProdutoFault" message="tns:AtualizacaoProdutoFaultMsg"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProdutoPortBinding" type="tns:ProdutoPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="atualizacaoProduto">
+      <soap:operation soapAction="http://service.ultra.com.br/Produto/v1/atualizacaoProduto"/>
+      <wsdl:input>
+        <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AtualizacaoProdutoFault">
+        <soap:fault name="AtualizacaoProdutoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProdutoService">
+    <wsdl:port name="ProdutoPort" binding="tns:ProdutoPortBinding">
+      <soap:address location="http://service.ultra.com.br/logistica/Produto/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

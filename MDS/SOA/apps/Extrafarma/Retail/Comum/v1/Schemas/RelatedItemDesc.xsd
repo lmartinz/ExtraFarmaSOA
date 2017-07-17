@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1" version="1.1">
+    <retailDoc:annotation>
+        <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
+    </retailDoc:annotation>      
+    <xs:element name="RelatedItemDesc">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Description is not available.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="varchar225">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>The main item against which the relationship is defined.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element name="relationship_id" type="number15">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>A system generated numeric field that uniquely identifies the relationship record in related_item_head.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element name="relationship_name" type="varchar2120">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>This is the user entered name of the relationship.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element name="relationship_type" type="varchar26">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Describes the type of relationship.  Valid values are in the codes table under code_type 'IREL'.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element name="mandatory_ind" type="mandatory_ind">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Indicates whether the relationship is mandatory or not. Valid values: 'Y' (yes), 'N' (no).</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="RelatedItemDtl">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>It's a referenced element. For detailed description, please refer referenced element doc.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>    
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="RelatedItemDtl">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This object holds related items and their attributes.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:complexType>
+            <xs:sequence>                               
+                <xs:element name="related_item" type="varchar225">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Item for which related items are defined. Valid transaction level/sellable item. Multiple items can be defined for a relationship.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="priority" type="number4">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Relationship priority. Applicable only for relationship type SUBS.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element name="effective_date" type="xs:dateTime">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>The related item can be used on transactions starting this date.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="end_date" type="xs:dateTime">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>The related item can be used on transactions until this date. A value of null means that it is always effective.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>                             
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>       
+    <xs:simpleType name="number15">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 15.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar2120">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max length of 120 characters.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar225">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max length of 25 characters.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="25"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number4">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 4.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar26">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max length of 6 characters.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="mandatory_ind">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Indicates whether the relationship is mandatory or not. Valid values: 'Y' (yes), 'N' (no).</retailDoc:documentation>
+		  </retailDoc:annotation>
+		  <xs:restriction base="xs:string">
+		  <xs:maxLength value="1"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="N"/>
+        </xs:restriction>
+	 </xs:simpleType>
+</xs:schema>
