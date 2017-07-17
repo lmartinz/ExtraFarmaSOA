@@ -11,12 +11,12 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
-  <import namespace="http://service.ultra.com.br/logistica/Produto/v1"
+  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/logistica/Produto/v1"
+  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl" importType="wsdl"/>
   <service name="ProdutoDBBPEL" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl">
-    <interface.wsdl interface="http://service.ultra.com.br/logistica/Produto/v1#wsdl.interface(ProdutoPortType)"/>
+    <interface.wsdl interface="http://service.ultra.com.br/erp-imifarma/Produto/v1#wsdl.interface(ProdutoPortType)"/>
     <binding.direct/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.2.0.161003</property>
@@ -26,7 +26,7 @@
     <componentType>
       <service name="ProdutoDBBPEL"
                ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl">
-        <interface.wsdl interface="http://service.ultra.com.br/logistica/Produto/v1#wsdl.interface(ProdutoPortType)"/>
+        <interface.wsdl interface="http://service.ultra.com.br/erp-imifarma/Produto/v1#wsdl.interface(ProdutoPortType)"/>
       </service>
       <reference name="AtualizacaoProdutoRestReference">
         <interface.wadl interface="WADLs/AtualizacaoProdutoRestReference.wadl"/>

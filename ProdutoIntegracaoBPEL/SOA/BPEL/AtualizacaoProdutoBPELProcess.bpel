@@ -16,8 +16,8 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-         xmlns:ns1="http://service.ultra.com.br/logistica/Produto/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
-         xmlns:ns2="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1"
+         xmlns:ns1="http://service.ultra.com.br/erp-imifarma/Produto/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://service.ultra.com.br/erp-imifarma/AtualizacaoProdutoRest/v1"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://canonico.ultra.com.br/LegadoOutput/v1"
          xmlns:ns4="http://canonico.ultra.com.br/LegadoFault/v1"
          xmlns:ns17="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
@@ -59,9 +59,9 @@
   <import namespace="http://canonico.ultra.com.br/LegadoOutput/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://service.ultra.com.br/logistica/AtualizacaoProdutoRest/v1"
+  <import namespace="http://service.ultra.com.br/erp-imifarma/AtualizacaoProdutoRest/v1"
           location="../Schemas/AtualizacaoProdutoRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://service.ultra.com.br/logistica/Produto/v1"
+  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
   <partnerLinks>
@@ -77,6 +77,37 @@
     <variable name="translateJsonToXML" element="ns3:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns4:RetornoServicoFault"/>
   </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="SequenceRetornoErro">
+        <assign name="TranslateJsonToXMLError">
+          <bpelx:annotation>
+            <bpelx:pattern>translate</bpelx:pattern>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
+            <to>$errorTranslateToXML</to>
+          </copy>
+        </assign>
+        <assign name="AssignReplyCatch">
+          <copy>
+            <from>$errorTranslateToXML/ns4:success</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+          </copy>
+          <copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+          </copy>
+          <copy>
+            <from>oraext:get-content-as-string($errorTranslateToXML/ns4:errors/node())</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+          </copy>
+        </assign>
+        <reply name="replyCatchOutput" partnerLink="ProdutoDBBPEL" variable="outputVariable"
+               portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
   <sequence name="main">
     <receive name="receiveInput" variable="inputVariable" createInstance="yes" partnerLink="ProdutoDBBPEL"
              portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>

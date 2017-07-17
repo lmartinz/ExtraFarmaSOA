@@ -1,2 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Faults/>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfAcao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
+      <line>137</line>
+      <col/>
+      <file>BPEL/AtualizacaoProdutoBPELProcess.bpel</file>
+      <name>BPEL/AtualizacaoProdutoBPELProcess.bpel</name>
+      <fix>Make sure that the expression in &lt;bpel:condition> is a boolean expression.</fix>
+      <msg>The expression oraext:compare-ignore-case($inputVariable.parame ... in &lt;bpel:condition> is not a boolean expression.</msg>
+   </Fault>
+</Faults>
