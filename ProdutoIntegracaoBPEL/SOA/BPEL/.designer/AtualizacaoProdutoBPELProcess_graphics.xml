@@ -4,15 +4,16 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="ProdutoDBBPEL" x="10" y="492" side="left"/>
-      <partnerlink name="AtualizacaoProdutoRestReference" x="904" y="552" side="right"/>
+      <partnerlink name="ProdutoDBBPEL" x="10" y="559" side="left"/>
+      <partnerlink name="AtualizacaoProdutoRestReference" x="1068" y="552" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,51,1106,533" show_swimlanes="true">
+   <graph_layout viewport="156,329,1106,518" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]/if/else/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence[2]" type="sequence"/>
    </graph_layout>
    <bookmarks/>

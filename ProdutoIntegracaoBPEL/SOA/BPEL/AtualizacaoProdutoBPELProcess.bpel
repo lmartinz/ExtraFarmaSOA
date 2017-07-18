@@ -44,7 +44,9 @@
          xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyDesc/v1"
          xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
          xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
-         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns20="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+         xmlns:ns21="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -134,12 +136,68 @@
         <documentation>
           <![CDATA[Criar]]>
         </documentation>
-        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemCre')</condition>
+        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDALOVCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDAFFCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDADateCre') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCCre')</condition>
         <invoke name="CriarProduto" partnerLink="AtualizacaoProdutoRestReference"
                 inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="criacaoProduto"
                 bpelx:invokeAsDetail="no"/>
+        <elseif>
+          <documentation>
+            <![CDATA[Alterar]]>
+          </documentation>
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemHdrMod') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupMod') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyMod') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimMod') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCMod')</condition>
+          <invoke name="AlterarProduto" partnerLink="AtualizacaoProdutoRestReference"
+                  inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoProduto"
+                  bpelx:invokeAsDetail="no"/>
+        </elseif>
+        <elseif>
+          <documentation>
+            <![CDATA[Excluir]]>
+          </documentation>
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemDel')
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupDel')
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDALOVDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDAFFDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDADateDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCDel')</condition>
+          <invoke name="ExcluirProduto" partnerLink="AtualizacaoProdutoRestReference"
+                  inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="exclusaoProduto"
+                  bpelx:invokeAsDetail="no"/>
+        </elseif>
         <else>
-          <empty name="Empty"/>
+          <documentation>
+            <![CDATA[TipoInvalido]]>
+          </documentation>
+          <sequence name="Sequence1">
+            <assign name="AssignReplyTipoInvalido">
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+              </copy>
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+              </copy>
+              <copy>
+                <from>concat('Rib Message Type ',$inputVariable.parameters/ns5:ribMessage/ns5:type,' invalida.')</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+              </copy>
+            </assign>
+            <reply name="ReplyTipoInvalido" partnerLink="ProdutoDBBPEL" variable="outputVariable"
+                   portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
+          </sequence>
         </else>
       </if>
     </sequence>

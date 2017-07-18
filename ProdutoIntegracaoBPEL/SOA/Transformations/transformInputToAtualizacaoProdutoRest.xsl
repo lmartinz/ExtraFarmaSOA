@@ -20,7 +20,8 @@
                 xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
                 xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
                 xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
-                xmlns:ns16="http://service.ultra.com.br/erp-imifarma/Produto/v1">
+                xmlns:ns17="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+                xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -83,6 +84,40 @@
             <tns:pesoItem>
                <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_weight"/>
             </tns:pesoItem>
+            <tns:LocalizacaoItem>
+               <tns:AtributoLocalizadoItem>
+                  <tns:indicadorItemServico>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_ind"/>
+                  </tns:indicadorItemServico>
+                  <tns:origemMercadoria>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:origin_code"/>
+                  </tns:origemMercadoria>
+                  <tns:ncmItem>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:classification_id"/>
+                  </tns:ncmItem>
+                  <tns:caracteristicaNCM>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ncm_char_code"/>
+                  </tns:caracteristicaNCM>
+                  <tns:excessaoIPI>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ex_ipi"/>
+                  </tns:excessaoIPI>
+                  <tns:pauta>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pauta_code"/>
+                  </tns:pauta>
+                  <tns:codigoServico>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_code"/>
+                  </tns:codigoServico>
+                  <tns:servicoFederal>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:federal_service"/>
+                  </tns:servicoFederal>
+                  <tns:estadoFabricacao>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:state_of_manufacture"/>
+                  </tns:estadoFabricacao>
+                  <tns:tipoListaFarmaceutica>
+                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pharma_list_type"/>
+                  </tns:tipoListaFarmaceutica>
+               </tns:AtributoLocalizadoItem>
+            </tns:LocalizacaoItem>
          </tns:CabecalhoItem>
          <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns12:ItemSupDesc">
             <tns:FornecedorItemList>

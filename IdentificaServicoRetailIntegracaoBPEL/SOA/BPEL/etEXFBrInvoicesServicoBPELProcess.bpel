@@ -71,7 +71,7 @@
         </variables>
         <faultHandlers>
           <catchAll>
-            <scope name="Scope1">
+            <scope name="ScopeTratamentoMensagem">
               <faultHandlers>
                 <catchAll>
                   <throw name="Throw" faultName="bpelx:rollback"/>
