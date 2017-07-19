@@ -32,7 +32,6 @@
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ns4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
          xmlns:ns5="http://service.ultra.com.br/logistica/ConfirmarPedidoReservaResponseRest/v1"
          xmlns:ns7="http://www.oracle.com/retail/integration/rib/RibMessages"
          xmlns:ns8="http://TargetNamespace.com/confirmarPedidoReserva"

@@ -37,7 +37,6 @@
          xmlns:ns9="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
          xmlns:ns10="http://service.ultra.com.br/atacado/PedidoReserva/v1"
          xmlns:ns11="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etFulfilOrdCfmJMSReference"
-         xmlns:ns12="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:ns13="http://canonico.ultra.com.br/LegadoOutput/v1">
 
@@ -56,7 +55,7 @@
                  partnerRole="execute_ptt"/>
     <partnerLink name="etFulfilOrdCfmJMSReference" partnerLinkType="ns11:Consume_Message_plt"
                  myRole="Consume_Message_role"/>
-    <partnerLink name="PedidoReservaBPELReference" partnerLinkType="ns10:PedidoReservaDBBPEL"
+    <partnerLink name="PedidoReservaBPELReference" partnerLinkType="ns10:PedidoReservaBPELReference"
                  partnerRole="PedidoReservaPortType"/>
   </partnerLinks>
   <variables>

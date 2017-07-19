@@ -22,11 +22,6 @@
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
           location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1.wsdl"
           importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1Wrapper.wsdl"
-          importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
-          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStoresFromRMSJMSReference"
           location="WSDLs/etStoresFromRMSJMSReference.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etEXFBrInvoicesJMSReference"
@@ -36,9 +31,6 @@
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
           location="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1Wrapper.wsdl"
-          importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
-          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/Lojas/v1"
           location="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1.wsdl" importType="wsdl"/>
@@ -50,6 +42,14 @@
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
+          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1Wrapper.wsdl"
+          importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
     <binding.jca config="Adapters/etPOScheduleFromRFMJMSReference_jms.jca">
@@ -183,14 +183,6 @@
       <property name="java.naming.provider.url"></property>
     </binding.direct>
   </reference>
-  <reference name="PedidoReservaBPELReference"
-             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl">
-    <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
-    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true">
-      <property name="java.naming.provider.url"></property>
-    </binding.direct>
-  </reference>
   <reference name="NFSaidaMercadoriaReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1#wsdl.interface(NFSaidaMercadoriaPortType)"/>
@@ -208,6 +200,14 @@
   </reference>
   <reference name="ProdutoReference" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/Produto/v1#wsdl.interface(ProdutoPortType)"/>
+    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
+                    useLocalJNDIProvider="true">
+      <property name="java.naming.provider.url"></property>
+    </binding.direct>
+  </reference>
+  <reference name="PedidoReservaBPELReference"
+             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl">
+    <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
     <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
                     useLocalJNDIProvider="true">
       <property name="java.naming.provider.url"></property>
@@ -254,10 +254,6 @@
     <target.uri>NFSaidaMercadoriaReference</target.uri>
   </wire>
   <wire>
-    <source.uri>etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference</source.uri>
-    <target.uri>PedidoReservaBPELReference</target.uri>
-  </wire>
-  <wire>
     <source.uri>etStoresFromRMSServicoBPELProcess/LojasBPELReference</source.uri>
     <target.uri>LojasBPELReference</target.uri>
   </wire>
@@ -272,5 +268,9 @@
   <wire>
     <source.uri>etItemsFromRMSServicoBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>etFulfilOrdCfmServicoBPELProcess/PedidoReservaBPELReference</source.uri>
+    <target.uri>PedidoReservaBPELReference</target.uri>
   </wire>
 </composite>

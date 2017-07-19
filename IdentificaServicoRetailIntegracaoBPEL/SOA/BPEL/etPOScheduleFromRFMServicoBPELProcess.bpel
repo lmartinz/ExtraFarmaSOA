@@ -30,7 +30,6 @@
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer"
          xmlns:ns3="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
          xmlns:ns4="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-         xmlns:ns6="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
          xmlns:ns5="http://service.ultra.com.br/infcorp/LogIntegration/v1"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://canonico.ultra.com.br/LegadoOutput/v1">
 
