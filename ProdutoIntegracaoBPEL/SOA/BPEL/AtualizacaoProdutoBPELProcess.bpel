@@ -78,6 +78,9 @@
     <variable name="responseJSON" type="xsd:string"/>
     <variable name="translateJsonToXML" element="ns3:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns4:RetornoServicoFault"/>
+    <variable name="endpointURI" type="xsd:string">
+      <from>string("http://dev-lil.extrafarma.com.br/erp-imifarma/v1/item")</from>
+    </variable>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -158,7 +161,11 @@ oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'IS
 oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCMod')</condition>
           <invoke name="AlterarProduto" partnerLink="AtualizacaoProdutoRestReference"
                   inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoProduto"
-                  bpelx:invokeAsDetail="no"/>
+                  bpelx:invokeAsDetail="no">
+            <bpelx:toProperties>
+              <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:CabecalhoItem/ns2:identificacaoItem)</bpelx:toProperty>
+            </bpelx:toProperties>
+          </invoke>
         </elseif>
         <elseif>
           <documentation>
@@ -174,7 +181,11 @@ oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'It
 oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCDel')</condition>
           <invoke name="ExcluirProduto" partnerLink="AtualizacaoProdutoRestReference"
                   inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="exclusaoProduto"
-                  bpelx:invokeAsDetail="no"/>
+                  bpelx:invokeAsDetail="no">
+            <bpelx:toProperties>
+              <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:CabecalhoItem/ns2:identificacaoItem)</bpelx:toProperty>
+            </bpelx:toProperties>
+          </invoke>
         </elseif>
         <else>
           <documentation>

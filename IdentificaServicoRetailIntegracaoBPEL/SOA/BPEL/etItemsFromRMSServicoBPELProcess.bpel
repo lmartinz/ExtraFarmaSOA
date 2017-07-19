@@ -28,7 +28,7 @@
          xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
-         xmlns:ns3="http://service.ultra.com.br/erp-imifarma/Produto/v1"
+         xmlns:ns3="http://service.ultra.com.br/dadosFundacao/Produto/v1"
          xmlns:ns4="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
          xmlns:ns6="http://service.ultra.com.br/infcorp/LogIntegration/v1"
          xmlns:ns5="http://canonico.ultra.com.br/LegadoOutput/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer">
@@ -56,7 +56,7 @@
   </variables>
   <sequence name="main">
     <receive name="receiveInput" partnerLink="etItemsFromRMSJMSReference" portType="ns1:Consume_Message_ptt"
-             operation="Consume_Message" variable="inputVariable"/>
+             operation="Consume_Message" variable="inputVariable" createInstance="yes"/>
     <if name="IfFamilyItems">
       <documentation>
         <![CDATA[AtualizacaoProduto]]>

@@ -46,9 +46,9 @@
           location="oramds:/apps/Extrafarma/Retail/Lojas/v1/WSDLs/LojasV1Wrapper.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etItemsFromRMSJMSReference"
           location="WSDLs/etItemsFromRMSJMSReference.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
+  <import namespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
+  <import namespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl" importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
@@ -158,7 +158,7 @@
       </service>
       <reference name="ProdutoReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl">
-        <interface.wsdl interface="http://service.ultra.com.br/erp-imifarma/Produto/v1#wsdl.interface(ProdutoPortType)"/>
+        <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/Produto/v1#wsdl.interface(ProdutoPortType)"/>
       </reference>
       <reference name="RegistroLogBPELReference"
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
@@ -207,7 +207,7 @@
     </binding.direct>
   </reference>
   <reference name="ProdutoReference" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl">
-    <interface.wsdl interface="http://service.ultra.com.br/erp-imifarma/Produto/v1#wsdl.interface(ProdutoPortType)"/>
+    <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/Produto/v1#wsdl.interface(ProdutoPortType)"/>
     <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
                     useLocalJNDIProvider="true">
       <property name="java.naming.provider.url"></property>

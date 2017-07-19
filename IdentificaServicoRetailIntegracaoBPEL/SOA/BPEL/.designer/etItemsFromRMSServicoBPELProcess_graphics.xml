@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="etItemsFromRMSJMSReference" x="0" y="90" side="left"/>
-      <partnerlink name="ProdutoReference" x="1232" y="496" side="right"/>
-      <partnerlink name="RegistroLogBPELReference" x="1232" y="685" side="right"/>
+      <partnerlink name="ProdutoReference" x="1224" y="496" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="1224" y="685" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="293,335,1106,518" show_swimlanes="true">
+   <graph_layout viewport="0,0,1106,518" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if/scope" type="scope" showhandlers="true"/>
