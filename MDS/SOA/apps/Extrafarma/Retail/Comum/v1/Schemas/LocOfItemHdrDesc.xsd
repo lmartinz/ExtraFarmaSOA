@@ -1,0 +1,27 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+    xmlns:BrItemHdrDesc="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <retailDoc:annotation>
+        <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
+    </retailDoc:annotation>
+    <xs:import
+        namespace="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1" schemaLocation="BrItemHdrDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Its a referenced element. For detailed description, please refer referenced element doc.</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
+        <xs:element name="LocOfItemHdrDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="1" minOccurs="0" ref="BrItemHdrDesc:BrItemHdrDesc">
+                   <retailDoc:annotation>
+                                <retailDoc:documentation>Brazil Localization.</retailDoc:documentation>
+                   </retailDoc:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

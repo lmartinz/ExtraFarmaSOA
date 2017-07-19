@@ -1,7 +1,7 @@
 <wsdl:definitions name="Produto"
-                  targetNamespace="http://service.ultra.com.br/logistica/Produto/v1"
+                  targetNamespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://service.ultra.com.br/logistica/Produto/v1"
+                  xmlns:tns="http://service.ultra.com.br/dadosFundacao/Produto/v1"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:Q1="http://www.oracle.com/retail/integration/rib/RibMessages"
                   xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
@@ -18,7 +18,7 @@
     </sp:UsernameToken>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/Produto/v1"
+    <xsd:schema targetNamespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
                 elementFormDefault="qualified">
       <xsd:import schemaLocation="../../../Comum/v1/Schemas/RibMessages.xsd"
                   namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
@@ -67,7 +67,7 @@
   </wsdl:binding>
   <wsdl:service name="ProdutoService">
     <wsdl:port name="ProdutoPort" binding="tns:ProdutoPortBinding">
-      <soap:address location="http://service.ultra.com.br/logistica/Produto/v1"/>
+      <soap:address location="http://service.ultra.com.br/dadosFundacao/Produto/v1"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

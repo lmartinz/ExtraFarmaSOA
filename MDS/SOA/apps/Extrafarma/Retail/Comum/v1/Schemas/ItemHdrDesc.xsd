@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1" version="1.0">
+<xs:schema elementFormDefault="qualified"
+	   targetNamespace="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+           version="1.0"
+           xmlns="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+           xmlns:LocOfItemHdrDesc="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1" 
+	   xmlns:retailDoc="http://www.w3.org/2001/XMLSchema"
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <retailDoc:annotation>
         <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
     </retailDoc:annotation>
+    <xs:import
+        namespace="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1" schemaLocation="LocOfItemHdrDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Its a referenced element. For detailed description, please refer referenced element doc.</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
     <xs:element name="ItemHdrDesc">
         <retailDoc:annotation>
 <retailDoc:documentation>Description is not available.</retailDoc:documentation>
@@ -678,6 +690,11 @@
                     <retailDoc:annotation>
 <retailDoc:documentation>This contains item combinability codes (with code type 'PCLA') which provide a way to define which items can be combined (packed or boxed) together.</retailDoc:documentation>
 </retailDoc:annotation>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="0" ref="LocOfItemHdrDesc:LocOfItemHdrDesc">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Provide an extension hook to localize ItemHdrDesc</retailDoc:documentation>
+                    </retailDoc:annotation>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>

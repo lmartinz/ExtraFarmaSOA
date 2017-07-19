@@ -16,8 +16,8 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-         xmlns:ns1="http://service.ultra.com.br/erp-imifarma/Produto/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
-         xmlns:ns2="http://service.ultra.com.br/erp-imifarma/AtualizacaoProdutoRest/v1"
+         xmlns:ns1="http://service.ultra.com.br/dadosFundacao/Produto/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns2="http://service.ultra.com.br/dadosFundacao/AtualizacaoProdutoRest/v1"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://canonico.ultra.com.br/LegadoOutput/v1"
          xmlns:ns4="http://canonico.ultra.com.br/LegadoFault/v1"
          xmlns:ns17="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
@@ -61,9 +61,9 @@
   <import namespace="http://canonico.ultra.com.br/LegadoOutput/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://service.ultra.com.br/erp-imifarma/AtualizacaoProdutoRest/v1"
+  <import namespace="http://service.ultra.com.br/dadosFundacao/AtualizacaoProdutoRest/v1"
           location="../Schemas/AtualizacaoProdutoRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://service.ultra.com.br/erp-imifarma/Produto/v1"
+  <import namespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
           location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1Wrapper.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
   <partnerLinks>
@@ -164,8 +164,8 @@ oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'It
           <documentation>
             <![CDATA[Excluir]]>
           </documentation>
-          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemDel')
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupDel')
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemDel') or
+oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupDel') or
 oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyDel') or
 oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimDel') or
 oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDALOVDel') or

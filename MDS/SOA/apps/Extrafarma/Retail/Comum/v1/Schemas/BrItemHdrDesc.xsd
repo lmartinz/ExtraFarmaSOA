@@ -1,0 +1,76 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<retailDoc:annotation>
+		<retailDoc:documentation>Fiscal Attributes for Item</retailDoc:documentation>
+	</retailDoc:annotation>
+	<xs:element name="BrItemHdrDesc">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Root element</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" name="service_ind" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Indicador de Item de Serviço</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="origin_code" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Origem da Mercadoria</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="classification_id" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> NCM do item</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="ncm_char_code" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Característica NCM</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="ex_ipi" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Exceção de IPI</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="pauta_code" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Pauta</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="service_code" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Código Serviço</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="federal_service" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Serviço Federal</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="state_of_manufacture" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Estado de Fabricação</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="pharma_list_type" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Tipo de lista Farmaceutica.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="varchar2250">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 250 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
