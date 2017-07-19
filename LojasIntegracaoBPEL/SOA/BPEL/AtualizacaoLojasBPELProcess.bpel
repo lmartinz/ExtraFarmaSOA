@@ -65,6 +65,9 @@
     <variable name="responseJSON" type="xsd:string"/>
     <variable name="translateJsonToXML" element="ns6:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns7:RetornoServicoFault"/>
+    <variable name="endpointURI" type="xsd:string">
+      <from>string("http://dev-lil.extrafarma.com.br/erp-imifarma/v1/loja")</from>
+    </variable>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -139,7 +142,11 @@
             <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtlmod')</condition>
             <invoke name="AlterarEnderecoLojas" partnerLink="AtualizacaoLojasRestReference"
                     inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoEndereco"
-                    bpelx:invokeAsDetail="no"/>
+                    bpelx:invokeAsDetail="no">
+              <bpelx:toProperties>
+                <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:codigoLoja ,"/endereco/")</bpelx:toProperty>
+              </bpelx:toProperties>
+            </invoke>
           </elseif>
           <else>
             <documentation>
@@ -147,7 +154,11 @@
             </documentation>
             <invoke name="AlterarGerenteLojas" partnerLink="AtualizacaoLojasRestReference"
                     inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracao"
-                    bpelx:invokeAsDetail="no"/>
+                    bpelx:invokeAsDetail="no">
+              <bpelx:toProperties>
+                <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:codigoLoja)</bpelx:toProperty>
+              </bpelx:toProperties>
+            </invoke>
           </else>
         </if>
       </sequence>
@@ -181,14 +192,22 @@
             </documentation>
             <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedel')</condition>
             <invoke name="ExcluirLojas" partnerLink="AtualizacaoLojasRestReference" inputVariable="requestJSON"
-                    outputVariable="responseJSON" bpelx:method="exclusao" bpelx:invokeAsDetail="no"/>
+                    outputVariable="responseJSON" bpelx:method="exclusao" bpelx:invokeAsDetail="no">
+              <bpelx:toProperties>
+                <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:codigoLoja)</bpelx:toProperty>
+              </bpelx:toProperties>
+            </invoke>
             <else>
               <documentation>
                 <![CDATA[ExclusaoEndereco]]>
               </documentation>
               <invoke name="ExcluirEnderecoLojas" partnerLink="AtualizacaoLojasRestReference"
                       inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="exclusaoEndereco"
-                      bpelx:invokeAsDetail="no"/>
+                      bpelx:invokeAsDetail="no">
+                <bpelx:toProperties>
+                  <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:codigoLoja ,"/endereco/")</bpelx:toProperty>
+                </bpelx:toProperties>
+              </invoke>
             </else>
           </if>
         </sequence>

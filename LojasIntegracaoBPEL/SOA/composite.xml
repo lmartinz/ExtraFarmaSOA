@@ -34,7 +34,7 @@
   </component>
   <reference name="AtualizacaoLojasRestReference">
     <interface.wadl interface="WADLs/AtualizacaoLojasRestReference.wadl"/>
-    <binding.rest config="WADLs/AtualizacaoLojasRestReference.wadl" location="http://dev-lil.extrafarma.com.br/erp-imifarma/v1/loja"/>
+    <binding.rest config="WADLs/AtualizacaoLojasRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>LojasDBBPEL</source.uri>
