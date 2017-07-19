@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoLocalDestino" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1">
+        <serviceConfig service="AtualizacaoPrecoaDBBPEL" expression="$in.parameters/tns:AtualizacaoPrecoRequest/codigoLocalDestino" operation="atualizarPreco" outputDataType="int" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoLocalOrigem" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1">
+        <serviceConfig service="AtualizacaoPrecoaDBBPEL" expression="$in.parameters/tns:AtualizacaoPrecoRequest/codigoLocalOrigem" operation="atualizarPreco" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoProduto" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1">
+        <serviceConfig service="AtualizacaoPrecoaDBBPEL" expression="$in.parameters/tns:AtualizacaoPrecoRequest/codigoProduto" operation="atualizarPreco" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>

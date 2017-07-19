@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <action name="JMSSensorAction_codigoLocalDestino" enabled="false" publishType="JMSQueue" publishTarget="">
+        <property name="JMSConnectionFactory"/>
+    </action>
+    <action name="DBSensorAction" enabled="true" publishType="BpelReportsSchema" publishName="" filter="" publishTarget="">
+        <sensorName>codigoLocalDestino</sensorName>
+        <sensorName>codigoLocalOrigem</sensorName>
+        <sensorName>codigoProduto</sensorName>
+    </action>
+    <action name="JMSSensorAction_codigoLocalOrigem" enabled="false" publishType="JMSQueue" publishTarget="">
+        <property name="JMSConnectionFactory"/>
+    </action>
+    <action name="JMSSensorAction_codigoProduto" enabled="false" publishType="JMSQueue" publishTarget="">
+        <property name="JMSConnectionFactory"/>
+    </action>
+</actions>

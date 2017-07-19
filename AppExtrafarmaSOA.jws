@@ -25,15 +25,14 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="AtualizacaoPrecoIntegracaoBPEL/AtualizacaoPrecoIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="AtualizacaoPrecoMercadoriaIntegracaoBPEL/AtualizacaoPrecoMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="AvisoExpedicaoMercadoriaIntegracaoBPEL/AvisoExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL/CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="CriacaoTransferenciaMercadoriaCDIntegracaoBPEL/CriacaoTransferenciaMercadoriaCDIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="LojasIntegracaoBPEL/LojasIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
       <hash><url n="URL" path="NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="NFSaidaMercadoriaIntegracaoBPEL/NFSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="NotaFiscalSaidaMercadoriaIntegracaoBPEL/NotaFiscalSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoReservaIntegracaoBPEL/PedidoReservaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoTransferenciaMercadoriaIntegracaoBPEL/PedidoTransferenciaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PontualInventarioIntegracaoBPEL/PontualInventarioIntegracaoBPEL.jpr"/></hash>
