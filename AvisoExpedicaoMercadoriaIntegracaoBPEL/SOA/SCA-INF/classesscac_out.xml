@@ -1,0 +1,213 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Erro ao obter o fluxo de entrada XML: file:/D:/RootGitExtrafarma/Comum/v1/Schemas/Fault.xsd: D:\RootGitExtrafarma\Comum\v1\Schemas\Fault.xsd (O sistema não pode encontrar o caminho especificado)</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotificarExpedicaoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotificarExpedicaoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}MetaInformacao</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaRequest</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "parameters" is undefined [element = {http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1}NotificarExpedicaoMercadoriaResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
+      <fix/>
+      <msg>Message part "NotificarExpedicaoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</name>
+      <fix/>
+      <msg>Message part "payload" is undefined [element = {http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess}process</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</name>
+      <fix/>
+      <msg>Message part "payload" is undefined [element = {http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess}processResponse</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</file>
+      <name>oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl</name>
+      <fix/>
+      <msg>Message part "part1" is undefined [element = {http://service.ultra.com.br/infcorp/LogIntegration/v1}Envelope</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/etASNOutJMSReference.wsdl</file>
+      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/etASNOutJMSReference.wsdl</name>
+      <fix/>
+      <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:component[@name='NotificarExpedicaoMercadoriaBPELProcess/NotificarExpedicaoMercadoriaBPEL']</loc>
+      <line/>
+      <col/>
+      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AvisoExpedicaoMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
+      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AvisoExpedicaoMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
+      <fix/>
+      <msg>O serviço "NotificarExpedicaoMercadoriaBPEL" exposto pelo componente "NotificarExpedicaoMercadoriaBPELProcess" não é conectado a\usado por nenhum outro componente.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <line>70</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check variable "inputVariable" declaration, check WSDL message "ns3:NotificarExpedicaoMercadoriaRequest" declaration.</fix>
+      <msg>variable "inputVariable" of type "client:NotificarExpedicaoMercadoriaBPELProcessRequestMessage" is not compatible with WSDL message "ns3:NotificarExpedicaoMercadoriaRequest".</msg>
+   </Fault>
+</Faults>

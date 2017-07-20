@@ -1,0 +1,115 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Wed Jul 19 23:26:37 BRT 2017
+  Author:  marco
+  Type: BPEL 2.0 Process
+  Purpose: Asynchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="NotificarExpedicaoMercadoriaBPELProcess"
+         targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess"
+         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference"
+         xmlns:ns3="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+         xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+  <import ui:processWSDL="true"
+          namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess"
+          location="../WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="NotificarExpedicaoMercadoriaBPEL"
+                 partnerLinkType="client:NotificarExpedicaoMercadoriaBPELProcess"
+                 myRole="NotificarExpedicaoMercadoriaBPELProcessProvider"
+                 partnerRole="NotificarExpedicaoMercadoriaBPELProcessRequester"/>
+    <partnerLink name="etASNOutJMSReference" partnerLinkType="ns2:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
+    <partnerLink name="NotificarExpedicaoMercadoriaDBBPEL" partnerLinkType="ns3:NotificarExpedicaoMercadoriaDBBPEL"
+                 myRole="ExpedicaoMercadoriaPortType"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns1:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+  </partnerLinks>
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        VARIABLES                                                        
+        List of messages and XML documents used within this BPEL process 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:NotificarExpedicaoMercadoriaBPELProcessRequestMessage"/>
+    <!-- Reference to the message that will be sent back to the requester during callback -->
+    <variable name="outputVariable" messageType="client:NotificarExpedicaoMercadoriaBPELProcessResponseMessage"/>
+    <variable name="MetaInformacaovariable" element="ns4:MetaInformacao"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <sequence name="FluxoTratamentoMensagem">
+        <scope name="ScopeTratamentoMensagem">
+          <faultHandlers>
+            <catchAll>
+              <sequence name="SequenceTratarFalha">
+                <assign name="AssignFault"></assign>
+                <throw name="Throw"/>
+              </sequence>
+            </catchAll>
+          </faultHandlers>
+          <sequence name="Sequence">
+            <assign name="AssignPayloadToRegistroErroLogBPEL"></assign>
+            <invoke name="postaMensagemErroRegistroLogBPEL"/>
+          </sequence>
+        </scope>
+        <assign name="AssignReplyCatch"></assign>
+        <reply name="replyCatchOutput"/>
+      </sequence>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ORCHESTRATION LOGIC                                               
+       Set of activities coordinating the flow of messages across the    
+       services integrated within this business process                  
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+  <sequence name="main">
+    <!-- Receive input from requestor. (Note: This maps to operation defined in NotificarExpedicaoMercadoriaBPELProcess.wsdl) -->
+    <receive name="receiveInput" partnerLink="NotificarExpedicaoMercadoriaDBBPEL"
+             portType="ns3:ExpedicaoMercadoriaPortType" operation="notificarExpedicaoMercadoria"
+             variable="inputVariable" createInstance="yes"/>
+    <sequence name="SequencePostaMensagemRib">
+      <assign name="TransformationNotificarExpedicaoMercadoriaToetASNOut">
+        <bpelx:annotation>
+          <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+        </bpelx:annotation>
+      </assign>
+      <invoke name="PostaMensagemetASNOutJMS"/>
+    </sequence>
+    <sequence name="FluxoRegistraLog">
+      <assign name="AssignPayloadToRegistroLogBPEL"></assign>
+      <invoke name="RegistroLogBPEL"/>
+    </sequence>
+    <assign name="AssignReplyOK"></assign>
+    <reply name="Reply"/>
+    <!-- 
+          Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
+        -->
+  </sequence>
+</process>
