@@ -1,14 +1,74 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <Faults>
    <Fault>
-      <severity>warning</severity>
+      <severity>error</severity>
       <loc/>
-      <line/>
+      <line>71</line>
       <col/>
-      <file>Mediators/NFSaidaMercadoriaMediator.mplan</file>
-      <name>Mediators/NFSaidaMercadoriaMediator.mplan</name>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
       <fix/>
-      <msg>Operation\Event "criarNFSaidaMercadoria" does not contain case. No operation\event will be executed\processed respectively.</msg>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>72</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Missing Attribute 'faultName'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>77</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>81</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>94</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>98</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>101</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix/>
+      <msg>Element not completed: 'assign'</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
@@ -18,7 +78,7 @@
       <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
       <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
       <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: C:\Users\Vinicius\Dropbox\Resource\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\PublicacaoNFSaidaMercadoriaBPELProcess.wsdl (The system cannot find the file specified)" near (FileInputStream.java:-2).</msg>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: D:\RootGitExtrafarma\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\PublicacaoNFSaidaMercadoriaBPELProcess.wsdl (O sistema não pode encontrar o arquivo especificado)" near (FileInputStream.java:-2).</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>

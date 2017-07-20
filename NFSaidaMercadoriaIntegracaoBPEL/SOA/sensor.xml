@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoLocalDestino" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1">
+        <serviceConfig service="NFSaidaMercadoriaDBBPEL" expression="$in.parameters/tns:CriarNFSaidaMercadoriaRequest/tns:codigoLocalDestino" operation="criarNFSaidaMercadoria" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigLocalOrigem" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1">
+        <serviceConfig service="NFSaidaMercadoriaDBBPEL" expression="$in.parameters/tns:CriarNFSaidaMercadoriaRequest/tns:codigoLocalOrigem" operation="criarNFSaidaMercadoria" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>
