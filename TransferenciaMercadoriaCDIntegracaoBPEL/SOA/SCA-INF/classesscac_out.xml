@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>34</line>
+      <col/>
+      <file>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</file>
+      <name>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</name>
+      <fix>You should place all explicit &lt;bpel:import> statements in a BPEL 2.0 process.</fix>
+      <msg>There are no explicit "import" statements in &lt;bpel:process> "CriarTransferenciaMercadoriaCDBPELProcess" as required by BPEL 2.0 standard.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='transformationToJSON']</loc>
+      <line>66</line>
+      <col/>
+      <file>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</file>
+      <name>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</name>
+      <fix>Make sure that value "ns2:Root-Element" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns2:Root-Element" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationToJson']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>123</line>
+      <col/>
+      <file>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</file>
+      <name>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</name>
+      <fix>Check the bpel:variable specified on this node via attribute "variable" and make sure it is itself specified correctly.</fix>
+      <msg>The node &lt;bpel:to> refers to a bpel:variable (via the attribute "variable") - this bpel:variable needs to be defined correctly.</msg>
+   </Fault>
+</Faults>

@@ -75,7 +75,27 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
       <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
    </list>
-   <value n="defaultPackage" v="avisoexpedicaomercadoriaintegracaobpel"/>
+   <value n="defaultPackage" v="transferenciamercadoriacdintegracaobpel"/>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="constituent-sets">
+            <hash>
+               <list n="url-path">
+                  <url path="WADLs/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+*"/>
+               </list>
+               <list n="url-path">
+                  <url path="."/>
+               </list>
+            </hash>
+         </list>
+         <list n="url-path"/>
+      </hash>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
@@ -115,7 +135,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="AvisoExpedicaoMercadoriaIntegracaoBPEL">
+         <hash n="TransferenciaMercadoriaCDIntegracaoBPEL">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -202,18 +222,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_AvisoExpedicaoMercadoriaIntegracaoBPEL.jar"/>
+            <url n="jarURL" path="deploy/sca_TransferenciaMercadoriaCDIntegracaoBPEL.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="AvisoExpedicaoMercadoriaIntegracaoBPEL"/>
+            <value n="profileName" v="TransferenciaMercadoriaCDIntegracaoBPEL"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="AvisoExpedicaoMercadoriaIntegracaoBPEL"/>
+         <string v="TransferenciaMercadoriaCDIntegracaoBPEL"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-AvisoExpedicaoMercadoriaIntegracaoBPEL-webapp"/>
-      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-AvisoExpedicaoMercadoriaIntegracaoBPEL-context-root"/>
+      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-TransferenciaMercadoriaCDIntegracaoBPEL-webapp"/>
+      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-TransferenciaMercadoriaCDIntegracaoBPEL-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
@@ -302,5 +322,5 @@
       </hash>
    </hash>
    <value n="SCA_BPEL_FOLDER_PROPERTY_NAME" v="BPEL/"/>
-   <value n="SOA_WSDL_FOLDER_NAME" v="WSDLs/"/>
+   <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="Transformations/"/>
 </jpr:project>

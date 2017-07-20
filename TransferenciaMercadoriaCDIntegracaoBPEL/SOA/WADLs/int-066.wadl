@@ -1,0 +1,251 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="api" />
+    <resources base="http://localhost">
+            <resource path="erp-imifarma/v1/transferencia">
+                <doc title="erp-imifarma/v1/transferencia" /> 
+                <method name="POST">                    
+                        <request>
+                                                            <representation mediaType="application/json">
+                                    <doc>{
+  &quot;numeroPedido&quot;: 1,
+  &quot;tipoDocumento&quot;: &quot;sample string 2&quot;,
+  &quot;codigoFilial&quot;: 3,
+  &quot;tipoLocal&quot;: &quot;sample string 4&quot;,
+  &quot;Motivo&quot;: {
+    &quot;motivoTransferencia&quot;: 1
+  },
+  &quot;ItemPedidoList&quot;: [
+    {
+      &quot;codigoCliente&quot;: 1,
+      &quot;codigoProduto&quot;: 2,
+      &quot;quantidadePedida&quot;: 3,
+      &quot;tipodestino&quot;: &quot;sample string 4&quot;,
+      &quot;precovenda&quot;: 5.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        },
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        }
+      ]
+    },
+    {
+      &quot;codigoCliente&quot;: 1,
+      &quot;codigoProduto&quot;: 2,
+      &quot;quantidadePedida&quot;: 3,
+      &quot;tipodestino&quot;: &quot;sample string 4&quot;,
+      &quot;precovenda&quot;: 5.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        },
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                                </representation>
+                                <representation mediaType="text/json">
+                                    <doc>{
+  &quot;numeroPedido&quot;: 1,
+  &quot;tipoDocumento&quot;: &quot;sample string 2&quot;,
+  &quot;codigoFilial&quot;: 3,
+  &quot;tipoLocal&quot;: &quot;sample string 4&quot;,
+  &quot;Motivo&quot;: {
+    &quot;motivoTransferencia&quot;: 1
+  },
+  &quot;ItemPedidoList&quot;: [
+    {
+      &quot;codigoCliente&quot;: 1,
+      &quot;codigoProduto&quot;: 2,
+      &quot;quantidadePedida&quot;: 3,
+      &quot;tipodestino&quot;: &quot;sample string 4&quot;,
+      &quot;precovenda&quot;: 5.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        },
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        }
+      ]
+    },
+    {
+      &quot;codigoCliente&quot;: 1,
+      &quot;codigoProduto&quot;: 2,
+      &quot;quantidadePedida&quot;: 3,
+      &quot;tipodestino&quot;: &quot;sample string 4&quot;,
+      &quot;precovenda&quot;: 5.0,
+      &quot;ProdutoList&quot;: [
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        },
+        {
+          &quot;numeroPedido&quot;: 1,
+          &quot;codigoProduto&quot;: 2,
+          &quot;codigoCliente&quot;: 3,
+          &quot;precoVenda&quot;: 4.0,
+          &quot;unidadeMedida&quot;: &quot;sample string 5&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                                </representation>
+                                <representation mediaType="application/xml">
+                                    <doc>&lt;PedidoTransferencia xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_066&quot;&gt;
+  &lt;ItemPedidoList&gt;
+    &lt;ItemPedido&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;codigoCliente&gt;1&lt;/codigoCliente&gt;
+      &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+      &lt;precovenda&gt;5&lt;/precovenda&gt;
+      &lt;quantidadePedida&gt;3&lt;/quantidadePedida&gt;
+      &lt;tipodestino&gt;sample string 4&lt;/tipodestino&gt;
+    &lt;/ItemPedido&gt;
+    &lt;ItemPedido&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;codigoCliente&gt;1&lt;/codigoCliente&gt;
+      &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+      &lt;precovenda&gt;5&lt;/precovenda&gt;
+      &lt;quantidadePedida&gt;3&lt;/quantidadePedida&gt;
+      &lt;tipodestino&gt;sample string 4&lt;/tipodestino&gt;
+    &lt;/ItemPedido&gt;
+  &lt;/ItemPedidoList&gt;
+  &lt;Motivo&gt;
+    &lt;motivoTransferencia&gt;1&lt;/motivoTransferencia&gt;
+  &lt;/Motivo&gt;
+  &lt;codigoFilial&gt;3&lt;/codigoFilial&gt;
+  &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+  &lt;tipoDocumento&gt;sample string 2&lt;/tipoDocumento&gt;
+  &lt;tipoLocal&gt;sample string 4&lt;/tipoLocal&gt;
+&lt;/PedidoTransferencia&gt;</doc>
+                                </representation>
+                                <representation mediaType="text/xml">
+                                    <doc>&lt;PedidoTransferencia xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_066&quot;&gt;
+  &lt;ItemPedidoList&gt;
+    &lt;ItemPedido&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;codigoCliente&gt;1&lt;/codigoCliente&gt;
+      &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+      &lt;precovenda&gt;5&lt;/precovenda&gt;
+      &lt;quantidadePedida&gt;3&lt;/quantidadePedida&gt;
+      &lt;tipodestino&gt;sample string 4&lt;/tipodestino&gt;
+    &lt;/ItemPedido&gt;
+    &lt;ItemPedido&gt;
+      &lt;ProdutoList&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+        &lt;Produto&gt;
+          &lt;codigoCliente&gt;3&lt;/codigoCliente&gt;
+          &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+          &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+          &lt;precoVenda&gt;4&lt;/precoVenda&gt;
+          &lt;unidadeMedida&gt;sample string 5&lt;/unidadeMedida&gt;
+        &lt;/Produto&gt;
+      &lt;/ProdutoList&gt;
+      &lt;codigoCliente&gt;1&lt;/codigoCliente&gt;
+      &lt;codigoProduto&gt;2&lt;/codigoProduto&gt;
+      &lt;precovenda&gt;5&lt;/precovenda&gt;
+      &lt;quantidadePedida&gt;3&lt;/quantidadePedida&gt;
+      &lt;tipodestino&gt;sample string 4&lt;/tipodestino&gt;
+    &lt;/ItemPedido&gt;
+  &lt;/ItemPedidoList&gt;
+  &lt;Motivo&gt;
+    &lt;motivoTransferencia&gt;1&lt;/motivoTransferencia&gt;
+  &lt;/Motivo&gt;
+  &lt;codigoFilial&gt;3&lt;/codigoFilial&gt;
+  &lt;numeroPedido&gt;1&lt;/numeroPedido&gt;
+  &lt;tipoDocumento&gt;sample string 2&lt;/tipoDocumento&gt;
+  &lt;tipoLocal&gt;sample string 4&lt;/tipoLocal&gt;
+&lt;/PedidoTransferencia&gt;</doc>
+                                </representation>
+                                <representation mediaType="application/x-www-form-urlencoded">
+                                    <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;PedidoTransferencia&#39;.</doc>
+                                </representation>
+                        </request>
+                    </method>
+            </resource>            
+    </resources>
+</application>
