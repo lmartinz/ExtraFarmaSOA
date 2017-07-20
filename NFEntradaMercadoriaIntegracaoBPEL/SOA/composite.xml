@@ -11,17 +11,14 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
-  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+  <import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1"
           location="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl"
           importType="wsdl"/>
-  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
-          location="WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl" importType="wsdl"/>
-  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
-          location="WSDLs/NFEntradaMercadoriaV1Wrapper1.wsdl" importType="wsdl"/>
+  
   <service name="NFEntradaMercadoriaDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl">
-    <interface.wsdl interface="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
-    <binding.ws port="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1#wsdl.endpoint(NFEntradaMercadoriaDBBPEL/NFEntradaMercadoriaPort)">
+    <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
+    <binding.ws port="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.endpoint(NFEntradaMercadoriaDBBPEL/NFEntradaMercadoriaPort)">
       <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
     </binding.ws>
   </service>
@@ -30,8 +27,8 @@
   <component name="NFEntradaMercadoriaBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/NFEntradaMercadoriaBPELProcess.bpel"/>
     <componentType>
-      <service name="NFEntradaMercadoriaDBBPEL" ui:wsdlLocation="WSDLs/NFEntradaMercadoriaV1Wrapper1.wsdl">
-        <interface.wsdl interface="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
+      <service name="NFEntradaMercadoriaDBBPEL" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
       </service>
       <reference name="NFEntradaMercadoriaRestReference">
         <interface.wadl interface="WADLs/NFEntradaMercadoriaRestReference.wadl"/>

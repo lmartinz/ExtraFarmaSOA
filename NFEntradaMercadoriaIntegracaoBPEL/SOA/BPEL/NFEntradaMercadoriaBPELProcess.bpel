@@ -14,10 +14,10 @@
                xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaBPELProcess"
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
-               xmlns:ns1="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+               xmlns:ns1="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1"
                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
          xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-         xmlns:ns2="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1" 
+         xmlns:ns2="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1" 
          
          xmlns:ns3="http://TargetNamespace.com/nxsdschema"
          xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
@@ -31,7 +31,9 @@
          xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
          xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns5="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns6="http://www.oracle.com/retail/integration/rib/RibMessages">
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,12 +41,12 @@
       List of services participating in this BPEL process               
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
-  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1"
+  <import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1"
           location="../WSDLs/NFEntradaMercadoriaV1Wrapper1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/NFEntregaResponse.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://extrafarma/fiscal/v1/nf/publicacaoNFEntrada/v1" location="../Schemas/NFEntradaMercadoriaJson.xsd"
+  <import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1" location="../Schemas/NFEntradaMercadoriaJson.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
   <partnerLinks>
     <!-- 
