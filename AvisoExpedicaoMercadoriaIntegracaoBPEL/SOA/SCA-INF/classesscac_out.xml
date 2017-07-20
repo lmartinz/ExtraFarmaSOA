@@ -8,7 +8,8 @@
       <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</file>
       <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
       <fix/>
-      <msg>Erro ao obter o fluxo de entrada XML: file:/D:/RootGitExtrafarma/Comum/v1/Schemas/Fault.xsd: D:\RootGitExtrafarma\Comum\v1\Schemas\Fault.xsd (O sistema não pode encontrar o caminho especificado)</msg>
+      <msg>Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/custom/bo/ExtOfASNOutDesc/v1/ExtOfASNOutDesc.xsd: oracle.mds.core.MetadataNotFoundException: MDS-00013: Nenhum metadado foi encontrado para o objeto de metadados "/apps/Extrafarma/custom/bo/ExtOfASNOutDesc/v1/ExtOfASNOutDesc.xsd" 
+MDS-00201: PDocument não encontrado no MetadataStore: [store-type=FileMetadataStore] </msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -129,26 +130,6 @@
       <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/AvisoExpedicaoMercadoriaV1.wsdl</name>
       <fix/>
       <msg>Message part "NotificarExpedicaoMercadoriaFault" is undefined [element = {http://canonico.ultra.com.br/infcorp/v1}Fault</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</file>
-      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</name>
-      <fix/>
-      <msg>Message part "payload" is undefined [element = {http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess}process</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line/>
-      <col/>
-      <file>file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</file>
-      <name>/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/NotificarExpedicaoMercadoriaBPELProcess.wsdl</name>
-      <fix/>
-      <msg>Message part "payload" is undefined [element = {http://xmlns.oracle.com/AppExtrafarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/NotificarExpedicaoMercadoriaBPELProcess}processResponse</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
@@ -191,23 +172,594 @@
       <msg>Message part "body" is undefined [element = {http://www.oracle.com/retail/integration/rib/RibMessages}RibMessages</msg>
    </Fault>
    <Fault>
-      <severity>warning</severity>
-      <loc>/ns:composite/ns:component[@name='NotificarExpedicaoMercadoriaBPELProcess/NotificarExpedicaoMercadoriaBPEL']</loc>
-      <line/>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']</loc>
+      <line>34</line>
       <col/>
-      <file>D:\RootGitExtrafarma\ExtraFarmaSOA\AvisoExpedicaoMercadoriaIntegracaoBPEL\SOA\composite.xml</file>
-      <name>D:\RootGitExtrafarma\ExtraFarmaSOA\AvisoExpedicaoMercadoriaIntegracaoBPEL\SOA\composite.xml</name>
-      <fix/>
-      <msg>O serviço "NotificarExpedicaoMercadoriaBPEL" exposto pelo componente "NotificarExpedicaoMercadoriaBPELProcess" não é conectado a\usado por nenhum outro componente.</msg>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Please check import location or element QNames.</fix>
+      <msg>Error loading schema from file:/D:/RootGitExtrafarma/ExtraFarmaSOA/AvisoExpedicaoMercadoriaIntegracaoBPEL/SOA/WSDLs/etASNOutJMSReference.wsdl [Cause=Erro ao obter o fluxo de entrada XML: oramds:/apps/Extrafarma/custom/bo/ExtOfASNOutDesc/v1/ExtOfASNOutDesc.xsd: oracle.mds.core.MetadataNotFoundException: MDS-00013: Nenhum metadado foi encontrado para o objeto de metadados "/apps/Extrafarma/custom/bo/ExtOfASNOutDesc/v1/ExtOfASNOutDesc.xsd" 
+MDS-00201: PDocument não encontrado no MetadataStore: [store-type=FileMetadataStore] ]</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='receive'][@name='receiveInput']</loc>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variables']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='variable'][@name='MetaInformacaovariable']</loc>
       <line>70</line>
       <col/>
       <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
       <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
-      <fix>Check variable "inputVariable" declaration, check WSDL message "ns3:NotificarExpedicaoMercadoriaRequest" declaration.</fix>
-      <msg>variable "inputVariable" of type "client:NotificarExpedicaoMercadoriaBPELProcessRequestMessage" is not compatible with WSDL message "ns3:NotificarExpedicaoMercadoriaRequest".</msg>
+      <fix>Make sure that value "ns4:MetaInformacao" is resolvable (check imports, value of "element").</fix>
+      <msg>"element" is set to "ns4:MetaInformacao" on this &lt;bpel:variable>  but it cannot be resolved (check value of "element", imports, WSDLs or XSDs).</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>85</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check expression syntax on &lt;bpel:from>.</fix>
+      <msg>The expression "‘500’" has invalid syntax - Unexpected '‘500’'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "notificarExpedicaoMercadoriaFault" does not have a part named "NotificarExpedicaoMercadoriaFault" - check expression segment "$notificarExpedicaoMercadoriaFault.NotificarExpedicaoMercadoriaFault"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>86</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:codigo" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "notificarExpedicaoMercadoriaFault" does not have a part named "NotificarExpedicaoMercadoriaFault" - check expression segment "$notificarExpedicaoMercadoriaFault.NotificarExpedicaoMercadoriaFault"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>90</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:mensagem" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "notificarExpedicaoMercadoriaFault" does not have a part named "NotificarExpedicaoMercadoriaFault" - check expression segment "$notificarExpedicaoMercadoriaFault.NotificarExpedicaoMercadoriaFault"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>94</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:detalhe" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "notificarExpedicaoMercadoriaFault" does not have a part named "NotificarExpedicaoMercadoriaFault" - check expression segment "$notificarExpedicaoMercadoriaFault.NotificarExpedicaoMercadoriaFault"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceTratarFalha']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignFault']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>98</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns5:tipo" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>110</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>110</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>114</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>114</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>118</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>118</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>122</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>122</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>126</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>126</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>130</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>130</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>134</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>134</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>138</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>138</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>142</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>142</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>146</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "postaMensagemErroRegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='Sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>146</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Body" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyCatch']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>157</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "outputVariable" does not have a part named "parameters" - check expression segment "$outputVariable.parameters"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyCatch']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>157</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::out" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationNotificarExpedicaoMercadoriaToetASNOut']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>183</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "inputVariable" does not have a part named "parameters" - check expression segment "$inputVariable.parameters"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>195</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>195</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>199</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>199</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>203</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>203</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>207</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][4]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>207</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>211</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][5]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>211</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>214</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check expression syntax on &lt;bpel:from>.</fix>
+      <msg>The expression "‘NotificarExpedicaoMercadoriaIntegracaoBPELProce ..." has invalid syntax - Unexpected '‘NotificarExpedicaoMercadoriaIntegracaoBPELProcessed’'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>215</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][6]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>215</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>218</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check expression syntax on &lt;bpel:from>.</fix>
+      <msg>The expression "‘SUCESSO’" has invalid syntax - Unexpected '‘SUCESSO’'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>219</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][7]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>219</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>222</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check expression syntax on &lt;bpel:from>.</fix>
+      <msg>The expression "‘RIB’" has invalid syntax - Unexpected '‘RIB’'</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>223</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][8]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>223</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>227</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>227</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Header" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>231</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "RegistroLogBPEL_execute_InputVariable" does not have a part named "part1" - check expression segment "$RegistroLogBPEL_execute_InputVariable.part1"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>231</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::ns4:Body" cannot be resolved.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>240</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix/>
+      <msg>Variable "outputVariable" does not have a part named "parameters" - check expression segment "$outputVariable.parameters"</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignReplyOK']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>240</line>
+      <col/>
+      <file>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</file>
+      <name>BPEL/NotificarExpedicaoMercadoriaBPELProcess.bpel</name>
+      <fix>Check the type definition associated with the BPEL variable.</fix>
+      <msg>The XPath segment "child::out" cannot be resolved.</msg>
    </Fault>
 </Faults>

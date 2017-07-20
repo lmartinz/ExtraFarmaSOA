@@ -1,5 +1,5 @@
-<adapter-config name="etASNOutJMSReference" adapter="jms" wsdlLocation="../WSDLs/etASNOutJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
-  
+<adapter-config name="etASNOutJMSReference" adapter="jms" wsdlLocation="../WSDLs/etASNOutJMSReference.wsdl"
+                xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   <connection-factory location="eis/aqjms/etASNOUT" UIJmsProvider="WLSJMS"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
     <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
@@ -9,5 +9,4 @@
       <property name="PayloadType" value="TextMessage"/>
     </interaction-spec>
   </endpoint-interaction>
-
 </adapter-config>

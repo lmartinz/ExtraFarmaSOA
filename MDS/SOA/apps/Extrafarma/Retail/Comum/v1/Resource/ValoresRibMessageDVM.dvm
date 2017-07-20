@@ -52,5 +52,19 @@
       <cell>F</cell>
       <cell>PDV</cell>
     </row>
+    <row markdefault="false">
+      <cell>id-value7</cell>
+      <cell>055</cell>
+      <cell>Items</cell>
+      <cell>ItemSupMod</cell>
+      <cell>F</cell>
+    </row>
+    <row markdefault="false">
+      <cell>id-value8</cell>
+      <cell>080</cell>
+      <cell>shipinfo</cell>
+      <cell>shipinfocre</cell>
+      <cell>F</cell>
+    </row>
   </rows>
 </dvm>

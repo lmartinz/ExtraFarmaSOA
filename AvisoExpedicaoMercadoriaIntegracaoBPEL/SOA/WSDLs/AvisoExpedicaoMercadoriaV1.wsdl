@@ -19,9 +19,9 @@
     <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
                 elementFormDefault="qualified">
       <xsd:include schemaLocation="../Schemas/AvisoExpedicaoMercadoriaEBMV1.xsd"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd"
+      <xsd:import schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/Fault.xsd"
                   namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
+      <xsd:import schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"
                   namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
     </xsd:schema>
   </wsdl:types>

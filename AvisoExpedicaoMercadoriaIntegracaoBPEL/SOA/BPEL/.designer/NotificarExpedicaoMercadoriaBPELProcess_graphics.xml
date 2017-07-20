@@ -4,12 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="NotificarExpedicaoMercadoriaBPEL" x="0" y="30" side="left"/>
-      <partnerlink name="NotificarExpedicaoMercadoriaDBBPEL" x="0" y="90" side="left"/>
-      <partnerlink name="RegistroLogBPELReference" x="0" y="164" side="left"/>
-      <partnerlink name="etASNOutJMSReference" x="1075" y="30" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="0" y="447" side="left"/>
+      <partnerlink name="NotificarExpedicaoMercadoriaDBBPEL" x="0" y="531" side="left"/>
+      <partnerlink name="etASNOutJMSReference" x="1169" y="323" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1182,633" show_swimlanes="true">
+   <graph_layout viewport="0,0,1323,654" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
