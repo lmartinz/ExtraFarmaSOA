@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="expedicaomercadoriabpelprocess_client" x="0" y="454" side="left"/>
-      <partnerlink name="etASNOutJMSReference" x="787" y="323" side="right"/>
-      <partnerlink name="RegistroLogBPELReference" x="787" y="425" side="right"/>
+      <partnerlink name="etASNOutJMSReference" x="1111" y="323" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="1111" y="425" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,954,293" show_swimlanes="true">
+   <graph_layout viewport="0,0,1278,683" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

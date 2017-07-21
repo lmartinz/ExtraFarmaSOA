@@ -58,19 +58,19 @@
   <partnerLinks>
     <partnerLink name="NFSaidaMercadoriaDBBPEL" partnerLinkType="ns1:NFSaidaMercadoriaDBBPEL"
                  myRole="NFSaidaMercadoriaPortType"/>
-    <partnerLink name="EtShipInfoJMSReference" partnerLinkType="ns2:Posta_Mensagem_plt"
-                 partnerRole="Posta_Mensagem_role"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="EtShipInfoJMSReference" partnerLinkType="ns2:Posta_Mensagem_plt"
+                 partnerRole="Posta_Mensagem_role"/>
   </partnerLinks>
   <variables>
     <variable name="InputVariable" messageType="ns1:CriarNFSaidaMercadoriaRequest"/>
     <variable name="outputVariable" messageType="ns1:CriarNFSaidaMercadoriaResponse"/>
     <variable name="MetaInformacaoVariable" type="ns4:MetaInformacaoType"/>
     <variable name="criarNFSaidaMercadoriaFault" messageType="ns1:CriarNFSaidaMercadoriaFaultMsg"/>
-    <variable name="PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
     <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
+    <variable name="PostaMensagemetShipInfoJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -170,13 +170,14 @@
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/TransformationCriarNotaFiscalSaidaMercadoriaToetShipInfo_1.xsl", $InputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/TransformationCriarNotaFiscalSaidaMercadoriaToetShipInfo.xsl", $InputVariable.parameters)</from>
           <to variable="PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
-      <invoke name="PostaMensagemetShipInfoJMS" bpelx:invokeAsDetail="no" partnerLink="EtShipInfoJMSReference"
-              portType="ns2:Posta_Mensagem_ptt" operation="Posta_Mensagem"
-              inputVariable="PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable"/>
+      <invoke name="PostaMensagemetShipInfoJMS"
+              inputVariable="PostaMensagemetShipInfoJMS_Posta_Mensagem_InputVariable"
+              partnerLink="EtShipInfoJMSReference" portType="ns2:Posta_Mensagem_ptt" operation="Posta_Mensagem"
+              bpelx:invokeAsDetail="no"/>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">

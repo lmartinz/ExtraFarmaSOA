@@ -4,7 +4,10 @@
                 xmlns:Q5="http://canonico.ultra.com.br/LegadoFault/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
                 xmlns:Q4="http://canonico.ultra.com.br/LegadoOutput/v1"
-                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+                xmlns:ns1="http://www.oracle.com/retail/integration/custom/bo/ExtOfShipInfoDesc/v1"
+                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/ShipInfoDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -23,6 +26,72 @@
    </oracle-xsl-mapper:schema>
    <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
    <xsl:template match="/">
-      <tns:RibMessages/>
+      <tns:RibMessages>
+         <tns:ribMessage>
+            <tns:family>
+               <xsl:value-of select="dvm:lookupValue (&quot;oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm&quot;, &quot;id&quot;, &quot;080&quot;, &quot;type&quot;, &quot;&quot; )"/>
+            </tns:family>
+            <tns:type>
+               <xsl:value-of select="dvm:lookupValue (&quot;oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm&quot;, &quot;id&quot;, &quot;080&quot;, &quot;type&quot;, &quot;&quot; )"/>
+            </tns:type>
+            <tns:messageData>
+               <ns3:ShipInfoDesc>
+                  <ns3:to_loc_type>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:codigoLocalDestino"/>
+                  </ns3:to_loc_type>
+                  <ns3:to_location>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:tipoLocalDestino"/>
+                  </ns3:to_location>
+                  <ns3:from_loc_type>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:codigoLocalOrigem"/>
+                  </ns3:from_loc_type>
+                  <ns3:from_location>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:tipoLocalOrigem"/>
+                  </ns3:from_location>
+                  <ns3:asn_nbr>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:numeroPedidoCliente"/>
+                  </ns3:asn_nbr>
+                  <ns3:asn_type>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:tipoPedidoTransferencia"/>
+                  </ns3:asn_type>
+                  <ns3:container_qty>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:quantidadeCaixasPedido"/>
+                  </ns3:container_qty>
+                  <ns3:bol_nbr>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:identificacaoTransferencia"/>
+                  </ns3:bol_nbr>
+                  <ns3:shipment_date>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:dataTransferencia"/>
+                  </ns3:shipment_date>
+                  <ns3:carrier_code>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:codigoIdentificacaoTransportadora"/>
+                  </ns3:carrier_code>
+                  <ns3:carrier_service_code>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:codigoNivelServicoTransportadora"/>
+                  </ns3:carrier_service_code>
+                  <ns3:printer_id>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:codigoIdentificacaoImpressora"/>
+                  </ns3:printer_id>
+                  <ns3:print_pkg_stn_req>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:IdentificacaoImpressaoRequerida"/>
+                  </ns3:print_pkg_stn_req>
+                  <ns3:home_dlvry_ind>
+                     <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:IdentificacaiEntregaDomicilio"/>
+                  </ns3:home_dlvry_ind>
+                  <xsl:for-each select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:NFSaidaDetalheList">
+                     <ns3:ShipInfoDistro>
+                        <xsl:for-each select="ns0:CaixasNotaFiscalSaidaList">
+                           <ns3:ShipInfoCtn>
+                              <xsl:for-each select="ns0:ItemNotaFiscalSaidaList">
+                                 <ns3:ShipInfoItem/>
+                              </xsl:for-each>
+                           </ns3:ShipInfoCtn>
+                        </xsl:for-each>
+                     </ns3:ShipInfoDistro>
+                  </xsl:for-each>
+               </ns3:ShipInfoDesc>
+            </tns:messageData>
+         </tns:ribMessage>
+      </tns:RibMessages>
    </xsl:template>
 </xsl:stylesheet>

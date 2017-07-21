@@ -1,74 +1,44 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <Faults>
    <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line>71</line>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][5]</loc>
+      <line>57</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
+      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: D:\RootGitExtrafarma\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\CriarNFSaidaMercadoriaIntegracaoBPEL.wsdl (O sistema não pode encontrar o arquivo especificado)" near (FileInputStream.java:-2).</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc/>
-      <line>72</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>140</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Missing Attribute 'faultName'</msg>
+      <fix>You must defined the variable to use it in the XPath expression.</fix>
+      <msg>The variable "inputVariable" is not defined in scope or process.</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc/>
-      <line>77</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationCriarNotaFiscalSaidaMercadoriaToetShipInfo']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
+      <line>174</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
+      <fix>Make sure that value "PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" is resolvable (check imports, value of "variable").</fix>
+      <msg>"variable" is set to "PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" on this &lt;bpel:to>  but it cannot be resolved (check value of "variable", imports, WSDLs or XSDs).</msg>
    </Fault>
    <Fault>
       <severity>error</severity>
-      <loc/>
-      <line>81</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>221</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line>94</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line>98</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc/>
-      <line>101</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix/>
-      <msg>Element not completed: 'assign'</msg>
+      <fix>You must defined the variable to use it in the XPath expression.</fix>
+      <msg>The variable "inputVariable" is not defined in scope or process.</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>

@@ -25,9 +25,8 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="AtualizacaoPrecoIntegracaoBPEL/AtualizacaoPrecoIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="AvisoExpedicaoMercadoriaIntegracaoBPEL/AvisoExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL/CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="ExpedicaoMercadoriaIntegracaoBPEL/ExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="LojasIntegracaoBPEL/LojasIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>

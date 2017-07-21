@@ -295,6 +295,21 @@
    </hash>
    <hash n="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider">
       <hash n="sca-content">
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+CriacaoNotaFiscalSaidaMercadoriav1.wsdl"/>
+               </list>
+               <list n="url-path">
+                  <url path="../NFSaidaMercadoriaIntegracaoBPEL/SOA/WSDLs/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="url-path">
+                  <url path="SOA/"/>
+               </list>
+            </hash>
+         </list>
          <list n="url-path">
             <url path="SOA/"/>
          </list>
