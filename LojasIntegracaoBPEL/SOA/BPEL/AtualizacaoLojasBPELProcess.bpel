@@ -107,7 +107,7 @@
       <documentation>
         <![CDATA[CriarAlterar]]>
       </documentation>
-      <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storecre') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtlmod') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storemod') </condition>
+      <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "storecre" or $inputVariable.parameters/ns3:ribMessage/ns3:type = "storedtlmod" or $inputVariable.parameters/ns3:ribMessage/ns3:type = "storemod"</condition>
       <sequence name="SequenceChamadaRestLegadoCriacaoLoja">
         <assign name="TransformationToJsonCriacao">
           <bpelx:annotation>
@@ -131,7 +131,7 @@
           <documentation>
             <![CDATA[Criar]]>
           </documentation>
-          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storecre')</condition>
+          <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "storecre" </condition>
           <invoke name="CriarLojas" partnerLink="AtualizacaoLojasRestReference"
                   inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="criacao"
                   bpelx:invokeAsDetail="no"/>
@@ -139,7 +139,7 @@
             <documentation>
               <![CDATA[AlterarEndereco]]>
             </documentation>
-            <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtlmod')</condition>
+            <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "storedtlmod"</condition>
             <invoke name="AlterarEnderecoLojas" partnerLink="AtualizacaoLojasRestReference"
                     inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoEndereco"
                     bpelx:invokeAsDetail="no">
@@ -166,7 +166,7 @@
         <documentation>
           <![CDATA[Excluir]]>
         </documentation>
-        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedel') or oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedtldel')</condition>
+        <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "storedel" or $inputVariable.parameters/ns3:ribMessage/ns3:type = "storedtldel"</condition>
         <sequence name="SequenceChamadaRestLegadoExclusaoLoja">
           <assign name="TransformationToJsonExclusao">
             <bpelx:annotation>
@@ -190,7 +190,7 @@
             <documentation>
               <![CDATA[Exclusao]]>
             </documentation>
-            <condition>oraext:compare-ignore-case($inputVariable.parameters/ns3:ribMessage/ns3:type,'storedel')</condition>
+            <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "storedel"</condition>
             <invoke name="ExcluirLojas" partnerLink="AtualizacaoLojasRestReference" inputVariable="requestJSON"
                     outputVariable="responseJSON" bpelx:method="exclusao" bpelx:invokeAsDetail="no">
               <bpelx:toProperties>
