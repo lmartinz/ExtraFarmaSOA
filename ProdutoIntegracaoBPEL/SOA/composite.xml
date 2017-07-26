@@ -35,8 +35,7 @@
   </component>
   <reference name="AtualizacaoProdutoRestReference">
     <interface.wadl interface="WADLs/AtualizacaoProdutoRestReference.wadl"/>
-    <binding.rest config="WADLs/AtualizacaoProdutoRestReference.wadl"
-                  location="http://localhost:7001"/>
+    <binding.rest config="WADLs/AtualizacaoProdutoRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>ProdutoDBBPEL</source.uri>
