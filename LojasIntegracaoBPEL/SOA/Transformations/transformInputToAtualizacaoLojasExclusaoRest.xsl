@@ -35,6 +35,11 @@
          <tns:lojaPossuiEstoque>
             <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreRef/ns3:stockholding_ind"/>
          </tns:lojaPossuiEstoque>
+         <tns:DetalheEnderecoLojaList>
+            <tns:idEndereco>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreRef/ns2:AddrRef/ns2:addr"/>
+            </tns:idEndereco>
+         </tns:DetalheEnderecoLojaList>
       </tns:Root-Element>
    </xsl:template>
 </xsl:stylesheet>
