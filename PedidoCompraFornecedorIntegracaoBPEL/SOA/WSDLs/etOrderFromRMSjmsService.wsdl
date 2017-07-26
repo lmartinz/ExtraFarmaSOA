@@ -1,0 +1,32 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="etOrderFromRMSjmsService"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:pc="http://xmlns.oracle.com/pcbpel/"
+     xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns1="http://schemas.oracle.com/bpel/extension"
+    >
+    <plt:partnerLinkType name="Consume_Message_plt">
+        <plt:role name="Consume_Message_role">
+            <plt:portType name="tns:Consume_Message_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:import namespace="http://schemas.oracle.com/bpel/extension" location="RuntimeFault.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/PedidoCompraFornecedor/v1/Schemas/RibMessages.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="Consume_Message_msg">
+        <wsdl:part name="body" element="imp1:RibMessages"/>
+    </wsdl:message>
+    <wsdl:portType name="Consume_Message_ptt">
+        <wsdl:operation name="Consume_Message">
+            <wsdl:input message="tns:Consume_Message_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" 
+            xmlns:tns="http://TargetNamespace.com/envioPedidoFornecedor" 
+            targetNamespace="http://TargetNamespace.com/envioPedidoFornecedor" 
+            elementFormDefault="unqualified" 
+            attributeFormDefault="unqualified" 
+            nxsd:version="NXSD" nxsd:stream="chars" 
+            nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="EnvioPedido" type="tns:Arquivo"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:complexType name="Arquivo">
+      <xsd:sequence>
+         <xsd:element name="Linha00" type="tns:Tipo00"/>
+         <xsd:element name="Linha01" type="tns:Tipo01"/>
+         <xsd:element name="Linha02" type="tns:Tipo02"/>
+         <xsd:element name="Linha03" type="tns:Tipo03" maxOccurs="unbounded" nxsd:lookAhead="1" nxsd:lookFor="03"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Tipo00" nxsd:lookAhead="1" nxsd:lookFor="" nxsd:scanLength="2" nxsd:lookForPattern="00">
+      <xsd:sequence>
+         <xsd:element name="TipoRegistro" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="IdentificacacaoArquivo" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="IdentificacaoCxPostalRem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="35" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="IdentificacaoCxPostalDes" type="xsd:string" nxsd:style="fixedLength" nxsd:length="35" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="Filter" type="xsd:string" nxsd:style="fixedLength" nxsd:length="364" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="Filler2" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="${eol}"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Tipo01" nxsd:lookAhead="1" nxsd:lookFor="" nxsd:scanLength="2" nxsd:lookForPattern="01">
+      <xsd:sequence>
+         <xsd:element name="TipoRegistro" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumPedidoCompra" type="xsd:string" nxsd:style="fixedLength" nxsd:length="15" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="DataEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="8" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="DataEntregaTarde" type="xsd:string" nxsd:style="fixedLength" nxsd:length="8" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="DataEntregaCedo" type="xsd:string" nxsd:style="fixedLength" nxsd:length="8" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="DataEmissao" type="xsd:string" nxsd:style="fixedLength" nxsd:length="8" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="TipoPedido" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumeroListaPrecos" type="xsd:string" nxsd:style="fixedLength" nxsd:length="20" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="EanCliente" type="xsd:string" nxsd:style="fixedLength" nxsd:length="13" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CnpjCliente" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumeroEanLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="164" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="RazaoSocialLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="LogradouroLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="33" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="BairroDistritoLocal" type="xsd:string" nxsd:style="fixedLength" nxsd:length="35" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="MunicipioLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="35" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="UfLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CepLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="9" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CnpjLocalEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="InscricaoEstadualEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="20" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="EanFaturamento" type="xsd:string" nxsd:style="fixedLength" nxsd:length="13" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CnpjDestinatatrio" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         
+         <xsd:element name="EanFornecedor" type="xsd:string" nxsd:style="fixedLength" nxsd:length="13" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CnpjFornecedor" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CondicaoEntrega" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="QtdeDesconto" type="xsd:string" nxsd:style="fixedLength" nxsd:length="8" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="ValorEncargos" type="xsd:string" nxsd:style="fixedLength" nxsd:length="9" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="TipoUsoMercadoria" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumeroContrato" type="xsd:string" nxsd:style="fixedLength" nxsd:length="25" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="TipoPedido" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="Filter3" type="xsd:string" nxsd:style="fixedLength" nxsd:length="37" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         
+         <xsd:element name="Filler4" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="${eol}"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Tipo02" nxsd:lookAhead="1" nxsd:lookFor="" nxsd:scanLength="2" nxsd:lookForPattern="02">
+      <xsd:sequence>
+         <xsd:element name="TipoRegistro" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumParcelas" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="EventoReferencia" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="ReferenciaTempo" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumeroDias" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="PercPagamentoFat" type="xsd:string" nxsd:style="fixedLength" nxsd:length="9" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="Filler2" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="${eol}"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Tipo03" nxsd:lookAhead="1" nxsd:lookFor="" nxsd:scanLength="2" nxsd:lookForPattern="03">
+      <xsd:sequence>
+         <xsd:element name="TipoRegistro" type="xsd:string" nxsd:style="fixedLength" nxsd:length="2" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="NumeroLinhaItem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="9" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="CodigoBarraItem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="TipoCodigoItem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="QuantidadeItem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="15" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="UnidadeMedida" type="xsd:string" nxsd:style="fixedLength" nxsd:length="6" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         
+         <xsd:element name="TipoPedidoItem" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="PrecoUnitario" type="xsd:string" nxsd:style="fixedLength" nxsd:length="14" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="BasePreco" type="xsd:string" nxsd:style="fixedLength" nxsd:length="10" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="UnidadeMedida" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="Desconto" type="xsd:string" nxsd:style="fixedLength" nxsd:length="10" nxsd:padStyle="tail" nxsd:paddedBy=" "/>
+         <xsd:element name="TipoUsoMercadoria" type="xsd:string" nxsd:style="fixedLength" nxsd:length="3" nxsd:padStyle="tail" nxsd:paddedBy=" "/>         
+         <xsd:element name="Filter" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="${eol}"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:annotation>
+      <xsd:appinfo>NXSDSAMPLE=/C:/servimed/layouts/most/retorno/RETFAR_00033658400000000000.txt</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>
