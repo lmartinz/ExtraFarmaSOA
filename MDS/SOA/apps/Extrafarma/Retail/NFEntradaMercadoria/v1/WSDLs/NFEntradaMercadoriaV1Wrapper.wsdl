@@ -12,5 +12,5 @@
     <plnk:partnerLinkType name="NFEntradaMercadoriaDBBPEL">
         <plnk:role name="NFEntradaMercadoriaPortType" portType="tns:NFEntradaMercadoriaPortType"/>
     </plnk:partnerLinkType>
-    <wsdl:import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1" location="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl"/>
+    <wsdl:import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1" location="NFEntradaMercadoriaV1.wsdl"/>
 </wsdl:definitions>

@@ -30,6 +30,7 @@
             <xsd:element name="DetalheEnderecoLojaList" maxOccurs="unbounded">
                <xsd:complexType>
                   <xsd:sequence>
+                     <xsd:element name="idEndereco" type="xsd:string"/>
                      <xsd:element name="tipoEndereco" type="xsd:string"/>
                      <xsd:element name="enderecoPrimario" type="xsd:string"/>
                      <xsd:element name="cidade" type="xsd:string"/>

@@ -1,0 +1,49 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/localization/bo/BrFiscalStoreAttrDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/localization/bo/BrFiscalStoreAttrDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<retailDoc:annotation>
+        <retailDoc:documentation>Fiscal Attributes for Store</retailDoc:documentation>
+	</retailDoc:annotation>
+    <xs:element name="BrFiscalStoreAttrDesc">
+		<retailDoc:annotation>
+            <retailDoc:documentation>Root element</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element minOccurs="0" name="neighborhood" type="varchar2250">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Informação referente ao Bairro da Loja</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+				<xs:element minOccurs="0" name="state_registration" type="varchar2250">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Inscrição Estadual I.E.</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+				<xs:element minOccurs="0" name="cnpj" type="varchar214">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>CNPJ - Cadastro Nacional da Pessoa Jurídica</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+			</xs:sequence>
+	    </xs:complexType>
+    </xs:element>
+	<xs:simpleType name="varchar2250">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max length of 250 characters.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+		<xs:simpleType name="varchar214">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a string of max length of 14 characters.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="14"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

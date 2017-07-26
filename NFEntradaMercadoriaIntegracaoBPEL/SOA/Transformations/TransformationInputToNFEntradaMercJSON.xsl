@@ -9,7 +9,10 @@
                 xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/ASNOutDesc/v1"
                 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                 xmlns:ns4="http://www.oracle.com/retail/integration/custom/bo/ExtOfASNOutDesc/v1"
-                xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd">
+                xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+                xmlns:ns7="http://canonico.ultra.com.br/LegadoOutput/v1"
+                xmlns:ns6="http://canonico.ultra.com.br/LegadoFault/v1"
+                xmlns:ns5="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

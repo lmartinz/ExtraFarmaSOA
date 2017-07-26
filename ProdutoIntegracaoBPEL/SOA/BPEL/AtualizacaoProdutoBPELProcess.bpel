@@ -46,7 +46,7 @@
          xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:ns20="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
-         xmlns:ns21="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1">
+         xmlns:ns21="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1" xmlns:ns22="json">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,6 +55,11 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://service.ultra.com.br/dadosFundacao/Produto/v1"
+          location="oramds:/apps/Extrafarma/Retail/Produto/v1/WSDLs/ProdutoV1.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://canonico.ultra.com.br/LegadoFault/v1"
           location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
@@ -71,44 +76,46 @@
     <partnerLink name="AtualizacaoProdutoRestReference" bpelx:wadl="yes"/>
   </partnerLinks>
   <variables>
-    <variable name="outputVariable" messageType="ns1:AtualizacaoProdutoResponse"/>
     <variable name="inputVariable" messageType="ns1:AtualizacaoProdutoRequest"/>
     <variable name="transformationJSON" element="ns2:Root-Element"/>
     <variable name="requestJSON" type="xsd:string"/>
-    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="responseJSON" bpelx:json="object"/>
     <variable name="translateJsonToXML" element="ns3:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns4:RetornoServicoFault"/>
-    <variable name="endpointURI" type="xsd:string">
-      <from>string("http://dev-lil.extrafarma.com.br/erp-imifarma/v1/item")</from>
-    </variable>
+    <variable name="outputVariable" messageType="ns1:AtualizacaoProdutoResponse"/>
+    <variable name="messageData" messageType="ns1:AtualizacaoProdutoRequest"/>
+    <variable name="requestJsonObject" bpelx:json="object"/>
   </variables>
   <faultHandlers>
     <catchAll>
       <sequence name="SequenceRetornoErro">
-        <assign name="TranslateJsonToXMLError">
-          <bpelx:annotation>
-            <bpelx:pattern>translate</bpelx:pattern>
-          </bpelx:annotation>
-          <copy>
-            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
-            <to>$errorTranslateToXML</to>
-          </copy>
-        </assign>
-        <assign name="AssignReplyCatch">
-          <copy>
-            <from>$errorTranslateToXML/ns4:success</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
-          </copy>
-          <copy>
-            <from>ora:getFlowId()</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
-          </copy>
-          <copy>
-            <from>oraext:get-content-as-string($errorTranslateToXML/ns4:errors/node())</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
-          </copy>
-        </assign>
-        <reply name="replyCatchOutput" partnerLink="ProdutoDBBPEL" variable="outputVariable"
+        <if name="IfRethrow">
+          <documentation>
+            <![CDATA[Rethrow]]>
+          </documentation>
+          <condition>$outputVariable.parameters/ns3:data/ns3:mensagem != ""</condition>
+          <empty name="Empty"/>
+          <else>
+            <documentation>
+              <![CDATA[NoRethrow]]>
+            </documentation>
+            <assign name="AssignReplyCatch">
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+              </copy>
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+              </copy>
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+              </copy>
+            </assign>
+          </else>
+        </if>
+        <reply name="replyCatchOutput" variable="outputVariable" partnerLink="ProdutoDBBPEL"
                portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
       </sequence>
     </catchAll>
@@ -117,12 +124,20 @@
     <receive name="receiveInput" variable="inputVariable" createInstance="yes" partnerLink="ProdutoDBBPEL"
              portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
     <sequence name="SequenceChamadaRestLegado">
+      <assign name="AssignParseMessageData">
+        <extensionAssignOperation>
+          <bpelx:append>
+            <bpelx:from>oraext:parseEscapedXML($inputVariable.parameters/ns5:ribMessage/ns5:messageData)</bpelx:from>
+            <bpelx:to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$messageData.parameters/ns5:ribMessage/ns5:messageData</bpelx:to>
+          </bpelx:append>
+        </extensionAssignOperation>
+      </assign>
       <assign name="TransformationToJson">
         <bpelx:annotation>
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAtualizacaoProdutoRest.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAtualizacaoProdutoRest.xsl", $messageData.parameters)</from>
           <to variable="transformationJSON"/>
         </copy>
       </assign>
@@ -135,96 +150,95 @@
           <to>$requestJSON</to>
         </copy>
       </assign>
-      <if name="IfAcao">
-        <documentation>
-          <![CDATA[Criar]]>
-        </documentation>
-        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDALOVCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDAFFCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDADateCre') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCCre')</condition>
-        <invoke name="CriarProduto" partnerLink="AtualizacaoProdutoRestReference"
-                inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="criacaoProduto"
-                bpelx:invokeAsDetail="no"/>
-        <elseif>
+      <extensionActivity>
+        <bpelx:js name="JsonParseProduto">
+          <![CDATA[$requestJsonObject = JSON.parse($requestJSON);]]>
+        </bpelx:js>
+      </extensionActivity>
+      <scope name="Scope1">
+        <faultHandlers>
+          <catch faultName="bpelx:bindingFault" faultVariable="BpelFault" faultMessageType="bpelx:RuntimeFaultMessage">
+            <sequence name="SequenceRetornoErroBpelFault">
+              <assign name="AssignBpelFault">
+                <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+                </copy>
+                <copy>
+                  <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+                </copy>
+                <copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+                </copy>
+              </assign>
+              <rethrow name="RethrowBindingFault"/>
+            </sequence>
+          </catch>
+          <catchAll>
+            <rethrow name="RethrowCatchAll"/>
+          </catchAll>
+        </faultHandlers>
+        <if name="IfAcao">
           <documentation>
-            <![CDATA[Alterar]]>
+            <![CDATA[Criar]]>
           </documentation>
-          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemHdrMod') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupMod') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyMod') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimMod') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCMod')</condition>
-          <invoke name="AlterarProduto" partnerLink="AtualizacaoProdutoRestReference"
-                  inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="alteracaoProduto"
+          <condition>$inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupCtyCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ISCDimCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDALOVCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDAFFCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDADateCre" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUPCCre"</condition>
+          <invoke name="CriarItem" partnerLink="AtualizacaoProdutoRestReference"
+                  inputVariable="requestJsonObject" outputVariable="responseJSON" bpelx:method="criar"
                   bpelx:invokeAsDetail="no">
             <bpelx:toProperties>
-              <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:CabecalhoItem/ns2:identificacaoItem)</bpelx:toProperty>
+              <bpelx:toProperty name="rest.binding.http.Content-Type">string('application/json')</bpelx:toProperty>
             </bpelx:toProperties>
           </invoke>
-        </elseif>
-        <elseif>
-          <documentation>
-            <![CDATA[Excluir]]>
-          </documentation>
-          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemSupCtyDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ISCDimDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDALOVDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDAFFDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUDADateDel') or
-oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'ItemUPCDel')</condition>
-          <invoke name="ExcluirProduto" partnerLink="AtualizacaoProdutoRestReference"
-                  inputVariable="requestJSON" outputVariable="responseJSON" bpelx:method="exclusaoProduto"
-                  bpelx:invokeAsDetail="no">
-            <bpelx:toProperties>
-              <bpelx:toProperty name="endpointURI">concat($endpointURI,"/" ,$transformationJSON/ns2:CabecalhoItem/ns2:identificacaoItem)</bpelx:toProperty>
-            </bpelx:toProperties>
-          </invoke>
-        </elseif>
-        <else>
-          <documentation>
-            <![CDATA[TipoInvalido]]>
-          </documentation>
-          <sequence name="Sequence1">
-            <assign name="AssignReplyTipoInvalido">
-              <copy>
-                <from>1</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
-              </copy>
-              <copy>
-                <from>ora:getFlowId()</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
-              </copy>
-              <copy>
-                <from>concat('Rib Message Type ',$inputVariable.parameters/ns5:ribMessage/ns5:type,' invalida.')</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
-              </copy>
-            </assign>
-            <reply name="ReplyTipoInvalido" partnerLink="ProdutoDBBPEL" variable="outputVariable"
-                   portType="ns1:ProdutoPortType" operation="atualizacaoProduto"/>
-          </sequence>
-        </else>
-      </if>
+          <elseif>
+            <documentation>
+              <![CDATA[Alterar]]>
+            </documentation>
+            <condition>$inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemHdrMod" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupMod" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupCtyMod" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ISCDimMod" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUPCMod"</condition>
+            <invoke name="AlterarItem" partnerLink="AtualizacaoProdutoRestReference"
+                    inputVariable="requestJsonObject" outputVariable="responseJSON" bpelx:method="alterar"
+                    bpelx:invokeAsDetail="no"/>
+          </elseif>
+          <elseif>
+            <documentation>
+              <![CDATA[Excluir]]>
+            </documentation>
+            <condition>$inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemSupCtyDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ISCDimDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDALOVDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDAFFDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUDADateDel" or $inputVariable.parameters/ns5:ribMessage/ns5:type = "ItemUPCDel"</condition>
+            <invoke name="ExcluirItem" partnerLink="AtualizacaoProdutoRestReference"
+                    inputVariable="requestJsonObject" outputVariable="responseJSON" bpelx:method="excluir"
+                    bpelx:invokeAsDetail="no"/>
+          </elseif>
+          <else>
+            <documentation>
+              <![CDATA[TipoInvalido]]>
+            </documentation>
+            <sequence name="SequenceTipoInvalido">
+              <assign name="AssignReplyTipoInvalido">
+                <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+                </copy>
+                <copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+                </copy>
+                <copy>
+                  <from>concat('Rib Message Type ',$inputVariable.parameters/ns5:ribMessage/ns5:type,' invalida.')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+                </copy>
+              </assign>
+              <throw name="ThrowTipoInvalido" faultName="bpel:invalidVariables"/>
+            </sequence>
+          </else>
+        </if>
+      </scope>
     </sequence>
     <sequence name="SequenceRetornoRestLegado">
-      <assign name="TranslateJsonToXMLReponse">
-        <bpelx:annotation>
-          <bpelx:pattern>translate</bpelx:pattern>
-        </bpelx:annotation>
-        <copy>
-          <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
-          <to>$translateJsonToXML</to>
-        </copy>
-      </assign>
       <assign name="AssignSucessoAtualizacaoLojas">
         <copy>
-          <from>$translateJsonToXML/ns3:success</from>
+          <from>0</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
         </copy>
         <copy>
@@ -232,12 +246,12 @@ oraext:compare-ignore-case($inputVariable.parameters/ns5:ribMessage/ns5:type,'It
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
         </copy>
         <copy>
-          <from>$translateJsonToXML/ns3:data/ns3:mensagem</from>
+          <from>'SUCESSO'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
         </copy>
       </assign>
     </sequence>
-    <reply name="Reply" partnerLink="ProdutoDBBPEL" variable="outputVariable" portType="ns1:ProdutoPortType"
+    <reply name="Reply" variable="outputVariable" partnerLink="ProdutoDBBPEL" portType="ns1:ProdutoPortType"
            operation="atualizacaoProduto"/>
   </sequence>
 </process>

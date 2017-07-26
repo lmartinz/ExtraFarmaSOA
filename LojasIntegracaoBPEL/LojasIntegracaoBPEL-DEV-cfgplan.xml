@@ -7,7 +7,7 @@
              <attribute name="location">
                     <searchReplace>
                         <search>http://localhost:7001</search>
-                        <replace>http://dev-lil.extrafarma.com.br/erp-imifarma/v1/loja</replace>
+                        <replace>http://172.20.64.158/erp-imifarma/v1/loja</replace>
                     </searchReplace>
              </attribute>
          </binding>
