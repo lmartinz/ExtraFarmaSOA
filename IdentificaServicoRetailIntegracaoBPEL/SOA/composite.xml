@@ -45,8 +45,10 @@
   <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1"
-          location="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl" importType="wsdl"/>
-  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" location="WSDLs/PedidoReservaV1Wrapper.wsdl"
+          location="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1Wrapper.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl"
           importType="wsdl"/>
   <service name="etPOScheduleFromRFMJMSReference" ui:wsdlLocation="WSDLs/etPOScheduleFromRFMJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etPOScheduleFromRFMJMSReference#wsdl.interface(Consume_Message_ptt)"/>
@@ -90,7 +92,8 @@
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
-      <reference name="PedidoReservaBPELReference" ui:wsdlLocation="WSDLs/PedidoReservaV1Wrapper.wsdl">
+      <reference name="PedidoReservaBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/atacado/PedidoReserva/v1#wsdl.interface(PedidoReservaPortType)"/>
       </reference>
     </componentType>
@@ -106,7 +109,8 @@
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
-      <reference name="RecebimentoNFCompraReference" ui:wsdlLocation="WSDLs/RecebimentoNFCompraV1Wrapper.wsdl">
+      <reference name="RecebimentoNFCompraReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/RecebimentoNFCompra/v1/WSDLs/RecebimentoNFCompraV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/RecebimentoNFCompra/v1#wsdl.interface(RecebimentoNFCompraPortType)"/>
       </reference>
     </componentType>
