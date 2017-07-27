@@ -17,7 +17,7 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
   <import namespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1"
-          location="WSDLs/ExpedicaoMercadoriaV1.wsdl"
+          location="../../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/WSDLs/ExpedicaoMercadoriaV1.wsdl"
           importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
@@ -26,9 +26,9 @@
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1"
-          location="WSDLs/ExpedicaoMercadoriaV1Wrapper.wsdl" importType="wsdl"/>
+          location="../../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/WSDLs/ExpedicaoMercadoriaV1Wrapper.wsdl" importType="wsdl"/>
   <service name="ExpedicaoMercadoriaDBBPEL"
-           ui:wsdlLocation="WSDLs/ExpedicaoMercadoriaV1.wsdl">
+           ui:wsdlLocation="../../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/WSDLs/ExpedicaoMercadoriaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
     <binding.direct/>
   </service>
@@ -37,7 +37,8 @@
   <component name="ExpedicaoMercadoriaBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/ExpedicaoMercadoriaBPELProcess.bpel"/>
     <componentType>
-      <service name="expedicaomercadoriabpelprocess_client" ui:wsdlLocation="WSDLs/ExpedicaoMercadoriaV1Wrapper.wsdl">
+      <service name="expedicaomercadoriabpelprocess_client"
+               ui:wsdlLocation="../../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/WSDLs/ExpedicaoMercadoriaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
       </service>
       <reference name="RegistroLogBPELReference" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">

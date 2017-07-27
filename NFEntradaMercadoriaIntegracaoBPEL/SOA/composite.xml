@@ -14,20 +14,21 @@
   <import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1"
           location="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl"
           importType="wsdl"/>
-  
+  <import namespace="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1"
+          location="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl"
+          importType="wsdl"/>
   <service name="NFEntradaMercadoriaDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
-    <binding.ws port="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.endpoint(NFEntradaMercadoriaDBBPEL/NFEntradaMercadoriaPort)">
-      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
-    </binding.ws>
+    <binding.direct/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.1.0.160608</property>
   <property name="compositeID" type="xs:string" many="false">0db33eee-a6df-4a73-8e4a-6f6b92e89364</property>
   <component name="NFEntradaMercadoriaBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/NFEntradaMercadoriaBPELProcess.bpel"/>
     <componentType>
-      <service name="NFEntradaMercadoriaDBBPEL" ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1.wsdl">
+      <service name="NFEntradaMercadoriaDBBPEL"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFEntradaMercadoria/v1/WSDLs/NFEntradaMercadoriaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFEntradaMercadoria/v1#wsdl.interface(NFEntradaMercadoriaPortType)"/>
       </service>
       <reference name="NFEntradaMercadoriaRestReference">

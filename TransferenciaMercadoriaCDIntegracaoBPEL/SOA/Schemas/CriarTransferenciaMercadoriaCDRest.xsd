@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
+            targetNamespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
+            elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON"
+            nxsd:encoding="US-ASCII">
+  <xsd:element name="Root-Element">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="numeroAgendamento" type="xsd:integer"/>
+        <xsd:element name="codigoDeposito" type="xsd:string"/>
+        <xsd:element name="PlanejamentoPedidoCompraList" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="numeroPedidoCompra" type="xsd:string"/>
+              <xsd:element name="PlanejamentoDetalheList">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="codigoItem" type="xsd:string"/>
+                    <xsd:element name="quantidadeConsolidadaPedidoCompra" type="xsd:decimal"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

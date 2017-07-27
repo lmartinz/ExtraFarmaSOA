@@ -25,10 +25,8 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="AtualizacaoPrecoIntegracaoBPEL/AtualizacaoPrecoIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="AvisoExpedicaoMercadoriaIntegracaoBPEL/AvisoExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL/CriacaoNotaFiscalSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="CriacaoTransferenciaMercadoriaCDIntegracaoBPEL/CriacaoTransferenciaMercadoriaCDIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="ExpedicaoMercadoriaIntegracaoBPEL/ExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="LojasIntegracaoBPEL/LojasIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
@@ -40,6 +38,7 @@
       <hash><url n="URL" path="ProdutoIntegracaoBPEL/ProdutoIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="RecebimentoMercadoriaIntegracaoBPEL/RecebimentoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="RecebimentoNFCompraIntegracaoBPEL/RecebimentoNFCompraIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="TransferenciaMercadoriaCDIntegracaoBPEL/TransferenciaMercadoriaCDIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="TransferenciaMercadoriaLojaIntegracaoBPEL/TransferenciaMercadoriaLojaIntegracaoBPEL.jpr"/></hash>
    </list>
 </jws:workspace>

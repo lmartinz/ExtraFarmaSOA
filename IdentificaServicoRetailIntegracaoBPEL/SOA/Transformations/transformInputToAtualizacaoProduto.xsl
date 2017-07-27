@@ -23,7 +23,40 @@
    <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
    <xsl:template match="/">
       <ns0:RibMessages>
-         <xsl:copy-of select="/ns0:RibMessages/ns0:ribMessage"/>
+         <ns0:ribMessage>
+            <ns0:family>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:family"/>
+            </ns0:family>
+            <ns0:type>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:type"/>
+            </ns0:type>
+            <ns0:id>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:id"/>
+            </ns0:id>
+            <ns0:ribmessageID>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:ribmessageID"/>
+            </ns0:ribmessageID>
+            <ns0:routingInfo>
+               <ns0:name>
+                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:routingInfo/ns0:name"/>
+               </ns0:name>
+               <ns0:value>
+                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:routingInfo/ns0:value"/>
+               </ns0:value>
+            </ns0:routingInfo>
+            <ns0:publishTime>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:publishTime"/>
+            </ns0:publishTime>
+            <ns0:messageData>
+                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/node()" disable-output-escaping="yes"/>
+            </ns0:messageData>
+            <ns0:customData>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:customData"/>
+            </ns0:customData>
+            <ns0:customFlag>
+               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:customFlag"/>
+            </ns0:customFlag>
+         </ns0:ribMessage>
       </ns0:RibMessages>
    </xsl:template>
 </xsl:stylesheet>

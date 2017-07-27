@@ -13,7 +13,7 @@
 	</retailDoc:annotation>
 	<xs:import
 		namespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfShipInfoDesc/v1"
-		schemaLocation="../../../../custom/bo/ExtOfShipInfoDesc/v1/ExtOfShipInfoDesc.xsd">
+		schemaLocation="ExtOfShipInfoDesc.xsd">
 		<retailDoc:annotation>
 			<retailDoc:documentation>Additional information about Shipment
 			</retailDoc:documentation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensors xmlns="http://xmlns.oracle.com/bpel/sensor">
+    <sensor sensorName="codigoLocalDestino" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1">
+        <serviceConfig service="NotificarExpedicaoMercadoriaDBBPEL" expression="$in.parameters/tns:NotificarExpedicaoMercadoriaRequest/codigoLocalDestino" operation="notificarExpedicaoMercadoria" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+    <sensor sensorName="codigoLocalOrigem" kind="service" target="undefined" filter="" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1">
+        <serviceConfig service="NotificarExpedicaoMercadoriaDBBPEL" expression="$in.parameters/tns:NotificarExpedicaoMercadoriaRequest/codigoLocalOrigem" operation="notificarExpedicaoMercadoria" outputDataType="string" outputNamespace="http://www.w3.org/2001/XMLSchema"/>
+    </sensor>
+</sensors>

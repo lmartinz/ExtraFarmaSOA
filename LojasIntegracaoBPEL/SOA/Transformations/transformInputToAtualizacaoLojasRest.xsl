@@ -6,7 +6,12 @@
                 xmlns:Q4="http://canonico.ultra.com.br/LegadoOutput/v1"
                 xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/AddrDesc/v1"
                 xmlns:ns1="http://service.ultra.com.br/logistica/Lojas/v1"
-                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd">
+                xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+                xmlns:ns5="http://www.oracle.com/retail/integration/custom/bo/ExtOfStoreDesc/v1"
+                xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/LocOfStoreDesc/v1"
+                xmlns:ns4="http://www.oracle.com/retail/integration/localization/bo/BrFiscalStoreAttrDesc/v1"
+                xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/StoreRef/v1"
+                xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/AddrRef/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -27,7 +32,7 @@
    <xsl:template match="/">
       <tns:Root-Element>
          <tns:codigoLoja>
-            <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreDesc/ns3:store"/>
+            <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/*:StoreDesc/*:store" />
          </tns:codigoLoja>
          <tns:tipoLoja>
             <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreDesc/ns3:store_type"/>
@@ -100,6 +105,9 @@
          </tns:possuiPOSIntegrado>
          <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreDesc/ns2:AddrDesc">
             <tns:DetalheEnderecoLojaList>
+               <tns:idEndereco>
+                  <xsl:value-of select="ns2:addr"/>
+               </tns:idEndereco>
                <tns:tipoEndereco>
                   <xsl:value-of select="ns2:addr_type"/>
                </tns:tipoEndereco>
@@ -116,6 +124,144 @@
                   <xsl:value-of select="ns2:post"/>
                </tns:cep>
             </tns:DetalheEnderecoLojaList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreDesc/ns5:ExtOfStoreDesc">
+            <tns:CustomizacaoCampoLojaList>
+               <tns:remessaControlado>
+                  <xsl:value-of select="ns5:controlled_shipping"/>
+               </tns:remessaControlado>
+               <tns:remessaRetinoico>
+                  <xsl:value-of select="ns5:retinoic_shipping"/>
+               </tns:remessaRetinoico>
+               <tns:validadeLicencaRetinoico>
+                  <xsl:value-of select="ns5:retinoic_lic_val"/>
+               </tns:validadeLicencaRetinoico>
+               <tns:numeroInscricaoSuframa>
+                  <xsl:value-of select="ns5:suframa_num"/>
+               </tns:numeroInscricaoSuframa>
+               <tns:validadeSuframa>
+                  <xsl:value-of select="ns5:suframa_val"/>
+               </tns:validadeSuframa>
+               <tns:registroLicencaVigilanciaSanitaria>
+                  <xsl:value-of select="ns5:sanitary_lic_id"/>
+               </tns:registroLicencaVigilanciaSanitaria>
+               <tns:codigoAlvaraLocalizacaoPrefeitura>
+                  <xsl:value-of select="ns5:alvara_loc_code"/>
+               </tns:codigoAlvaraLocalizacaoPrefeitura>
+               <tns:possuiAfeAnvisa>
+                  <xsl:value-of select="ns5:afe_anvisa_ind"/>
+               </tns:possuiAfeAnvisa>
+               <tns:registroLicencaValidadeVigilanciaSanitaria>
+                  <xsl:value-of select="ns5:lic_id_sanitary_val"/>
+               </tns:registroLicencaValidadeVigilanciaSanitaria>
+               <tns:enderecoFantasia>
+                  <xsl:value-of select="ns5:fantasy_loc"/>
+               </tns:enderecoFantasia>
+               <tns:localizacaoCartesiana>
+                  <xsl:value-of select="ns5:cartesian_loc"/>
+               </tns:localizacaoCartesiana>
+               <tns:gerenteDistrital>
+                  <xsl:value-of select="ns5:district_manager"/>
+               </tns:gerenteDistrital>
+               <tns:gerenteMercado>
+                  <xsl:value-of select="ns5:market_manager"/>
+               </tns:gerenteMercado>
+               <tns:horarioFuncionamento>
+                  <xsl:value-of select="ns5:business_hours"/>
+               </tns:horarioFuncionamento>
+               <tns:tipoEstacionamento>
+                  <xsl:value-of select="ns5:parking_type"/>
+               </tns:tipoEstacionamento>
+               <tns:lojaPolo>
+                  <xsl:value-of select="ns5:polo_store_ind"/>
+               </tns:lojaPolo>
+               <tns:perfilSortimento>
+                  <xsl:value-of select="ns5:assortment_profile"/>
+               </tns:perfilSortimento>
+               <tns:possuiTelefonia>
+                  <xsl:value-of select="ns5:telephony_ind"/>
+               </tns:possuiTelefonia>
+               <tns:possuiFarmaciaPopular>
+                  <xsl:value-of select="ns5:popular_drugstore_ind"/>
+               </tns:possuiFarmaciaPopular>
+               <tns:possuiServicosFarmaceutico>
+                  <xsl:value-of select="ns5:pharm_services_ind"/>
+               </tns:possuiServicosFarmaceutico>
+               <tns:possuiCaixaEletronico>
+                  <xsl:value-of select="ns5:cash_machine_ind"/>
+               </tns:possuiCaixaEletronico>
+               <tns:numeroTerminalAtendimento>
+                  <xsl:value-of select="ns5:terminals_service"/>
+               </tns:numeroTerminalAtendimento>
+               <tns:numeroCheckout>
+                  <xsl:value-of select="ns5:checkouts"/>
+               </tns:numeroCheckout>
+               <tns:numeroCestaoFralda>
+                  <xsl:value-of select="ns5:diapers_basket"/>
+               </tns:numeroCestaoFralda>
+               <tns:numeroFreezer>
+                  <xsl:value-of select="ns5:freezer_ind"/>
+               </tns:numeroFreezer>
+               <tns:numeroPontaGondola>
+                  <xsl:value-of select="ns5:gondola_tips"/>
+               </tns:numeroPontaGondola>
+               <tns:numeroVagaEstacionamento>
+                  <xsl:value-of select="ns5:parking_lots"/>
+               </tns:numeroVagaEstacionamento>
+               <tns:numeroGeladeira>
+                  <xsl:value-of select="ns5:refrigerator_qty"/>
+               </tns:numeroGeladeira>
+               <tns:numeroCooler>
+                  <xsl:value-of select="ns5:cooler_ind"/>
+               </tns:numeroCooler>
+               <tns:validadeVigilanciaSanitaria>
+                  <xsl:value-of select="ns5:sanitary_val"/>
+               </tns:validadeVigilanciaSanitaria>
+               <tns:tamanhoLoja>
+                  <xsl:value-of select="ns5:store_size"/>
+               </tns:tamanhoLoja>
+               <tns:areaTerreno>
+                  <xsl:value-of select="ns5:land_area"/>
+               </tns:areaTerreno>
+               <tns:areaConstruida>
+                  <xsl:value-of select="ns5:building_area"/>
+               </tns:areaConstruida>
+               <tns:areaVendas>
+                  <xsl:value-of select="ns5:sales_area"/>
+               </tns:areaVendas>
+               <tns:padraoArquitetonico>
+                  <xsl:value-of select="ns5:arch_standard"/>
+               </tns:padraoArquitetonico>
+               <tns:clusterVenda>
+                  <xsl:value-of select="ns5:cluster_sales"/>
+               </tns:clusterVenda>
+               <tns:tipoLoja>
+                  <xsl:value-of select="ns5:store_type"/>
+               </tns:tipoLoja>
+               <tns:totem>
+                  <xsl:value-of select="ns5:totem_ind"/>
+               </tns:totem>
+               <tns:idLojaFisica>
+                  <xsl:value-of select="ns5:id_phys_store"/>
+               </tns:idLojaFisica>
+            </tns:CustomizacaoCampoLojaList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:StoreDesc/ns6:LocOfStoreDesc">
+            <tns:CustomizacaoCampoFiscalList>
+               <xsl:for-each select="ns4:BrFiscalStoreAttrDesc">
+                  <tns:CampoFiscalList>
+                     <tns:bairroLoja>
+                        <xsl:value-of select="ns4:neighborhood"/>
+                     </tns:bairroLoja>
+                     <tns:inscricaoEstadual>
+                        <xsl:value-of select="ns4:state_registration"/>
+                     </tns:inscricaoEstadual>
+                     <tns:cnpj>
+                        <xsl:value-of select="ns4:cnpj"/>
+                     </tns:cnpj>
+                  </tns:CampoFiscalList>
+               </xsl:for-each>
+            </tns:CustomizacaoCampoFiscalList>
          </xsl:for-each>
       </tns:Root-Element>
    </xsl:template>

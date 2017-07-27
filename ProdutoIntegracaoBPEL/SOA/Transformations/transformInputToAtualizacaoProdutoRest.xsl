@@ -41,83 +41,85 @@
    <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
    <xsl:template match="/">
       <tns:Root-Element>
-         <tns:CabecalhoItem>
-            <tns:identificacaoItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item"/>
-            </tns:identificacaoItem>
-            <tns:numeroDigitos>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_number_type"/>
-            </tns:numeroDigitos>
-            <tns:subclasse>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:subclass"/>
-            </tns:subclasse>
-            <tns:descricaItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_desc"/>
-            </tns:descricaItem>
-            <tns:breveDescricaoItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:short_desc"/>
-            </tns:breveDescricaoItem>
-            <tns:precoVarejo>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:mfg_rec_retail"/>
-            </tns:precoVarejo>
-            <tns:temperaturaItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:handling_temp"/>
-            </tns:temperaturaItem>
-            <tns:descricaoControleTemperatura>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:handling_temp_desc"/>
-            </tns:descricaoControleTemperatura>
-            <tns:observacao>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:comments"/>
-            </tns:observacao>
-            <tns:unidadeVarejo>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:unit_retail"/>
-            </tns:unidadeVarejo>
-            <tns:comprimentoItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_length"/>
-            </tns:comprimentoItem>
-            <tns:larguraItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_width"/>
-            </tns:larguraItem>
-            <tns:alturaItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_height"/>
-            </tns:alturaItem>
-            <tns:pesoItem>
-               <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_weight"/>
-            </tns:pesoItem>
-            <tns:LocalizacaoItem>
-               <tns:AtributoLocalizadoItem>
-                  <tns:indicadorItemServico>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_ind"/>
-                  </tns:indicadorItemServico>
-                  <tns:origemMercadoria>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:origin_code"/>
-                  </tns:origemMercadoria>
-                  <tns:ncmItem>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:classification_id"/>
-                  </tns:ncmItem>
-                  <tns:caracteristicaNCM>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ncm_char_code"/>
-                  </tns:caracteristicaNCM>
-                  <tns:excessaoIPI>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ex_ipi"/>
-                  </tns:excessaoIPI>
-                  <tns:pauta>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pauta_code"/>
-                  </tns:pauta>
-                  <tns:codigoServico>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_code"/>
-                  </tns:codigoServico>
-                  <tns:servicoFederal>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:federal_service"/>
-                  </tns:servicoFederal>
-                  <tns:estadoFabricacao>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:state_of_manufacture"/>
-                  </tns:estadoFabricacao>
-                  <tns:tipoListaFarmaceutica>
-                     <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pharma_list_type"/>
-                  </tns:tipoListaFarmaceutica>
-               </tns:AtributoLocalizadoItem>
-            </tns:LocalizacaoItem>
+         <xsl:choose>
+             <xsl:when test="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc">
+             <tns:CabecalhoItem>
+              <tns:identificacaoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item"/>
+              </tns:identificacaoItem>
+              <tns:numeroDigitos>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_number_type"/>
+              </tns:numeroDigitos>
+              <tns:subclasse>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:subclass"/>
+              </tns:subclasse>
+              <tns:descricaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_desc"/>
+              </tns:descricaItem>
+              <tns:breveDescricaoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:short_desc"/>
+              </tns:breveDescricaoItem>
+              <tns:precoVarejo>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:mfg_rec_retail"/>
+              </tns:precoVarejo>
+              <tns:temperaturaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:handling_temp"/>
+              </tns:temperaturaItem>
+              <tns:descricaoControleTemperatura>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:handling_temp_desc"/>
+              </tns:descricaoControleTemperatura>
+              <tns:observacao>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:comments"/>
+              </tns:observacao>
+              <tns:unidadeVarejo>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:unit_retail"/>
+              </tns:unidadeVarejo>
+              <tns:comprimentoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_length"/>
+              </tns:comprimentoItem>
+              <tns:larguraItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_width"/>
+              </tns:larguraItem>
+              <tns:alturaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_height"/>
+              </tns:alturaItem>
+              <tns:pesoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns10:item_weight"/>
+              </tns:pesoItem>
+              <tns:LocalizacaoItem>
+                 <tns:AtributoLocalizadoItem>
+                    <tns:indicadorItemServico>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_ind"/>
+                    </tns:indicadorItemServico>
+                    <tns:origemMercadoria>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:origin_code"/>
+                    </tns:origemMercadoria>
+                    <tns:ncmItem>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:classification_id"/>
+                    </tns:ncmItem>
+                    <tns:caracteristicaNCM>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ncm_char_code"/>
+                    </tns:caracteristicaNCM>
+                    <tns:excessaoIPI>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ex_ipi"/>
+                    </tns:excessaoIPI>
+                    <tns:pauta>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pauta_code"/>
+                    </tns:pauta>
+                    <tns:codigoServico>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_code"/>
+                    </tns:codigoServico>
+                    <tns:servicoFederal>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:federal_service"/>
+                    </tns:servicoFederal>
+                    <tns:estadoFabricacao>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:state_of_manufacture"/>
+                    </tns:estadoFabricacao>
+                    <tns:tipoListaFarmaceutica>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pharma_list_type"/>
+                    </tns:tipoListaFarmaceutica>
+                 </tns:AtributoLocalizadoItem>
+              </tns:LocalizacaoItem>
          </tns:CabecalhoItem>
          <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns8:ItemDesc/ns12:ItemSupDesc">
             <tns:FornecedorItemList>
@@ -318,6 +320,287 @@
                </xsl:for-each>
             </tns:ItemReferenciaList>
          </xsl:for-each>
+         </xsl:when>
+         <xsl:otherwise>
+           <tns:CabecalhoItem>
+              <tns:identificacaoItem>
+                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item"/>
+              </tns:identificacaoItem>
+              <tns:numeroDigitos>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_number_type"/>
+              </tns:numeroDigitos>
+              <tns:subclasse>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:subclass"/>
+              </tns:subclasse>
+              <tns:descricaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_desc"/>
+              </tns:descricaItem>
+              <tns:breveDescricaoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:short_desc"/>
+              </tns:breveDescricaoItem>
+              <tns:precoVarejo>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:mfg_rec_retail"/>
+              </tns:precoVarejo>
+              <tns:temperaturaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:handling_temp"/>
+              </tns:temperaturaItem>
+              <tns:descricaoControleTemperatura>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:handling_temp_desc"/>
+              </tns:descricaoControleTemperatura>
+              <tns:observacao>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:comments"/>
+              </tns:observacao>
+              <tns:unidadeVarejo>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:unit_retail"/>
+              </tns:unidadeVarejo>
+              <tns:comprimentoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_length"/>
+              </tns:comprimentoItem>
+              <tns:larguraItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_width"/>
+              </tns:larguraItem>
+              <tns:alturaItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_height"/>
+              </tns:alturaItem>
+              <tns:pesoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_weight"/>
+              </tns:pesoItem>
+              <tns:LocalizacaoItem>
+                 <tns:AtributoLocalizadoItem>
+                    <tns:indicadorItemServico>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_ind"/>
+                    </tns:indicadorItemServico>
+                    <tns:origemMercadoria>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:origin_code"/>
+                    </tns:origemMercadoria>
+                    <tns:ncmItem>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:classification_id"/>
+                    </tns:ncmItem>
+                    <tns:caracteristicaNCM>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ncm_char_code"/>
+                    </tns:caracteristicaNCM>
+                    <tns:excessaoIPI>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:ex_ipi"/>
+                    </tns:excessaoIPI>
+                    <tns:pauta>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pauta_code"/>
+                    </tns:pauta>
+                    <tns:codigoServico>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:service_code"/>
+                    </tns:codigoServico>
+                    <tns:servicoFederal>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:federal_service"/>
+                    </tns:servicoFederal>
+                    <tns:estadoFabricacao>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:state_of_manufacture"/>
+                    </tns:estadoFabricacao>
+                    <tns:tipoListaFarmaceutica>
+                       <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns16:LocOfItemHdrDesc/ns17:BrItemHdrDesc/ns17:pharma_list_type"/>
+                    </tns:tipoListaFarmaceutica>
+                 </tns:AtributoLocalizadoItem>
+              </tns:LocalizacaoItem>
+         </tns:CabecalhoItem>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns12:ItemSupDesc">
+            <tns:FornecedorItemList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns12:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorFornecedor>
+                  <xsl:value-of select="ns12:supplier"/>
+               </tns:identificadorFornecedor>
+               <tns:identificadorItemFornecedor>
+                  <xsl:value-of select="ns12:vpn"/>
+               </tns:identificadorItemFornecedor>
+            </tns:FornecedorItemList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns13:ItemSupCtyDesc">
+            <tns:PaisFornecedorItem>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns13:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorFornecedor>
+                  <xsl:value-of select="ns13:supplier"/>
+               </tns:identificadorFornecedor>
+               <tns:paisFabricacao>
+                  <xsl:value-of select="ns13:origin_country_id"/>
+               </tns:paisFabricacao>
+               <tns:fornecedorPrimario>
+                  <xsl:value-of select="ns13:primary_supp_ind"/>
+               </tns:fornecedorPrimario>
+               <tns:paisPrimario>
+                  <xsl:value-of select="ns13:primary_country_ind"/>
+               </tns:paisPrimario>
+               <tns:custoUnitarioCorporativo>
+                  <xsl:value-of select="ns13:unit_cost"/>
+               </tns:custoUnitarioCorporativo>
+               <tns:fatorFornecedorItem>
+                  <xsl:value-of select="ns13:supp_pack_size"/>
+               </tns:fatorFornecedorItem>
+               <tns:leadtime>
+                  <xsl:value-of select="ns13:lead_time"/>
+               </tns:leadtime>
+               <tns:tamanhoQuebraPack>
+                  <xsl:value-of select="ns13:inner_pack_size"/>
+               </tns:tamanhoQuebraPack>
+               <tns:formaArredondamentoPedido>
+                  <xsl:value-of select="ns13:round_lvl"/>
+               </tns:formaArredondamentoPedido>
+               <tns:numeroUnidadeEnvio>
+                  <xsl:value-of select="ns13:ti"/>
+               </tns:numeroUnidadeEnvio>
+               <tns:numeroCamadaComplementar>
+                  <xsl:value-of select="ns13:hi"/>
+               </tns:numeroCamadaComplementar>
+            </tns:PaisFornecedorItem>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns9:ISCDimDesc">
+            <tns:DimensaoItemList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns9:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorFornecedor>
+                  <xsl:value-of select="ns9:supplier"/>
+               </tns:identificadorFornecedor>
+               <tns:paisFabricacao>
+                  <xsl:value-of select="ns9:origin_country"/>
+               </tns:paisFabricacao>
+               <tns:descricaoObjeto>
+                  <xsl:value-of select="ns9:dim_object"/>
+               </tns:descricaoObjeto>
+            </tns:DimensaoItemList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns5:ItemUDALOVDesc">
+            <tns:ItemUDALOVList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns5:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorGrupoAtributos>
+                  <xsl:value-of select="ns5:uda_id"/>
+               </tns:identificadorGrupoAtributos>
+               <tns:valorGrupoAtributos>
+                  <xsl:value-of select="ns5:uda_value"/>
+               </tns:valorGrupoAtributos>
+            </tns:ItemUDALOVList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns4:ItemUDAFFDesc">
+            <tns:ItemUDAFFList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns4:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorUDAFF>
+                  <xsl:value-of select="ns4:uda_id"/>
+               </tns:identificadorUDAFF>
+               <tns:textoUDAFF>
+                  <xsl:value-of select="ns4:uda_text"/>
+               </tns:textoUDAFF>
+            </tns:ItemUDAFFList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns3:ItemUDADateDesc">
+            <tns:ItemUDADateList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns3:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorUDA>
+                  <xsl:value-of select="ns3:uda_id"/>
+               </tns:identificadorUDA>
+               <tns:dataEfetivaUDA>
+                  <xsl:value-of select="ns3:uda_date"/>
+               </tns:dataEfetivaUDA>
+            </tns:ItemUDADateList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns11:ItemImageDesc">
+            <tns:ItemImagemList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns11:item"/>
+               </tns:identificadorItem>
+               <tns:nomeImagem>
+                  <xsl:value-of select="ns11:image_name"/>
+               </tns:nomeImagem>
+               <tns:caminhoImagem>
+                  <xsl:value-of select="ns11:image_addr"/>
+               </tns:caminhoImagem>
+            </tns:ItemImagemList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns15:ItemUPCDesc">
+            <tns:ItemCodigoBarra>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns15:item_id"/>
+               </tns:identificadorItem>
+               <tns:numeroDigitosContados>
+                  <xsl:value-of select="ns15:item_number_type"/>
+               </tns:numeroDigitosContados>
+            </tns:ItemCodigoBarra>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns14:ItemBOMDesc">
+            <tns:ItemPackList>
+               <tns:identificadorPack>
+                  <xsl:value-of select="ns14:pack_no"/>
+               </tns:identificadorPack>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns14:item"/>
+               </tns:identificadorItem>
+               <tns:quantidadeItemNoPack>
+                  <xsl:value-of select="ns14:pack_qty"/>
+               </tns:quantidadeItemNoPack>
+            </tns:ItemPackList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns2:ItemTcktDesc">
+            <tns:ItemTicketList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns2:item"/>
+               </tns:identificadorItem>
+               <tns:tipoTicket>
+                  <xsl:value-of select="ns2:ticket_type_id"/>
+               </tns:tipoTicket>
+            </tns:ItemTicketList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns6:ItemSupCtyMfrDesc">
+            <tns:ItemPaisManufaturaFornecedorList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns6:item"/>
+               </tns:identificadorItem>
+               <tns:identificadorFornecedor>
+                  <xsl:value-of select="ns6:supplier"/>
+               </tns:identificadorFornecedor>
+               <tns:paisFabricacao>
+                  <xsl:value-of select="ns6:manufacturer_ctry_id"/>
+               </tns:paisFabricacao>
+               <tns:paisPrimario>
+                  <xsl:value-of select="ns6:primary_manufacturer_ctry_ind"/>
+               </tns:paisPrimario>
+            </tns:ItemPaisManufaturaFornecedorList>
+         </xsl:for-each>
+         <xsl:for-each select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns7:RelatedItemDesc">
+            <tns:ItemReferenciaList>
+               <tns:identificadorItem>
+                  <xsl:value-of select="ns7:item"/>
+               </tns:identificadorItem>
+               <tns:idGeradoSistema>
+                  <xsl:value-of select="ns7:relationship_id"/>
+               </tns:idGeradoSistema>
+               <tns:nomeRelacionamento>
+                  <xsl:value-of select="ns7:relationship_name"/>
+               </tns:nomeRelacionamento>
+               <tns:tipoRelacionamento>
+                  <xsl:value-of select="ns7:relationship_type"/>
+               </tns:tipoRelacionamento>
+               <tns:relacionamentoObrigatorio>
+                  <xsl:value-of select="ns7:mandatory_ind"/>
+               </tns:relacionamentoObrigatorio>
+               <xsl:for-each select="ns7:RelatedItemDtl">
+                  <tns:ItemElementoReferenciadoList>
+                     <tns:itemRelacionado>
+                        <xsl:value-of select="ns7:related_item"/>
+                     </tns:itemRelacionado>
+                     <tns:transacaoAPartir>
+                        <xsl:value-of select="ns7:effective_date"/>
+                     </tns:transacaoAPartir>
+                  </tns:ItemElementoReferenciadoList>
+               </xsl:for-each>
+            </tns:ItemReferenciaList>
+         </xsl:for-each>
+           </xsl:otherwise>
+          </xsl:choose>
       </tns:Root-Element>
    </xsl:template>
 </xsl:stylesheet>

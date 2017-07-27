@@ -5,7 +5,7 @@
     xmlns:EXFItemDesc="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
     xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:import
-        namespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1" schemaLocation="../../../../base/bo/EXFItemDesc/v1/EXFItemDesc.xsd">
+        namespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1" schemaLocation="EXFItemDesc.xsd">
         <retailDoc:annotation>
             <retailDoc:documentation>Item Additional Information</retailDoc:documentation>
         </retailDoc:annotation>

@@ -1,6 +1,6 @@
 <adapter-config name="EtShipInfoJMSReference" adapter="jms" wsdlLocation="../WSDLs/EtShipInfoJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etShipInfo" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etShipInfo" UIJmsProvider="THIRDPARTY"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
     <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
       <property name="TimeToLive" value="0"/>

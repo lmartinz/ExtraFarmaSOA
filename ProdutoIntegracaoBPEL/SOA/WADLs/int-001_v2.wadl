@@ -1,0 +1,3381 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="api" />
+    <resources base="http://localhost">
+            <resource path="">
+                <doc title="" /> 
+                <method name="POST">
+                    <request>
+                            <param name="produto"
+      style="template"
+      type="xs:string"
+      required="true" />                            
+                                                    <representation mediaType="application/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="text/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:44:59.8942759-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:44:59.8962761-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="application/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="text/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:44:59.8962761-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:44:59.8942759-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="application/x-www-form-urlencoded">
+                                <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;Produto&#39;.</doc>
+                            </representation>
+                    </request>
+                </method>
+            </resource>
+            <resource path="">
+                <doc title="" /> 
+                <method name="PUT">
+                    <request>
+                            <param name="produto"
+      style="template"
+      type="xs:string"
+      required="true" />                            
+                                                    <representation mediaType="application/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="text/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1022967-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="application/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="text/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1022967-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1022967-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="application/x-www-form-urlencoded">
+                                <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;Produto&#39;.</doc>
+                            </representation>
+                    </request>
+                </method>
+            </resource>
+            <resource path="">
+                <doc title="" /> 
+                <method name="DELETE">
+                    <request>
+                            <param name="produto"
+      style="template"
+      type="xs:string"
+      required="true" />                            
+                                                    <representation mediaType="application/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="text/json">
+                                <doc>{
+  &quot;CabecalhoItem&quot;: {
+    &quot;identificacaoItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitos&quot;: &quot;sample string 2&quot;,
+    &quot;subclasse&quot;: &quot;sample string 3&quot;,
+    &quot;descricaItem&quot;: &quot;sample string 4&quot;,
+    &quot;breveDescricaoItem&quot;: &quot;sample string 5&quot;,
+    &quot;precoVarejo&quot;: 6.1,
+    &quot;temperaturaItem&quot;: &quot;sample string 7&quot;,
+    &quot;descricaoControleTemperatura&quot;: &quot;sample string 8&quot;,
+    &quot;observacao&quot;: &quot;sample string 9&quot;,
+    &quot;unidadeVarejo&quot;: 10.1,
+    &quot;unidadeVaregista&quot;: 11.1,
+    &quot;comprimentoItem&quot;: 12.1,
+    &quot;larguraItem&quot;: 13.1,
+    &quot;alturaItem&quot;: 14.1,
+    &quot;pesoItem&quot;: 15.1,
+    &quot;LocalizacaoItem&quot;: {
+      &quot;AtributoLocalizadoItem&quot;: {
+        &quot;indicadorItemServico&quot;: &quot;sample string 1&quot;,
+        &quot;origemMercadoria&quot;: &quot;sample string 2&quot;,
+        &quot;ncmItem&quot;: &quot;sample string 3&quot;,
+        &quot;caracteristicaNCM&quot;: &quot;sample string 4&quot;,
+        &quot;excessaoIPI&quot;: &quot;sample string 5&quot;,
+        &quot;pauta&quot;: &quot;sample string 6&quot;,
+        &quot;codigoServico&quot;: &quot;sample string 7&quot;,
+        &quot;servicoFederal&quot;: &quot;sample string 8&quot;,
+        &quot;estadoFabricacao&quot;: &quot;sample string 9&quot;,
+        &quot;tipoListaFarmaceutica&quot;: &quot;sample string 10&quot;
+      }
+    }
+  },
+  &quot;FornecedorItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;identificadorItemFornecedor&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;PaisFornecedorItem&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+    &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+    &quot;fornecedorPrimario&quot;: &quot;sample string 4&quot;,
+    &quot;paisPrimario&quot;: &quot;sample string 5&quot;,
+    &quot;custoUnitarioCorporativo&quot;: &quot;sample string 6&quot;,
+    &quot;fatorFornecedorItem&quot;: 7,
+    &quot;leadtime&quot;: &quot;sample string 8&quot;,
+    &quot;tamanhoQuebraPack&quot;: 9,
+    &quot;formaArredondamentoPedido&quot;: &quot;sample string 10&quot;,
+    &quot;numeroUnidadeEnvio&quot;: 11,
+    &quot;numeroCamadaComplementar&quot;: 12
+  },
+  &quot;DimensaoItemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: &quot;sample string 2&quot;,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;descricaoObjeto&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemUDALOVList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorGrupoAtributos&quot;: 2,
+      &quot;valorGrupoAtributos&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDAFFList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDAFF&quot;: 2,
+      &quot;textoUDAFF&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemUDADateList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorUDA&quot;: 2,
+      &quot;dataEfetivaUDA&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+    }
+  ],
+  &quot;ItemImagemList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;nomeImagem&quot;: &quot;sample string 2&quot;,
+      &quot;caminhoImagem&quot;: &quot;sample string 3&quot;
+    }
+  ],
+  &quot;ItemCodigoBarra&quot;: {
+    &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+    &quot;numeroDigitosContados&quot;: &quot;sample string 2&quot;
+  },
+  &quot;ItemPackList&quot;: [
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    },
+    {
+      &quot;identificadorPack&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorItem&quot;: &quot;sample string 2&quot;,
+      &quot;quantidadeItemNoPack&quot;: 3
+    }
+  ],
+  &quot;ItemTicketList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;tipoTicket&quot;: &quot;sample string 2&quot;
+    }
+  ],
+  &quot;ItemPaisManufaturaFornecedorList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;identificadorFornecedor&quot;: 2,
+      &quot;paisFabricacao&quot;: &quot;sample string 3&quot;,
+      &quot;paisPrimario&quot;: &quot;sample string 4&quot;
+    }
+  ],
+  &quot;ItemReferenciaList&quot;: [
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    },
+    {
+      &quot;identificadorItem&quot;: &quot;sample string 1&quot;,
+      &quot;idGeradoSistema&quot;: 2,
+      &quot;nomeRelacionamento&quot;: &quot;sample string 3&quot;,
+      &quot;tipoRelacionamento&quot;: &quot;sample string 4&quot;,
+      &quot;relacionamentoObrigatorio&quot;: &quot;sample string 5&quot;,
+      &quot;ItemElementoReferenciadoList&quot;: [
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        },
+        {
+          &quot;itemRelacionado&quot;: &quot;sample string 1&quot;,
+          &quot;transacaoAPartir&quot;: &quot;2017-07-24T15:45:00.1042969-03:00&quot;
+        }
+      ]
+    }
+  ]
+}</doc>
+                            </representation>
+                            <representation mediaType="application/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="text/xml">
+                                <doc>&lt;Produto xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models&quot;&gt;
+  &lt;CabecalhoItem&gt;
+    &lt;LocalizacaoItem&gt;
+      &lt;AtributoLocalizadoItem&gt;
+        &lt;caracteristicaNCM&gt;sample string 4&lt;/caracteristicaNCM&gt;
+        &lt;codigoServico&gt;sample string 7&lt;/codigoServico&gt;
+        &lt;estadoFabricacao&gt;sample string 9&lt;/estadoFabricacao&gt;
+        &lt;excessaoIPI&gt;sample string 5&lt;/excessaoIPI&gt;
+        &lt;indicadorItemServico&gt;sample string 1&lt;/indicadorItemServico&gt;
+        &lt;ncmItem&gt;sample string 3&lt;/ncmItem&gt;
+        &lt;origemMercadoria&gt;sample string 2&lt;/origemMercadoria&gt;
+        &lt;pauta&gt;sample string 6&lt;/pauta&gt;
+        &lt;servicoFederal&gt;sample string 8&lt;/servicoFederal&gt;
+        &lt;tipoListaFarmaceutica&gt;sample string 10&lt;/tipoListaFarmaceutica&gt;
+      &lt;/AtributoLocalizadoItem&gt;
+    &lt;/LocalizacaoItem&gt;
+    &lt;alturaItem&gt;14.1&lt;/alturaItem&gt;
+    &lt;breveDescricaoItem&gt;sample string 5&lt;/breveDescricaoItem&gt;
+    &lt;comprimentoItem&gt;12.1&lt;/comprimentoItem&gt;
+    &lt;descricaItem&gt;sample string 4&lt;/descricaItem&gt;
+    &lt;descricaoControleTemperatura&gt;sample string 8&lt;/descricaoControleTemperatura&gt;
+    &lt;identificacaoItem&gt;sample string 1&lt;/identificacaoItem&gt;
+    &lt;larguraItem&gt;13.1&lt;/larguraItem&gt;
+    &lt;numeroDigitos&gt;sample string 2&lt;/numeroDigitos&gt;
+    &lt;observacao&gt;sample string 9&lt;/observacao&gt;
+    &lt;pesoItem&gt;15.1&lt;/pesoItem&gt;
+    &lt;precoVarejo&gt;6.1&lt;/precoVarejo&gt;
+    &lt;subclasse&gt;sample string 3&lt;/subclasse&gt;
+    &lt;temperaturaItem&gt;sample string 7&lt;/temperaturaItem&gt;
+    &lt;unidadeVaregista&gt;11.1&lt;/unidadeVaregista&gt;
+    &lt;unidadeVarejo&gt;10.1&lt;/unidadeVarejo&gt;
+  &lt;/CabecalhoItem&gt;
+  &lt;DimensaoItemList&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+    &lt;DimensaoItem&gt;
+      &lt;descricaoObjeto&gt;sample string 4&lt;/descricaoObjeto&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;/DimensaoItem&gt;
+  &lt;/DimensaoItemList&gt;
+  &lt;FornecedorItemList&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+    &lt;FornecedorItem&gt;
+      &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorItemFornecedor&gt;sample string 3&lt;/identificadorItemFornecedor&gt;
+    &lt;/FornecedorItem&gt;
+  &lt;/FornecedorItemList&gt;
+  &lt;ItemCodigoBarra&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;numeroDigitosContados&gt;sample string 2&lt;/numeroDigitosContados&gt;
+  &lt;/ItemCodigoBarra&gt;
+  &lt;ItemImagemList&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+    &lt;ItemImagem&gt;
+      &lt;caminhoImagem&gt;sample string 3&lt;/caminhoImagem&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeImagem&gt;sample string 2&lt;/nomeImagem&gt;
+    &lt;/ItemImagem&gt;
+  &lt;/ItemImagemList&gt;
+  &lt;ItemPackList&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+    &lt;ItemPack&gt;
+      &lt;identificadorItem&gt;sample string 2&lt;/identificadorItem&gt;
+      &lt;identificadorPack&gt;sample string 1&lt;/identificadorPack&gt;
+      &lt;quantidadeItemNoPack&gt;3&lt;/quantidadeItemNoPack&gt;
+    &lt;/ItemPack&gt;
+  &lt;/ItemPackList&gt;
+  &lt;ItemPaisManufaturaFornecedorList&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+    &lt;ItemPaisManufaturaFornecedor&gt;
+      &lt;identificadorFornecedor&gt;2&lt;/identificadorFornecedor&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+      &lt;paisPrimario&gt;sample string 4&lt;/paisPrimario&gt;
+    &lt;/ItemPaisManufaturaFornecedor&gt;
+  &lt;/ItemPaisManufaturaFornecedorList&gt;
+  &lt;ItemReferenciaList&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+    &lt;ItemReferencia&gt;
+      &lt;ItemElementoReferenciadoList&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+        &lt;ItemElementoReferenciado&gt;
+          &lt;itemRelacionado&gt;sample string 1&lt;/itemRelacionado&gt;
+          &lt;transacaoAPartir&gt;2017-07-24T15:45:00.1042969-03:00&lt;/transacaoAPartir&gt;
+        &lt;/ItemElementoReferenciado&gt;
+      &lt;/ItemElementoReferenciadoList&gt;
+      &lt;idGeradoSistema&gt;2&lt;/idGeradoSistema&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;nomeRelacionamento&gt;sample string 3&lt;/nomeRelacionamento&gt;
+      &lt;relacionamentoObrigatorio&gt;sample string 5&lt;/relacionamentoObrigatorio&gt;
+      &lt;tipoRelacionamento&gt;sample string 4&lt;/tipoRelacionamento&gt;
+    &lt;/ItemReferencia&gt;
+  &lt;/ItemReferenciaList&gt;
+  &lt;ItemTicketList&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+    &lt;ItemTicket&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;tipoTicket&gt;sample string 2&lt;/tipoTicket&gt;
+    &lt;/ItemTicket&gt;
+  &lt;/ItemTicketList&gt;
+  &lt;ItemUDADateList&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+    &lt;ItemUDADate&gt;
+      &lt;dataEfetivaUDA&gt;2017-07-24T15:45:00.1042969-03:00&lt;/dataEfetivaUDA&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDA&gt;2&lt;/identificadorUDA&gt;
+    &lt;/ItemUDADate&gt;
+  &lt;/ItemUDADateList&gt;
+  &lt;ItemUDAFFList&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+    &lt;ItemUDAFF&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;identificadorUDAFF&gt;2&lt;/identificadorUDAFF&gt;
+      &lt;textoUDAFF&gt;sample string 3&lt;/textoUDAFF&gt;
+    &lt;/ItemUDAFF&gt;
+  &lt;/ItemUDAFFList&gt;
+  &lt;ItemUDALOVList&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+    &lt;ItemUDALOV&gt;
+      &lt;identificadorGrupoAtributos&gt;2&lt;/identificadorGrupoAtributos&gt;
+      &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+      &lt;valorGrupoAtributos&gt;sample string 3&lt;/valorGrupoAtributos&gt;
+    &lt;/ItemUDALOV&gt;
+  &lt;/ItemUDALOVList&gt;
+  &lt;PaisFornecedorItem&gt;
+    &lt;custoUnitarioCorporativo&gt;sample string 6&lt;/custoUnitarioCorporativo&gt;
+    &lt;fatorFornecedorItem&gt;7&lt;/fatorFornecedorItem&gt;
+    &lt;formaArredondamentoPedido&gt;sample string 10&lt;/formaArredondamentoPedido&gt;
+    &lt;fornecedorPrimario&gt;sample string 4&lt;/fornecedorPrimario&gt;
+    &lt;identificadorFornecedor&gt;sample string 2&lt;/identificadorFornecedor&gt;
+    &lt;identificadorItem&gt;sample string 1&lt;/identificadorItem&gt;
+    &lt;leadtime&gt;sample string 8&lt;/leadtime&gt;
+    &lt;numeroCamadaComplementar&gt;12&lt;/numeroCamadaComplementar&gt;
+    &lt;numeroUnidadeEnvio&gt;11&lt;/numeroUnidadeEnvio&gt;
+    &lt;paisFabricacao&gt;sample string 3&lt;/paisFabricacao&gt;
+    &lt;paisPrimario&gt;sample string 5&lt;/paisPrimario&gt;
+    &lt;tamanhoQuebraPack&gt;9&lt;/tamanhoQuebraPack&gt;
+  &lt;/PaisFornecedorItem&gt;
+&lt;/Produto&gt;</doc>
+                            </representation>
+                            <representation mediaType="application/x-www-form-urlencoded">
+                                <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;Produto&#39;.</doc>
+                            </representation>
+                    </request>
+                </method>
+            </resource>
+            <resource path="api/item?code={code}">
+                <doc title="api/item?code={code}" /> 
+                <method name="POST">
+                    <request>
+                            <param name="code"
+      style="template"
+      type="xs:string"
+      required="true" />                            
+                            <param name="result"
+      style="template"
+      type="xs:string"
+      required="true" />                            
+                                                    <representation mediaType="application/json">
+                                <doc>{
+  &quot;id&quot;: &quot;sample string 1&quot;,
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;sample string 3&quot;
+}</doc>
+                            </representation>
+                            <representation mediaType="text/json">
+                                <doc>{
+  &quot;id&quot;: &quot;sample string 1&quot;,
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;sample string 3&quot;
+}</doc>
+                            </representation>
+                            <representation mediaType="application/xml">
+                                <doc>&lt;RetornoServico xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Controllers&quot;&gt;
+  &lt;id&gt;sample string 1&lt;/id&gt;
+  &lt;message&gt;sample string 3&lt;/message&gt;
+  &lt;success&gt;true&lt;/success&gt;
+&lt;/RetornoServico&gt;</doc>
+                            </representation>
+                            <representation mediaType="text/xml">
+                                <doc>&lt;RetornoServico xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Controllers&quot;&gt;
+  &lt;id&gt;sample string 1&lt;/id&gt;
+  &lt;message&gt;sample string 3&lt;/message&gt;
+  &lt;success&gt;true&lt;/success&gt;
+&lt;/RetornoServico&gt;</doc>
+                            </representation>
+                            <representation mediaType="application/x-www-form-urlencoded">
+                                <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;RetornoServico&#39;.</doc>
+                            </representation>
+                    </request>
+                </method>
+            </resource>
+    </resources>
+</application>

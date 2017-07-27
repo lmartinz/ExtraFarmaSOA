@@ -46,10 +46,10 @@
   <partnerLinks>
     <partnerLink name="etPOScheduleFromRFMJMSReference" partnerLinkType="ns1:Consume_Message_plt"
                  myRole="Consume_Message_role"/>
-    <partnerLink name="RecebimentoNFCompraReference" partnerLinkType="ns3:RecebimentoNFCompraDBBPEL"
-                 partnerRole="RecebimentoNFCompraPortType"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns4:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="RecebimentoNFCompraReference" partnerLinkType="ns3:RecebimentoNFCompraDBBPEL"
+                 partnerRole="RecebimentoNFCompraPortType"/>
   </partnerLinks>
   <variables>
     <variable name="inputVariable" messageType="ns1:Consume_Message_msg"/>

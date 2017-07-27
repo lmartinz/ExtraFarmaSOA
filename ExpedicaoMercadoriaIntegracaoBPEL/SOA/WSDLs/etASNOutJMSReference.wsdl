@@ -14,7 +14,8 @@
   </plt:partnerLinkType>
     <wsdl:types>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1" schemaLocation="../Schemas/ExpedicaoMercadoriaEBMV1.xsd" />
+        <import namespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1"
+                schemaLocation="../../../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/Schemas/ExpedicaoMercadoriaEBMV1.xsd" />
       </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">

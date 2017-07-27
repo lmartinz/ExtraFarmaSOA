@@ -1,0 +1,173 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu Jul 20 09:39:20 BRT 2017
+  Author:  marco
+  Type: BPEL 2.0 Process
+  Purpose: Asynchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="CriarTransferenciaMercadoriaCDBPELProcess"
+         targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/TransferenciaMercadoriaCDIntegracaoBPEL/CriarTransferenciaMercadoriaCDBPELProcess"
+         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/TransferenciaMercadoriaCDIntegracaoBPEL/CriarTransferenciaMercadoriaCDBPELProcess"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns2="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
+         xmlns:ns3="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns4="http://canonico.ultra.com.br/LegadoFault/v1"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <import namespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
+            location="../../../MDS/SOA/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl"
+            importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+    <partnerLinks>
+        <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+        <partnerLink name="CriarTransferenciaMercadoriaCDRestReference" bpelx:wadl="yes"/>
+        <partnerLink name="TransferenciaMercadoriaCDDBBPEL" partnerLinkType="ns1:TransferenciaMercadoriaCDDBBPEL"
+                     myRole="CriarTransferenciaMercadoriaCDPortType"/>
+    </partnerLinks>
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        VARIABLES                                                        
+        List of messages and XML documents used within this BPEL process 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <variables>
+        <!-- Reference to the message passed as input during initiation -->
+        <variable name="inputVariable" messageType="ns1:CriarTransferenciaMercadoriaCDRequest"/>
+
+        <!-- Reference to the message that will be sent back to the requester during callback -->
+        <variable name="outputVariable" messageType="ns1:CriarTransferenciaMercadoriaCDResponse"/>
+        <variable name="requestJSON" type="xsd:string"/>
+        <variable name="responseJSON" type="xsd:string"/>
+        <variable name="transformationToJSON" element="ns2:Root-Element"/>
+        <variable name="translateJsonToXML" element="ns3:RetornoServico"/>
+        <variable name="errorTranslateToXML" element="ns4:RetornoServicoFault"/>
+    </variables>
+    <faultHandlers>
+        <catchAll>
+            <sequence name="SequenceRetornoErro">
+                <assign name="TranslateJsonToXMLError">
+                    <bpelx:annotation>
+                        <bpelx:pattern>translate</bpelx:pattern>
+                    </bpelx:annotation>
+                    <copy>
+                        <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
+                        <to>$errorTranslateToXML</to>
+                    </copy>
+                </assign>
+          
+                
+                <assign name="AssignReplyCatch">
+                    <copy>
+                        <from>$errorTranslateToXML/ns4:success</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+                    </copy>
+                    <copy>
+                        <from>ora:getFlowId()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+                    </copy>
+                    <copy>
+                        <from>oraext:get-content-as-string($errorTranslateToXML/ns4:errors/node())</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+                    </copy>
+                </assign>
+                <reply name="replyCatchOutput" partnerLink="TransferenciaMercadoriaCDDBBPEL" variable="outputVariable"
+                       portType="ns1:CriarTransferenciaMercadoriaCDPortType"
+                       operation="criarTransferenciaMercadoriaCD"/>
+            </sequence>
+        </catchAll>
+    </faultHandlers>
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ORCHESTRATION LOGIC                                               
+       Set of activities coordinating the flow of messages across the    
+       services integrated within this business process                  
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <sequence name="main">
+        <!-- Receive input from requestor. (Note: This maps to operation defined in CriarTransferenciaMercadoriaCDBPELProcess.wsdl) -->
+        <receive name="receiveInput" variable="inputVariable" createInstance="yes"
+                 partnerLink="TransferenciaMercadoriaCDDBBPEL" portType="ns1:CriarTransferenciaMercadoriaCDPortType"
+                 operation="criarTransferenciaMercadoriaCD"/>
+        <sequence name="SequenceChamadaRestLegado">
+            <assign name="TransformationToJson">
+                <bpelx:annotation>
+                    <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                    <from>ora:doXSLTransformForDoc("../Transformations/transformationInputToCriarTransferenciaMercadoriaCDRest.xsl", $inputVariable.parameters)</from>
+                    <to variable="transformationToJSON"/>
+                </copy>
+            </assign>
+            <assign name="TranslateToJSON">
+                <bpelx:annotation>
+                    <bpelx:pattern>translate</bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                    <from>ora:doTranslateToNative($transformationToJSON, 'Schemas/CriarTransferenciaMercadoriaCDRest.xsd', 'Root-Element', 'STRING')</from>
+                    <to>$requestJSON</to>
+                </copy>
+            </assign>
+            <invoke name="CriarTransferenciaMercadoriaCDRestReference" bpelx:invokeAsDetail="no"
+                    partnerLink="CriarTransferenciaMercadoriaCDRestReference" inputVariable="requestJSON"
+                    outputVariable="responseJSON" bpelx:method="CriarTransferenciaMercadoriaCD"/>
+        </sequence>
+        <sequence name="SequenceRetornoRestLegado">
+            <assign name="TranslateJsonToXMLReponse">
+                <bpelx:annotation>
+                    <bpelx:pattern>translate</bpelx:pattern>
+                </bpelx:annotation>
+                <copy>
+                    <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
+                    <to>$translateJsonToXML</to>
+                </copy>
+            </assign>
+            <assign name="AssignSucessoCriarTransferenciaMercadoriaCD">
+                <copy>
+                    <from>$translateJsonToXML/ns3:success</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:success</to>
+                </copy>
+                <copy>
+                    <from>$translateJsonToXML/ns3:data/ns3:mensagem</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:mensagem</to>
+                </copy>
+                <copy>
+                    <from>ora:getFlowId()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns3:data/ns3:id</to>
+                </copy>
+            </assign>
+        </sequence>
+        <!-- 
+          Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
+        -->
+        <reply name="Reply" partnerLink="TransferenciaMercadoriaCDDBBPEL" variable="outputVariable"
+               portType="ns1:CriarTransferenciaMercadoriaCDPortType" operation="criarTransferenciaMercadoriaCD"/>
+    </sequence>
+</process>

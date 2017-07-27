@@ -1,0 +1,282 @@
+<!-- ################################################################################
+     This is a generated Custom XSD template for the complex type
+Please follow these steps in the same order
+STEP 1: Add your custom elements at the designated location below and save the file
+STEP 2: Run "GenerateArifacts" using GUI or CLI option
+STEP 3: Verify the artifacts to ensure customization is as expected
+
+For more information refer to the documentation doc
+#####################################################################################
+-->
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfStoreDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/custom/bo/ExtOfStoreDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ExtOfStoreDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" name="controlled_shipping" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-005 - Remessa de Controlados - Semelhante ao retinóico, para produtos controlados</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="retinoic_shipping" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-007 - Remessa de Retinóico - Indica a permissão de recebimento de retinóicos</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="retinoic_lic_val" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-008 - Validade da Licença de Retinóicos - Indica a validade da licença de retinóicos</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="suframa_num" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-019 -Número da inscrição SUFRAMA</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="suframa_val" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation> Validade SUFRAMA </retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="sanitary_lic_id" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-020 - Registro de Licença de Vigilância Sanitária - Não tem algum tipo de comportamento</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="alvara_loc_code" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-021 - Código de Alvará Localização Prefeitura - Não tem algum tipo de comportamento</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="afe_anvisa_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-022 - AFE/ANVISA (tem ou não tem licença) - Apenas informativo, não é necessário restringir nada</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="lic_id_sanitary_val" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-025 - Registro de Licença e Validade da Vigilância Sanitária Estadual - Mesmo comportamento do ATR-020 a nível estadual</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="fantasy_loc" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-049 - Endereço Fantasia - Campo aberto</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="cartesian_loc" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-050 - Localização cartesiana - Campo aberto</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="district_manager" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-051 - Gerente Distrital - Campo aberto</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="market_manager" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-052 - Gerente de Mercado - Campo aberto</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="business_hours" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-053 - Horário de funcionamento - Campo aberto</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="parking_type" type="varchar230">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-054 - Tipo Estacionamento - LOV (público, próprio, acesso pedestre)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="polo_store_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-055 - Loja Polo - Sim/não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="assortment_profile" type="varchar230">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-056 - Perfil Sortimento - LOV (Luxo, padrão-plus, padrão, popular)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="telephony_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-057 - Telefonia - Sim /não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="popular_drugstore_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-059 - Farmácia popular - Sim /não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="pharm_services_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-060 - Serviços farmacêuticos  - Sim /não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="cash_machine_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-061 - Caixa eletrônico - Sim /não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="terminals_service" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-062 - Terminais de atendimento - LOV (0, 1 , 2, 3, 4)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="checkouts" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-063 - Check-outs - LOV (0, 1 , 2, 3, 4)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="diapers_basket" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-064 - Cestões de fraldas - LOV (0, 1 , 2, 3, 4)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="freezer_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-065 - Freezer - 0 ou 1</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="gondola_tips" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-066 - Pontas de gondola - LOV (0, 1 , 2, 3, 4)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="parking_lots" type="varchar23">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-067 - Vagas estacionamento - LOV (0, 1 , 2, 3, 4)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="refrigerator_qty" type="varchar230">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-068 - Número de geladeiras - LOV (1- próprio, 1 - terceiro, 1 - própria + 1 terceiro)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="cooler_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-069 - Cooler - Sim/não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="sanitary_val" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-070 - Validade da Vigilância Sanitária - Não tem algum tipo de comportamento</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="store_size" type="varchar25">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-071 - Tamanho de loja - P, M, G, GG</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="land_area" type="varchar210">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-072 - Área do terreno - 245 m²</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="building_area" type="varchar210">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-073 - Área construída - 150 m²</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="sales_area" type="varchar210">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-074 - Área de vendas - 100m²</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="arch_standard" type="varchar220">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ATR-075 - Padrão arquitetônico - Luxo, padrão, popular</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="cluster_sales" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> N/A - Cluster vendas - </retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="store_type" type="varchar2250">
+					<retailDoc:annotation>
+						<retailDoc:documentation> N/A - Tipo de loja - Esquina positiva, esquina negativa, shopping, posto, aeroporto, calçadão, mall, Atacado, Delivery</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="totem_ind" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation> N/A - Totem - Sim/Não</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" name="id_phys_store" type="number10">
+					<retailDoc:annotation>
+						<retailDoc:documentation> ID Loja Física, Obrigatório apenas quando “Tipo de Loja” for igual “Delivery”</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Adding simple Type -->
+	<xs:simpleType name="varchar21">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 1 character.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar23">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 3 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar25">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 5 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar210">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 10 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar220">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 20 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar230">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 30 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>  
+	<xs:simpleType name="varchar2250">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 250 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	 <xs:simpleType name="number10">
+                <retailDoc:annotation>
+                        <retailDoc:documentation>This type can hold a number of digits count 10.</retailDoc:documentation>
+                </retailDoc:annotation>
+                <xs:restriction base="xs:long">
+                        <xs:totalDigits value="10"/>
+                </xs:restriction>
+        </xs:simpleType>
+</xs:schema>
