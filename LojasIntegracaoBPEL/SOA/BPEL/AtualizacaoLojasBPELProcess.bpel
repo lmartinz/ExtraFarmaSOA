@@ -38,7 +38,9 @@
          xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/LocOfStoreDesc/v1"
          xmlns:ns11="http://www.oracle.com/retail/integration/localization/bo/BrFiscalStoreAttrDesc/v1"
          xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/StoreRef/v1"
-         xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/AddrRef/v1">
+         xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/AddrRef/v1"
+         xmlns:ns15="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
+         xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/SODesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

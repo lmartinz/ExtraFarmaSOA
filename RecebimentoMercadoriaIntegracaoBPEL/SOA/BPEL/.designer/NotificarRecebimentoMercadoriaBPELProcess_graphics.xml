@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="RecebimentoMercadoriaDBBPEL" x="0" y="531" side="left"/>
-      <partnerlink name="etReceivingJMSReference" x="1033" y="323" side="right"/>
-      <partnerlink name="RegistroLogBPELReference" x="1033" y="447" side="right"/>
+      <partnerlink name="etReceivingJMSReference" x="1023" y="323" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="1023" y="447" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,123,1200,652" show_swimlanes="true">
+   <graph_layout viewport="0,0,1138,527" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

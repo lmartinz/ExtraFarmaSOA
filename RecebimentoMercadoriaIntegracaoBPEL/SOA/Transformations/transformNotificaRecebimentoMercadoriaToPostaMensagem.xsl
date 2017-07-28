@@ -8,7 +8,23 @@
                 xmlns:ns4="http://www.oracle.com/retail/integration/custom/bo/ExtOfReceiptDesc/v1"
                 xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/RecebimentoMercadoriaIntegracaoBPEL/etReceivingJMSReference"
                 xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1"
-                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/">
+                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+                xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
+                xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ItemUDADateDesc/v1"
+                xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/ItemUDAFFDesc/v1"
+                xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1"
+                xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+                xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+                xmlns:ns8="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+                xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/ItemUDALOVDesc/v1"
+                xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyMfrDesc/v1"
+                xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/ItemDesc/v1"
+                xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/ISCDimDesc/v1"
+                xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/ItemImageDesc/v1"
+                xmlns:ns17="http://www.oracle.com/retail/integration/base/bo/ItemSupDesc/v1"
+                xmlns:ns18="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyDesc/v1"
+                xmlns:ns19="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
+                xmlns:ns20="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -29,12 +45,7 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '061076100', 'family', '')"/>
-            </tns:family>
-            <tns:type>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '061076100', 'type', '')"/>
-            </tns:type>
+
             <tns:messageData>
                <ns2:ReceiptDesc>
                   <ns2:schedule_nbr>
@@ -123,9 +134,9 @@
                   </xsl:for-each>
                </ns2:ReceiptDesc>
             </tns:messageData>
-            <tns:customFlag>
+            <!-- <tns:customFlag>
                <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '061076100', 'customFlag', '')"/>
-            </tns:customFlag>
+            </tns:customFlag>-->
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

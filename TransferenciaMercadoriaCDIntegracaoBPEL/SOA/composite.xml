@@ -15,7 +15,8 @@
           location="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1.wsdl"
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
-          location="../../MDS/SOA/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl" importType="wsdl"/>
+          location="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl"
+          importType="wsdl"/>
   <service name="TransferenciaMercadoriaCDDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1#wsdl.interface(CriarTransferenciaMercadoriaCDPortType)"/>
@@ -27,7 +28,7 @@
     <implementation.bpel src="BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel"/>
     <componentType>
       <service name="TransferenciaMercadoriaCDDBBPEL"
-               ui:wsdlLocation="../../MDS/SOA/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl">
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1#wsdl.interface(CriarTransferenciaMercadoriaCDPortType)"/>
       </service>
       <reference name="CriarTransferenciaMercadoriaCDRestReference">
@@ -38,7 +39,7 @@
   </component>
   <reference name="CriarTransferenciaMercadoriaCDRestReference">
     <interface.wadl interface="WADLs/CriarTransferenciaMercadoriaCDRestReference.wadl"/>
-    <binding.rest config="WADLs/CriarTransferenciaMercadoriaCDRestReference.wadl" location="http://localhost"/>
+    <binding.rest config="WADLs/CriarTransferenciaMercadoriaCDRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>CriarTransferenciaMercadoriaCDBPELProcess/CriarTransferenciaMercadoriaCDRestReference</source.uri>

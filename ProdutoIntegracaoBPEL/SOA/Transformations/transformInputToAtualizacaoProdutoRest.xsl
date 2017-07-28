@@ -21,7 +21,8 @@
                 xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
                 xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
                 xmlns:ns17="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
-                xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1">
+                xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+                xmlns:ns18="http://www.oracle.com/retail/integration/base/bo/ItemRef/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -323,10 +324,19 @@
          </xsl:when>
          <xsl:otherwise>
            <tns:CabecalhoItem>
-              <tns:identificacaoItem>
-                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item"/>
-              </tns:identificacaoItem>
-              <tns:numeroDigitos>
+             <xsl:choose>
+               <xsl:when test="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item">
+                 <tns:identificacaoItem>
+                   <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item"/>
+                 </tns:identificacaoItem>
+               </xsl:when>
+             <xsl:otherwise>
+               <tns:identificacaoItem>
+                 <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns18:ItemRef/ns18:item"/>
+               </tns:identificacaoItem>
+             </xsl:otherwise>
+             </xsl:choose>
+                  <tns:numeroDigitos>
                  <xsl:value-of select="/ns0:RibMessages/ns0:ribMessage/ns0:messageData/ns10:ItemHdrDesc/ns10:item_number_type"/>
               </tns:numeroDigitos>
               <tns:subclasse>

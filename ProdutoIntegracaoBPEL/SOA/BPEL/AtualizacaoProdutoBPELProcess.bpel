@@ -155,7 +155,7 @@
           <![CDATA[$requestJsonObject = JSON.parse($requestJSON);]]>
         </bpelx:js>
       </extensionActivity>
-      <scope name="Scope1">
+      <scope name="ScopeAtualizacaoProduto">
         <faultHandlers>
           <catch faultName="bpelx:bindingFault" faultVariable="BpelFault" faultMessageType="bpelx:RuntimeFaultMessage">
             <sequence name="SequenceRetornoErroBpelFault">

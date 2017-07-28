@@ -27,7 +27,7 @@
                   namespace="http://canonico.ultra.com.br/LegadoOutput/v1"/>
       <xsd:import schemaLocation="../../../Comum/v1/Schemas/LegadoFault.xsd"
                   namespace="http://canonico.ultra.com.br/LegadoFault/v1"/>
-      <xsd:import schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"
+      <xsd:import schemaLocation="../../../Comum/v1/Schemas/RibMessages.xsd"
                   namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
       <xsd:import schemaLocation="../../../Comum/v1/Schemas/MetaInformacao.xsd"
                   namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>

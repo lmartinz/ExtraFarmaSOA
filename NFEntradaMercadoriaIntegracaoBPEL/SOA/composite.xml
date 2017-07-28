@@ -39,7 +39,7 @@
   </component>
   <reference name="NFEntradaMercadoriaRestReference">
     <interface.wadl interface="WADLs/NFEntradaMercadoriaRestReference.wadl"/>
-    <binding.rest config="WADLs/NFEntradaMercadoriaRestReference.wadl" location="http://localhost"/>
+    <binding.rest config="WADLs/NFEntradaMercadoriaRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>NFEntradaMercadoriaBPELProcess/NFEntradaMercadoriaRestReference</source.uri>

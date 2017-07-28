@@ -12,5 +12,5 @@
         <plnk:role name="CriarTransferenciaMercadoriaCDPortType" portType="tns:CriarTransferenciaMercadoriaCDPortType"/>
     </plnk:partnerLinkType>
     <wsdl:import namespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
-         location="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1.wsdl"/>
+         location="CriarTransferenciaMercadoriaCDV1.wsdl"/>
 </wsdl:definitions>

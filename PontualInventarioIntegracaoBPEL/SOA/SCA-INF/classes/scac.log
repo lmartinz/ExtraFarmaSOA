@@ -1,31 +1,20 @@
-2017-06-28 17:55:17.360/1.426 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence.xml"
-2017-06-28 17:55:17.398/1.463 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Middleware12G/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
-2017-06-28 17:55:17.400/1.465 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
-2017-06-28 17:55:17.402/1.468 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
-2017-06-28 17:55:17.404/1.469 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
-2017-06-28 17:55:17.405/1.470 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+2017-07-14 20:23:10.605/1.504 Oracle Coherence 12.2.1.2.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Middleware1212G/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2017-07-14 20:23:10.657/1.557 Oracle Coherence 12.2.1.2.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Middleware1212G/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2017-07-14 20:23:10.659/1.558 Oracle Coherence 12.2.1.2.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2017-07-14 20:23:10.662/1.561 Oracle Coherence 12.2.1.2.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2017-07-14 20:23:10.663/1.562 Oracle Coherence 12.2.1.2.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2017-07-14 20:23:10.664/1.563 Oracle Coherence 12.2.1.2.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
 
-Oracle Coherence Version 12.2.1.0.0 Build 60603
+Oracle Coherence Version 12.2.1.2.0 Build 65221
  Grid Edition: Development mode
-Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
 
-2017-06-28 17:55:17.517/1.583 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
-2017-06-28 17:55:17.521/1.586 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
-2017-06-28 17:55:18.411/2.476 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "Vinicius's cluster" has been automatically generated
-Jun 28, 2017 5:55:19 PM oracle.soa.scac.ValidateComposite loadWSDLs
+2017-07-14 20:23:10.771/1.670 Oracle Coherence GE 12.2.1.2.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+2017-07-14 20:23:11.481/2.380 Oracle Coherence GE 12.2.1.2.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "Vinicius's cluster" has been automatically generated
+Jul 14, 2017 8:23:12 PM oracle.soa.scac.ValidateComposite loadWSDLs
 WARNING: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
-Jun 28, 2017 5:55:19 PM oracle.adf.share.ADFContext getCurrent
-WARNING: Automatically initializing a DefaultContext for getCurrent.
-Caller should ensure that a DefaultContext is proper for this use.
-Memory leaks and/or unexpected behaviour may occur if the automatic initialization is performed improperly.
-This message may be avoided by performing initADFContext before using getCurrent().
-For more information please enable logging for oracle.adf.share.ADFContext at FINEST level.
-Jun 28, 2017 5:55:19 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
-INFO: Resource META-INF/adf-config.xml not found on the classpath.
-Jun 28, 2017 5:55:19 PM oracle.adf.share.config.ADFConfigFactory findOrCreateADFConfig
-INFO: A default implementation of ADFConfig is being created for application. This can lead to unexpected results in some cases. Please add a basic META-INF/adf-config.xml to your classpath to avoid functional errors.
-2017-06-28 17:55:19.491/3.557 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
-Jun 28, 2017 5:55:19 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Jul 14, 2017 8:23:12 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Java HotSpot(TM) Client VM warning: ignoring option PermSize=32m; support was removed in 8.0
-Java HotSpot(TM) Client VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+WARNING: Failed to load WSDL from file:/C:/Users/Vinicius/Dropbox/Resource/ExtraFarmaSOA/PontualInventarioIntegracaoBPEL/SOA/WSDLs/AjustePontualInventarioBPELProcess.wsdl due to: Error in getting XML input stream: file:/C:/Users/Vinicius/Dropbox/Resource/ExtraFarmaSOA/PontualInventarioIntegracaoBPEL/SOA/WSDLs/AjustePontualInventarioBPELProcess.wsdl: C:\Users\Vinicius\Dropbox\Resource\ExtraFarmaSOA\PontualInventarioIntegracaoBPEL\SOA\WSDLs\AjustePontualInventarioBPELProcess.wsdl (The system cannot find the file specified)
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

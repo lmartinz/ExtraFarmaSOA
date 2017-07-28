@@ -2,8 +2,8 @@
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
    <doc title="AtualizacaoProdutoRestReference">RestReference</doc>
    <resources>
-      <resource path="alteracao">
-         <method name="PUT" soa:name="alteracaoProduto">
+      <resource path="">
+         <method name="PUT" soa:name="alterar">
             <request>
                <representation mediaType="application/json"/>
                <representation mediaType="*/*"/>
@@ -13,9 +13,7 @@
             <response/>
             <response/>
          </method>
-      </resource>
-      <resource path="criacao">
-         <method name="POST" soa:name="criacaoProduto">
+         <method name="POST" soa:name="criar">
             <request>
                <representation mediaType="application/json"/>
                <representation mediaType="*/*"/>
@@ -25,9 +23,7 @@
             <response/>
             <response/>
          </method>
-      </resource>
-      <resource path="exclusao">
-         <method name="DELETE" soa:name="exclusaoProduto">
+         <method name="DELETE" soa:name="excluir">
             <request/>
             <response/>
             <response/>

@@ -2,7 +2,7 @@
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
    <doc title="CriarTransferenciaMercadoriaCDRestReference">RestReference</doc>
    <resources>
-      <resource path="/erp-imifarma/v1/recebimento/cd/agendamento">
+      <resource path="/transferencia">
          <method name="POST" soa:name="CriarTransferenciaMercadoriaCD">
             <request>
                <representation mediaType="application/json"/>
@@ -16,4 +16,3 @@
       </resource>
    </resources>
 </application>
-
