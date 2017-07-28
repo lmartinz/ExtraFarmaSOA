@@ -6,6 +6,7 @@
       <property name="DestinationName" value="topic/etFulfilOrdCfm"/>
       <property name="UseMessageListener" value="false"/>
       <property name="PayloadType" value="TextMessage"/>
+      <property name="DurableSubscriber" value="FULFILLCANCEL_LEGACY_SUB_1"/>
     </activation-spec>
   </endpoint-activation>
 

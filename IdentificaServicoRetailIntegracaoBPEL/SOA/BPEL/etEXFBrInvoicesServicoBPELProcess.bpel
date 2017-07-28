@@ -32,7 +32,9 @@
          xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
          xmlns:ui="http://xmlns.oracle.com/soa/designer"
          xmlns:ns5="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
-         xmlns:ns6="http://canonico.ultra.com.br/LegadoOutput/v1">
+         xmlns:ns6="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/SODesc/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +65,7 @@
       <documentation>
         <![CDATA[PublicacaoNFSaidaMercadoria]]>
       </documentation>
-      <condition>oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:family,'EXFBrInvoices') and (oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:type,'exfnfapprovdcre') or oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:type,'exfnfcanceldcre'))</condition>
+      <condition>$inputVariable.body/ns2:ribMessage/ns2:family = "EXFBrInvoices" and ($inputVariable.body/ns2:ribMessage/ns2:type = "exfnfapprovdcre" or $inputVariable.body/ns2:ribMessage/ns2:type = "exfnfcanceldcre")</condition>
       <scope name="ScopePublicacaoNFSaidaMercadoria">
         <variables>
           <variable name="inputPublicacaoNFSaidaMercadoria" messageType="ns5:PublicacaoNFSaidaMercadoriaRequest"/>
@@ -166,10 +168,6 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
               </copy>
               <copy>
-                <from>$outputPublicacaoNFSaidaMercadoria.parameters/ns6:data/ns6:id</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
-              </copy>
-              <copy>
                 <from>'RIB'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
@@ -182,7 +180,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
               </copy>
               <copy>
-                <from>oraext:get-content-as-string($inputVariable)</from>
+                <from>oraext:get-content-as-string($inputVariable.body)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
               </copy>
             </assign>

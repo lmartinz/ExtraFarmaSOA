@@ -3,7 +3,23 @@
                 xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etEXFBrInvoicesJMSReference"
                 xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
                 xmlns:pc="http://xmlns.oracle.com/pcbpel/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/">
+                xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+                xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
+                xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/ItemUDADateDesc/v1"
+                xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/ItemUDAFFDesc/v1"
+                xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1"
+                xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+                xmlns:ns4="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+                xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ItemUDALOVDesc/v1"
+                xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyMfrDesc/v1"
+                xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/ItemDesc/v1"
+                xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/ISCDimDesc/v1"
+                xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/ItemImageDesc/v1"
+                xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/ItemSupDesc/v1"
+                xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyDesc/v1"
+                xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
+                xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

@@ -38,7 +38,7 @@
   </component>
   <reference name="AutorizarRecebimentoNFCompraRestReference">
     <interface.wadl interface="WADLs/AutorizarRecebimentoNFCompraRestReference.wadl"/>
-    <binding.rest config="WADLs/AutorizarRecebimentoNFCompraRestReference.wadl" location="http://localhost"/>
+    <binding.rest config="WADLs/AutorizarRecebimentoNFCompraRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>RecebimentoNFCompraDBBPEL</source.uri>

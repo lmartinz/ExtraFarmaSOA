@@ -7,7 +7,9 @@
                 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                 xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
                 xmlns:ns1="http://www.oracle.com/retail/integration/custom/bo/ExtOfShipInfoDesc/v1"
-                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/ShipInfoDesc/v1">
+                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/ShipInfoDesc/v1"
+                xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/SODesc/v1"
+                xmlns:ns4="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

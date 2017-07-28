@@ -4,15 +4,19 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="PedidoReservaDBBPEL" x="0" y="426" side="left"/>
-      <partnerlink name="ConfirmaReservaPedidoRestReference" x="882" y="423" side="right"/>
+      <partnerlink name="PedidoReservaDBBPEL" x="0" y="605" side="left"/>
+      <partnerlink name="ConfirmaReservaPedidoRestReference" x="1178" y="658" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1106,533" show_swimlanes="true">
+   <graph_layout viewport="132,600,1138,527" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]/scope/faultHandlers/catch" type="catch"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]/scope/faultHandlers/catch/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence[1]/scope/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence[2]" type="sequence"/>
    </graph_layout>
    <bookmarks/>

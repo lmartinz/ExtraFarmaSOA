@@ -1,0 +1,13 @@
+<adapter-config name="etASNOutJMSReference" adapter="jms" wsdlLocation="../WSDLs/etASNOutJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/aqjms/etASNOut" UIJmsProvider="WLSJMS"/>
+  <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
+    <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
+      <property name="DestinationName" value="topic/etASNOut"/>
+      <property name="UseMessageListener" value="false"/>
+      <property name="PayloadType" value="TextMessage"/>
+      <property name="DurableSubscriber" value="ASNOUTSEC_LEGACY_SUB_1"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>

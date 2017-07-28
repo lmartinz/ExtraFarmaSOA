@@ -54,11 +54,11 @@
           location="oramds:/apps/Extrafarma/Retail/PedidoReserva/v1/WSDLs/PedidoReservaV1Wrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
-    <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaDBBPEL" myRole="PedidoReservaPortType"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns3:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
     <partnerLink name="etFulfillOrderJMSReference" partnerLinkType="ns8:Posta_Mensagem_plt"
                  partnerRole="Posta_Mensagem_role"/>
+    <partnerLink name="PedidoReservaDBBPEL" partnerLinkType="ns1:PedidoReservaBPELReference" myRole="PedidoReservaPortType"/>
   </partnerLinks>
   <variables>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>

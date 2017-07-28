@@ -14,7 +14,7 @@
   </plt:partnerLinkType>
     <wsdl:types>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/Schemas/RibMessages.xsd" />
+        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd" />
       </schema>
     </wsdl:types>
     <wsdl:message name="Posta_Mensagem_msg">

@@ -1,0 +1,217 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Thu Jul 27 00:45:50 BRT 2017
+  Author:  Vinicius
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="etStkOrdersFromRIBToWH1ServicoBPELProcess"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStkOrdersFromRIBToWH1ServicoBPELProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStkOrdersFromRIBToWH1ServicoBPELProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStkOrdersFromRIBToWH1JMSReference"
+         xmlns:ns16="http://www.oracle.com/retail/integration/base/bo/ItemTcktDesc/v1"
+         xmlns:ns2="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/ItemUDADateDesc/v1"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/ItemUDAFFDesc/v1"
+         xmlns:ns18="http://www.oracle.com/retail/integration/base/bo/RelatedItemDesc/v1"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/ItemHdrDesc/v1"
+         xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/LocOfItemHdrDesc/v1"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ns6="http://www.oracle.com/retail/integration/localization/bo/BrItemHdrDesc/v1"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/ItemUDALOVDesc/v1"
+         xmlns:ns17="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyMfrDesc/v1"
+         xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/ItemDesc/v1"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/ISCDimDesc/v1"
+         xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/ItemImageDesc/v1"
+         xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/ItemSupDesc/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/ItemSupCtyDesc/v1"
+         xmlns:ns15="http://www.oracle.com/retail/integration/base/bo/ItemBOMDesc/v1"
+         xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/ItemUPCDesc/v1"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns19="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
+         xmlns:ns20="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
+         xmlns:ns21="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns22="http://canonico.ultra.com.br/LegadoOutput/v1" xmlns:ui="http://xmlns.oracle.com/soa/designer"
+         xmlns:ns23="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStockOrdersISOJMSReference">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/IdentificaServicoRetailIntegracaoBPEL/etStkOrdersFromRIBToWH1JMSReference"
+          location="../WSDLs/etStkOrdersFromRIBToWH1JMSReference.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="etStkOrdersFromRIBToWH1JMSReference" partnerLinkType="ns1:Consume_Message_plt"
+                 myRole="Consume_Message_role"/>
+    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns20:RegistroLogBPELReference"
+                 partnerRole="execute_ptt"/>
+    <partnerLink name="TransferenciaMercadoriaCDReference" partnerLinkType="ns19:TransferenciaMercadoriaCDDBBPEL"
+                 partnerRole="CriarTransferenciaMercadoriaCDPortType"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable" messageType="ns1:Consume_Message_msg"/>
+    <variable name="InputRegistroLogCriarBPEL" messageType="ns20:requestMessage"/>
+  </variables>
+  <sequence name="main">
+    <receive name="receiveInput" createInstance="yes" partnerLink="etStkOrdersFromRIBToWH1JMSReference"
+             portType="ns1:Consume_Message_ptt" operation="Consume_Message" variable="inputVariable"/>
+    <if name="IfFamilyStockorder">
+      <documentation>
+        <![CDATA[TransferenciaMercadoriaCDBPELProcess]]>
+      </documentation>
+      <condition>$inputVariable.body/ns2:ribMessage/ns2:family = "stockorder" and $inputVariable.body/ns2:ribMessage/ns2:type = "socre"</condition>
+      <scope name="ScopeCriarTransferenciaMercadoriaCDBPELProcess">
+        <variables>
+          <variable name="outputCriarTransferenciaMercadoriaCDBPELProcess"
+                    messageType="ns19:CriarTransferenciaMercadoriaCDResponse"/>
+          <variable name="inputCriarTransferenciaMercadoriaCDBPELProcess"
+                    messageType="ns19:CriarTransferenciaMercadoriaCDRequest"/>
+        </variables>
+        <faultHandlers>
+          <catchAll>
+            <scope name="ScopeCatchAll">
+              <faultHandlers>
+                <catchAll>
+                  <throw name="Throw" faultName="bpelx:rollback"/>
+                </catchAll>
+              </faultHandlers>
+              <sequence name="SequenceTratamentoMensagem">
+                <assign name="AssignPayloadToRegistroErroLogBPEL">
+                  <copy>
+                    <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:nomeServico</to>
+                  </copy>
+                  <copy>
+                    <from>xp20:current-dateTime()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:datahoraRequisicao</to>
+                  </copy>
+                  <copy>
+                    <from>'TransferenciaMercadoriaCDIntegracaoBPEL'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:passoFluxo</to>
+                  </copy>
+                  <copy>
+                    <from>ora:getFaultAsString()</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:mensagem</to>
+                  </copy>
+                  <copy>
+                    <from>$inputVariable.body/ns2:ribMessage/ns2:type</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:usuario</to>
+                  </copy>
+                  <copy>
+                    <from>'RIB'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:sistemaOrigem</to>
+                  </copy>
+                  <copy>
+                    <from>'LEGADO'</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:sistemaDestino</to>
+                  </copy>
+                  <copy>
+                    <from>1</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:status</to>
+                  </copy>
+                  <copy>
+                    <from>oraext:get-content-as-string($inputVariable.body)</from>
+                    <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Body</to>
+                  </copy>
+                </assign>
+                <invoke name="postaMensagemErroRegistroLogBPEL"
+                        partnerLink="RegistroLogBPELReference" portType="ns20:execute_ptt" operation="execute"
+                        inputVariable="InputRegistroLogCriarBPEL" bpelx:invokeAsDetail="no"/>
+              </sequence>
+            </scope>
+          </catchAll>
+        </faultHandlers>
+        <sequence name="SequenceTransferenciaMercadoriaCDBPELProcess">
+          <sequence name="SequenceCriarTransferenciaMercadoriaCDBPELProcess">
+            <assign name="TransformationCriarTransferenciaMercadoriaCD">
+              <bpelx:annotation>
+                <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+              </bpelx:annotation>
+              <copy>
+                <from>ora:doXSLTransformForDoc("../Transformations/transformInputToCriarTransferenciaMercadoriaCD.xsl", $inputVariable.body)</from>
+                <to variable="inputCriarTransferenciaMercadoriaCDBPELProcess" part="parameters"/>
+              </copy>
+            </assign>
+            <invoke name="CriarTransferenciaMercadoriaCDBPELProcess"
+                    inputVariable="inputCriarTransferenciaMercadoriaCDBPELProcess"
+                    outputVariable="outputCriarTransferenciaMercadoriaCDBPELProcess"
+                    partnerLink="TransferenciaMercadoriaCDReference"
+                    portType="ns19:CriarTransferenciaMercadoriaCDPortType" operation="criarTransferenciaMercadoriaCD"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+          <sequence name="CriarFluxoRegistraLog">
+            <assign name="AssignPayloadToRegistroLogBPEL">
+              <copy>
+                <from>'IdentificaServicoRetailIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:nomeServico</to>
+              </copy>
+              <copy>
+                <from>'TransferenciaMercadoriaCDIntegracaoBPEL'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>$outputCriarTransferenciaMercadoriaCDBPELProcess.parameters/ns22:data/ns22:mensagem</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:mensagem</to>
+              </copy>
+              <copy>
+                <from>number($outputCriarTransferenciaMercadoriaCDBPELProcess.parameters/ns22:success)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:status</to>
+              </copy>
+              <copy>
+                <from>'LEGADO'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:sistemaDestino</to>
+              </copy>
+              <copy>
+                <from>'RIB'</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:sistemaOrigem</to>
+              </copy>
+              <copy>
+                <from>$inputVariable.body/ns2:ribMessage/ns2:type</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:usuario</to>
+              </copy>
+              <copy>
+                <from>oraext:get-content-as-string($inputVariable.body)</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Body</to>
+              </copy>
+              <copy>
+                <from>xp20:current-dateTime()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputRegistroLogCriarBPEL.part1/ns21:Header/ns21:MetaInformacao/ns21:datahoraRequisicao</to>
+              </copy>
+            </assign>
+            <invoke name="RegistroLogCriarBPEL" partnerLink="RegistroLogBPELReference"
+                    portType="ns20:execute_ptt" operation="execute" inputVariable="InputRegistroLogCriarBPEL"
+                    bpelx:invokeAsDetail="no"/>
+          </sequence>
+        </sequence>
+      </scope>
+      <else>
+        <documentation>
+          <![CDATA[Mensagem Descartada]]>
+        </documentation>
+        <sequence name="SequenceMsgDescartada">
+          <empty name="Empty"/>
+        </sequence>
+      </else>
+    </if>
+  </sequence>
+</process>

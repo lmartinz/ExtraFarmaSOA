@@ -1,0 +1,13 @@
+<adapter-config name="etStkOrdersFromRIBToWH1JMSReference" adapter="jms" wsdlLocation="../WSDLs/etStkOrdersFromRIBToWH1JMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/aqjms/etStkOrdersFromRIBToWH1" UIJmsProvider="WLSJMS"/>
+  <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
+    <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
+      <property name="DestinationName" value="topic/etStkOrdersFromRIBToWH1"/>
+      <property name="UseMessageListener" value="false"/>
+      <property name="PayloadType" value="TextMessage"/>
+      <property name="DurableSubscriber" value="STKORDERS_IMIFARMA_SUB_1"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>

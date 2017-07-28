@@ -1,11 +1,12 @@
 <adapter-config name="etItemsFromRMSJMSReference" adapter="jms" wsdlLocation="../WSDLs/etItemsFromRMSJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etItemsFromRMS" UIJmsProvider="THIRDPARTY"/>
+  <connection-factory location="eis/aqjms/etItemsFromRMS" UIJmsProvider="WLSJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
       <property name="DestinationName" value="topic/etItemsFromRMS"/>
       <property name="UseMessageListener" value="false"/>
       <property name="PayloadType" value="TextMessage"/>
+      <property name="DurableSubscriber" value="ITEMS_LEGACY_SUB_1"/>
     </activation-spec>
   </endpoint-activation>
 

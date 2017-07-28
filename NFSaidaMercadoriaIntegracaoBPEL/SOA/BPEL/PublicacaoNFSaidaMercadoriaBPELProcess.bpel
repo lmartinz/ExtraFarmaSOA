@@ -35,7 +35,9 @@
          xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
          xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/EXFBrInvoicesDesc/v1"
          xmlns:ns7="http://canonico.ultra.com.br/LegadoOutput/v1"
-         xmlns:ns8="http://canonico.ultra.com.br/LegadoFault/v1">
+         xmlns:ns8="http://canonico.ultra.com.br/LegadoFault/v1" xmlns:ns9="json"
+         xmlns:ns11="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
+         xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/SODesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,11 +46,16 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+          location="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1Wrapper.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <import namespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+          location="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/fiscal/PublicacaoNFSaidaMercadoriaRest/v1"
           location="../Schemas/PublicacaoNFSaidaMercadoriaRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
-  <import namespace="http://xmlns.oracle.com/AppExtrafarmaSOA/NFSaidaMercadoriaIntegracaoBPEL/PublicacaoNFSaidaMercadoriaBPELProcess"
-          location="../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl"
-          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="NFSaidaMercadoriaDBBPEL" partnerLinkType="ns1:NFSaidaMercadoriaDBBPEL"
                  myRole="NFSaidaMercadoriaPortType"/>
@@ -56,39 +63,44 @@
   </partnerLinks>
   <variables>
     <variable name="requestJSON" type="xsd:string"/>
-    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="responseJSON" bpelx:json="object"/>
     <variable name="TranslateXMLToJson" element="ns2:Root-Element"/>
     <variable name="inputVariable" messageType="ns1:PublicacaoNFSaidaMercadoriaRequest"/>
     <variable name="outputVariable" messageType="ns1:PublicacaoNFSaidaMercadoriaResponse"/>
     <variable name="translateJsonToXML" element="ns7:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns8:RetornoServicoFault"/>
+    <variable name="messageData" messageType="ns1:PublicacaoNFSaidaMercadoriaRequest"/>
+    <variable name="requestJsonObject" bpelx:json="object"/>
   </variables>
   <faultHandlers>
     <catchAll>
       <sequence name="SequenceRetornoErro">
-        <assign name="TranslateJsonToXMLError">
-          <bpelx:annotation>
-            <bpelx:pattern>translate</bpelx:pattern>
-          </bpelx:annotation>
-          <copy>
-            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
-            <to>$errorTranslateToXML</to>
-          </copy>
-        </assign>
-        <assign name="AssignReplyCatch">
-          <copy>
-            <from>$errorTranslateToXML/ns8:success</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
-          </copy>
-          <copy>
-            <from>ora:getFlowId()</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
-          </copy>
-          <copy>
-            <from>oraext:get-content-as-string($errorTranslateToXML/ns8:errors/node())</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
-          </copy>
-        </assign>
+        <if name="IfRethrow">
+          <documentation>
+            <![CDATA[Rethrow]]>
+          </documentation>
+          <condition>$outputVariable.parameters/ns7:data/ns7:mensagem != ""</condition>
+          <empty name="Empty"/>
+          <else>
+            <documentation>
+              <![CDATA[NoRethrow]]>
+            </documentation>
+            <assign name="AssignReplyCatch">
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+              </copy>
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+              </copy>
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+              </copy>
+            </assign>
+          </else>
+        </if>
         <reply name="replyCatchOutput" variable="outputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
                portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria"/>
       </sequence>
@@ -98,12 +110,20 @@
     <receive name="receiveInput" variable="inputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
              portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria" createInstance="yes"/>
     <sequence name="SequenceChamadaRestLegado">
+      <assign name="AssignParseMessageData">
+        <extensionAssignOperation>
+          <bpelx:append>
+            <bpelx:from>oraext:parseEscapedXML($inputVariable.parameters/ns4:ribMessage/ns4:messageData)</bpelx:from>
+            <bpelx:to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$messageData.parameters/ns4:ribMessage/ns4:messageData</bpelx:to>
+          </bpelx:append>
+        </extensionAssignOperation>
+      </assign>
       <assign name="TransformationToJson">
         <bpelx:annotation>
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToPublicacaoNFSaidaMercadoriaRest.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToPublicacaoNFSaidaMercadoriaRest.xsl", $messageData.parameters)</from>
           <to variable="TranslateXMLToJson"/>
         </copy>
       </assign>
@@ -116,67 +136,91 @@
           <to>$requestJSON</to>
         </copy>
       </assign>
-      <if name="IfTipoOperacao">
-        <documentation>
-          <![CDATA[Aprovar]]>
-        </documentation>
-        <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfapprovdcre')</condition>
-        <sequence name="SequenceAprovar">
-          <invoke name="PublicacaoAprovarNFSaidaMercadoriaRestReference"
-                  partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJSON"
-                  outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaAprovada"
-                  bpelx:invokeAsDetail="no"/>
-        </sequence>
-        <elseif>
+      <extensionActivity>
+        <bpelx:js name="JsonParsePublicarNF">
+          <![CDATA[$requestJsonObject = JSON.parse($requestJSON);]]>
+        </bpelx:js>
+      </extensionActivity>
+      <scope name="ScopePublicarNFSaida">
+        <faultHandlers>
+          <catch faultName="bpelx:bindingFault" faultVariable="BpelFault" faultMessageType="bpelx:RuntimeFaultMessage">
+            <sequence name="SequenceRetornoErroBpelFault">
+              <assign name="AssignBpelFault">
+                <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+                </copy>
+                <copy>
+                  <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+                </copy>
+                <copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+                </copy>
+              </assign>
+              <rethrow name="RethrowBindingFault"/>
+            </sequence>
+          </catch>
+          <catchAll>
+            <rethrow name="RethrowCatchAll"/>
+          </catchAll>
+        </faultHandlers>
+        <if name="IfTipoOperacao">
           <documentation>
-            <![CDATA[Cancelar]]>
+            <![CDATA[Aprovar]]>
           </documentation>
-          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfcanceldcre')</condition>
-          <sequence name="SequenceCancelar">
-            <invoke name="PublicacaoCancelarNFSaidaMercadoriaRestReference"
-                    partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJSON"
-                    outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaCancelada"
+          <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfapprovdcre')</condition>
+          <sequence name="SequenceAprovar">
+            <invoke name="PublicacaoAprovarNFSaidaMercadoriaRestReference"
+                    partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJsonObject"
+                    outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaAprovada"
                     bpelx:invokeAsDetail="no"/>
           </sequence>
-        </elseif>
-        <else>
-          <sequence name="SequenceTipoInvalido">
-            <assign name="AssignReplyTipoInvalido">
-              <copy>
-                <from>1</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
-              </copy>
-              <copy>
-                <from>ora:getFlowId()</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
-              </copy>
-              <copy>
-                <from>concat('Rib Message Type ',$inputVariable.parameters/ns4:ribMessage/ns4:type,' invalida.')</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
-              </copy>
-            </assign>
-            <reply name="ReplyTipoInvalido" variable="outputVariable" partnerLink="NFSaidaMercadoriaDBBPEL"
-                   portType="ns1:NFSaidaMercadoriaPortType" operation="publicacaoNFSaidaMercadoria"/>
-          </sequence>
-        </else>
-      </if>
+          <elseif>
+            <documentation>
+              <![CDATA[Cancelar]]>
+            </documentation>
+            <condition>oraext:compare-ignore-case($inputVariable.parameters/ns4:ribMessage/ns4:type,'exfnfcanceldcre')</condition>
+            <sequence name="SequenceCancelar">
+              <invoke name="PublicacaoCancelarNFSaidaMercadoriaRestReference"
+                      partnerLink="PublicacaoNFSaidaMercadoriaRestReference" inputVariable="requestJsonObject"
+                      outputVariable="responseJSON" bpelx:method="publicacaoNFSaidaMercadoriaCancelada"
+                      bpelx:invokeAsDetail="no"/>
+            </sequence>
+          </elseif>
+          <else>
+            <documentation>
+              <![CDATA[TipoInvalido]]>
+            </documentation>
+            <sequence name="SequenceTipoInvalido">
+              <assign name="AssignReplyTipoInvalido">
+                <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+                </copy>
+                <copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+                </copy>
+                <copy>
+                  <from>concat('Rib Message Type ',$inputVariable.parameters/ns4:ribMessage/ns4:type,' invalida.')</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+                </copy>
+              </assign>
+              <throw name="ThrowTipoInvalido" faultName="bpel:invalidVariables"/>
+            </sequence>
+          </else>
+        </if>
+      </scope>
       <sequence name="SequenceRetornoRestLegado">
-        <assign name="TranslateJsonToXMLReponse">
-          <bpelx:annotation>
-            <bpelx:pattern>translate</bpelx:pattern>
-          </bpelx:annotation>
-          <copy>
-            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
-            <to>$translateJsonToXML</to>
-          </copy>
-        </assign>
         <assign name="AssignSucessoPublicacaoNFSaidaMercadoria">
           <copy>
-            <from>$translateJsonToXML/ns7:success</from>
+            <from>0</from>
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
           </copy>
           <copy>
-            <from>$translateJsonToXML/ns7:data/ns7:mensagem</from>
+            <from>'SUCESSO'</from>
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
           </copy>
           <copy>

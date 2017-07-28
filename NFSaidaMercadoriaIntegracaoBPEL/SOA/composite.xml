@@ -16,7 +16,7 @@
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-          location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
+          location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <service name="NFSaidaMercadoriaDBBPEL"
            ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1#wsdl.interface(NFSaidaMercadoriaPortType)"/>
@@ -60,7 +60,8 @@
                ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/NFSaidaMercadoria/v1/WSDLs/NFSaidaMercadoriaV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1#wsdl.interface(NFSaidaMercadoriaPortType)"/>
       </service>
-      <reference name="RegistroLogBPELReference" ui:wsdlLocation="WSDLs/RegistroLogBPELWrapper.wsdl">
+      <reference name="RegistroLogBPELReference"
+                 ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
       <reference name="EtShipInfoJMSReference" ui:wsdlLocation="WSDLs/EtShipInfoJMSReference.wsdl">
@@ -70,8 +71,7 @@
   </component>
   <reference name="PublicacaoNFSaidaMercadoriaRestReference">
     <interface.wadl interface="WADLs/PublicacaoNFSaidaMercadoriaRestReference.wadl"/>
-    <binding.rest config="WADLs/PublicacaoNFSaidaMercadoriaRestReference.wadl"
-                  location="http://extrafarma/fiscal/v1/nf/publicacaoNFSaida"/>
+    <binding.rest config="WADLs/PublicacaoNFSaidaMercadoriaRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <reference name="EtShipInfoJMSReference" ui:wsdlLocation="WSDLs/EtShipInfoJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/NFSaidaMercadoriaIntegracaoBPEL/EtShipInfoJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
@@ -80,9 +80,9 @@
   <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true">
-      <property name="java.naming.provider.url"></property>
+    <binding.direct address="soadirect:/default/RegistroLogIntegracaoBPEL!1.0/RegistroLogDBBPELV1"
+                    connection-factory="oracle.soa.api.JNDIDirectConnectionFactory" useLocalJNDIProvider="false">
+      <property name="java.naming.provider.url">t3://efbrmtzvlx154:13410,efbrmtzvlx153:13420,efbrmtzvlx153:13410,efbrmtzvlx154:13420</property>
     </binding.direct>
   </reference>
   <wire>

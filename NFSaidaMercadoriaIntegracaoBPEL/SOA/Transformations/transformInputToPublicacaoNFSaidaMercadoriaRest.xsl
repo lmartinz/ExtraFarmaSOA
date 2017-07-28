@@ -9,7 +9,9 @@
                 xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
                 xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/EXFBrInvoicesDesc/v1"
                 xmlns:Q5="http://canonico.ultra.com.br/LegadoFault/v1"
-                xmlns:ns4="http://canonico.ultra.com.br/LegadoOutput/v1">
+                xmlns:ns4="http://canonico.ultra.com.br/LegadoOutput/v1"
+                xmlns:ns5="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
+                xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/SODesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

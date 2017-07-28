@@ -71,7 +71,7 @@
       <documentation>
         <![CDATA[ConfirmarReservaPedido]]>
       </documentation>
-      <condition>oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:family,'FulfilOrdCfm') and oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:type,'fulfilordcfmcre')</condition>
+      <condition>$inputVariable.body/ns2:ribMessage/ns2:family = "FulfilOrdCfm" and $inputVariable.body/ns2:ribMessage/ns2:type = "fulfilordcfmcre"</condition>
       <scope name="ScopeConfirmarReservaPedido">
         <variables>
           <variable name="inputConfirmarReservaPedido" messageType="ns10:ConfirmarPedidoReservaRequest"/>

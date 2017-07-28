@@ -63,7 +63,7 @@
       <documentation>
         <![CDATA[AutorizarRecebimentoNFCompra]]>
       </documentation>
-      <condition>oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:family,'POSchedule') and oraext:compare-ignore-case($inputVariable.body/ns2:ribMessage/ns2:type,'poschedcre')</condition>
+      <condition>$inputVariable.body/ns2:ribMessage/ns2:family = "POSchedule" and $inputVariable.body/ns2:ribMessage/ns2:type = "poschedcre"</condition>
       <scope name="ScopeAutorizarRecebimentoNFCompra">
         <variables>
           <variable name="inputAutorizarRecebimentoNFCompra" messageType="ns3:AutorizarRecebimentoNFCompraRequest"/>

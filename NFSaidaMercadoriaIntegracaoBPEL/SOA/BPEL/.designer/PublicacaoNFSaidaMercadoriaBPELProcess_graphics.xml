@@ -4,18 +4,22 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="NFSaidaMercadoriaDBBPEL" x="0" y="559" side="left"/>
-      <partnerlink name="PublicacaoNFSaidaMercadoriaRestReference" x="1190" y="557" side="right"/>
+      <partnerlink name="NFSaidaMercadoriaDBBPEL" x="0" y="624" side="left"/>
+      <partnerlink name="PublicacaoNFSaidaMercadoriaRestReference" x="1698" y="792" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="107,75,1106,521" show_swimlanes="true">
+   <graph_layout viewport="509,564,1138,527" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/sequence/if/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/sequence/if/elseif/sequence" type="sequence"/>
-      <layout_item collapsed="false" xpath="/process/sequence/sequence/if/else/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/faultHandlers/catch" type="catch"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/faultHandlers/catch/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/if/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/if/elseif/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/sequence/scope/if/else/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/sequence/sequence" type="sequence"/>
    </graph_layout>
    <bookmarks/>

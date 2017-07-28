@@ -2,68 +2,28 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][5]</loc>
-      <line>57</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]</loc>
+      <line>135</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: D:\RootGitExtrafarma\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\CriarNFSaidaMercadoriaIntegracaoBPEL.wsdl (O sistema não pode encontrar o arquivo especificado)" near (FileInputStream.java:-2).</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
-      <line>140</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix>You must defined the variable to use it in the XPath expression.</fix>
-      <msg>The variable "inputVariable" is not defined in scope or process.</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequencePostaMensagemRib']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='TransformationCriarNotaFiscalSaidaMercadoriaToetShipInfo']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='to']</loc>
-      <line>174</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix>Make sure that value "PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" is resolvable (check imports, value of "variable").</fix>
-      <msg>"variable" is set to "PostaMensagemEtShipInfoJMS_Posta_Mensagem_InputVariable" on this &lt;bpel:to>  but it cannot be resolved (check value of "variable", imports, WSDLs or XSDs).</msg>
-   </Fault>
-   <Fault>
-      <severity>error</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
-      <line>221</line>
-      <col/>
-      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
-      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
-      <fix>You must defined the variable to use it in the XPath expression.</fix>
-      <msg>The variable "inputVariable" is not defined in scope or process.</msg>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns4:Body"</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
-      <line>51</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]</loc>
+      <line>217</line>
       <col/>
-      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
-      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
-      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: D:\RootGitExtrafarma\ExtraFarmaSOA\NFSaidaMercadoriaIntegracaoBPEL\SOA\WSDLs\PublicacaoNFSaidaMercadoriaBPELProcess.wsdl (O sistema não pode encontrar o arquivo especificado)" near (FileInputStream.java:-2).</msg>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns4:Body"</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
-      <line>51</line>
-      <col/>
-      <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
-      <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
-      <fix>Check location "../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
-      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "../WSDLs/PublicacaoNFSaidaMercadoriaBPELProcess.wsdl"</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
-      <line>123</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopePublicarNFSaida']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
+      <line>173</line>
       <col/>
       <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
       <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>
@@ -72,8 +32,8 @@
    </Fault>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='elseif']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
-      <line>134</line>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegado']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopePublicarNFSaida']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfTipoOperacao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='elseif']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='condition']</loc>
+      <line>184</line>
       <col/>
       <file>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</file>
       <name>BPEL/PublicacaoNFSaidaMercadoriaBPELProcess.bpel</name>

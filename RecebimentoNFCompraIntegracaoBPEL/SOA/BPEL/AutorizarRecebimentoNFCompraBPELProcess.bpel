@@ -42,6 +42,8 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/logistica/AutorizarRecebimentoNFCompraRest/v1"
           location="../Schemas/AutorizarRecebimentoNFCompraRest.xsd"
           importType="http://www.w3.org/2001/XMLSchema"/>
@@ -57,37 +59,42 @@
     <variable name="inputVariable" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
     <variable name="requestJSON" type="xsd:string"/>
     <variable name="transformationJSON" element="ns5:Root-Element"/>
-    <variable name="responseJSON" type="xsd:string"/>
+    <variable name="responseJSON" bpelx:json="object"/>
     <variable name="outputVariable" messageType="ns1:AutorizarRecebimentoNFCompraResponse"/>
     <variable name="translateJsonToXML" element="ns7:RetornoServico"/>
     <variable name="errorTranslateToXML" element="ns8:RetornoServicoFault"/>
+    <variable name="messageData" messageType="ns1:AutorizarRecebimentoNFCompraRequest"/>
+    <variable name="requestJsonObject" bpelx:json="object"/>
   </variables>
   <faultHandlers>
     <catchAll>
       <sequence name="SequenceRetornoErro">
-        <assign name="TranslateJsonToXMLError">
-          <bpelx:annotation>
-            <bpelx:pattern>translate</bpelx:pattern>
-          </bpelx:annotation>
-          <copy>
-            <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoFault.xsd', 'RetornoServicoFault', 'DOM')</from>
-            <to>$errorTranslateToXML</to>
-          </copy>
-        </assign>
-        <assign name="AssignReplyCatch">
-          <copy>
-            <from>ora:getFlowId()</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
-          </copy>
-          <copy>
-            <from>oraext:get-content-as-string($errorTranslateToXML/ns8:errors/node())</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
-          </copy>
-          <copy>
-            <from>$errorTranslateToXML/ns8:success</from>
-            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
-          </copy>
-        </assign>
+        <if name="IfRethrow">
+          <documentation>
+            <![CDATA[Rethrow]]>
+          </documentation>
+          <condition>$outputVariable.parameters/ns7:data/ns7:mensagem != ""</condition>
+          <empty name="Empty"/>
+          <else>
+            <documentation>
+              <![CDATA[NoRethrow]]>
+            </documentation>
+            <assign name="AssignReplyCatch">
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+              </copy>
+              <copy>
+                <from>ora:getFaultAsString()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+              </copy>
+              <copy>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+              </copy>
+            </assign>
+          </else>
+        </if>
         <reply name="replyCatchOutput" partnerLink="RecebimentoNFCompraDBBPEL" variable="outputVariable"
                portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"/>
       </sequence>
@@ -98,12 +105,20 @@
              portType="ns1:RecebimentoNFCompraPortType" operation="autorizarRecebimentoNFCompra"
              variable="inputVariable"/>
     <sequence name="SequenceChamadaRestLegado">
+      <assign name="AssignParseMessageData">
+        <extensionAssignOperation>
+          <bpelx:append>
+            <bpelx:from>oraext:parseEscapedXML($inputVariable.parameters/ns6:ribMessage/ns6:messageData)</bpelx:from>
+            <bpelx:to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$messageData.parameters/ns6:ribMessage/ns6:messageData</bpelx:to>
+          </bpelx:append>
+        </extensionAssignOperation>
+      </assign>
       <assign name="TransformationToJson">
         <bpelx:annotation>
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAutorizarRecebimentoNFCompraRest.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformInputToAutorizarRecebimentoNFCompraRest.xsl", $messageData.parameters)</from>
           <to variable="transformationJSON"/>
         </copy>
       </assign>
@@ -116,27 +131,49 @@
           <to>$requestJSON</to>
         </copy>
       </assign>
-      <invoke name="AutorizarRecebimentoNFCompraRestReference"
-              partnerLink="AutorizarRecebimentoNFCompraRestReference" bpelx:method="autorizarRecebimentoNFCompra" inputVariable="requestJSON" outputVariable="responseJSON"
-              bpelx:invokeAsDetail="no"/>
+      <extensionActivity>
+        <bpelx:js name="JsonParseRecebimentoNFCompra">
+          <![CDATA[$requestJsonObject = JSON.parse($requestJSON);]]>
+        </bpelx:js>
+      </extensionActivity>
+      <scope name="ScopeAutorizarRecebimento">
+        <faultHandlers>
+          <catch faultName="bpelx:bindingFault" faultVariable="BpelFault" faultMessageType="bpelx:RuntimeFaultMessage">
+            <sequence name="SequenceRetornoErroBpelFault">
+              <assign name="AssignBpelFault">
+                <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
+                </copy>
+                <copy>
+                  <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
+                </copy>
+                <copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:id</to>
+                </copy>
+              </assign>
+              <rethrow name="RethrowBindingFault"/>
+            </sequence>
+          </catch>
+          <catchAll>
+            <rethrow name="RethrowCatchAll"/>
+          </catchAll>
+        </faultHandlers>
+        <invoke name="AutorizarRecebimentoNFCompraRestReference" partnerLink="AutorizarRecebimentoNFCompraRestReference"
+                bpelx:method="autorizarRecebimentoNFCompra" inputVariable="requestJsonObject" outputVariable="responseJSON"
+                bpelx:invokeAsDetail="no"/>
+      </scope>
     </sequence>
     <sequence name="SequenceRetornoRestLegado">
-      <assign name="TranslateJsonToXMLReponse">
-        <bpelx:annotation>
-          <bpelx:pattern>translate</bpelx:pattern>
-        </bpelx:annotation>
-        <copy>
-          <from>ora:doTranslateFromNative(string($responseJSON), 'oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/LegadoOutput.xsd', 'RetornoServico', 'DOM')</from>
-          <to>$translateJsonToXML</to>
-        </copy>
-      </assign>
       <assign name="AssignSucessoAutorizarRecebimentoNFCompra">
         <copy>
-          <from>$translateJsonToXML/ns7:success</from>
+          <from>0</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:success</to>
         </copy>
         <copy>
-          <from>$translateJsonToXML/ns7:data/ns7:mensagem</from>
+          <from>'SUCESSO'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns7:data/ns7:mensagem</to>
         </copy>
         <copy>
