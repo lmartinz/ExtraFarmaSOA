@@ -1,0 +1,350 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/base/bo/EXFXNFDocDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/base/bo/EXFXNFDocDesc/v1"
+    xmlns:EXFItemDesc="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <retailDoc:annotation>
+        <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
+    </retailDoc:annotation>
+	<xs:import
+        namespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1" schemaLocation="EXFItemDesc.xsd">
+        <retailDoc:annotation>
+            <retailDoc:documentation>Additional information about Lot Information</retailDoc:documentation>
+        </retailDoc:annotation>
+    </xs:import>
+    <xs:element name="EXFXNFDocDesc">
+        <xs:complexType>
+            <xs:sequence>
+  				<xs:element name="loc" type="varchar210">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains NF issuer location.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="loc_type" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains NF issuer location type (S-Store/W-Warehouse).</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="nf_type" type="varchar21">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains if  NF is a "Cupom de Cobertura (1)" or RMA (2).</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFNFTicketNBR">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information about COO/CCF and NFe Access Key</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="comments" type="varchar2240">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains any comment about NF</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="create_user" type="varchar230">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains requesting user.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element ref="EXFNFDocCustomer">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information about Customer</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="EXFXNFDocItem">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information about item and value</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="total_doc_value" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains NF total value</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="total_discount_value" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains NF total discount</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="nf_other_expense" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains other expenses related with NF doc</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" ref="EXFRMADesc">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information regarding return (RMA).</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="EXFNFTicketNBR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ticket_model" type="varchar22">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains fiscal ticket model (2B,2C,2D)</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="coo_number" type="number30">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains ticket COO number.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="ecf_number" type="number30">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains ticket ECF number.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+                <xs:element minOccurs="0" name="ticket_access_key" type="varchar244">
+			        <retailDoc:annotation>
+			            <retailDoc:documentation>Access key provided by fiscal partners solution.</retailDoc:documentation>
+			        </retailDoc:annotation>
+			    </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EXFRMADesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" name="rma_origin_nfe_accesskey" type="varchar244">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains Origin NFE Access Key</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="rma_issue_date" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains RMA Issue Date</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EXFNFDocCustomer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="customer_id" type="number10">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's ID</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_name" type="varchar2100">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's full name</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_cpf" type="number14">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's CPF/CNPJ.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_add1" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's address.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="customer_add2" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's address number</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="customer_add3" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains additional information about customer's address</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_add4" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information about customer's address (Neighborhood). </retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_add5" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains information about customer's address (Postal Code).</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_city" type="varchar250">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's city.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="city_inscription_id" type="number20">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains city IBGE code.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="customer_state" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains customer's state</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="EXFXNFDocItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item_id" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains item_id</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="unit_qty" type="number12">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains item's total quantity</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="unit_price" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains item's unit price.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="unit_percent_discount" type="number3">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains item's percentage of discount.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="unit_discount" type="number20_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains item's discount in value</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFItemDesc:EXFItemDesc">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot and IMEI Information</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:simpleType name="varchar210">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 10 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="10"/>
+       </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar21">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 1 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="1"/>
+       </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="varchar2240">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 240 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="240"/>
+		</xs:restriction>
+	</xs:simpleType>
+    <xs:simpleType name="varchar230">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 10 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+       </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="varchar22">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 2 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="varchar244">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 44 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="44"/>
+		</xs:restriction>
+	</xs:simpleType>
+    <xs:simpleType name="varchar2100">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 100 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="100"/>
+       </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar250">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 50 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="50"/>
+       </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="varchar225">
+       <retailDoc:annotation>
+          <retailDoc:documentation>This type can hold a string of max length of 25 characters.</retailDoc:documentation>
+       </retailDoc:annotation>
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="25"/>
+       </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number20_4">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 20 and fraction digit count of 4.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="20"/>
+            <xs:fractionDigits value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number30">
+	   <retailDoc:annotation>
+		   <retailDoc:documentation>This type can hold a number of digits count 30.</retailDoc:documentation>
+	   </retailDoc:annotation>
+	   <xs:restriction base="xs:decimal">
+		   <xs:totalDigits value="30"/>
+	   </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number10">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 10.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="number14">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits count 14.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+    <xs:simpleType name="number20">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 20.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number12">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 12.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="number3">
+        <retailDoc:annotation>
+            <retailDoc:documentation>This type can hold a number of digits count 3.</retailDoc:documentation>
+        </retailDoc:annotation>
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
