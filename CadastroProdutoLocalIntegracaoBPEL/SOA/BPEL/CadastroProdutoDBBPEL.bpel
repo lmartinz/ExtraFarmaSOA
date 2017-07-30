@@ -1,0 +1,376 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Sat Jul 29 20:35:40 BRT 2017
+  Author:  lmartins
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="CadastroProdutoDBBPEL"
+               targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoLocal/v1"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoLocal/v1"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ns1="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ui="http://xmlns.oracle.com/soa/designer" xmlns:ns2="json"
+         xmlns:ns3="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns4="http://TargetNamespace.com/nxsdschema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns5="http://canonico.ultra.com.br/LegadoOutput/v1"
+         xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ItemLocDesc/v1">
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://TargetNamespace.com/nxsdschema" location="../Schemas/produto.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages"
+          location="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd"
+          importType="http://www.w3.org/2001/XMLSchema"/>
+  <import namespace="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1"
+          location="oramds:/apps/Extrafarma/Retail/CadastroProduto/v1/WSDLs/CadastroProdutoV1Wrapper.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="cadastroprodutodbbpel" partnerLinkType="ns1:CadastroProdutoDBBPEL" myRole="ProdutoPortType"/>
+    <partnerLink name="CadastroProtoRestReference" bpelx:wadl="yes"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="ns1:ProdutoRequest"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="ns1:ProdutoResponse"/>
+    <variable name="requestJSONObject" bpelx:json="object"/>
+    <variable name="responseJSON" bpelx:json="object"/>
+    <variable name="messageData" messageType="ns1:ProdutoRequest"/>
+    <variable name="requestJSON" element="ns4:Root-Element"/>
+    <variable name="transformationJSON" element="ns4:Root-Element"/>
+    <variable name="requestJSONString" type="xsd:string"/>
+  </variables>
+  <faultHandlers>
+    <catchAll><sequence name="SequenceRetornoErro" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <if name="IfRethrow">
+         <documentation>
+            <![CDATA[Rethrow]]>
+         </documentation>
+         <condition>$outputVariable.parameters/ns5:data/ns5:mensagem != ""</condition>
+         <empty name="Empty"/>
+         <else>
+            <documentation>
+               <![CDATA[NoRethrow]]>
+            </documentation>
+            <assign name="AssignReplyCatch">
+               
+               
+               
+            <copy>
+                  <from>1</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+               </copy><copy>
+                  <from>ora:getFlowId()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+               </copy><copy>
+                  <from>ora:getFaultAsString()</from>
+                  <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+               </copy></assign>
+         </else>
+      </if>
+      <reply name="replyCatchOutput" partnerLink="cadastroprodutodbbpel" variable="outputVariable"
+             portType="ns1:ProdutoPortType"
+             operation="cadastrarProdutoLocal"/>
+   </sequence></catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in CadastroProdutoDBBPEL.wsdl) -->
+    <receive name="receiveInput" partnerLink="cadastroprodutodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="inputVariable" createInstance="yes"/>
+    <scope name="ScopeEnriquecimento">
+      <sequence name="SequenceEnriquecimento">
+        <assign name="AssignParseMessageData" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+          <extensionAssignOperation>
+            <bpelx:append xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+              <bpelx:from>oraext:parseEscapedXML($inputVariable.parameters/ns3:ribMessage/ns3:messageData)</bpelx:from>
+              <bpelx:to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$messageData.parameters/ns3:ribMessage/ns3:messageData</bpelx:to>
+            </bpelx:append>
+          </extensionAssignOperation>
+        </assign>
+        <assign name="TransformationAtualizar">
+         <bpelx:annotation xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+            <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+         </bpelx:annotation>
+         <copy>
+            <from>ora:doXSLTransformForDoc("../Transformations/TransformationAtualizar.xsl", $messageData)</from>
+            <to variable="transformationJSON"/>
+         </copy>
+      </assign>
+        <assign name="TranslateToJson">
+         <bpelx:annotation xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+            <bpelx:pattern>translate</bpelx:pattern>
+         </bpelx:annotation>
+         <copy>
+            <from>ora:doTranslateToNative($transformationJSON, 'Schemas/produto.xsd', 'Root-Element', 'STRING')</from>
+            <to>$requestJSONString</to>
+         </copy>
+      </assign>
+        <extensionActivity xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         <bpelx:js name="JsonParseCriarAlterar" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+            <![CDATA[$requestJsonObject = JSON.parse($requestJSONString);]]>
+         </bpelx:js>
+      </extensionActivity>
+      </sequence>
+    </scope>
+    <if name="IfMetodo">
+      <documentation>
+        <![CDATA[atualizar]]>
+      </documentation>
+      <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "ItemLocMod"</condition>
+      <sequence name="SequenceAtualizar">
+        <scope name="ScopeAtualizar">
+          <faultHandlers>
+            <catch faultName="bpelx:bindingFault" faultVariable="BpelFault"
+                   faultMessageType="bpelx:RuntimeFaultMessage"><sequence name="SequenceRetornoErroBpelFault"
+                                                                          xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <assign name="AssignBpelFault">
+         
+         
+         
+      <copy>
+            <from>1</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+         </copy><copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+         </copy><copy>
+            <from>oraext:get-content-as-string($BpelFault.detail)</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+         </copy></assign>
+      <rethrow name="RethrowBindingFault"/>
+   </sequence></catch>
+            <catchAll bpelx:name="BpelFault">
+              <rethrow name="RethrowAtualizar"/>
+            </catchAll>
+          </faultHandlers>
+          <invoke name="Atualizar" partnerLink="CadastroProtoRestReference" bpelx:method="atualizar"
+                  inputVariable="requestJSONObject" outputVariable="responseJSON" bpelx:invokeAsDetail="no">
+            <bpelx:toProperties>
+              <bpelx:toProperty name="rest.binding.http.Content-Type">string('application/json')</bpelx:toProperty>
+              <bpelx:toProperty name="rest.template.idItemLocal">$transformationJSON/ns4:codigoProduto</bpelx:toProperty>
+            </bpelx:toProperties>
+          </invoke>
+        </scope>
+      </sequence>
+      <elseif>
+        <documentation>
+          <![CDATA[criar]]>
+        </documentation>
+        <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "ItemLocCre"</condition><sequence name="SequenceCriar"
+                                                                                                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+      
+      <scope name="ScopeCriar">
+         <faultHandlers>
+            <catch faultName="bpelx:bindingFault" faultVariable="BpelFault"
+                   faultMessageType="bpelx:RuntimeFaultMessage">
+               <sequence name="SequenceRetornoErroBpelFault"
+                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignBpelFault">
+                     
+                     
+                     
+                  <copy>
+                        <from>1</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+                     </copy><copy>
+                        <from>ora:getFlowId()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+                     </copy><copy>
+                        <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+                     </copy></assign>
+                  <rethrow name="RethrowBindingFault"/>
+               </sequence>
+            </catch>
+            <catchAll bpelx:name="BpelFault" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <rethrow name="RethrowCriar"/>
+            </catchAll>
+         </faultHandlers>
+         <invoke name="Criar" partnerLink="CadastroProtoRestReference"
+                 inputVariable="requestJSONObject" outputVariable="responseJSON"
+                 xmlns:bpelx="http://schemas.oracle.com/bpel/extension" bpelx:invokeAsDetail="no" bpelx:method="criar">
+            <bpelx:toProperties>
+               <bpelx:toProperty name="rest.binding.http.Content-Type">string('application/json')</bpelx:toProperty>
+            </bpelx:toProperties>
+         </invoke>
+      </scope>
+   </sequence></elseif>
+      <elseif>
+        <documentation>
+          <![CDATA[excluir]]>
+        </documentation>
+        <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "ItemLocDel"</condition><sequence name="SequenceExcluir"
+                                                                                                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+      
+      <scope name="ScopeExcluir">
+         <faultHandlers>
+            <catch faultName="bpelx:bindingFault" faultVariable="BpelFault"
+                   faultMessageType="bpelx:RuntimeFaultMessage">
+               <sequence name="SequenceRetornoErroBpelFault"
+                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignBpelFault">
+                     
+                     
+                     
+                  <copy>
+                        <from>1</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+                     </copy><copy>
+                        <from>ora:getFlowId()</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+                     </copy><copy>
+                        <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+                     </copy></assign>
+                  <rethrow name="RethrowBindingFault"/>
+               </sequence>
+            </catch>
+            <catchAll bpelx:name="BpelFault" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <rethrow name="RethrowExcluir"/>
+            </catchAll>
+         </faultHandlers>
+         <invoke name="Excluir" partnerLink="CadastroProtoRestReference" inputVariable="requestJSONObject"
+                 outputVariable="responseJSON" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 bpelx:method="excluir" bpelx:invokeAsDetail="no">
+            <bpelx:toProperties>
+               <bpelx:toProperty name="rest.binding.http.Content-Type">string('application/json')</bpelx:toProperty>
+            <bpelx:toProperty name="rest.template.idItemLocal">$transformationJSON/ns4:codigoProduto</bpelx:toProperty></bpelx:toProperties>
+         </invoke>
+      </scope>
+   </sequence></elseif>
+      <elseif>
+        <documentation>
+          <![CDATA[ressuprir]]>
+        </documentation>
+        <condition>$inputVariable.parameters/ns3:ribMessage/ns3:type = "ItemLocReplMod"</condition><sequence name="SequenceRessuprir"
+                                                                                                             xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      
+      
+      
+      
+      <scope name="ScopeRessuprir">
+         <faultHandlers>
+            <catch faultName="bpelx:bindingFault" faultVariable="BpelFault"
+                   faultMessageType="bpelx:RuntimeFaultMessage">
+               <sequence name="SequenceRetornoErroBpelFault"
+                         xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                  <assign name="AssignBpelFault">
+                    <copy>
+                      <from>1</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+                    </copy>
+                    <copy>
+                      <from>ora:getFlowId()</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+                    </copy>
+                    <copy>
+                      <from>oraext:get-content-as-string($BpelFault.detail)</from>
+                      <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+                    </copy>
+                  </assign>
+                  <rethrow name="RethrowBindingFault"/>
+               </sequence>
+            </catch>
+            <catchAll bpelx:name="BpelFault" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+               <rethrow name="RethrowRessuprir"/>
+            </catchAll>
+         </faultHandlers>
+         <invoke name="Ressuprir" partnerLink="CadastroProtoRestReference" inputVariable="requestJSONObject"
+                 outputVariable="responseJSON" xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+                 bpelx:method="ressuprir" bpelx:invokeAsDetail="no">
+            <bpelx:toProperties>
+               <bpelx:toProperty name="rest.binding.http.Content-Type">string('application/json')</bpelx:toProperty>
+            <bpelx:toProperty name="rest.template.idItemLocal">$transformationJSON/ns4:codigoProduto</bpelx:toProperty></bpelx:toProperties>
+         </invoke>
+      </scope>
+   </sequence></elseif>
+      <else>
+        <documentation>
+          <![CDATA[MetodoNaoPermitido]]>
+        </documentation><sequence name="SequenceTipoInvalido"
+                                  xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <assign name="AssignReplyTipoInvalido">
+         
+         
+         
+      <copy>
+            <from>concat('Rib Message Type ',$inputVariable.parameters/ns3:ribMessage/ns3:type,' invalida.')</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+         </copy><copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+         </copy><copy>
+            <from>1</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+         </copy></assign>
+      <throw name="ThrowTipoInvalido" faultName="bpel:invalidVariables"/>
+   </sequence></else>
+    </if><sequence name="SequenceRetornoRestLegado" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <assign name="AssignSucessoAtualizacaoLojas">
+         
+         
+         
+      <copy>
+            <from>'SUCESSO'</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:mensagem</to>
+         </copy><copy>
+            <from>ora:getFlowId()</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:data/ns5:id</to>
+         </copy><copy>
+            <from>0</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
+         </copy></assign>
+   </sequence><!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="cadastroprodutodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="outputVariable"/>
+  </sequence>
+</process>

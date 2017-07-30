@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="CadastroProtoRestReference">RestReference</doc>
+   <resources>
+      <resource path="/{idItemLocal}">
+         <method name="PUT" soa:name="atualizar">
+            <request>
+               <param name="idItemLocal" style="template" type="xsd:string"/>
+               <representation mediaType="application/json"/>
+               <representation mediaType="*/*"/>
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/x-www-form-urlencoded"/>
+            </request>
+            <response/>
+            <response/>
+         </method>
+      </resource>
+      <resource path="/{idItemLocal}">
+         <method name="DELETE" soa:name="excluir">
+            <request>
+               <param name="idItemLocal" style="template" type="xsd:string"/>
+            </request>
+            <response/>
+            <response/>
+         </method>
+      </resource>
+      <resource path="/ressuprimento/{idItemLocal}">
+         <method name="PUT" soa:name="ressuprir">
+            <request>
+               <param name="idItemLocal" style="template" type="xsd:string"/>
+               <representation mediaType="application/json"/>
+               <representation mediaType="*/*"/>
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/x-www-form-urlencoded"/>
+            </request>
+            <response/>
+            <response/>
+         </method>
+      </resource>
+      <resource path="/">
+         <method name="POST" soa:name="criar">
+            <request>
+               <representation mediaType="application/json"/>
+               <representation mediaType="*/*"/>
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/x-www-form-urlencoded"/>
+            </request>
+            <response/>
+            <response/>
+         </method>
+      </resource>
+   </resources>
+</application>

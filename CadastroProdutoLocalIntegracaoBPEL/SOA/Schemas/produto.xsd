@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/nxsdschema" targetNamespace="http://TargetNamespace.com/nxsdschema" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="codigoProduto" type="xsd:integer"/>
+            <xsd:element name="LocalList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="codigoFilial" type="xsd:integer"/>
+                     <xsd:element name="tipoLocal" type="xsd:string"/>
+                     <xsd:element name="atualizaEstoque" type="xsd:string"/>
+                     <xsd:element name="permiteVolucao" type="xsd:string"/>
+                     <xsd:element name="ItemLocalVirtualList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="codigoFilial" type="xsd:integer"/>
+                              <xsd:element name="tipoLocal" type="xsd:string"/>
+                              <xsd:element name="descricaoitemLocal" type="xsd:string"/>
+                              <xsd:element name="statusProduto" type="xsd:string"/>
+                              <xsd:element name="codigoFornecedorPrincipal" type="xsd:integer"/>
+                              <xsd:element name="indicadorTaxavel" type="xsd:string"/>
+                              <xsd:element name="indicadorLocal" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                     <xsd:element name="ItemLocalVirtualReposicaoList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="codigoFilial" type="xsd:integer"/>
+                              <xsd:element name="tipoLocal" type="xsd:string"/>
+                              <xsd:element name="multiploReabastecimento" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
+</xsd:schema>
