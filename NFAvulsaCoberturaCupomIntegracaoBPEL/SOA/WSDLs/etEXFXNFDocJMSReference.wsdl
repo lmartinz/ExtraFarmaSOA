@@ -1,0 +1,28 @@
+<wsdl:definitions
+     name="etEXFXNFDocJMSReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/NFAvulsaCoberturaCupomIntegracaoBPEL/etEXFXNFDocJMSReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/NFAvulsaCoberturaCupomIntegracaoBPEL/etEXFXNFDocJMSReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="Posta_Mensagem_plt" >
+    <plt:role name="Posta_Mensagem_role" >
+      <plt:portType name="tns:Posta_Mensagem_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://www.oracle.com/retail/integration/rib/RibMessages" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/RibMessages.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Posta_Mensagem_msg">
+        <wsdl:part name="body" element="imp1:RibMessages"/>
+    </wsdl:message>
+    <wsdl:portType name="Posta_Mensagem_ptt">
+        <wsdl:operation name="Posta_Mensagem">
+            <wsdl:input message="tns:Posta_Mensagem_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

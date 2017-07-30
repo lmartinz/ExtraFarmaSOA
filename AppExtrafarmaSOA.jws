@@ -31,6 +31,8 @@
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="LojasIntegracaoBPEL/LojasIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="MDS/MDS.jpr"/></hash>
+      <hash><url n="URL" path="MercadoriaAtacadoIntegracaoBPEL/MercadoriaAtacadoIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="NFAvulsaCoberturaCupomIntegracaoBPEL/NFAvulsaCoberturaCupomIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="NFEntradaMercadoriaIntegracaoBPEL/NFEntradaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="NFSaidaMercadoriaIntegracaoBPEL/NFSaidaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoCompraFornecedorIntegracaoBPEL/PedidoCompraFornecedorIntegracaoBPEL.jpr"/></hash>

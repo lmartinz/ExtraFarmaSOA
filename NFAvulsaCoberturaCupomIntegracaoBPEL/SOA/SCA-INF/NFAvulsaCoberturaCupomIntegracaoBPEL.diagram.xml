@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="NFAvulsaCoberturaCupomDBBPEL">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="99" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="92" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="NFAvulsaCoberturaCupomDBBPEL" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1#wsdl.interface(NFAvulsaCoberturaCupomPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>emitirNFAvulsaCoberturaCupom</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="etEXFXNFDocJMSReference">
+        <dgm:body borderWidth="2" arcRad="20" X="838" Y="26" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="828" Y="19" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="etEXFXNFDocJMSReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/NFAvulsaCoberturaCupomIntegracaoBPEL/etEXFXNFDocJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/jms_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Posta_Mensagem</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="RegistroLogBPELReference">
+        <dgm:body borderWidth="2" arcRad="20" X="838" Y="144" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="828" Y="137" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="RegistroLogBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>execute</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="EmitirNFAvulsaCoberturaCupomBPELProcess">
+        <dgm:body borderWidth="2" arcRad="20" X="433" Y="84" width="130" height="86">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="423" Y="77" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="NFAvulsaCoberturaCupomDBBPEL" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1#wsdl.interface(NFAvulsaCoberturaCupomPortType)"/>
+        <dgm:outputPort name="etEXFXNFDocJMSReference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/NFAvulsaCoberturaCupomIntegracaoBPEL/etEXFXNFDocJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+        <dgm:outputPort name="RegistroLogBPELReference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="NFAvulsaCoberturaCupomDBBPEL" target="EmitirNFAvulsaCoberturaCupomBPELProcess/NFAvulsaCoberturaCupomDBBPEL" width="2">
+        <dgm:gSegment X1="168" Y1="109" X2="423" Y2="109"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="EmitirNFAvulsaCoberturaCupomBPELProcess/etEXFXNFDocJMSReference" target="etEXFXNFDocJMSReference" width="2">
+        <dgm:gSegment X1="573" Y1="109" X2="597" Y2="109"/>
+        <dgm:gSegment X1="597" Y1="109" X2="597" Y2="36"/>
+        <dgm:gSegment X1="597" Y1="36" X2="828" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="EmitirNFAvulsaCoberturaCupomBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
+        <dgm:gSegment X1="573" Y1="134" X2="597" Y2="134"/>
+        <dgm:gSegment X1="597" Y1="134" X2="597" Y2="154"/>
+        <dgm:gSegment X1="597" Y1="154" X2="828" Y2="154"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>
