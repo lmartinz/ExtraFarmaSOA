@@ -36,7 +36,8 @@
          xmlns:ns7="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
          xmlns:ns8="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-         xmlns:ns9="http://service.ultra.com.br/infcorp/LogIntegration/v1">
+         xmlns:ns9="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+         xmlns:ns10="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,14 +52,13 @@
           location="../WSDLs/etOrderFromRMSjmsService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
           ui:processWSDL="true"/>
   <partnerLinks>
-    <partnerLink name="etOrderFromRMSjmsService" partnerLinkType="ns1:Consume_Message_plt"
-                 myRole="Consume_Message_role"/>
     <partnerLink name="WritefileReference" partnerLinkType="ns6:Write_plt" partnerRole="Write_role"/>
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns8:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
+    <partnerLink name="PedidoCompraFernecedorDBBPEL" partnerLinkType="ns10:PedidoCompraFernecedorDBBPEL"
+                 myRole="PedidoCompraFernecedorPortType"/>
   </partnerLinks>
   <variables>
-    <variable name="inputReceiveMessage" messageType="ns1:Consume_Message_msg"/>
     <variable name="inputWriteFile" messageType="ns6:Write_msg"/>
     
     <variable name="pArquivo" type="xsd:string"/>
@@ -68,6 +68,7 @@
     <variable name="diretorio" type="xsd:string"/>
     <variable name="varCatchALL" messageType="bpelx:RuntimeFaultMessage"/>
     <variable name="nomeArquivo" type="xsd:string"/>
+    <variable name="inputReceiveMessage" messageType="ns10:PedidoCompraFernecedorRequest"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -97,7 +98,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:sistemaDestino</to>
               </copy>
               <copy>
-                <from>oraext:get-content-as-string($inputReceiveMessage.body)</from>
+                <from>oraext:get-content-as-string($inputReceiveMessage.parameters)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Body</to>
               </copy>
               <copy>
@@ -105,7 +106,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:nomeServico</to>
               </copy>
               <copy>
-                <from>$inputReceiveMessage.body/ns3:ribMessage/ns3:publishTime</from>
+                <from>$inputReceiveMessage.parameters/ns3:ribMessage/ns3:publishTime</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:datahoraRequisicao</to>
               </copy>
               <copy>
@@ -122,8 +123,8 @@
     </catchAll>
   </faultHandlers>
   <sequence name="main">
-    <receive name="Receive" partnerLink="etOrderFromRMSjmsService" portType="ns1:Consume_Message_ptt"
-             operation="Consume_Message" variable="inputReceiveMessage" createInstance="yes"/>
+    <receive name="Receive" partnerLink="PedidoCompraFernecedorDBBPEL" portType="ns10:PedidoCompraFernecedorPortType"
+             operation="PedidoCompraFernecedor" variable="inputReceiveMessage" createInstance="yes"/>
     <scope name="ScopeWriteFile">
       <sequence name="SequenceWriteFile">
         <assign name="AssignSetaDiretorioNomeArquivo">
@@ -132,14 +133,14 @@
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$diretorio</to>
           </copy>
           <copy>
-            <from>concat("PF",$inputReceiveMessage.body/ns3:ribMessage/ns3:messageData/ns4:PODesc/ns4:order_no,".txt")</from>
+            <from>concat("PF",$inputReceiveMessage.parameters/ns3:ribMessage/ns3:messageData/ns4:PODesc/ns4:order_no,".txt")</from>
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$nomeArquivo</to>
           </copy>
         </assign>
         <assign name="AssignEnviarPedido"
                                                  xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
           <copy>
-            <from>ora:processXQuery10('../Transformations/TransformationInputToJMSFileWrite.xqy', 'enviarPedido', $inputReceiveMessage.body)</from>
+            <from>ora:processXQuery10('../Transformations/TransformationInputToJMSFileWrite.xqy', 'enviarPedido', $inputReceiveMessage.parameters)</from>
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputWriteFile</to>
           </copy>
           <copy>
@@ -160,11 +161,11 @@
       </bpelx:exec>
    </extensionActivity>
         <assign name="ArquivoAssign" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
-      
-   <copy>
-         <from>$pArquivoBase64</from>
-         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputWriteFile.opaque</to>
-      </copy></assign>
+          <copy>
+            <from>$pArquivoBase64</from>
+            <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InputWriteFile.opaque</to>
+          </copy>
+        </assign>
         <invoke name="InvokeWriteFile" partnerLink="WritefileReference" portType="ns6:Write_ptt" operation="Write"
                 inputVariable="InputWriteFile" bpelx:invokeAsDetail="no">
           <bpelx:toProperties>

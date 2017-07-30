@@ -19,19 +19,23 @@
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
-  <service name="etOrderFromRMSjmsService" ui:wsdlLocation="WSDLs/etOrderFromRMSjmsService.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService#wsdl.interface(Consume_Message_ptt)"/>
-    <binding.jca config="Adapters/etOrderFromRMSjmsService_jms.jca">
-      <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
-    </binding.jca>
+  <import namespace="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1"
+          location="oramds:/apps/Extrafarma/Retail/PedidoCompraFornecedor/v1/WSDLs/PedidoCompraFornecedorV1Wrapper.wsdl"
+          importType="wsdl"/>
+  <service name="PedidoCompraFernecedorDBBPEL"
+           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoCompraFornecedor/v1/WSDLs/PedidoCompraFornecedorV1Wrapper.wsdl">
+    <interface.wsdl interface="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1#wsdl.interface(PedidoCompraFernecedorPortType)"/>
+    <binding.direct/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.2.0.161003</property>
   <property name="compositeID" type="xs:string" many="false">6ff71413-36fe-4526-9c7e-a3e005668c5a</property>
   <component name="PedidoCompraFornecedorBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/PedidoCompraFornecedorBPELProcess.bpel"/>
     <componentType>
-      <service name="etOrderFromRMSjmsService" ui:wsdlLocation="WSDLs/etOrderFromRMSjmsService.wsdl">
-        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService#wsdl.interface(Consume_Message_ptt)"/>
+     
+      <service name="PedidoCompraFernecedorDBBPEL"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/PedidoCompraFornecedor/v1/WSDLs/PedidoCompraFornecedorV1Wrapper.wsdl">
+        <interface.wsdl interface="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1#wsdl.interface(PedidoCompraFernecedorPortType)"/>
       </service>
       <reference name="WritefileReference" ui:wsdlLocation="WSDLs/WritefileReference.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/WritefileReference#wsdl.interface(Write_ptt)"/>
@@ -56,15 +60,15 @@
     </binding.direct>
   </reference>
   <wire>
-    <source.uri>etOrderFromRMSjmsService</source.uri>
-    <target.uri>PedidoCompraFornecedorBPELProcess/etOrderFromRMSjmsService</target.uri>
-  </wire>
-  <wire>
     <source.uri>PedidoCompraFornecedorBPELProcess/WritefileReference</source.uri>
     <target.uri>WritefileReference</target.uri>
   </wire>
   <wire>
     <source.uri>PedidoCompraFornecedorBPELProcess/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PedidoCompraFernecedorDBBPEL</source.uri>
+    <target.uri>PedidoCompraFornecedorBPELProcess/PedidoCompraFernecedorDBBPEL</target.uri>
   </wire>
 </composite>

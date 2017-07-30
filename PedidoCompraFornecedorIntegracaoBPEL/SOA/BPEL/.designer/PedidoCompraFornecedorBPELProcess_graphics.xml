@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="etOrderFromRMSjmsService" x="0" y="90" side="left"/>
+      <partnerlink name="PedidoCompraFernecedorDBBPEL" x="0" y="90" side="left"/>
       <partnerlink name="RegistroLogBPELReference" x="0" y="302" side="left"/>
-      <partnerlink name="WritefileReference" x="1055" y="616" side="right"/>
+      <partnerlink name="WritefileReference" x="1083" y="616" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="478,0,710,306" show_swimlanes="true">
+   <graph_layout viewport="329,0,887,298" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
