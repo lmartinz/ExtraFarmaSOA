@@ -75,12 +75,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
       <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
    </list>
-   <value n="defaultPackage" v="produtolocalintegracaobpel"/>
-   <hash n="oracle.ide.model.ResourcePaths">
-      <hash n="resourcesContentSet">
-         <list n="url-path"/>
-      </hash>
-   </hash>
+   <value n="defaultPackage" v="cadastroprodutolocalintegracaobpel"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
@@ -119,7 +114,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="ProdutoLocalIntegracaoBPEL">
+         <hash n="CadastroProdutoLocalIntegracaoBPEL">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -206,18 +201,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_ProdutoLocalIntegracaoBPEL.jar"/>
+            <url n="jarURL" path="deploy/sca_CadastroProdutoLocalIntegracaoBPEL.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
             <value n="profileName" v="CadastroProdutoLocalIntegracaoBPEL"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="ProdutoLocalIntegracaoBPEL"/>
+         <string v="CadastroProdutoLocalIntegracaoBPEL"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-ProdutoLocalIntegracaoBPEL-webapp"/>
-      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-ProdutoLocalIntegracaoBPEL-context-root"/>
+      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-CadastroProdutoLocalIntegracaoBPEL-webapp"/>
+      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-CadastroProdutoLocalIntegracaoBPEL-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
