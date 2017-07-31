@@ -4,10 +4,10 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="produtodbbpel" x="7" y="681" side="left"/>
-      <partnerlink name="CadastroProtoRestReference" x="3152" y="841" side="right"/>
+      <partnerlink name="CadastroProdutoBPELProcess" x="0" y="681" side="left"/>
+      <partnerlink name="CadastroProtoRestReference" x="3216" y="841" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,600,887,538" show_swimlanes="true">
+   <graph_layout viewport="0,750,887,306" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>

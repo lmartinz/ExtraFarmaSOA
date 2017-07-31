@@ -12,20 +12,22 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
   <import namespace="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1"
-          location="oramds:/apps/Extrafarma/Retail/CadastroProduto/v1/WSDLs/CadastroProdutoV1Wrapper.wsdl"
+          location="oramds:/apps/Extrafarma/Retail/ProdutoLocal/v1/WSDLs/ProdutoLocalV1Wrapper.wsdl"
           importType="wsdl"/>
-  <service name="produtodbbpel_ep"
-           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/CadastroProduto/v1/WSDLs/CadastroProdutoV1Wrapper.wsdl">
+  <service name="ProdutoLocalDBBPEL"
+           ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/ProdutoLocal/v1/WSDLs/ProdutoLocalV1Wrapper.wsdl">
     <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1#wsdl.interface(ProdutoPortType)"/>
-    <binding.ws port="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1#wsdl.endpoint(cadastroprodutodbbpel_ep/ProdutoPort)"/>
+    <binding.ws port="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1#wsdl.endpoint(cadastroprodutodbbpel_ep/ProdutoPort)">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
+    </binding.ws>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.2.0.161003</property>
   <property name="compositeID" type="xs:string" many="false">65dd9dcd-e1cc-440f-91b5-b12c3b9b7d10</property>
-  <component name="ProdutoDBBPEL" version="2.0">
-    <implementation.bpel src="BPEL/ProdutoDBBPEL.bpel"/>
+  <component name="CadastroProdutoBPELProcess" version="2.0">
+    <implementation.bpel src="BPEL/CadastroProdutoBPELProcess.bpel"/>
     <componentType>
-      <service name="produtodbbpel"
-               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/CadastroProduto/v1/WSDLs/CadastroProdutoV1Wrapper.wsdl">
+      <service name="CadastroProdutoBPELProcess"
+               ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/ProdutoLocal/v1/WSDLs/ProdutoLocalV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1#wsdl.interface(ProdutoPortType)"/>
       </service>
       <reference name="CadastroProtoRestReference">
@@ -38,15 +40,15 @@
     <binding.rest config="WADLs/CadastroProtoRestReference.wadl" location="http://localhost"/>
   </reference>
   <wire>
-    <source.uri>produtodbbpel_ep</source.uri>
-    <target.uri>ProdutoDBBPEL/produtodbbpel</target.uri>
+    <source.uri>ProdutoLocalDBBPEL</source.uri>
+    <target.uri>CadastroProdutoBPELProcess/CadastroProdutoBPELProcess</target.uri>
   </wire>
   <wire>
-    <source.uri>ProdutoDBBPEL/CadastroProtoRestReference</source.uri>
+    <source.uri>CadastroProdutoBPELProcess/CadastroProtoRestReference</source.uri>
     <target.uri>ProtoRestReference</target.uri>
   </wire>
   <wire>
-    <source.uri>ProdutoDBBPEL/CadastroProtoRestReference</source.uri>
+    <source.uri>CadastroProdutoBPELProcess/CadastroProtoRestReference</source.uri>
     <target.uri>CadastroProtoRestReference</target.uri>
   </wire>
 </composite>

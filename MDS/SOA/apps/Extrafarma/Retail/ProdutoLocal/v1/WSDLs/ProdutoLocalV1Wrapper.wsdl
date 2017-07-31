@@ -11,5 +11,6 @@
     <plnk:partnerLinkType name="CadastroProdutoDBBPEL">
         <plnk:role name="ProdutoPortType" portType="tns:ProdutoPortType"/>
     </plnk:partnerLinkType>
-    <wsdl:import namespace="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1" location="CadastroProdutoV1.wsdl"/>
+    <wsdl:import namespace="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1"
+                 location="ProdutoLocalV1.wsdl"/>
 </wsdl:definitions>
