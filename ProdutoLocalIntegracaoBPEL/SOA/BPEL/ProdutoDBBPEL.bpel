@@ -8,7 +8,7 @@
   Purpose: Synchronous BPEL Process
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
-<process name="CadastroProdutoDBBPEL"
+<process name="ProdutoDBBPEL"
                targetNamespace="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoLocal/v1"
                xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
                xmlns:client="http://xmlns.oracle.com/AppExtrafarmaSOA/ProdutoLocal/v1"
@@ -54,7 +54,7 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="cadastroprodutodbbpel" partnerLinkType="ns1:CadastroProdutoDBBPEL" myRole="ProdutoPortType"/>
+    <partnerLink name="produtodbbpel" partnerLinkType="ns1:CadastroProdutoDBBPEL" myRole="ProdutoPortType"/>
     <partnerLink name="CadastroProtoRestReference" bpelx:wadl="yes"/>
   </partnerLinks>
 
@@ -105,7 +105,7 @@
                </copy></assign>
          </else>
       </if>
-      <reply name="replyCatchOutput" partnerLink="cadastroprodutodbbpel" variable="outputVariable"
+      <reply name="replyCatchOutput" partnerLink="produtodbbpel" variable="outputVariable"
              portType="ns1:ProdutoPortType"
              operation="cadastrarProdutoLocal"/>
    </sequence></catchAll>
@@ -120,7 +120,7 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in CadastroProdutoDBBPEL.wsdl) -->
-    <receive name="receiveInput" partnerLink="cadastroprodutodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="produtodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="inputVariable" createInstance="yes"/>
     <scope name="ScopeEnriquecimento">
       <sequence name="SequenceEnriquecimento">
         <assign name="AssignParseMessageData" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
@@ -371,6 +371,6 @@
             <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns5:success</to>
          </copy></assign>
    </sequence><!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="cadastroprodutodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="produtodbbpel" portType="ns1:ProdutoPortType" operation="cadastrarProdutoLocal" variable="outputVariable"/>
   </sequence>
 </process>
