@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="etStockOrdersISOJMSReference" x="0" y="90" side="left"/>
-      <partnerlink name="RegistroLogBPELReference" x="0" y="699" side="left"/>
-      <partnerlink name="TransferenciaMercadoriaCDReference" x="1229" y="496" side="right"/>
+      <partnerlink name="etItemLocFromRMSJMSReference" x="0" y="90" side="left"/>
+      <partnerlink name="RegistroLogBPELReference" x="1208" y="685" side="right"/>
+      <partnerlink name="ProdutoLocalReference" x="1208" y="496" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,150,1138,334" show_swimlanes="true">
+   <graph_layout viewport="0,375,1138,334" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/if/scope" type="scope" showhandlers="true"/>

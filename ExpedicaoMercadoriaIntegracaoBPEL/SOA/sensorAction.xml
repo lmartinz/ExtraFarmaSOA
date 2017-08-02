@@ -4,9 +4,9 @@
         <property name="JMSConnectionFactory"/>
     </action>
     <action name="DBSensorAction" enabled="true" publishType="BpelReportsSchema" publishName="" filter="" publishTarget="">
+        <sensorName>numeroPedido</sensorName>
         <sensorName>codigoLocalDestino</sensorName>
         <sensorName>codigoLocalOrigem</sensorName>
-        <sensorName>numeroPedido</sensorName>
     </action>
     <action name="JMSSensorAction_codigoLocalOrigem" enabled="false" publishType="JMSQueue" publishTarget="">
         <property name="JMSConnectionFactory"/>

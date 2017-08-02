@@ -1,6 +1,6 @@
 <adapter-config name="etStkOrdersFromRIBToWH1JMSReference" adapter="jms" wsdlLocation="../WSDLs/etStkOrdersFromRIBToWH1JMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etStkOrdersFromRIBToWH1" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etStkOrdersFromRIBToWH1" UIJmsProvider="OJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
       <property name="DestinationName" value="topic/etStkOrdersFromRIBToWH1"/>

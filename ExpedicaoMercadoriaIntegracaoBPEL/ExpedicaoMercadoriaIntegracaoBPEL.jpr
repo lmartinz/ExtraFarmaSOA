@@ -86,6 +86,8 @@
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
+         <string v="WSDL"/>
+         <string v="WSPolicy"/>
          <string v="XML"/>
          <string v="XML_SCHEMA"/>
       </list>
@@ -110,6 +112,8 @@
          <string v=".xml"/>
          <string v=".xsd"/>
          <string v=".xsl"/>
+         <string v=".exm"/>
+         <string v=".xml"/>
          <string v=".exm"/>
          <string v=".xml"/>
       </list>
@@ -233,7 +237,7 @@
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
             <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
-               <value n="remoteParameter:SOA:hostname" v="ASUS-G73JW"/>
+               <value n="remoteParameter:SOA:hostname" v="ASUS-YONAWARE"/>
                <value n="remoteParameter:SOA:port" v="5004"/>
                <value n="remoteProtocol" v="SOA"/>
             </hash>
@@ -301,6 +305,18 @@
    </hash>
    <hash n="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider">
       <hash n="sca-content">
+         <list n="constituent-sets">
+            <hash>
+               <list n="url-path">
+                  <url path="../MDS/SOA/apps/Extrafarma/Retail/ExpedicaoMercadoria/v1/WSDLs/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="url-path">
+                  <url path="SOA/"/>
+               </list>
+            </hash>
+         </list>
          <list n="url-path">
             <url path="SOA/"/>
          </list>

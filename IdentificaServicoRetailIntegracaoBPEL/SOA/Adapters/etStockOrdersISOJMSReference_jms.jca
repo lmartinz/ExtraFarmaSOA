@@ -1,6 +1,6 @@
 <adapter-config name="etStockOrdersISOJMSReference" adapter="jms" wsdlLocation="../WSDLs/etStockOrdersISOJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etStockOrdersISO" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etStockOrdersISO" UIJmsProvider="OJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
       <property name="DestinationName" value="eis/aqjms/etStockOrdersISO"/>

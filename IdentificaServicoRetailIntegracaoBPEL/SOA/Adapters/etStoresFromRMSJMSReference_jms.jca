@@ -1,6 +1,6 @@
 <adapter-config name="etStoresFromRMSJMSReference" adapter="jms" wsdlLocation="../WSDLs/etStoresFromRMSJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etStoresFromRMS" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etStoresFromRMS" UIJmsProvider="OJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
       <property name="DestinationName" value="topic/etStoresFromRMS"/>

@@ -8,11 +8,13 @@
      xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
      xmlns:ns1="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+     xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/jms/"
     >
     <plnk:partnerLinkType name="MercadoriaAtacadoDBBPEL">
         <plnk:role name="MercadoriaAtacadoPortType" portType="tns:MercadoriaAtacadoPortType"/>
     </plnk:partnerLinkType>
     <wsdl:import namespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1" location="MercadoriaAtacadoV1.wsdl"/>
+    <wsdl:import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/" location="jmsAdapterOutboundHeader.wsdl"/>
     <wsdl:types>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <xsd:import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1" schemaLocation="oramds:/apps/Extrafarma/Retail/Comum/v1/Schemas/MetaInformacao.xsd"/>

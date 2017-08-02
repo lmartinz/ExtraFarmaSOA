@@ -28,8 +28,14 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>{xs:string('exfxnfdoc')}</tns:family>
-            <tns:type>{xs:string('exfxnfdoccre')}</tns:type>
+            <tns:family>exfxnfdoc</tns:family>
+            <tns:type>exfxnfdoccre</tns:type>
+            <tns:id>
+               <xsl:value-of select="/ns0:DevolucaoMercadoriaAtacadoRequest/RmaList/chaveNotaOrigem"/>
+            </tns:id>
+            <tns:ribmessageID>
+               <xsl:value-of select="concat('ERPImifarma_exfxnfdoc_sub_1|', xp20:current-dateTime(),'|')"/>
+            </tns:ribmessageID>
             <tns:publishTime>
                <xsl:value-of select="xp20:current-dateTime()"/>
             </tns:publishTime>

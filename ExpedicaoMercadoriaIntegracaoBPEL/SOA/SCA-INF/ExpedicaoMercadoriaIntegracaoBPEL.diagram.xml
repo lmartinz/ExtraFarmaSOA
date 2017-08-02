@@ -8,19 +8,18 @@
         <dgm:shadow arcRad="20" X="11" Y="92" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:outputPort name="ExpedicaoMercadoriaDBBPEL" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
+        <dgm:outputPort name="ExpedicaoMercadoriaDBBPEL" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
-        <dgm:sensorIcon URI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/sensor.png" X="111" Y="8" width="12" height="12"/>
         <dgm:operations>
             <dgm:item>notificarExpedicaoMercadoria</dgm:item>
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="RegistroLogBPELReference">
-        <dgm:body borderWidth="2" arcRad="20" X="930" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="848" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="920" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="838" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="RegistroLogBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
@@ -30,11 +29,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="etASNOutJMSReference">
-        <dgm:body borderWidth="2" arcRad="20" X="930" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="848" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="920" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="838" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="etASNOutJMSReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/ExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
@@ -43,36 +42,36 @@
             <dgm:item>Posta_Mensagem</dgm:item>
         </dgm:operations>
     </dgm:gReference>
-    <dgm:gComponent name="ExpedicaoMercadoriaBPELProcess">
-        <dgm:body borderWidth="2" arcRad="20" X="479" Y="84" width="130" height="86">
+    <dgm:gComponent name="NotificarExpedicaoMercadoriaBPEL">
+        <dgm:body borderWidth="2" arcRad="20" X="438" Y="84" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="469" Y="77" width="150" height="102">
+        <dgm:shadow arcRad="20" X="428" Y="77" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:inputPort name="expedicaomercadoriabpelprocess_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
+        <dgm:inputPort name="ExpedicaoMercadoriaDBBPEL" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1#wsdl.interface(ExpedicaoMercadoriaPortType)"/>
         <dgm:outputPort name="RegistroLogBPELReference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
         <dgm:outputPort name="etASNOutJMSReference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/ExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
-    <dgm:gWireLink source="ExpedicaoMercadoriaBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
-        <dgm:gSegment X1="619" Y1="109" X2="643" Y2="109"/>
-        <dgm:gSegment X1="643" Y1="109" X2="643" Y2="36"/>
-        <dgm:gSegment X1="643" Y1="36" X2="920" Y2="36"/>
+    <dgm:gWireLink source="NotificarExpedicaoMercadoriaBPEL/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
+        <dgm:gSegment X1="578" Y1="109" X2="602" Y2="109"/>
+        <dgm:gSegment X1="602" Y1="109" X2="602" Y2="36"/>
+        <dgm:gSegment X1="602" Y1="36" X2="838" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="ExpedicaoMercadoriaBPELProcess/etASNOutJMSReference" target="etASNOutJMSReference" width="2">
-        <dgm:gSegment X1="619" Y1="134" X2="643" Y2="134"/>
-        <dgm:gSegment X1="643" Y1="134" X2="643" Y2="154"/>
-        <dgm:gSegment X1="643" Y1="154" X2="920" Y2="154"/>
+    <dgm:gWireLink source="NotificarExpedicaoMercadoriaBPEL/etASNOutJMSReference" target="etASNOutJMSReference" width="2">
+        <dgm:gSegment X1="578" Y1="134" X2="602" Y2="134"/>
+        <dgm:gSegment X1="602" Y1="134" X2="602" Y2="154"/>
+        <dgm:gSegment X1="602" Y1="154" X2="838" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="ExpedicaoMercadoriaDBBPEL" target="ExpedicaoMercadoriaBPELProcess/expedicaomercadoriabpelprocess_client" width="2">
-        <dgm:gSegment X1="168" Y1="109" X2="469" Y2="109"/>
+    <dgm:gWireLink source="ExpedicaoMercadoriaDBBPEL" target="NotificarExpedicaoMercadoriaBPEL/ExpedicaoMercadoriaDBBPEL" width="2">
+        <dgm:gSegment X1="168" Y1="109" X2="428" Y2="109"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

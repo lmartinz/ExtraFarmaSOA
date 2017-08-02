@@ -1,6 +1,6 @@
 <adapter-config name="etEXFBrInvoicesJMSReference" adapter="jms" wsdlLocation="../WSDLs/etEXFBrInvoicesJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etEXFBrInvoices" UIJmsProvider="WLSJMS"/>
+  <connection-factory location="eis/aqjms/etEXFBrInvoices" UIJmsProvider="OJMS"/>
   <endpoint-activation portType="Consume_Message_ptt" operation="Consume_Message">
     <activation-spec className="oracle.tip.adapter.jms.inbound.JmsConsumeActivationSpec">
       <property name="DestinationName" value="topic/etEXFBrInvoices"/>
