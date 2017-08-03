@@ -4,8 +4,8 @@
      xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoReservaIntegracaoBPEL/etFulfillOrderJMSReference"
      xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
      xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
-     xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:imp1="http://www.oracle.com/retail/integration/rib/RibMessages"
     >
   <plt:partnerLinkType name="Posta_Mensagem_plt" >
     <plt:role name="Posta_Mensagem_role" >

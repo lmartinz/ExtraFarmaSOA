@@ -45,7 +45,21 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-
+            <tns:family>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "061076100", "family", "receiving" )'/>
+            </tns:family>
+            <tns:type>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "061076100", "type", "receiptcre" )'/>
+            </tns:type>
+            <tns:id>
+               <xsl:value-of select="/ns0:NotificarRecebimentoMercadoriaRequest/codigoAgendamento"/>
+            </tns:id>
+            <tns:ribmessageID>
+               <xsl:value-of select="concat('ERPImifarma_receiving_sub_1|', xp20:current-dateTime(),'|')"/>
+            </tns:ribmessageID>
+            <tns:publishTime>
+               <xsl:value-of select="xp20:current-dateTime ( )"/>
+            </tns:publishTime>
             <tns:messageData>
                <ns2:ReceiptDesc>
                   <ns2:schedule_nbr>
@@ -134,9 +148,9 @@
                   </xsl:for-each>
                </ns2:ReceiptDesc>
             </tns:messageData>
-            <!-- <tns:customFlag>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '061076100', 'customFlag', '')"/>
-            </tns:customFlag>-->
+            <tns:customFlag>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "061076100", "customFlag", "F" )'/>
+            </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

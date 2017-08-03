@@ -115,15 +115,15 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:status</to>
               </copy>
               <copy>
-                <from>oraext:get-content-as-string($inputVariable)</from>
+                <from>oraext:get-content-as-string($inputVariable.parameters)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns3:Body</to>
               </copy>
               <copy>
-                <from>'RecebimentoMercadoriaRestHTTP'</from>
+                <from>'RecebimentoMercadoriaIntegracaoBPEL'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:nomeServico</to>
               </copy>
               <copy>
-                <from>'RecebimentoMercadoriaBPELErro'</from>
+                <from>'NotificarRecebimentoMercadoriaBPELProcess'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:passoFluxo</to>
               </copy>
               <copy>
@@ -189,9 +189,20 @@
           <to variable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
+      <assign name="AssignId">
+        <copy>
+          <from>concat($PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable.body/ns5:ribMessage/ns5:ribmessageID, ora:getFlowId())</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable.body/ns5:ribMessage/ns5:ribmessageID</to>
+        </copy>
+      </assign>
       <invoke name="PostaMensagemetReceivingJMS" partnerLink="etReceivingJMSReference"
               portType="ns4:Posta_Mensagem_ptt" operation="Posta_Mensagem"
-              inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" bpelx:invokeAsDetail="no"/>
+              inputVariable="PostaMensagemetReceivingJMS_Posta_Mensagem_InputVariable" bpelx:invokeAsDetail="no">
+        <bpelx:toProperties>
+          <bpelx:toProperty name="jca.jms.JMSProperty.threadValue">"1"</bpelx:toProperty>
+          <bpelx:toProperty name="jca.jms.JMSPriority">5</bpelx:toProperty>
+        </bpelx:toProperties>
+      </invoke>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
@@ -200,27 +211,27 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:sistemaDestino</to>
         </copy>
         <copy>
-          <from>$MetaInformacaoVariable/ns3:datahoraRequisicao</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:datahoraRequisicao</to>
-        </copy>
-        <copy>
-          <from>'RecebimentoMercadoriaRestHTTP'</from>
+          <from>'RecebimentoMercadoriaIntegracaoBPEL'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:nomeServico</to>
         </copy>
         <copy>
-          <from>$MetaInformacaoVariable/ns3:idControle</from>
+          <from>xp20:current-dateTime()</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:datahoraRequisicao</to>
+        </copy>
+        <copy>
+          <from>ora:getFlowId()</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:idControle</to>
         </copy>
         <copy>
-          <from>$MetaInformacaoVariable/ns3:usuario</from>
+          <from>'legado'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:usuario</to>
         </copy>
         <copy>
-          <from>oraext:get-content-as-string($inputVariable)</from>
+          <from>oraext:get-content-as-string($inputVariable.parameters)</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Body</to>
         </copy>
         <copy>
-          <from>'RecebimentoMercadoriaIntegracaoBPELProcessed'</from>
+          <from>'NotificarRecebimentoMercadoriaBPELProcess'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:passoFluxo</to>
         </copy>
         <copy>
@@ -232,7 +243,7 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:status</to>
         </copy>
         <copy>
-          <from>$MetaInformacaoVariable/ns3:sistemaOrigem</from>
+          <from>'LEGADO'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns3:Header/ns3:MetaInformacao/ns3:sistemaOrigem</to>
         </copy>
       </assign>

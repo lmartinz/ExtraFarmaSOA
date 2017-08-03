@@ -28,11 +28,18 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>exfxnfdoc</tns:family>
-            <tns:type>exfxnfdoccre</tns:type>
+            <tns:family>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "family", "exfxnfdoc" )'/>
+            </tns:family>
+            <tns:type>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "type", "exfxnfdoccre" )'/>
+            </tns:type>
             <tns:id>
                <xsl:value-of select="/ns0:EmitirNFAvulsaCoberturaCupomRequest/OperacaoCupomFiscalList/numeroContadorOrdemOperacao"/>
             </tns:id>
+            <tns:ribmessageID>
+               <xsl:value-of select="concat ('ERPImifarma_exfxnfdoc_sub_1|', xp20:current-dateTime(),'|')"/>
+            </tns:ribmessageID>
             <tns:publishTime>
                <xsl:value-of select="xp20:current-dateTime ( )"/>
             </tns:publishTime>
@@ -163,7 +170,9 @@
                   </ns3:nf_other_expense>
                </ns3:EXFXNFDocDesc>
             </tns:messageData>
-            <tns:customFlag>F</tns:customFlag>
+            <tns:customFlag>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "customFlag", "F" )'/>
+            </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

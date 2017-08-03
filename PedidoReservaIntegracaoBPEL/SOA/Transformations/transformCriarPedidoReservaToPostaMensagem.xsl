@@ -14,7 +14,9 @@
                 xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1"
                 xmlns:ns8="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1"
                 xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtlRef/v1"
-                xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/FulfilOrdRef/v1">
+                xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/FulfilOrdRef/v1"
+                xmlns:ns11="http://canonico.ultra.com.br/LegadoOutput/v1"
+                xmlns:Q5="http://canonico.ultra.com.br/LegadoFault/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>
@@ -36,11 +38,20 @@
       <tns:RibMessages>
          <tns:ribMessage>
             <tns:family>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '035', 'family', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "035", "family", "fulfilord" )'/>
             </tns:family>
             <tns:type>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '035', 'type', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "035", "type", "fulfilordtsfcre" )'/>
             </tns:type>
+            <tns:id>
+               <xsl:value-of select="/ns0:CriarPedidoReservaRequest/codigoPedidoAtendimento"/>
+            </tns:id>
+            <tns:ribmessageID>
+               <xsl:value-of select="concat('ERPImifarma_fulfilord_sub_1|', xp20:current-dateTime(),'|')"/>
+            </tns:ribmessageID>
+            <tns:publishTime>
+               <xsl:value-of select="xp20:current-dateTime ( )"/>
+            </tns:publishTime>
             <tns:messageData>
                <ns7:FulfilOrdDesc>
                   <ns7:customer_order_no>
@@ -291,7 +302,7 @@
                </ns7:FulfilOrdDesc>
             </tns:messageData>
             <tns:customFlag>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '035', 'customFlag', '')"/>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "035", "customFlag", "F" )'/>
             </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>

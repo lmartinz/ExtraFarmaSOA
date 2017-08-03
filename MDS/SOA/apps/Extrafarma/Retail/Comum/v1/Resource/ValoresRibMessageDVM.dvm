@@ -7,7 +7,6 @@
     <column name="family"/>
     <column name="type"/>
     <column name="customFlag"/>
-    <column name="sistemaOrigem"/>
   </columns>
   <rows>
     <row markdefault="false">
@@ -15,55 +14,71 @@
       <cell>rtv</cell>
       <cell>rtvcre</cell>
       <cell>F</cell>
-      <cell>ERPImifarma</cell>
+    </row>
+    <row markdefault="false">
+      <cell>021</cell>
+      <cell>exfxprcchg</cell>
+      <cell>exfxprcchgcre</cell>
+      <cell>F</cell>
     </row>
     <row markdefault="false">
       <cell>061076100</cell>
       <cell>receiving</cell>
       <cell>receiptcre</cell>
       <cell>F</cell>
-      <cell>ERPImifarma</cell>
     </row>
     <row markdefault="false">
       <cell>032CRIAR</cell>
       <cell>xtsf</cell>
       <cell>xtsfcre</cell>
       <cell>F</cell>
-      <cell>ExtrafarmaWeb</cell>
     </row>
     <row markdefault="false">
       <cell>032CANCELAR</cell>
       <cell>xtsf</cell>
       <cell>xtsfdel</cell>
       <cell>F</cell>
-      <cell>ExtrafarmaWeb</cell>
     </row>
     <row markdefault="false">
       <cell>059</cell>
       <cell>invadjust</cell>
       <cell>invadjustcre</cell>
       <cell>F</cell>
-      <cell>ERPImifarma</cell>
     </row>
     <row markdefault="false">
-      <cell>130</cell>
+      <cell>067</cell>
+      <cell>sostatus</cell>
+      <cell>sostatuscre</cell>
+      <cell>F</cell>
+    </row>
+    <row markdefault="false">
+      <cell>130085</cell>
       <cell>exfxnfdoc</cell>
       <cell>exfxnfdoccre</cell>
       <cell>F</cell>
-      <cell>PDV</cell>
     </row>
     <row markdefault="false">
-      <cell>id-value7</cell>
       <cell>055</cell>
-      <cell>Items</cell>
-      <cell>ItemSupMod</cell>
+      <cell>asnout</cell>
+      <cell>asnoutcre</cell>
       <cell>F</cell>
     </row>
     <row markdefault="false">
-      <cell>id-value8</cell>
       <cell>080</cell>
       <cell>shipinfo</cell>
       <cell>shipinfocre</cell>
+      <cell>F</cell>
+    </row>
+    <row markdefault="false">
+      <cell>035</cell>
+      <cell>fulfilord</cell>
+      <cell>fulfilordtsfcre</cell>
+      <cell>F</cell>
+    </row>
+    <row markdefault="false">
+      <cell>072</cell>
+      <cell>fulfilord</cell>
+      <cell>fulfilordapprdel</cell>
       <cell>F</cell>
     </row>
   </rows>

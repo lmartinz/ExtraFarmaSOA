@@ -108,7 +108,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
               </copy>
               <copy>
-                <from>'MercadoriaAtacadoIntegracaoBPEL Erro'</from>
+                <from>'DevolucaoMercadoriaAtacadoBPELProcess'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
               </copy>
               <copy>
@@ -212,7 +212,7 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
         </copy>
         <copy>
-          <from>'MercadoriaAtacadoIntegracaoBPEL Return'</from>
+          <from>'DevolucaoMercadoriaAtacadoBPELProcess'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
         </copy>
         <copy>

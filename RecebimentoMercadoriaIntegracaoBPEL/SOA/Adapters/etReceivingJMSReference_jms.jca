@@ -1,9 +1,10 @@
 <adapter-config name="etReceivingJMSReference" adapter="jms" wsdlLocation="../WSDLs/etReceivingJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etReceiving" UIJmsProvider="WLSJMS"/>
+  <connection-factory UIConnectionName="extrafarma" location="eis/aqjms/etReceiving" UIJmsProvider="OJMS"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
     <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
       <property name="TimeToLive" value="0"/>
+      <property name="Priority" value="0"/>
       <property name="DestinationName" value="topic/etReceiving"/>
       <property name="DeliveryMode" value="Persistent"/>
       <property name="PayloadType" value="TextMessage"/>
