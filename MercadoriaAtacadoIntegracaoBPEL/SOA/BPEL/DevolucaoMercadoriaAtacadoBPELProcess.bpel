@@ -41,7 +41,7 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/" location="../WSDLs/jmsAdapterOutboundHeader.wsdl"
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/" location="oramds:/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1"
           location="../WSDLs/MercadoriaAtacadoV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -66,7 +66,6 @@
     <variable name="outputVariable" messageType="ns1:DevolucaoMercadoriaAtacadoResponse"/>
     <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao"/>
     <variable name="DevolucaoMercadoriaAtacadoFaultMsg" messageType="ns1:DevolucaoMercadoriaAtacadoFaultMsg"/>
-    <variable name="JMSOutboundHeaderAndProperties" element="ns6:JMSOutboundHeadersAndProperties"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -171,27 +170,20 @@
           <to variable="inputPostaMensagemetEXFXNFDocJMS" part="body"/>
         </copy>
       </assign>
-      <assign name="assignThreadProperties">
-        <copy>
-          <from>'threadValue'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns6:JMSOutboundProperties/ns6:Property/@name</to>
-        </copy>
+      <assign name="AssignId">
         <copy>
           <from>concat($inputPostaMensagemetEXFXNFDocJMS.body/ns7:ribMessage/ns7:ribmessageID, ora:getFlowId())</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemetEXFXNFDocJMS.body/ns7:ribMessage/ns7:ribmessageID</to>
         </copy>
-        <copy>
-          <from>'String'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns6:JMSOutboundProperties/ns6:Property/@type</to>
-        </copy>
-        <copy>
-          <from>'1'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns6:JMSOutboundProperties/ns6:Property/@value</to>
-        </copy>
       </assign>
       <invoke name="PostaMensagemetEXFXNFDocJMS" partnerLink="etEXFXNFDocJMSReference" portType="ns2:Posta_Mensagem_ptt"
               operation="Posta_Mensagem" inputVariable="inputPostaMensagemetEXFXNFDocJMS"
-              bpelx:invokeAsDetail="no" bpelx:inputHeaderVariable="JMSOutboundHeaderAndProperties"/>
+              bpelx:invokeAsDetail="no" bpelx:inputHeaderVariable="JMSOutboundHeaderAndProperties">
+        <bpelx:toProperties>
+          <bpelx:toProperty name="jca.jms.JMSProperty.threadValue">"1"</bpelx:toProperty>
+          <bpelx:toProperty name="jca.jms.JMSPriority">5</bpelx:toProperty>
+        </bpelx:toProperties>
+      </invoke>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
@@ -200,12 +192,12 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Body</to>
         </copy>
         <copy>
-          <from>'legado'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
-        </copy>
-        <copy>
           <from>ora:getFlowId()</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable/ns4:usuario</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
         </copy>
         <copy>
           <from>'LEGADO'</from>

@@ -1,12 +1,13 @@
 <adapter-config name="EtShipInfoJMSReference" adapter="jms" wsdlLocation="../WSDLs/EtShipInfoJMSReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/aqjms/etShipInfo" UIJmsProvider="THIRDPARTY"/>
+  <connection-factory location="eis/aqjms/etShipInfo" UIJmsProvider="OJMS"/>
   <endpoint-interaction portType="Posta_Mensagem_ptt" operation="Posta_Mensagem">
     <interaction-spec className="oracle.tip.adapter.jms.outbound.JmsProduceInteractionSpec">
       <property name="TimeToLive" value="0"/>
-      <property name="DestinationName" value="Topics/etShipInfo"/>
+      <property name="DestinationName" value="topic/etShipInfo"/>
       <property name="DeliveryMode" value="Persistent"/>
       <property name="PayloadType" value="TextMessage"/>
+      <property name="Priority" value="0"/>
     </interaction-spec>
   </endpoint-interaction>
 

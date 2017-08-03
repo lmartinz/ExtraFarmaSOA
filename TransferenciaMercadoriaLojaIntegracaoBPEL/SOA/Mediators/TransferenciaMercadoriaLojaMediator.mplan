@@ -4,10 +4,6 @@
    <operation name="criarTransferenciaMercadoriaLoja" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
       <switch>
          <case executionType="sequential"
-               name="TransferenciaMercadoriaLojaBPELProcess.transferenciamercadorialojabpelprocess_client.criarTransferenciaMercadoriaLoja">
-            <action/>
-         </case>
-         <case executionType="sequential"
                name="CriarTransferenciaMercadoriaLojaBPELProcess.criartransferenciamercadorialojabpelprocess_client.criarTransferenciaMercadoriaLoja">
             <action>
                <invoke reference="CriarTransferenciaMercadoriaLojaBPELProcess.criartransferenciamercadorialojabpelprocess_client"
@@ -25,10 +21,6 @@
    </operation>
    <operation name="cancelarTransferenciaMercadoriaLoja" deliveryPolicy="AllOrNothing" priority="4" validateSchema="false">
       <switch>
-         <case executionType="sequential"
-               name="CancelarTransferenciaMercadoriaLojaBPELProcess.cancelartransferenciamercadorialojabpelprocess_client.cancelarTransferenciaMercadoriaLoja">
-            <action/>
-         </case>
          <case executionType="sequential"
                name="CancelarTransferenciaMercadoriaLojaBPELProcess.TransferenciaMercadoriaLojaDBBPEL.cancelarTransferenciaMercadoriaLoja">
             <action>

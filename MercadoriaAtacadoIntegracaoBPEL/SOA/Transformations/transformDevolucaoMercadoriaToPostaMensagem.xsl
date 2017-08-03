@@ -28,8 +28,12 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>exfxnfdoc</tns:family>
-            <tns:type>exfxnfdoccre</tns:type>
+            <tns:family>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "family", "exfxnfdoc" )'/>
+            </tns:family>
+            <tns:type>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "type", "exfxnfdoccre" )'/>
+            </tns:type>
             <tns:id>
                <xsl:value-of select="/ns0:DevolucaoMercadoriaAtacadoRequest/RmaList/chaveNotaOrigem"/>
             </tns:id>
@@ -64,7 +68,7 @@
                         <xsl:value-of select="/ns0:DevolucaoMercadoriaAtacadoRequest/Cliente/nome"/>
                      </ns3:customer_name>
                      <ns3:customer_cpf>
-                        <xsl:value-of select="/ns0:DevolucaoMercadoriaAtacadoRequest/Cliente/cpfCnpj"/>
+                        <xsl:value-of select="number(/ns0:DevolucaoMercadoriaAtacadoRequest/Cliente/cpfCnpj)"/>
                      </ns3:customer_cpf>
                      <ns3:customer_add1>
                         <xsl:value-of select="/ns0:DevolucaoMercadoriaAtacadoRequest/Cliente/endereco"/>
@@ -154,7 +158,9 @@
                   </xsl:for-each>
                </ns3:EXFXNFDocDesc>
             </tns:messageData>
-            <tns:customFlag>F</tns:customFlag>
+            <tns:customFlag>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "130085", "customFlag", "F" )'/>
+            </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

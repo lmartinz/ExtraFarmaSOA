@@ -10,7 +10,7 @@
   <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
           location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/ExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference"
-          location="WSDLs/etASNOutJMSReference.wsdl"
+          location="WSDLs/etASNInJMSReference.wsdl"
           importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
           location="WSDLs/ExpedicaoMercadoriaV1.wsdl" importType="wsdl"/>
@@ -34,7 +34,7 @@
                  ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPELWrapper.wsdl">
         <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
       </reference>
-      <reference name="etASNOutJMSReference" ui:wsdlLocation="WSDLs/etASNOutJMSReference.wsdl">
+      <reference name="etASNInJMSReference" ui:wsdlLocation="WSDLs/etASNInJMSReference.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/ExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
       </reference>
     </componentType>
@@ -48,18 +48,18 @@
       <property name="java.naming.provider.url">t3://efbrmtzvlx154:13410,efbrmtzvlx153:13420,efbrmtzvlx153:13410,efbrmtzvlx154:13420</property>
     </binding.direct>
   </reference>
-  <reference name="etASNOutJMSReference"
-             ui:wsdlLocation="WSDLs/etASNOutJMSReference.wsdl">
+  <reference name="etASNInJMSReference"
+             ui:wsdlLocation="WSDLs/etASNInJMSReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/ExpedicaoMercadoriaIntegracaoBPEL/etASNOutJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
-    <binding.jca config="Adapters/etASNOutJMSReference_jms.jca"/>
+    <binding.jca config="Adapters/etASNInJMSReference_jms.jca"/>
   </reference>
   <wire>
     <source.uri>NotificarExpedicaoMercadoriaBPEL/RegistroLogBPELReference</source.uri>
     <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
   <wire>
-    <source.uri>NotificarExpedicaoMercadoriaBPEL/etASNOutJMSReference</source.uri>
-    <target.uri>etASNOutJMSReference</target.uri>
+    <source.uri>NotificarExpedicaoMercadoriaBPEL/etASNInJMSReference</source.uri>
+    <target.uri>etASNInJMSReference</target.uri>
   </wire>
   <wire>
     <source.uri>ExpedicaoMercadoriaDBBPEL</source.uri>

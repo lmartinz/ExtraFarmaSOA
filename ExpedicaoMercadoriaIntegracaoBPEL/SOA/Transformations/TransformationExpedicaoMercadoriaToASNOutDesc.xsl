@@ -20,7 +20,7 @@
       </oracle-xsl-mapper:mapSources>
       <oracle-xsl-mapper:mapTargets>
          <oracle-xsl-mapper:target type="WSDL">
-            <oracle-xsl-mapper:schema location="../WSDLs/etASNOutJMSReference.wsdl"/>
+            <oracle-xsl-mapper:schema location="../WSDLs/etASNInJMSReference.wsdl"/>
             <oracle-xsl-mapper:rootElement name="RibMessages" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
          </oracle-xsl-mapper:target>
       </oracle-xsl-mapper:mapTargets>
@@ -30,8 +30,12 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>asnout</tns:family>
-            <tns:type>asnoutcre</tns:type>
+            <tns:family>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "055", "family", "asnout" )'/>
+            </tns:family>
+            <tns:type>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "055", "type", "asnoutcre" )'/>
+            </tns:type>
             <tns:id>
                <xsl:value-of select="/ns0:NotificarExpedicaoMercadoriaRequest/numeroPedido"/>
             </tns:id>
@@ -109,7 +113,9 @@
                   </xsl:for-each>
                </ns3:ASNOutDesc>
             </tns:messageData>
-            <tns:customFlag>F</tns:customFlag>
+            <tns:customFlag>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "055", "customFlag", "F" )'/>
+            </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

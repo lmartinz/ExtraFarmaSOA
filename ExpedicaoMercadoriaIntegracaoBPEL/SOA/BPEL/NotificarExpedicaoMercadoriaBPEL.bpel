@@ -44,8 +44,6 @@
         List of services participating in this BPEL process               
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     -->
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/" location="oramds:/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl"
-          importType="http://schemas.xmlsoap.org/wsdl/"/>
 <import namespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
           location="../WSDLs/ExpedicaoMercadoriaV1.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -66,7 +64,7 @@
     -->
     <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns2:RegistroLogBPELReference"
                  partnerRole="execute_ptt"/>
-    <partnerLink name="etASNOutJMSReference" partnerLinkType="ns3:Posta_Mensagem_plt"
+    <partnerLink name="etASNInJMSReference" partnerLinkType="ns3:Posta_Mensagem_plt"
                  partnerRole="Posta_Mensagem_role"/>
     <partnerLink name="ExpedicaoMercadoriaDBBPEL" partnerLinkType="ns1:ExpedicaoMercadoriaDBBepl"
                  myRole="ExpedicaoMercadoriaPortType"/>
@@ -86,7 +84,6 @@
     <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns2:requestMessage"/>
     <variable name="NotificarExpedicaoMercadoriaFault" messageType="ns1:NotificarExpedicaoMercadoriaFaultMsg"/>
-    <variable name="JMSOutboundHeaderAndProperties" element="ns12:JMSOutboundHeadersAndProperties"/>
     <variable name="inputVariable" messageType="ns1:NotificarExpedicaoMercadoriaRequest"/>
   </variables>
   <faultHandlers>
@@ -142,7 +139,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
               </copy>
               <copy>
-                <from>'ExpedicaoMercadoriaIntegracaoBPEL Erro'</from>
+                <from>'NotificarExpedicaoMercadoriaBPEL'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
               </copy>
               <copy>
@@ -199,27 +196,20 @@
           <to variable="PostaMensagemEtASNOutJMS_Posta_Mensagem_InputVariable" part="body"/>
         </copy>
       </assign>
-      <assign name="assignThreadProperties">
-        <copy>
-          <from> 'threadValue'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns12:JMSOutboundProperties/ns12:Property/@name</to>
-        </copy>
-        <copy>
-          <from>'String'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns12:JMSOutboundProperties/ns12:Property/@type</to>
-        </copy>
+      <assign name="AssignId">
         <copy>
           <from>concat($PostaMensagemEtASNOutJMS_Posta_Mensagem_InputVariable.body/ns7:ribMessage/ns7:ribmessageID, ora:getFlowId())</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemEtASNOutJMS_Posta_Mensagem_InputVariable.body/ns7:ribMessage/ns7:ribmessageID</to>
         </copy>
-        <copy>
-          <from>'1'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns12:JMSOutboundProperties/ns12:Property/@value</to>
-        </copy>
       </assign>
-      <invoke name="PostaMensagemASNOutDesc" bpelx:invokeAsDetail="no" partnerLink="etASNOutJMSReference"
+      <invoke name="PostaMensagemASNOutDesc" partnerLink="etASNInJMSReference"
               portType="ns3:Posta_Mensagem_ptt" operation="Posta_Mensagem"
-              inputVariable="PostaMensagemEtASNOutJMS_Posta_Mensagem_InputVariable"/>
+              inputVariable="PostaMensagemEtASNOutJMS_Posta_Mensagem_InputVariable" bpelx:invokeAsDetail="no">
+        <bpelx:toProperties>
+          <bpelx:toProperty name="jca.jms.JMSProperty.threadValue">"1"</bpelx:toProperty>
+          <bpelx:toProperty name="jca.jms.JMSPriority">5</bpelx:toProperty>
+        </bpelx:toProperties>
+      </invoke>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">

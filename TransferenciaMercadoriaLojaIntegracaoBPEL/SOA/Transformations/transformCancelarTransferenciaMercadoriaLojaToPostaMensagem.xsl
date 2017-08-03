@@ -28,16 +28,16 @@
       <tns:RibMessages>
          <tns:ribMessage>
             <tns:family>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CANCELAR', 'family', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CANCELAR", "family", "xtsf" )'/>
             </tns:family>
             <tns:type>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CANCELAR', 'type', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CANCELAR", "type", "xtsfdtldel" )'/>
             </tns:type>
             <tns:id>
                <xsl:value-of select="/ns0:CancelarTransferenciaMercadoriaLojaRequest/codigoTransferencia"/>
             </tns:id>
             <tns:ribmessageID>
-               <xsl:value-of select="concat (dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CANCELAR', 'family', ''), '|', xp20:current-dateTime(),'|', /ns0:CancelarTransferenciaMercadoriaLojaRequest/codigoTransferencia)"/>
+               <xsl:value-of select="concat ('ERPImifarma_xtsf_sub_1|', xp20:current-dateTime(),'|')"/>
             </tns:ribmessageID>
             <tns:publishTime>
                <xsl:value-of select="xp20:current-dateTime ( )"/>
@@ -58,7 +58,7 @@
             </tns:messageData>
             <tns:customData/>
             <tns:customFlag>
-               <xsl:value-of select="oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CANCELAR', 'customFlag', '')"/>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CANCELAR", "customFlag", "F" )'/>
             </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>

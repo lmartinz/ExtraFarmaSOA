@@ -30,12 +30,26 @@
    <xsl:template match="/">
       <tns:RibMessages>
          <tns:ribMessage>
-            <tns:family>
-               <xsl:value-of select="dvm:lookupValue (&quot;oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm&quot;, &quot;id&quot;, &quot;080&quot;, &quot;type&quot;, &quot;&quot; )"/>
-            </tns:family>
-            <tns:type>
-               <xsl:value-of select="dvm:lookupValue (&quot;oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm&quot;, &quot;id&quot;, &quot;080&quot;, &quot;type&quot;, &quot;&quot; )"/>
-            </tns:type>
+            <tns:family>shipinfo</tns:family>
+            <tns:type>shipinfocre</tns:type>
+            <tns:id>
+               <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:identificacaoTransferencia"/>
+            </tns:id>
+            <tns:routingInfo>
+               <tns:name>from_phys_loc</tns:name>
+               <tns:value>
+                  <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:tipoLocalOrigem"/>
+               </tns:value>
+            </tns:routingInfo>
+            <tns:routingInfo>
+               <tns:name>to_phys_loc</tns:name>
+               <tns:value>
+                  <xsl:value-of select="/ns0:CriarNFSaidaMercadoriaRequest/ns0:tipoLocalDestino"/>
+               </tns:value>
+            </tns:routingInfo>
+            <tns:publishTime>
+               <xsl:value-of select="xp20:current-dateTime ( )"/>
+            </tns:publishTime>
             <tns:messageData>
                <ns3:ShipInfoDesc>
                   <ns3:to_loc_type>
@@ -93,6 +107,7 @@
                   </xsl:for-each>
                </ns3:ShipInfoDesc>
             </tns:messageData>
+            <tns:customFlag>F</tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
    </xsl:template>

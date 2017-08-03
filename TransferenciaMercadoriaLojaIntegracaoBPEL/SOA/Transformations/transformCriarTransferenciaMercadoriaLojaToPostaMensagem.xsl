@@ -30,17 +30,23 @@
       <tns:RibMessages>
          <tns:ribMessage>
             <tns:family>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CRIAR', 'family', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CRIAR", "family", "xtsf" )'/>
             </tns:family>
             <tns:type>
-               <xsl:value-of select="dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CRIAR', 'type', '')"/>
+              <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CRIAR", "type", "xtsfcre" )'/>
             </tns:type>
             <tns:id>
                <xsl:value-of select="/ns0:CriarTransferenciaMercadoriaLojaRequest/codigoTransferencia"/>
             </tns:id>
             <tns:ribmessageID>
-               <xsl:value-of select="concat (dvm:lookupValue ('oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CRIAR', 'family', ''), '|', xp20:current-dateTime(),'|', /ns0:CriarTransferenciaMercadoriaLojaRequest/codigoTransferencia)"/>
+               <xsl:value-of select="concat('ERPImifarma_xtsf_sub_1|', xp20:current-dateTime(),'|')"/>
             </tns:ribmessageID>
+            <tns:routingInfo>
+               <tns:name>from_phys_loc</tns:name>
+               <tns:value>
+                  <xsl:value-of select="/ns0:CriarTransferenciaMercadoriaLojaRequest/codigoTransferencia"/>
+               </tns:value>
+            </tns:routingInfo>
             <tns:publishTime>
                <xsl:value-of select="xp20:current-dateTime ( )"/>
             </tns:publishTime>
@@ -89,7 +95,7 @@
                </ns2:XTsfDesc>
             </tns:messageData>
             <tns:customFlag>
-               <xsl:value-of select="oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessage.dvm', 'id', '032CRIAR', 'customFlag', '')"/>
+               <xsl:value-of select='dvm:lookupValue ("oramds:/apps/Extrafarma/Retail/Comum/v1/Resource/ValoresRibMessageDVM.dvm", "id", "032CRIAR", "customFlag", "F" )'/>
             </tns:customFlag>
          </tns:ribMessage>
       </tns:RibMessages>
