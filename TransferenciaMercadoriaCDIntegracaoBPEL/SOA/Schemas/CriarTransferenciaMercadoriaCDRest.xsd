@@ -1,30 +1,46 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
-            targetNamespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
-            elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON"
-            nxsd:encoding="US-ASCII">
-  <xsd:element name="Root-Element">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="numeroAgendamento" type="xsd:integer"/>
-        <xsd:element name="codigoDeposito" type="xsd:string"/>
-        <xsd:element name="PlanejamentoPedidoCompraList" maxOccurs="unbounded">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="numeroPedidoCompra" type="xsd:string"/>
-              <xsd:element name="PlanejamentoDetalheList">
-                <xsd:complexType>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1" targetNamespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1" elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+   <xsd:element name="Root-Element">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="numeroPedido" type="xsd:integer"/>
+            <xsd:element name="tipoDocumento" type="xsd:string"/>
+            <xsd:element name="codigoFilial" type="xsd:integer"/>
+            <xsd:element name="tipoLocal" type="xsd:string"/>
+            <xsd:element name="Motivo">
+               <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element name="codigoItem" type="xsd:string"/>
-                    <xsd:element name="quantidadeConsolidadaPedidoCompra" type="xsd:decimal"/>
+                     <xsd:element name="motivoTransferencia" type="xsd:integer"/>
                   </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ItemPedidoList" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="codigoCliente" type="xsd:integer"/>
+                     <xsd:element name="codigoProduto" type="xsd:integer"/>
+                     <xsd:element name="quantidadePedida" type="xsd:integer"/>
+                     <xsd:element name="tipodestino" type="xsd:string"/>
+                     <xsd:element name="precovenda" type="xsd:double"/>
+                     <xsd:element name="ProdutoList" maxOccurs="unbounded">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="numeroPedido" type="xsd:integer"/>
+                              <xsd:element name="codigoProduto" type="xsd:integer"/>
+                              <xsd:element name="codigoCliente" type="xsd:integer"/>
+                              <xsd:element name="precoVenda" type="xsd:double"/>
+                              <xsd:element name="unidadeMedida" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+<xsd:annotation xmlns="">
+      <xsd:appinfo>NXSDSAMPLE=C:\Users\Vinicius\Dropbox\HQS\Resource\Documentos\Extrafarma\int-066 - transferencias (stock order)\sample\int-066.json</xsd:appinfo>
+      <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+   </xsd:annotation>
 </xsd:schema>

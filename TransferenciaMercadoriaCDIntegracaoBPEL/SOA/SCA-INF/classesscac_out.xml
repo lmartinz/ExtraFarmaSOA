@@ -1,23 +1,2 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Faults>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
-      <line>51</line>
-      <col/>
-      <file>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</file>
-      <name>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</name>
-      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: C:\Users\Vinicius\Dropbox\Resource\ExtraFarmaSOA\TransferenciaMercadoriaCDIntegracaoBPEL\SOA\WSDLs\CriarTransferenciaMercadoriaCDV1Wrapper.wsdl (The system cannot find the file specified)" near (FileInputStream.java:-2).</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][3]</loc>
-      <line>51</line>
-      <col/>
-      <file>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</file>
-      <name>BPEL/CriarTransferenciaMercadoriaCDBPELProcess.bpel</name>
-      <fix>Check location "../WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
-      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "../WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl"</msg>
-   </Fault>
-</Faults>
+<Faults/>

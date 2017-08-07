@@ -62,7 +62,8 @@
   <variables xml:id="id_8">
     <variable name="inputPostaMensagem" messageType="ns2:Produce_Message_msg" xml:id="id_10"/>
     <variable name="inputRegistroLogBpel" messageType="ns3:requestMessage" xml:id="id_11"/>
-    <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao" xml:id="id_12"/>
+    <variable name="MetaInformacaoVariable" xml:id="id_12"
+              messageType="ns1:requestHeader"/>
     <variable name="PedidoTransferenciaMercadoriaFault" messageType="ns1:PedidoTransferenciaMercadoriaFaultMsg"
               xml:id="id_116"/>
     <variable name="outputPedidoTransferenciaMercadoria" messageType="ns1:PedidoTransferenciaMercadoriaResponse"
@@ -104,11 +105,11 @@
       <sequence name="FluxoRegistraLogErro" xml:id="id_21">
          <assign name="AssignPayloadToRegistroErroLogBPEL" xml:id="id_22">
               <copy xml:id="id_23">
-                <from xml:id="id_24">$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+                <from xml:id="id_24">$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_25">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
               </copy>
               <copy xml:id="id_26">
-                <from xml:id="id_27">'PedidoTransferenciaMercadoriaRestHTTP'</from>
+                <from xml:id="id_27">'PedidoTransferenciaMercadoriaIntegracaoBPEL'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_28">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
               </copy>
               <copy xml:id="id_29">
@@ -116,23 +117,23 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_31">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
               </copy>
               <copy xml:id="id_32">
-                <from xml:id="id_33">$MetaInformacaoVariable/ns4:usuario</from>
+                <from xml:id="id_33">$MetaInformacaoVariable.parameters/ns4:usuario</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_34">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
               </copy>
               <copy xml:id="id_35">
-                <from xml:id="id_36">$MetaInformacaoVariable/ns4:idControle</from>
+                <from xml:id="id_36">$MetaInformacaoVariable.parameters/ns4:idControle</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_37">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
               </copy>
               <copy xml:id="id_38">
-                <from xml:id="id_39">$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+                <from xml:id="id_39">$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_40">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
               <copy xml:id="id_41">
-                <from xml:id="id_42">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria)</from>
+                <from xml:id="id_42">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria.parameters)</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_43">$inputRegistroLogBpel.part1/ns4:Body</to>
               </copy>
               <copy xml:id="id_44">
-                <from xml:id="id_45">'ModificarPedidoTransferenciaMercadoriaBPELErro'</from>
+                <from xml:id="id_45">'ModificarPedidoTransferenciaMercadoriaBPELProcess'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_46">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
               </copy>
               <copy xml:id="id_47">
@@ -172,26 +173,31 @@
           <bpelx:pattern patternName="bpelx:transformation" xml:id="id_69"></bpelx:pattern>
         </bpelx:annotation>
         <copy xml:id="id_70">
-          <from xml:id="id_71">ora:doXSLTransformForDoc("../Transformations/transformInputToPostaMensagemEtSOStatusJMS.xsl", $inputPedidoTransferenciaMercadoria.parameters)</from>
+          <from xml:id="id_71">ora:doXSLTransformForDoc("../Transformations/transformInputToPostaMensagemEtSOStatusJMS.xsl", $inputPedidoTransferenciaMercadoria.parameters, "MetaInformacaoVariable.parameters", $MetaInformacaoVariable.parameters)</from>
           <to variable="inputPostaMensagem" part="body" xml:id="id_72"/>
         </copy>
       </assign>
       <invoke name="PostaMensagemetSOStatusJMS" partnerLink="etSOStatusReference" portType="ns2:Produce_Message_ptt"
-              operation="Produce_Message" inputVariable="inputPostaMensagem" bpelx:invokeAsDetail="no" xml:id="id_73"/>
+              operation="Produce_Message" inputVariable="inputPostaMensagem" xml:id="id_73" bpelx:invokeAsDetail="no">
+        <bpelx:toProperties>
+          <bpelx:toProperty name="jca.jms.JMSProperty.threadValue">"1"</bpelx:toProperty>
+          <bpelx:toProperty name="jca.jms.JMSPriority">5</bpelx:toProperty>
+        </bpelx:toProperties>
+      </invoke>
     </sequence>
     <sequence name="FluxoRegistraLog" xml:id="id_65">
       <assign name="AssignPayloadToRegistroLogBPEL" xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
               xml:id="id_74">
         <copy xml:id="id_75">
-          <from xml:id="id_76">'PedidoTransferenciaMercadoriaRestHTTP'</from>
+          <from xml:id="id_76">'PedidoTransferenciaMercadoriaIntegracaoBPEL'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_77">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
         </copy>
         <copy xml:id="id_78">
-          <from xml:id="id_79">$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+          <from xml:id="id_79">$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_80">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
         </copy>
         <copy xml:id="id_81">
-          <from xml:id="id_82">'PedidoTransferenciaMercadoriaBPELProcessed'</from>
+          <from xml:id="id_82">'ModificarPedidoTransferenciaMercadoriaBPELProcess'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_83">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
         </copy>
         <copy xml:id="id_84">
@@ -199,15 +205,15 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_86">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
         </copy>
         <copy xml:id="id_87">
-          <from xml:id="id_88">$MetaInformacaoVariable/ns4:usuario</from>
+          <from xml:id="id_88">$MetaInformacaoVariable.parameters/ns4:usuario</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_89">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
         </copy>
         <copy xml:id="id_90">
-          <from xml:id="id_91">$MetaInformacaoVariable/ns4:idControle</from>
+          <from xml:id="id_91">$MetaInformacaoVariable.parameters/ns4:idControle</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_92">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
         </copy>
         <copy xml:id="id_93">
-          <from xml:id="id_94">$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+          <from xml:id="id_94">$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_95">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
         </copy>
         <copy xml:id="id_96">
@@ -219,7 +225,7 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_101">$inputRegistroLogBpel.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
         </copy>
         <copy xml:id="id_102">
-          <from xml:id="id_103">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria)</from>
+          <from xml:id="id_103">oraext:get-content-as-string($inputPedidoTransferenciaMercadoria.parameters)</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0" xml:id="id_104">$inputRegistroLogBpel.part1/ns4:Body</to>
         </copy>
       </assign>

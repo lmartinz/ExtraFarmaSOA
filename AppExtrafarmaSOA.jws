@@ -24,8 +24,6 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
-      <hash><url n="URL" path="AtualizacaoPrecoIntegracaoBPEL/AtualizacaoPrecoIntegracaoBPEL.jpr"/></hash>
-      <hash><url n="URL" path="CadastroProdutoLocalIntegracaoBPEL/CadastroProdutoLocalIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="DevolucaoMercadoriaIntegracaoBPEL/DevolucaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="ExpedicaoMercadoriaIntegracaoBPEL/ExpedicaoMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="IdentificaServicoRetailIntegracaoBPEL/IdentificaServicoRetailIntegracaoBPEL.jpr"/></hash>
@@ -39,6 +37,7 @@
       <hash><url n="URL" path="PedidoReservaIntegracaoBPEL/PedidoReservaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PedidoTransferenciaMercadoriaIntegracaoBPEL/PedidoTransferenciaMercadoriaIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="PontualInventarioIntegracaoBPEL/PontualInventarioIntegracaoBPEL.jpr"/></hash>
+      <hash><url n="URL" path="PrecoIntegracaoBPEL/PrecoIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="ProdutoIntegracaoBPEL/ProdutoIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="ProdutoLocalIntegracaoBPEL/ProdutoLocalIntegracaoBPEL.jpr"/></hash>
       <hash><url n="URL" path="RecebimentoMercadoriaIntegracaoBPEL/RecebimentoMercadoriaIntegracaoBPEL.jpr"/></hash>

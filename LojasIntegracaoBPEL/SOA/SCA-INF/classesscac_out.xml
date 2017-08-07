@@ -1,23 +1,2 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Faults>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfType']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegadoCriacaoLoja']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeCriarAlterarLoja']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfAcao']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='elseif']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceAlterarEnderecoLojas']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='AlterarEnderecoLoja']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='toProperties']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='toProperty'][@name='rest.template.idEndereco']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='query']</loc>
-      <line>201</line>
-      <col/>
-      <file>BPEL/AtualizacaoLojasBPELProcess.bpel</file>
-      <name>BPEL/AtualizacaoLojasBPELProcess.bpel</name>
-      <fix>Add a predicate to select an element from the sequence.</fix>
-      <msg>The XPath segment "child::ns2:DetalheEnderecoLojaList" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfType']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='elseif']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceChamadaRestLegadoExclusaoLoja']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeExcluirLoja']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='if'][@name='IfAcaoEx']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='else']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='SequenceExcluirEnderecoLojas']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='invoke'][@name='ExcluirEnderecoLoja']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='toProperties']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='toProperty'][@name='rest.template.idEndereco']/*[namespace-uri()='http://schemas.oracle.com/bpel/extension'][local-name()='query']</loc>
-      <line>305</line>
-      <col/>
-      <file>BPEL/AtualizacaoLojasBPELProcess.bpel</file>
-      <name>BPEL/AtualizacaoLojasBPELProcess.bpel</name>
-      <fix>Add a predicate to select an element from the sequence.</fix>
-      <msg>The XPath segment "child::ns2:DetalheEnderecoLojaList" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
-   </Fault>
-</Faults>
+<Faults/>

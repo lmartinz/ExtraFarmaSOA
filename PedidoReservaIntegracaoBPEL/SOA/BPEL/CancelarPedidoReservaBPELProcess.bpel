@@ -62,7 +62,7 @@
     <variable name="outputVariable" messageType="ns1:CancelarPedidoReservaResponse"/>
     <variable name="PostaMensagemetEtFulfillOrderJMS" messageType="ns2:Posta_Mensagem_msg"/>
     <variable name="RegistroLogBPEL" messageType="ns3:requestMessage"/>
-    <variable name="MetaInformacao" element="ns4:MetaInformacao"/>
+    <variable name="MetaInformacao" messageType="ns1:requestHeader"/>
     <variable name="PostaMensagemErroRegistroLogBPEL" messageType="ns3:requestMessage"/>
     <variable name="CancelarPedidoReservaFault" messageType="ns1:CancelarPedidoReservaFaultMsg"/>
   </variables>
@@ -99,32 +99,32 @@
           <sequence name="FluxoRegistraLogErro">
             <assign name="AssignPayloadToRegistroErroLogBPEL">
               <copy>
-                <from>xp20:current-dateTime()</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
-              </copy>
-              <copy>
                 <from>ora:getFaultAsString()</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacao.parameters/ns4:datahoraRequisicao</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
               </copy>
               <copy>
                 <from>'RIB'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
               </copy>
               <copy>
-                <from>'legado'</from>
+                <from>$MetaInformacao.parameters/ns4:usuario</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
               </copy>
               <copy>
-                <from>ora:getFlowId()</from>
+                <from>$MetaInformacao.parameters/ns4:idControle</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
-              </copy>
-              <copy>
-                <from>'LEGADO'</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
               <copy>
                 <from>1</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:status</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacao.parameters/ns4:sistemaOrigem</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemErroRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
               <copy>
                 <from>oraext:get-content-as-string($inputVariable.parameters)</from>
@@ -165,14 +165,8 @@
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformCancelarPedidoReservaToPostaMensagem.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformCancelarPedidoReservaToPostaMensagem.xsl", $inputVariable.parameters, "MetaInformacao.parameters", $MetaInformacao.parameters)</from>
           <to variable="PostaMensagemetEtFulfillOrderJMS" part="body"/>
-        </copy>
-      </assign>
-      <assign name="AssignId">
-        <copy>
-          <from>concat($PostaMensagemetEtFulfillOrderJMS.body/ns6:ribMessage/ns6:ribmessageID, ora:getFlowId())</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$PostaMensagemetEtFulfillOrderJMS.body/ns6:ribMessage/ns6:ribmessageID</to>
         </copy>
       </assign>
       <invoke name="PostaMensagemetEtFulfillOrderJMS"
@@ -203,24 +197,24 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Body</to>
         </copy>
         <copy>
-          <from>xp20:current-dateTime()</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
-        </copy>
-        <copy>
           <from>'RIB'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaDestino</to>
         </copy>
         <copy>
-          <from>ora:getFlowId()</from>
+          <from>$MetaInformacao.parameters/ns4:datahoraRequisicao</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacao.parameters/ns4:idControle</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
         </copy>
         <copy>
-          <from>'legado'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+          <from>$MetaInformacao.parameters/ns4:sistemaOrigem</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
         </copy>
         <copy>
-          <from>'LEGADO'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
+          <from>$MetaInformacao.parameters/ns4:usuario</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
         </copy>
         <copy>
           <from>'SUCESSO'</from>

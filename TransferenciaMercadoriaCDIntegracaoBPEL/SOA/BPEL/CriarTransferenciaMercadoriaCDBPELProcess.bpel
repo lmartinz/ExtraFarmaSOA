@@ -47,7 +47,7 @@
             location="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1.wsdl"
             importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCD/v1"
-            location="../WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl"
+            location="oramds:/apps/Extrafarma/Retail/TransferenciaMercadoriaCD/v1/WSDLs/CriarTransferenciaMercadoriaCDV1Wrapper.wsdl"
             importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
     <import namespace="http://service.ultra.com.br/logistica/CriarTransferenciaMercadoriaCDRest/v1"
             location="../Schemas/CriarTransferenciaMercadoriaCDRest.xsd" importType="http://www.w3.org/2001/XMLSchema"/>

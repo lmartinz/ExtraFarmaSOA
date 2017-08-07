@@ -5,15 +5,6 @@
 	xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
 	targetNamespace="http://www.oracle.com/retail/integration/base/bo/PrcChgDesc/v1"
 	version="1.0">
-	<xs:import
-		namespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfPrcChgDesc/v1"
-		schemaLocation="../../../../SoaMds/apps/Extrafarma/Retail/Comum/v1/Schemas/ExtOfPrcChgDesc.xsd">
-		<retailDoc:annotation>
-			<retailDoc:documentation>It's a referenced element. For detailed
-				description, please refer referenced element doc.
-			</retailDoc:documentation>
-		</retailDoc:annotation>
-	</xs:import>
 	<retailDoc:annotation>
 		<retailDoc:documentation>This is root element of this document which
 			contains name space definitions for the document elements.
@@ -82,13 +73,6 @@
 						</retailDoc:documentation>
 					</retailDoc:annotation>
 				</xs:element>
-				<xs:element maxOccurs="1" minOccurs="0"
-					ref="ExtOfPrcChgDesc:ExtOfPrcChgDtl">
-					<retailDoc:annotation>
-						<retailDoc:documentation>Provide an extension hook to customize
-							PrcChgDtl</retailDoc:documentation>
-					</retailDoc:annotation>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -148,13 +132,6 @@
 					<retailDoc:annotation>
 						<retailDoc:documentation>Description is not available.
 						</retailDoc:documentation>
-					</retailDoc:annotation>
-				</xs:element>
-				<xs:element maxOccurs="1" minOccurs="0"
-					ref="ExtOfPrcChgDesc:ExtOfPrcChgDesc">
-					<retailDoc:annotation>
-						<retailDoc:documentation>Provide an extension hook to customize
-							PrcChgDesc</retailDoc:documentation>
 					</retailDoc:annotation>
 				</xs:element>
 			</xs:sequence>

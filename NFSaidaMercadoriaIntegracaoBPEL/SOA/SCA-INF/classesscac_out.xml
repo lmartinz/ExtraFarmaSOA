@@ -2,8 +2,29 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>51</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
+      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "oracle.mds.core.MetadataNotFoundException: MDS-00013: no metadata found for metadata object "/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl" 
+MDS-00201: PDocument not found in MetadataStore : [store-type=FileMetadataStore] " near (MetadataObject.java:1918).</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
+      <line>51</line>
+      <col/>
+      <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
+      <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
+      <fix>Check location "oramds:/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl" and import type "http://schemas.xmlsoap.org/wsdl/"</fix>
+      <msg>Cannot import type "http://schemas.xmlsoap.org/wsdl/" from location "oramds:/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl"</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='Scope1']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][9]</loc>
-      <line>142</line>
+      <line>141</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>
@@ -13,7 +34,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][10]</loc>
-      <line>238</line>
+      <line>228</line>
       <col/>
       <file>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</file>
       <name>BPEL/CriarNFSaidaMercadoriaIntegracaoBPEL.bpel</name>

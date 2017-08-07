@@ -11,14 +11,8 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService"
-          location="WSDLs/etOrderFromRMSjmsService.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/WritefileReference"
           location="WSDLs/WritefileReference.wsdl" importType="wsdl"/>
-  <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-          location="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" importType="wsdl"/>
-  <import namespace="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
-          location="WSDLs/RegistroLogBPELWrapper.wsdl" importType="wsdl"/>
   <import namespace="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1"
           location="oramds:/apps/Extrafarma/Retail/PedidoCompraFornecedor/v1/WSDLs/PedidoCompraFornecedorV1Wrapper.wsdl"
           importType="wsdl"/>
@@ -40,9 +34,6 @@
       <reference name="WritefileReference" ui:wsdlLocation="WSDLs/WritefileReference.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/WritefileReference#wsdl.interface(Write_ptt)"/>
       </reference>
-      <reference name="RegistroLogBPELReference" ui:wsdlLocation="WSDLs/RegistroLogBPELWrapper.wsdl">
-        <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-      </reference>
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">sync</property>
@@ -51,21 +42,9 @@
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/WritefileReference#wsdl.interface(Write_ptt)"/>
     <binding.jca config="Adapters/WritefileReference_file.jca"/>
   </reference>
-  <reference name="RegistroLogBPELReference"
-             ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl">
-    <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-    <binding.direct address="t3://teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true">
-      <property name="java.naming.provider.url"></property>
-    </binding.direct>
-  </reference>
   <wire>
     <source.uri>PedidoCompraFornecedorBPELProcess/WritefileReference</source.uri>
     <target.uri>WritefileReference</target.uri>
-  </wire>
-  <wire>
-    <source.uri>PedidoCompraFornecedorBPELProcess/RegistroLogBPELReference</source.uri>
-    <target.uri>RegistroLogBPELReference</target.uri>
   </wire>
   <wire>
     <source.uri>PedidoCompraFernecedorDBBPEL</source.uri>

@@ -5,7 +5,7 @@
         <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
     </retailDoc:annotation>
 	<xs:import
-        namespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfASNOutDesc/v1" schemaLocation="../../../../custom/bo/ExtOfASNOutDesc/v1/ExtOfASNOutDesc.xsd">
+        namespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfASNOutDesc/v1" schemaLocation="ExtOfASNOutDesc.xsd">
         <retailDoc:annotation>
             <retailDoc:documentation>Additional information about ASNOutDesc</retailDoc:documentation>
         </retailDoc:annotation>

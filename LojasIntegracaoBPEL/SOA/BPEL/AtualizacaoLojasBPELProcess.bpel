@@ -39,8 +39,7 @@
          xmlns:ns11="http://www.oracle.com/retail/integration/localization/bo/BrFiscalStoreAttrDesc/v1"
          xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/StoreRef/v1"
          xmlns:ns14="http://www.oracle.com/retail/integration/base/bo/AddrRef/v1"
-         xmlns:ns15="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1"
-         xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/SODesc/v1">
+         xmlns:ns15="http://www.oracle.com/retail/integration/custom/bo/ExtOfSODesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +70,6 @@
     <variable name="transformationJSON" element="ns2:Root-Element"/>
     <variable name="requestJSON" type="xsd:string"/>
     <variable name="responseJSON" bpelx:json="object"/>
-    <variable name="translateJsonToXML" element="ns12:Root-Element"/>
     <variable name="errorTranslateToXML" element="ns7:RetornoServicoFault"/>
     <variable name="statusJson" bpelx:json="object"/>
     <variable name="inputVariable" messageType="ns1:AtualizacaoLojasRequest"/>

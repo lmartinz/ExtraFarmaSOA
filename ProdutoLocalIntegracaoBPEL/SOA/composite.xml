@@ -26,7 +26,7 @@
   <component name="CadastroProdutoBPELProcess" version="2.0">
     <implementation.bpel src="BPEL/CadastroProdutoBPELProcess.bpel"/>
     <componentType>
-      <service name="CadastroProdutoBPELProcess"
+      <service name="ProdutoLocalDBBPEL"
                ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/ProdutoLocal/v1/WSDLs/ProdutoLocalV1Wrapper.wsdl">
         <interface.wsdl interface="http://service.ultra.com.br/dadosFundacao/ProdutoLocal/v1#wsdl.interface(ProdutoPortType)"/>
       </service>
@@ -37,11 +37,11 @@
   </component>
   <reference name="CadastroProtoRestReference">
     <interface.wadl interface="WADLs/CadastroProtoRestReference.wadl"/>
-    <binding.rest config="WADLs/CadastroProtoRestReference.wadl" location="http://localhost"/>
+    <binding.rest config="WADLs/CadastroProtoRestReference.wadl" location="http://localhost:7001"/>
   </reference>
   <wire>
     <source.uri>ProdutoLocalDBBPEL</source.uri>
-    <target.uri>CadastroProdutoBPELProcess/CadastroProdutoBPELProcess</target.uri>
+    <target.uri>CadastroProdutoBPELProcess/ProdutoLocalDBBPEL</target.uri>
   </wire>
   <wire>
     <source.uri>CadastroProdutoBPELProcess/CadastroProtoRestReference</source.uri>

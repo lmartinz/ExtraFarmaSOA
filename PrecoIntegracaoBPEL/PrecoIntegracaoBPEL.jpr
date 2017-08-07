@@ -61,21 +61,21 @@
       <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
    </hash>
    <list n="contentSets">
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
       <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
-      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
       <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
       <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
-      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
-      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
-      <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
-      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
+      <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
       <string v="oracle.sb.tooling.ide.core.projects.SbProjectSettings/sbContentSet"/>
-      <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
       <string v="oracle.tip.tools.ide.ess.addin.ESSContentSetProvider/ess-content"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
    </list>
-   <value n="defaultPackage" v="atualizacaoprecointegracaobpel"/>
+   <value n="defaultPackage" v="precointegracaobpel"/>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="url-path"/>
@@ -120,7 +120,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="AtualizacaoPrecoIntegracaoBPEL">
+         <hash n="PrecoIntegracaoBPEL">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -207,18 +207,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_AtualizacaoPrecoIntegracaoBPEL.jar"/>
+            <url n="jarURL" path="deploy/sca_PrecoIntegracaoBPEL.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="AtualizacaoPrecoIntegracaoBPEL"/>
+            <value n="profileName" v="PrecoIntegracaoBPEL"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="AtualizacaoPrecoIntegracaoBPEL"/>
+         <string v="PrecoIntegracaoBPEL"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-AtualizacaoPrecoIntegracaoBPEL-webapp"/>
-      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-AtualizacaoPrecoIntegracaoBPEL-context-root"/>
+      <value n="j2eeWebAppName" v="AppExtrafarmaSOA-PrecoIntegracaoBPEL-webapp"/>
+      <value n="j2eeWebContextRoot" v="AppExtrafarmaSOA-PrecoIntegracaoBPEL-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">

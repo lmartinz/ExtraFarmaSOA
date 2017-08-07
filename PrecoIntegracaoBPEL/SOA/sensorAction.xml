@@ -6,12 +6,8 @@
     <action name="DBSensorAction" enabled="true" publishType="BpelReportsSchema" publishName="" filter="" publishTarget="">
         <sensorName>codigoLocalDestino</sensorName>
         <sensorName>codigoLocalOrigem</sensorName>
-        <sensorName>codigoProduto</sensorName>
     </action>
     <action name="JMSSensorAction_codigoLocalOrigem" enabled="false" publishType="JMSQueue" publishTarget="">
-        <property name="JMSConnectionFactory"/>
-    </action>
-    <action name="JMSSensorAction_codigoProduto" enabled="false" publishType="JMSQueue" publishTarget="">
         <property name="JMSConnectionFactory"/>
     </action>
 </actions>

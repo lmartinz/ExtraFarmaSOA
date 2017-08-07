@@ -4,15 +4,15 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="AtualizacaoPrecoDBBPEL" x="0" y="304" side="left"/>
-      <partnerlink name="RegistroLogBPELReference" x="948" y="266" side="right"/>
-      <partnerlink name="etEXFXPrcChgToRMSJMSReference" x="948" y="323" side="right"/>
+      <partnerlink name="PrecoDBBPELV1" x="10" y="531" side="left"/>
+      <partnerlink name="etEXFXPrcChgToRMSJMSReference" x="966" y="323" side="right"/>
+      <partnerlink name="RegistroLogBPELReference" x="966" y="447" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1155,694" show_swimlanes="true">
+   <graph_layout viewport="0,0,1138,550" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
-      <layout_item collapsed="true" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
-      <layout_item collapsed="true" xpath="/process/faultHandlers/catchAll/sequence/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope" type="scope" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/faultHandlers/catchAll/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence/scope/sequence" type="sequence"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
-    <dgm:gService name="AtualizacaoPrecoaDBBPEL">
+    <dgm:gService name="PrecoDBBPELV1">
         <dgm:body borderWidth="2" arcRad="20" X="21" Y="99" width="137" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
@@ -8,19 +8,18 @@
         <dgm:shadow arcRad="20" X="11" Y="92" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:outputPort name="AtualizacaoPrecoaDBBPEL" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1#wsdl.interface(AtualizacaoPrecoPortType)"/>
+        <dgm:outputPort name="PrecoDBBPELV1" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/precificacao/Preco/v1#wsdl.interface(PrecoPortType)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/direct_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
-        <dgm:sensorIcon URI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/sensor.png" X="111" Y="8" width="12" height="12"/>
         <dgm:operations>
-            <dgm:item>atualizarPreco</dgm:item>
+            <dgm:item>atualizacaoPreco</dgm:item>
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="RegistroLogBPELReference">
-        <dgm:body borderWidth="2" arcRad="20" X="910" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="838" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="900" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="828" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="RegistroLogBPELReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
@@ -30,49 +29,49 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="etEXFXPrcChgToRMSJMSReference">
-        <dgm:body borderWidth="2" arcRad="20" X="910" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="838" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="900" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="828" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:inputPort name="etEXFXPrcChgToRMSJMSReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+        <dgm:inputPort name="etEXFXPrcChgToRMSJMSReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/jms_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
         <dgm:operations>
             <dgm:item>Posta_Mensagem</dgm:item>
         </dgm:operations>
     </dgm:gReference>
-    <dgm:gComponent name="AtualizacaoPrecoBPELProcess">
-        <dgm:body borderWidth="2" arcRad="20" X="469" Y="84" width="130" height="86">
+    <dgm:gComponent name="PrecoIntegracaoBPEL">
+        <dgm:body borderWidth="2" arcRad="20" X="433" Y="84" width="130" height="86">
             <dgm:borderColor r="69" g="113" b="140"/>
             <dgm:lightBgColor r="166" g="208" b="230"/>
             <dgm:darkBgColor r="99" g="162" b="201"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="459" Y="77" width="150" height="102">
+        <dgm:shadow arcRad="20" X="423" Y="77" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:inputPort name="AtualizacaoPrecoDBBPEL" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1#wsdl.interface(AtualizacaoPrecoPortType)"/>
+        <dgm:inputPort name="PrecoDBBPELV1" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.ultra.com.br/precificacao/Preco/v1#wsdl.interface(PrecoPortType)"/>
         <dgm:outputPort name="RegistroLogBPELReference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"/>
-        <dgm:outputPort name="etEXFXPrcChgToRMSJMSReference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/AtualizacaoPrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
+        <dgm:outputPort name="etEXFXPrcChgToRMSJMSReference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference#wsdl.interface(Posta_Mensagem_ptt)"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
-    <dgm:gWireLink source="AtualizacaoPrecoaDBBPEL" target="AtualizacaoPrecoBPELProcess/AtualizacaoPrecoDBBPEL" width="2">
-        <dgm:gSegment X1="168" Y1="109" X2="459" Y2="109"/>
+    <dgm:gWireLink source="PrecoIntegracaoBPEL/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
+        <dgm:gSegment X1="573" Y1="109" X2="597" Y2="109"/>
+        <dgm:gSegment X1="597" Y1="109" X2="597" Y2="36"/>
+        <dgm:gSegment X1="597" Y1="36" X2="828" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="AtualizacaoPrecoBPELProcess/RegistroLogBPELReference" target="RegistroLogBPELReference" width="2">
-        <dgm:gSegment X1="609" Y1="109" X2="633" Y2="109"/>
-        <dgm:gSegment X1="633" Y1="109" X2="633" Y2="36"/>
-        <dgm:gSegment X1="633" Y1="36" X2="900" Y2="36"/>
+    <dgm:gWireLink source="PrecoIntegracaoBPEL/etEXFXPrcChgToRMSJMSReference" target="etEXFXPrcChgToRMSJMSReference" width="2">
+        <dgm:gSegment X1="573" Y1="134" X2="597" Y2="134"/>
+        <dgm:gSegment X1="597" Y1="134" X2="597" Y2="154"/>
+        <dgm:gSegment X1="597" Y1="154" X2="828" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="AtualizacaoPrecoBPELProcess/etEXFXPrcChgToRMSJMSReference" target="etEXFXPrcChgToRMSJMSReference" width="2">
-        <dgm:gSegment X1="609" Y1="134" X2="633" Y2="134"/>
-        <dgm:gSegment X1="633" Y1="134" X2="633" Y2="154"/>
-        <dgm:gSegment X1="633" Y1="154" X2="900" Y2="154"/>
+    <dgm:gWireLink source="PrecoDBBPELV1" target="PrecoIntegracaoBPEL/PrecoDBBPELV1" width="2">
+        <dgm:gSegment X1="168" Y1="109" X2="423" Y2="109"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

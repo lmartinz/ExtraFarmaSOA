@@ -32,7 +32,11 @@
          xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
          xmlns:ns4="http://service.ultra.com.br/infcorp/LogIntegration/v1"
          xmlns:ns5="http://canonico.ultra.com.br/infcorp/v1" xmlns:ns6="http://xmlns.oracle.com/pcbpel/adapter/jms/"
-         xmlns:ns7="http://www.oracle.com/retail/integration/rib/RibMessages">
+         xmlns:ns7="http://www.oracle.com/retail/integration/rib/RibMessages"
+         xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/EXFNFInfoDesc/v1"
+         xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+         xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/ASNOutDesc/v1"
+         xmlns:ns9="http://www.oracle.com/retail/integration/custom/bo/ExtOfASNOutDesc/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,8 +45,6 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/" location="oramds:/apps/Extrafarma/Retail/Comum/v1/WSDLs/jmsAdapterOutboundHeader.wsdl"
-          importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1"
           location="../WSDLs/MercadoriaAtacadoV1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <import namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"
@@ -64,7 +66,7 @@
     <variable name="inputPostaMensagemetEXFXNFDocJMS" messageType="ns2:Posta_Mensagem_msg"/>
     <variable name="inputRegistroLogBPEL" messageType="ns3:requestMessage"/>
     <variable name="outputVariable" messageType="ns1:DevolucaoMercadoriaAtacadoResponse"/>
-    <variable name="MetaInformacaoVariable" element="ns4:MetaInformacao"/>
+    <variable name="MetaInformacaoVariable" messageType="ns1:requestHeader"/>
     <variable name="DevolucaoMercadoriaAtacadoFaultMsg" messageType="ns1:DevolucaoMercadoriaAtacadoFaultMsg"/>
   </variables>
   <faultHandlers>
@@ -104,27 +106,27 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
               </copy>
               <copy>
-                <from>xp20:current-dateTime()</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
-              </copy>
-              <copy>
                 <from>'DevolucaoMercadoriaAtacadoBPELProcess'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
               </copy>
               <copy>
                 <from>ora:getFaultAsString()</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:mensagem</to>
               </copy>
               <copy>
-                <from>$MetaInformacaoVariable/ns4:usuario</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
-              </copy>
-              <copy>
-                <from>$MetaInformacaoVariable/ns4:idControle</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:idControle</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
               </copy>
               <copy>
-                <from>$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:usuario</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
+              </copy>
+              <copy>
+                <from>$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
               <copy>
@@ -166,14 +168,8 @@
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformDevolucaoMercadoriaToPostaMensagem.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformDevolucaoMercadoriaToPostaMensagem.xsl", $inputVariable.parameters, "MetaInformacaoVariable.parameters", $MetaInformacaoVariable.parameters)</from>
           <to variable="inputPostaMensagemetEXFXNFDocJMS" part="body"/>
-        </copy>
-      </assign>
-      <assign name="AssignId">
-        <copy>
-          <from>concat($inputPostaMensagemetEXFXNFDocJMS.body/ns7:ribMessage/ns7:ribmessageID, ora:getFlowId())</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputPostaMensagemetEXFXNFDocJMS.body/ns7:ribMessage/ns7:ribmessageID</to>
         </copy>
       </assign>
       <invoke name="PostaMensagemetEXFXNFDocJMS" partnerLink="etEXFXNFDocJMSReference" portType="ns2:Posta_Mensagem_ptt"
@@ -192,15 +188,15 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Body</to>
         </copy>
         <copy>
-          <from>ora:getFlowId()</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
-        </copy>
-        <copy>
-          <from>$MetaInformacaoVariable/ns4:usuario</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:usuario</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
         </copy>
         <copy>
-          <from>'LEGADO'</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:idControle</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
         </copy>
         <copy>
@@ -208,12 +204,12 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
         </copy>
         <copy>
-          <from>xp20:current-dateTime()</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
-        </copy>
-        <copy>
           <from>'DevolucaoMercadoriaAtacadoBPELProcess'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
+        </copy>
+        <copy>
+          <from>$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
+          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLogBPEL.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
         </copy>
         <copy>
           <from>'SUCESSO'</from>

@@ -37,7 +37,8 @@
          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
          xmlns:ns8="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS"
          xmlns:ns9="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-         xmlns:ns10="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1">
+         xmlns:ns10="http://service.ultra.com.br/logistica/PedidoCompraFernecedor/v1"
+         xmlns:ns11="http://canonico.ultra.com.br/LegadoOutput/v1">
 
   <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,15 +47,13 @@
      services integrated within this business process
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   -->
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/WritefileReference"
+          location="../WSDLs/WritefileReference.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
+          ui:processWSDL="true"/>
   <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
           importType="http://schemas.xmlsoap.org/wsdl/"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoCompraFornecedorIntegracaoBPEL/etOrderFromRMSjmsService"
-          location="../WSDLs/etOrderFromRMSjmsService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"
-          ui:processWSDL="true"/>
   <partnerLinks>
     <partnerLink name="WritefileReference" partnerLinkType="ns6:Write_plt" partnerRole="Write_role"/>
-    <partnerLink name="RegistroLogBPELReference" partnerLinkType="ns8:RegistroLogBPELReference"
-                 partnerRole="execute_ptt"/>
     <partnerLink name="PedidoCompraFernecedorDBBPEL" partnerLinkType="ns10:PedidoCompraFernecedorDBBPEL"
                  myRole="PedidoCompraFernecedorPortType"/>
   </partnerLinks>
@@ -64,11 +63,11 @@
     <variable name="pArquivo" type="xsd:string"/>
     <variable name="pArquivoBase64" type="xsd:string"/>
     <variable name="InputWriteFile" messageType="ns6:Write_msg"/>
-    <variable name="inputRegistroLOG" messageType="ns8:requestMessage"/>
     <variable name="diretorio" type="xsd:string"/>
     <variable name="varCatchALL" messageType="bpelx:RuntimeFaultMessage"/>
     <variable name="nomeArquivo" type="xsd:string"/>
     <variable name="inputReceiveMessage" messageType="ns10:PedidoCompraFernecedorRequest"/>
+    <variable name="outputVariable" messageType="ns10:PedidoCompraFernecedorResponse"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -83,39 +82,23 @@
    </sequence></catchAll>
           </faultHandlers>
           <sequence>
-            <assign name="AssignPayloadToRegistroErroLogBPEL"
+            <assign name="AssignReplyCatch"
                     xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
               <copy>
-                <from>'PedidoCompraFornecedorErro'</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:passoFluxo</to>
+                <from>1</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:success</to>
+              </copy>
+              <copy>
+                <from>ora:getFlowId()</from>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:data/ns11:id</to>
               </copy>
               <copy>
                 <from>ora:getFaultAsString()</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:mensagem</to>
-              </copy>
-              <copy>
-                <from>'RIB'</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:sistemaDestino</to>
-              </copy>
-              <copy>
-                <from>oraext:get-content-as-string($inputReceiveMessage.parameters)</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Body</to>
-              </copy>
-              <copy>
-                <from>'PedidoCompraForncedorHTTP'</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:nomeServico</to>
-              </copy>
-              <copy>
-                <from>$inputReceiveMessage.parameters/ns3:ribMessage/ns3:publishTime</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:datahoraRequisicao</to>
-              </copy>
-              <copy>
-                <from>1</from>
-                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$inputRegistroLOG.part1/ns9:Header/ns9:MetaInformacao/ns9:status</to>
+                <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:data/ns11:mensagem</to>
               </copy>
             </assign>
-            <invoke name="InvokeRegistroLOG" bpelx:invokeAsDetail="no" partnerLink="RegistroLogBPELReference"
-                    portType="ns8:execute_ptt" operation="execute" inputVariable="inputRegistroLOG"/>
+            <reply name="replyCatchOutput" partnerLink="PedidoCompraFernecedorDBBPEL" variable="outputVariable"
+                   portType="ns10:PedidoCompraFernecedorPortType" operation="PedidoCompraFernecedor"/>
           </sequence>
         </scope>
         <throw name="ThrowCatchALL" faultName="bpelx:remoteFault" faultVariable="varCatchALL"/>
@@ -175,5 +158,21 @@
         </invoke>
       </sequence>
     </scope>
+    <assign name="AssignSucessoAtualizacaoLojas">
+      <copy>
+        <from>ora:getFlowId()</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:data/ns11:id</to>
+      </copy>
+      <copy>
+        <from>'SUCESSO'</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:data/ns11:mensagem</to>
+      </copy>
+      <copy>
+        <from>0</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.parameters/ns11:success</to>
+      </copy>
+    </assign>
+    <reply name="replyOutput" partnerLink="PedidoCompraFernecedorDBBPEL" variable="outputVariable"
+           portType="ns10:PedidoCompraFernecedorPortType" operation="PedidoCompraFernecedor"/>
   </sequence>
 </process>

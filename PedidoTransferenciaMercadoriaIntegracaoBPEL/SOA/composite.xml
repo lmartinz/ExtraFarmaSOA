@@ -54,20 +54,20 @@
   <reference name="etSOStatusJMSReference" ui:wsdlLocation="WSDLs/etSOStatusJMSReference.wsdl" xml:id="id_22">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PedidoTransferenciaMercadoriaIntegracaoBPEL/etSOStatusReference#wsdl.interface(Produce_Message_ptt)"
                     xml:id="id_23"/>
-    <binding.jca config="Adapters/etSOStatusJMSReference.jca" xml:id="id_24"/>
+    <binding.jca config="Adapters/etSOStatusJMSReference.jca" xml:id="id_51"/>
   </reference>
   <reference name="RegistroLogBPELReference"
              ui:wsdlLocation="oramds:/apps/Extrafarma/Retail/Comum/Log/v1/WSDL/RegistroLogBPEL.wsdl" xml:id="id_25">
     <interface.wsdl interface="http://www.extrafarma.com.br/sca/soapservice/ExtrafarmaSOA-F1-S1/RegistroLogLBBpel/RegistroLogWS#wsdl.interface(execute_ptt)"
                     xml:id="id_26"/>
-    <binding.direct address="t3:teste" connection-factory="oracle.soa.api.JNDIDirectConnectionFactory"
-                    useLocalJNDIProvider="true" xml:id="id_27">
-      <property name="java.naming.provider.url" xml:id="id_28"></property>
+   <binding.direct address="soadirect:/default/RegistroLogIntegracaoBPEL!1.0/RegistroLogDBBPELV1"
+                    connection-factory="oracle.soa.api.JNDIDirectConnectionFactory" useLocalJNDIProvider="false">
+      <property name="java.naming.provider.url">t3://efbrmtzvlx154:13410,efbrmtzvlx153:13420,efbrmtzvlx153:13410,efbrmtzvlx154:13420</property>
     </binding.direct>
   </reference>
   <wire xml:id="id_32">
     <source.uri xml:id="id_33">ModificarPedidoTransferenciaMercadoriaBPELProcess/etSOStatusReference</source.uri>
-    <target.uri xml:id="id_34">etSOStatusJMSReference</target.uri>
+    <target.uri xml:id="id_52">etSOStatusJMSReference</target.uri>
   </wire>
   <wire xml:id="id_35">
     <source.uri xml:id="id_39">ModificarPedidoTransferenciaMercadoriaBPELProcess/RegistroLogBPELReference</source.uri>

@@ -8,7 +8,8 @@
                 xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/jms/AppExtrafarmaSOA/PontualInventarioIntegracaoBPEL/etInvAdjustJMSReference"
                 xmlns:ns4="http://www.oracle.com/retail/integration/custom/bo/ExtOfInvAdjustDesc/v1"
                 xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
-                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/InvAdjustDesc/v1">
+                xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/InvAdjustDesc/v1"
+                xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/PrcChgDesc/v1">
    <oracle-xsl-mapper:schema>
       <!--SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY.-->
       <oracle-xsl-mapper:mapSources>

@@ -68,12 +68,11 @@
   <variables>
     <variable name="inputVariable" messageType="ns1:CriarNFSaidaMercadoriaRequest"/>
     <variable name="outputVariable" messageType="ns1:CriarNFSaidaMercadoriaResponse"/>
-    <variable name="MetaInformacaoVariable" type="ns4:MetaInformacaoType"/>
+    <variable name="MetaInformacaoVariable" messageType="ns1:requestHeader"/>
     <variable name="criarNFSaidaMercadoriaFault" messageType="ns1:CriarNFSaidaMercadoriaFaultMsg"/>
     <variable name="RegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="postaMensagemErroRegistroLogBPEL_execute_InputVariable" messageType="ns3:requestMessage"/>
     <variable name="PostaMensagemetShipInfoJMS_Posta_Mensagem_InputVariable" messageType="ns2:Posta_Mensagem_msg"/>
-    <variable name="JMSOutboundHeaderAndProperties" element="ns8:JMSOutboundHeadersAndProperties"/>
   </variables>
   <faultHandlers>
     <catchAll>
@@ -108,19 +107,19 @@
           <sequence>
             <assign name="AssignPayloadToRegistroErroLogBPEL">
               <copy>
-                <from>$MetaInformacaoVariable/ns4:datahoraRequisicao</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
               </copy>
               <copy>
-                <from>$MetaInformacaoVariable/ns4:usuario</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:usuario</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
               </copy>
               <copy>
-                <from>$MetaInformacaoVariable/ns4:idControle</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:idControle</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
               </copy>
               <copy>
-                <from>$MetaInformacaoVariable/ns4:sistemaOrigem</from>
+                <from>$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
               </copy>
               <copy>
@@ -144,7 +143,7 @@
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Body</to>
               </copy>
               <copy>
-                <from>'NFSaidaMercadoriaIntegracaoBPEL Erro'</from>
+                <from>'CriarNFSaidaMercadoriaBPELProcess'</from>
                 <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$postaMensagemErroRegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
               </copy>
             </assign>
@@ -174,45 +173,36 @@
           <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
         </bpelx:annotation>
         <copy>
-          <from>ora:doXSLTransformForDoc("../Transformations/transformationCriarNotaFiscalSaidaMercadoriaToetShipInfo.xsl", $inputVariable.parameters)</from>
+          <from>ora:doXSLTransformForDoc("../Transformations/transformationCriarNotaFiscalSaidaMercadoriaToetShipInfo.xsl", $inputVariable.parameters, "MetaInformacaoVariable.parameters", $MetaInformacaoVariable.parameters)</from>
           <to variable="PostaMensagemetShipInfoJMS_Posta_Mensagem_InputVariable" part="body"/>
-        </copy>
-      </assign>
-      <assign name="AssignThreadProperties">
-        <copy>
-          <from>'threadValue'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns8:JMSOutboundProperties/ns8:Property/@name</to>
-        </copy>
-        <copy>
-          <from>'String'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns8:JMSOutboundProperties/ns8:Property/@type</to>
-        </copy>
-        <copy>
-          <from>'1'</from>
-          <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$JMSOutboundHeaderAndProperties/ns8:JMSOutboundProperties/ns8:Property/@value</to>
         </copy>
       </assign>
       <invoke name="PostaMensagemetShipInfoJMS"
               inputVariable="PostaMensagemetShipInfoJMS_Posta_Mensagem_InputVariable"
               partnerLink="EtShipInfoJMSReference" portType="ns2:Posta_Mensagem_ptt" operation="Posta_Mensagem"
-              bpelx:invokeAsDetail="no"/>
+              bpelx:invokeAsDetail="no">
+        <bpelx:toProperties>
+          <bpelx:toProperty name="jca.jms.JMSProperty.threadValue">"1"</bpelx:toProperty>
+          <bpelx:toProperty name="jca.jms.JMSPriority">5</bpelx:toProperty>
+        </bpelx:toProperties>
+      </invoke>
     </sequence>
     <sequence name="FluxoRegistraLog">
       <assign name="AssignPayloadToRegistroLogBPEL">
         <copy>
-          <from>xp20:current-dateTime()</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:datahoraRequisicao</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:datahoraRequisicao</to>
         </copy>
         <copy>
-          <from>'legado'</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:usuario</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:usuario</to>
         </copy>
         <copy>
-          <from>ora:getFlowId()</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:idControle</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:idControle</to>
         </copy>
         <copy>
-          <from>'LEGADO'</from>
+          <from>$MetaInformacaoVariable.parameters/ns4:sistemaOrigem</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:sistemaOrigem</to>
         </copy>
         <copy>
@@ -220,7 +210,7 @@
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:nomeServico</to>
         </copy>
         <copy>
-          <from>'NFSaidaMercadoriaIntegracaoBPEL'</from>
+          <from>'CriarNFSaidaMercadoriaBPELProcess'</from>
           <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$RegistroLogBPEL_execute_InputVariable.part1/ns4:Header/ns4:MetaInformacao/ns4:passoFluxo</to>
         </copy>
         <copy>

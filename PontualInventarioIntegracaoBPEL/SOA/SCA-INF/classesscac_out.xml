@@ -2,18 +2,8 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='import'][2]</loc>
-      <line>45</line>
-      <col/>
-      <file>BPEL/AjustePontualInventarioBPELProcess.bpel</file>
-      <name>BPEL/AjustePontualInventarioBPELProcess.bpel</name>
-      <fix>You have stumbled onto a BPEL 2.0 validator bug. Please send us a test case to fix this problem.</fix>
-      <msg>Validator error on &lt;bpel:import> while running rule "ImportValidator.CheckNamespaceOfImport.8" - exception "java.io.FileNotFoundException: C:\Users\Vinicius\Dropbox\Resource\ExtraFarmaSOA\PontualInventarioIntegracaoBPEL\SOA\WSDLs\AjustePontualInventarioBPELProcess.wsdl (The system cannot find the file specified)" near (FileInputStream.java:-2).</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='faultHandlers']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='catchAll']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='scope'][@name='ScopeTratamentoMensagem']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroErroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]</loc>
-      <line>73</line>
+      <line>94</line>
       <col/>
       <file>BPEL/AjustePontualInventarioBPELProcess.bpel</file>
       <name>BPEL/AjustePontualInventarioBPELProcess.bpel</name>
@@ -23,7 +13,7 @@
    <Fault>
       <severity>warning</severity>
       <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='FluxoRegistraLog']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='AssignPayloadToRegistroLogBPEL']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]</loc>
-      <line>157</line>
+      <line>183</line>
       <col/>
       <file>BPEL/AjustePontualInventarioBPELProcess.bpel</file>
       <name>BPEL/AjustePontualInventarioBPELProcess.bpel</name>

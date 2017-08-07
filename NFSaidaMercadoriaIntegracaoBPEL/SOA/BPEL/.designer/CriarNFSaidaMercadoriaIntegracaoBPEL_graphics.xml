@@ -4,11 +4,11 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="NFSaidaMercadoriaDBBPEL" x="0" y="563" side="left"/>
-      <partnerlink name="EtShipInfoJMSReference" x="0" y="419" side="left"/>
-      <partnerlink name="RegistroLogBPELReference" x="1000" y="495" side="right"/>
+      <partnerlink name="NFSaidaMercadoriaDBBPEL" x="0" y="531" side="left"/>
+      <partnerlink name="EtShipInfoJMSReference" x="0" y="323" side="left"/>
+      <partnerlink name="RegistroLogBPELReference" x="1000" y="447" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1138,502" show_swimlanes="true">
+   <graph_layout viewport="0,0,1138,550" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
       <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
